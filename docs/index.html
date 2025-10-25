@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blueprint Browser</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#0b0e11;color:#e8eef5}
+    header{position:sticky;top:0;background:#12161b;border-bottom:1px solid #1f2630;padding:12px 16px;z-index:10}
+    input,select{background:#0f1317;border:1px solid #303947;color:#e8eef5;padding:8px;border-radius:6px}
+    main{display:grid;grid-template-columns:280px 1fr;gap:16px;padding:16px}
+    aside{border-right:1px solid #1f2630;padding-right:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+    .card{background:#12161b;border:1px solid #1f2630;border-radius:8px;overflow:hidden}
+    .card img{width:100%;height:220px;object-fit:contain;background:#0f1317}
+    .meta{padding:8px 10px;font-size:12px;color:#a9b6c6}
+    .text{padding:8px 10px;font-size:11px;color:#91a0b3;border-top:1px solid #1f2630}
+    .pill{display:inline-block;background:#0f1317;border:1px solid #303947;border-radius:999px;padding:2px 8px;margin-right:6px}
+    .counts{font-size:12px;color:#a9b6c6;margin-top:8px}
+    footer{padding:16px;color:#8a98ab}
+  </style>
+</head>
+<body>
+<header>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <strong>Blueprint Browser</strong>
+    <input id="q" placeholder="Search filename… (e.g., A1.1, panel, window)" style="flex:1;min-width:260px"/>
+    <select id="section">
+      <option value="">All</option>
+      <option>ARCH</option>
+      <option>STRUCT</option>
+      <option>MEP/ELEC</option>
+      <option>MEP/MECH</option>
+      <option>MEP/PLUMB</option>
+      <option>CIVIL</option>
+      <option>SITE</option>
+      <option>LANDSCAPE</option>
+      <option>DETAILS</option>
+      <option>SCHEDULES</option>
+      <option>GENERAL</option>
+      <option>_unmatched</option>
+    </select>
+    <span class="counts" id="counts"></span>
+  </div>
+</header>
+<main>
+  <aside>
+    <div id="folders"></div>
+    <hr style="border-color:#1f2630;margin:12px 0">
+    <div style="font-size:12px;color:#8a98ab">OCR filters</div>
+    <input id="sheetFilter" placeholder="Sheet (e.g., A1.1)" style="margin-top:6px;width:95%"/>
+    <input id="textFilter" placeholder="Text contains…" style="margin-top:6px;width:95%"/>
+  </aside>
+  <section>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+<footer>
+  Tip: Click a card to open the full image in a new tab. Use the dropdown to filter by category.
+<footer>Tip: Click a card to open the full image in a new tab. Use the dropdown to filter by category. | <a href="SOP.html" style="color:#9cc1ff">Open SOP</a> | <a href="SOP_detailed.html" style="color:#9cc1ff">Open Detailed SOP</a> | <a href="SOP_tasks.html" style="color:#9cc1ff">Task SOPs</a> | <a href="task_sops/index.html" style="color:#9cc1ff">Per‑Task SOP Index</a> | <a href="SOP_quick.html" style="color:#9cc1ff">Open Quick SOP</a> | <a href="printables/index.html" style="color:#9cc1ff">Printables</a> | <a href="tasks.md" style="color:#9cc1ff">All Tasks (WBS)</a> | <a href="tasks.html" style="color:#9cc1ff">Tasks Dashboard</a> | <a href="tasks.csv" style="color:#9cc1ff">CSV</a></footer>
+<script>
+(async function(){
+  const data = await fetch('assets/index.json').then(r=>r.json());
+  let ocr = {};
+  try { ocr = await fetch('assets/ocr.json').then(r=>r.json()); } catch(e) { ocr = {}; }
+  const grid = document.getElementById('grid');
+  const q = document.getElementById('q');
+  const sectionSel = document.getElementById('section');
+  const countsEl = document.getElementById('counts');
+  const foldersEl = document.getElementById('folders');
+
+  function renderFolders(){
+    const sections = Object.keys(data).sort();
+    foldersEl.innerHTML = sections.map(s=>`<div><span class="pill">${s}</span> ${data[s].length} files</div>`).join('');
+  }
+
+  function render(){
+    const term = (q.value||'').toLowerCase();
+    const section = sectionSel.value;
+    const sheetTerm = (document.getElementById('sheetFilter').value||'').trim().toUpperCase();
+    const textTerm = (document.getElementById('textFilter').value||'').toLowerCase();
+    let items = [];
+    Object.entries(data).forEach(([sec,files])=>{
+      if(section && section!==sec) return;
+      files.forEach(f=>{ items.push({sec, ...f}); });
+    });
+    if(term){ items = items.filter(i=> i.name.toLowerCase().includes(term)); }
+    if(sheetTerm){ items = items.filter(i=> (ocr[i.href]?.sheet||'').includes(sheetTerm)); }
+    if(textTerm){ items = items.filter(i=> (ocr[i.href]?.text_sample||'').toLowerCase().includes(textTerm)); }
+    countsEl.textContent = `${items.length} result(s)`;
+    grid.innerHTML = items.map(i=>`
+      <div class="card">
+        <a href="${i.href}" target="_blank" rel="noopener">
+          <img loading="lazy" src="${i.href}" alt="${i.name}">
+        </a>
+        <div class="meta">
+          <span class="pill">${i.sec}</span>
+          <strong>${i.name}</strong>
+        </div>
+        ${ocr[i.href]?`<div class="text"><div><b>Sheet:</b> ${ocr[i.href].sheet||'-'} <b>Title:</b> ${ocr[i.href].title_hint||'-'}</div><div>${(ocr[i.href].text_sample||'').slice(0,160)}</div></div>`:''}
+      </div>`).join('');
+  }
+
+  q.addEventListener('input', render);
+  sectionSel.addEventListener('change', render);
+
+  renderFolders();
+  render();
+  // Support deep-linking via query params ?q=...&section=...
+  (function applyQuery(){
+    const params = new URLSearchParams(window.location.search);
+    const qParam = params.get('q') || '';
+    const sParam = params.get('section') || '';
+    if (qParam) { q.value = qParam; }
+    if (sParam) { sectionSel.value = sParam; }
+    if (qParam || sParam) { render(); }
+  })();
+  document.getElementById('sheetFilter').addEventListener('input', render);
+  document.getElementById('textFilter').addEventListener('input', render);
+})();
+</script>
+</body>
+</html>

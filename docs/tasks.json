@@ -1,0 +1,317 @@
+[
+  {
+    "id": "0.1",
+    "trade": "GENERAL",
+    "task": "Mobilize & site controls",
+    "do": "Install fencing/controls, access/laydown, post plan",
+    "check": "Controls continuous; access firm",
+    "outputs": "Site ready, daily report started",
+    "status": "pending"
+  },
+  {
+    "id": "1.1",
+    "trade": "EARTHWORK",
+    "task": "Excavate to subgrade",
+    "do": "Excavate per plan; stockpile; protect",
+    "check": "Elevation within tolerance; safe slopes",
+    "outputs": "Subgrade ready",
+    "status": "pending"
+  },
+  {
+    "id": "1.2",
+    "trade": "EARTHWORK",
+    "task": "Subgrade compaction",
+    "do": "Compact per geotech",
+    "check": "Pass density; proof-roll",
+    "outputs": "Compaction report",
+    "status": "pending"
+  },
+  {
+    "id": "1.3",
+    "trade": "CONCRETE",
+    "task": "Footing forms & sleeves",
+    "do": "Set forms; place sleeves/embeds",
+    "check": "Forms square; sleeves located",
+    "outputs": "Forms ready",
+    "status": "pending"
+  },
+  {
+    "id": "1.4",
+    "trade": "REBAR",
+    "task": "Tie footing rebar",
+    "do": "Tie rebar; chairs; clear cover",
+    "check": "Cover 3\" to earth, 1.5\" forms",
+    "outputs": "Rebar inspection passed",
+    "status": "pending"
+  },
+  {
+    "id": "1.5",
+    "trade": "CONCRETE",
+    "task": "Anchor bolts/holdowns",
+    "do": "Place anchors/holdowns per schedule",
+    "check": "Locations per plan; embed depth met",
+    "outputs": "Anchors fixed",
+    "status": "pending"
+  },
+  {
+    "id": "1.6",
+    "trade": "CONCRETE",
+    "task": "Pour footings",
+    "do": "Place/finish/cure; cylinders",
+    "check": "Slump/air within spec; cure started",
+    "outputs": "Footings in place",
+    "status": "pending"
+  },
+  {
+    "id": "1.7",
+    "trade": "PLUMB-UG",
+    "task": "Underground plumbing",
+    "do": "Lay DWV; slope; bed/cover",
+    "check": "Slope 1/4\"/ft (\u22643\"); test",
+    "outputs": "UG inspection passed",
+    "status": "pending"
+  },
+  {
+    "id": "1.8",
+    "trade": "ELEC-UG",
+    "task": "Underground electrical",
+    "do": "Conduit trenches; sweeps; pull string",
+    "check": "Depth; warning tape",
+    "outputs": "UG inspection passed",
+    "status": "pending"
+  },
+  {
+    "id": "1.9",
+    "trade": "CONCRETE",
+    "task": "Slab prep",
+    "do": "VB lapped/taped; WWM/rebar; chairs",
+    "check": "VB seams \u22656\"; cover",
+    "outputs": "Slab ready",
+    "status": "pending"
+  },
+  {
+    "id": "1.10",
+    "trade": "CONCRETE",
+    "task": "Slab pour & finish",
+    "do": "Place/finish; sawcut",
+    "check": "Flatness/level; curing",
+    "outputs": "Slab complete",
+    "status": "pending"
+  },
+  {
+    "id": "2.1",
+    "trade": "FRAMING",
+    "task": "Sill plates & first walls",
+    "do": "Layout; plates; studs",
+    "check": "Anchor bolt fit; straight walls",
+    "outputs": "First lift complete",
+    "status": "pending"
+  },
+  {
+    "id": "2.2",
+    "trade": "FRAMING",
+    "task": "Floors & joists",
+    "do": "Set beams/joists/blocking",
+    "check": "Bearing/hanger nails; level",
+    "outputs": "Framed floor",
+    "status": "pending"
+  },
+  {
+    "id": "2.3",
+    "trade": "FRAMING",
+    "task": "Shearwalls & straps",
+    "do": "Sheathing; nailing; straps",
+    "check": "Nail pattern per schedule",
+    "outputs": "Shear complete",
+    "status": "pending"
+  },
+  {
+    "id": "2.4",
+    "trade": "FRAMING",
+    "task": "Trusses/Roof frame",
+    "do": "Set trusses/rafters; bracing",
+    "check": "Layout; bracing; plumb",
+    "outputs": "Roof framed",
+    "status": "pending"
+  },
+  {
+    "id": "2.5",
+    "trade": "FRAMING",
+    "task": "Stairs & openings",
+    "do": "Frame openings; stairs",
+    "check": "Dims true; guards",
+    "outputs": "Openings complete",
+    "status": "pending"
+  },
+  {
+    "id": "3.1",
+    "trade": "ENVELOPE",
+    "task": "WRB & flashing",
+    "do": "Install WRB; flash openings",
+    "check": "Laps 4\"/6\"; order sill\u2192jamb\u2192set\u2192head",
+    "outputs": "WRB complete",
+    "status": "pending"
+  },
+  {
+    "id": "3.2",
+    "trade": "WINDOWS",
+    "task": "Window install",
+    "do": "Set/level; fasten; flash head",
+    "check": "Per mfr; water test sample",
+    "outputs": "Windows in",
+    "status": "pending"
+  },
+  {
+    "id": "3.3",
+    "trade": "DOORS",
+    "task": "Exterior door install",
+    "do": "Set/level; thresholds; flash",
+    "check": "Per mfr; clearance",
+    "outputs": "Doors in",
+    "status": "pending"
+  },
+  {
+    "id": "3.4",
+    "trade": "ROOF",
+    "task": "Underlayment & flashings",
+    "do": "Dry-in; valleys; boots",
+    "check": "Laps 4\"/6\"; sealed",
+    "outputs": "Roof dry-in",
+    "status": "pending"
+  },
+  {
+    "id": "3.5",
+    "trade": "SIDING",
+    "task": "Cladding start",
+    "do": "Starter/vents; fasten per spec",
+    "check": "Clearances; fasteners",
+    "outputs": "Cladding underway",
+    "status": "pending"
+  },
+  {
+    "id": "4.1",
+    "trade": "ELECTRICAL",
+    "task": "Panel & homeruns",
+    "do": "Set panel; homeruns/circuits",
+    "check": "Clear space 30x36; labeling",
+    "outputs": "Panel rough done",
+    "status": "pending"
+  },
+  {
+    "id": "4.2",
+    "trade": "ELECTRICAL",
+    "task": "Devices & lighting rough",
+    "do": "Boxes set depth; layout",
+    "check": "Heights; AFCI/GFCI; box fill",
+    "outputs": "Device rough done",
+    "status": "pending"
+  },
+  {
+    "id": "4.3",
+    "trade": "PLUMBING",
+    "task": "Supply/vent/drain rough",
+    "do": "Piping; vents; cleanouts",
+    "check": "Slopes/supports; tests",
+    "outputs": "Plumbing rough done",
+    "status": "pending"
+  },
+  {
+    "id": "4.4",
+    "trade": "MECHANICAL",
+    "task": "Ducts & equipment rough",
+    "do": "Ducts; returns; equipment pads",
+    "check": "Sealed; clearances; condensate",
+    "outputs": "Mech rough done",
+    "status": "pending"
+  },
+  {
+    "id": "4.5",
+    "trade": "FIRESTOP",
+    "task": "Fire/smoke sealing",
+    "do": "Seal penetrations rated walls",
+    "check": "Listed products; continuity",
+    "outputs": "Firestop complete",
+    "status": "pending"
+  },
+  {
+    "id": "5.1",
+    "trade": "INSULATION",
+    "task": "Insulate & air seal",
+    "do": "Install per R; seal gaps",
+    "check": "Full fill; baffles",
+    "outputs": "Insulation done",
+    "status": "pending"
+  },
+  {
+    "id": "5.2",
+    "trade": "DRYWALL",
+    "task": "Hang & tape",
+    "do": "Hang per patterns; tape",
+    "check": "Type X at rated; joints",
+    "outputs": "Close-in passed",
+    "status": "pending"
+  },
+  {
+    "id": "6.1",
+    "trade": "FINISHES",
+    "task": "Flooring & tile",
+    "do": "Prep; install; cure",
+    "check": "Flatness; moisture",
+    "outputs": "Floors complete",
+    "status": "pending"
+  },
+  {
+    "id": "6.2",
+    "trade": "FINISHES",
+    "task": "Trim & paint",
+    "do": "Trim/doors; paint",
+    "check": "Reveals; finish quality",
+    "outputs": "Trim/paint done",
+    "status": "pending"
+  },
+  {
+    "id": "6.3",
+    "trade": "FIXTURES",
+    "task": "Set plumbing/electrical",
+    "do": "Set trims/devices; test",
+    "check": "No leaks; function",
+    "outputs": "Trims set",
+    "status": "pending"
+  },
+  {
+    "id": "7.1",
+    "trade": "SITE",
+    "task": "Flatwork & grading",
+    "do": "Forms; pour; grade",
+    "check": "Slopes; joints",
+    "outputs": "Flatwork/grading done",
+    "status": "pending"
+  },
+  {
+    "id": "7.2",
+    "trade": "LANDSCAPE",
+    "task": "Planting/irrigation",
+    "do": "Set plants; irrigation",
+    "check": "Coverage; backflow",
+    "outputs": "Landscape complete",
+    "status": "pending"
+  },
+  {
+    "id": "8.1",
+    "trade": "COMMISSION",
+    "task": "Startup & tests",
+    "do": "Start equipment; balance",
+    "check": "Reports complete",
+    "outputs": "Systems started",
+    "status": "pending"
+  },
+  {
+    "id": "8.2",
+    "trade": "CLOSEOUT",
+    "task": "Punch & handover",
+    "do": "Punch; clean; O&M; train",
+    "check": "Signed docs; CO",
+    "outputs": "Handover complete",
+    "status": "pending"
+  }
+]

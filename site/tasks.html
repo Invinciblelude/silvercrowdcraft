@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tasks Dashboard</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#0b0e11;color:#e8eef5}
+    header{position:sticky;top:0;background:#12161b;border-bottom:1px solid #1f2630;padding:12px 16px;z-index:10}
+    input,select,textarea,button{background:#0f1317;border:1px solid #303947;color:#e8eef5;padding:8px;border-radius:6px}
+    main{display:grid;grid-template-columns:320px 1fr;gap:16px;padding:16px}
+    .list{max-height:calc(100vh - 120px);overflow:auto;border-right:1px solid #1f2630;padding-right:12px}
+    .row{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px dashed #1f2630}
+    .row a{color:#9cc1ff;text-decoration:none}
+    .pill{padding:2px 8px;border:1px solid #303947;border-radius:999px;margin-left:6px}
+    .panel{background:#12161b;border:1px solid #1f2630;border-radius:8px;padding:12px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{font-size:12px;color:#9ca9bb}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  </style>
+</head>
+<body>
+<header>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <strong>Tasks Dashboard</strong>
+    <input id="q" placeholder="Search task…" style="flex:1;min-width:260px"/>
+    <select id="trade"></select>
+    <select id="status">
+      <option value="">All</option>
+      <option>pending</option>
+      <option>in_progress</option>
+      <option>complete</option>
+    </select>
+    <button id="exportCsv">Export CSV</button>
+    <button id="exportJson">Export JSON</button>
+  </div>
+</header>
+<main>
+  <div class="list" id="list"></div>
+  <div id="detail" class="panel">
+    <div>Select a task on the left.</div>
+  </div>
+</main>
+<script>
+(async function(){
+  const tasks = await fetch('tasks.json').then(r=>r.json());
+  // augment with local saved state
+  const saved = JSON.parse(localStorage.getItem('taskState')||'{}');
+  tasks.forEach(t=>Object.assign(t, saved[t.id]||{}));
+
+  const q = document.getElementById('q');
+  const tradeSel = document.getElementById('trade');
+  const statusSel = document.getElementById('status');
+  const list = document.getElementById('list');
+  const detail = document.getElementById('detail');
+
+  const trades = Array.from(new Set(tasks.map(t=>t.trade))).sort();
+  tradeSel.innerHTML = '<option value="">All trades</option>' + trades.map(t=>`<option>${t}</option>`).join('');
+
+  function save(){
+    const state = {};
+    tasks.forEach(t=>{ state[t.id] = {
+      status:t.status||'pending', crew:t.crew||'', hours:t.hours||'', sop:t.sop||'',
+      dod_plan: !!t.dod_plan, dod_insp: !!t.dod_insp, insp_id: t.insp_id||'', insp_date: t.insp_date||'',
+      photos: t.photos||'', asbuilt: !!t.asbuilt, clean: !!t.clean
+    }; });
+    localStorage.setItem('taskState', JSON.stringify(state));
+  }
+
+  function rows(){
+    const term = (q.value||'').toLowerCase();
+    const trade = tradeSel.value; const st = statusSel.value;
+    return tasks.filter(t=>
+      (!trade || t.trade===trade) && (!st || (t.status||'pending')===st) &&
+      (t.task.toLowerCase().includes(term) || t.id.toLowerCase().includes(term))
+    );
+  }
+
+  function renderList(){
+    list.innerHTML = rows().map(t=>
+      `<div class="row"><div><a href="#" data-id="${t.id}">${t.id} — ${t.trade}: ${t.task}</a></div><div><span class="pill">${t.status||'pending'}</span></div></div>`
+    ).join('');
+  }
+
+  function renderDetail(id){
+    const t = tasks.find(x=>x.id===id); if(!t) return;
+    detail.innerHTML = `
+      <div class="grid2">
+        <div>
+          <label>Task</label>
+          <div style="margin-bottom:8px"><strong>${t.id}</strong> — ${t.trade}: ${t.task}</div>
+          <label>Do</label><div class="panel" style="margin-bottom:8px">${t.do}</div>
+          <label>Check</label><div class="panel" style="margin-bottom:8px">${t.check}</div>
+          <label>Outputs</label><div class="panel" style="margin-bottom:8px">${t.outputs}</div>
+          ${t.sheets ? `<label>Sheet refs (from OCR)</label><div class="panel" style="margin-bottom:8px">` + t.sheets.map(s=>`<div><a href="${s}" target="_blank">${s}</a></div>`).join('') + `</div>` : ''}
+          <label>Definition of Done</label>
+          <div class="panel" style="margin-bottom:8px">
+            <div><input type="checkbox" id="dod_plan"> Built per plan/spec</div>
+            <div><input type="checkbox" id="dod_insp"> Required inspection/test passed &nbsp; <input id="insp_id" placeholder="Inspection ID" style="width:150px"> <input id="insp_date" type="date" style="width:150px"></div>
+            <div>Photos saved &nbsp; <input id="photos" type="number" min="0" step="1" style="width:90px" placeholder="#"></div>
+            <div><input type="checkbox" id="asbuilt"> As‑built redlines updated</div>
+            <div><input type="checkbox" id="clean"> Area clean/protected</div>
+          </div>
+        </div>
+        <div>
+          <label>Status</label>
+          <select id="st"><option>pending</option><option>in_progress</option><option>complete</option></select>
+          <div style="height:8px"></div>
+          <label>Crew (names or count)</label>
+          <input id="crew" placeholder="e.g., 3 carpenters" style="width:100%" value="${t.crew||''}">
+          <div style="height:8px"></div>
+          <label>Hours (actual)</label>
+          <input id="hours" type="number" step="0.25" placeholder="e.g., 12" style="width:100%" value="${t.hours||''}">
+          <div style="height:8px"></div>
+          <label>SOP notes (your sequence / safety / inspection notes)</label>
+          <textarea id="sop" rows="8" style="width:100%">${t.sop||''}</textarea>
+          <div class="actions">
+            <button id="save">Save</button>
+            <button id="markStart">Start</button>
+            <button id="markDone">Mark Complete</button>
+            <a id="openSop" class="pill" href="#" target="_blank" style="text-decoration:none">Open Task SOP</a>
+            <a id="openImages" class="pill" href="#" target="_blank" style="text-decoration:none">Open Images</a>
+          </div>
+        </div>
+      </div>`;
+    detail.querySelector('#st').value = t.status||'pending';
+    // preset DoD fields
+    detail.querySelector('#dod_plan').checked = !!t.dod_plan;
+    detail.querySelector('#dod_insp').checked = !!t.dod_insp;
+    detail.querySelector('#insp_id').value = t.insp_id||'';
+    detail.querySelector('#insp_date').value = t.insp_date||'';
+    detail.querySelector('#photos').value = t.photos||'';
+    detail.querySelector('#asbuilt').checked = !!t.asbuilt;
+    detail.querySelector('#clean').checked = !!t.clean;
+    detail.querySelector('#save').onclick = ()=>{
+      t.status = detail.querySelector('#st').value;
+      t.crew = detail.querySelector('#crew').value;
+      t.hours = detail.querySelector('#hours').value;
+      t.sop = detail.querySelector('#sop').value;
+      t.dod_plan = detail.querySelector('#dod_plan').checked;
+      t.dod_insp = detail.querySelector('#dod_insp').checked;
+      t.insp_id = detail.querySelector('#insp_id').value;
+      t.insp_date = detail.querySelector('#insp_date').value;
+      t.photos = detail.querySelector('#photos').value;
+      t.asbuilt = detail.querySelector('#asbuilt').checked;
+      t.clean = detail.querySelector('#clean').checked;
+      save(); renderList();
+    };
+    detail.querySelector('#markStart').onclick = ()=>{ detail.querySelector('#st').value='in_progress'; detail.querySelector('#save').click(); };
+    detail.querySelector('#markDone').onclick = ()=>{ detail.querySelector('#st').value='complete'; detail.querySelector('#save').click(); };
+    // links
+    const sopLink = document.getElementById('openSop');
+    sopLink.href = `task_sops/${t.id.replace(/\./g,'_')}.html`;
+    const imgLink = document.getElementById('openImages');
+    const guessSection = (t.trade.includes('FRAMING')||t.trade==='REBAR'||t.trade==='CONCRETE') ? 'STRUCT' :
+      (t.trade.includes('ELECTRICAL')? 'MEP/ELEC' : (t.trade.includes('PLUMB')? 'MEP/PLUMB' : (t.trade.includes('MECHAN')? 'MEP/MECH' : (t.trade in ['ENVELOPE','WINDOWS','DOORS','ROOF','SIDING']? 'DETAILS' : (t.trade in ['SITE','LANDSCAPE']? t.trade.split('-')[0] : 'ARCH')))));
+    imgLink.href = `index.html?section=${encodeURIComponent(guessSection)}&q=${encodeURIComponent(t.task.split(' ')[0]||'')}`;
+  }
+
+  list.addEventListener('click', (e)=>{
+    const a = e.target.closest('a[data-id]');
+    if(a){ e.preventDefault(); renderDetail(a.dataset.id); }
+  });
+
+  q.addEventListener('input', renderList);
+  tradeSel.addEventListener('change', renderList);
+  statusSel.addEventListener('change', renderList);
+
+  document.getElementById('exportCsv').onclick = ()=>{
+    const header = ['id','trade','task','do','check','outputs','status','crew','hours','sop'];
+    const lines = [header.join(',')].concat(rows().map(t=> header.map(k=>`"${String(t[k]||'').replace(/"/g,'""')}"`).join(',')));
+    const blob = new Blob([lines.join('\n')], {type:'text/csv'});
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'tasks_export.csv'; a.click();
+  };
+
+  document.getElementById('exportJson').onclick = ()=>{
+    const state = {};
+    tasks.forEach(t=>{ state[t.id] = {status:t.status||'pending', crew:t.crew||'', hours:t.hours||'', sop:t.sop||''}; });
+    const blob = new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'tasks_state.json'; a.click();
+  };
+
+  renderList();
+})();
+</script>
+</body>
+</html>
