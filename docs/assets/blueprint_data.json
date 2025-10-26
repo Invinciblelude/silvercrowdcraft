@@ -1,0 +1,565 @@
+{
+  "project": {
+    "name": "728 Cortlandt Drive",
+    "address": "728 Cortlandt Drive",
+    "total_pages": 34
+  },
+  "pages": [
+    {
+      "page_num": 1,
+      "sheet_num": "02",
+      "title": "Asbuilt Siteplan",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/02-AsBuilt-SitePlan.jpg",
+      "filename": "02-AsBuilt-SitePlan.jpg"
+    },
+    {
+      "page_num": 2,
+      "sheet_num": "03",
+      "title": "Asbuilt Floorplan",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/03-AsBuilt-FloorPlan.jpg",
+      "filename": "03-AsBuilt-FloorPlan.jpg"
+    },
+    {
+      "page_num": 3,
+      "sheet_num": "04",
+      "title": "Asbuilt Roofplan",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/04-AsBuilt-RoofPlan.jpg",
+      "filename": "04-AsBuilt-RoofPlan.jpg"
+    },
+    {
+      "page_num": 4,
+      "sheet_num": "05",
+      "title": "Asbuilt Elevations",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/05-AsBuilt-Elevations.jpg",
+      "filename": "05-AsBuilt-Elevations.jpg"
+    },
+    {
+      "page_num": 5,
+      "sheet_num": "06",
+      "title": "Proposed Siteplan",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/06-Proposed-SitePlan.jpg",
+      "filename": "06-Proposed-SitePlan.jpg"
+    },
+    {
+      "page_num": 6,
+      "sheet_num": "07",
+      "title": "Proposed Floorplan",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg",
+      "filename": "07-Proposed-FloorPlan.jpg"
+    },
+    {
+      "page_num": 7,
+      "sheet_num": "08",
+      "title": "Proposed Roofplan",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/08-Proposed-RoofPlan.jpg",
+      "filename": "08-Proposed-RoofPlan.jpg"
+    },
+    {
+      "page_num": 8,
+      "sheet_num": "10",
+      "title": "Proposed Elevations Front",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/10-Proposed-Elevations-Front.jpg",
+      "filename": "10-Proposed-Elevations-Front.jpg"
+    },
+    {
+      "page_num": 9,
+      "sheet_num": "11",
+      "title": "Proposed Elevations Rear",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/11-Proposed-Elevations-Rear.jpg",
+      "filename": "11-Proposed-Elevations-Rear.jpg"
+    },
+    {
+      "page_num": 10,
+      "sheet_num": "A1.02",
+      "title": "E Driveway",
+      "category": "ARCH",
+      "image_path": "blueprints/classified/ARCH/A1.02_E_DRIVEWAY.jpeg",
+      "filename": "A1.02_E_DRIVEWAY.jpeg"
+    },
+    {
+      "page_num": 11,
+      "sheet_num": "C31401",
+      "title": "Adobe Masonry Fireplace",
+      "category": "CIVIL",
+      "image_path": "blueprints/classified/CIVIL/C31401_ADOBE_MASONRY_FIREPLACE.jpeg",
+      "filename": "C31401_ADOBE_MASONRY_FIREPLACE.jpeg"
+    },
+    {
+      "page_num": 12,
+      "sheet_num": "C31401",
+      "title": "E Driveway",
+      "category": "CIVIL",
+      "image_path": "blueprints/classified/CIVIL/C31401_E_DRIVEWAY.jpeg",
+      "filename": "C31401_E_DRIVEWAY.jpeg"
+    },
+    {
+      "page_num": 13,
+      "sheet_num": "C31401",
+      "title": "E R I C K N U T S O N",
+      "category": "CIVIL",
+      "image_path": "blueprints/classified/CIVIL/C31401_E_R_I_C_K_N_U_T_S_O_N.jpeg",
+      "filename": "C31401_E_R_I_C_K_N_U_T_S_O_N.jpeg"
+    },
+    {
+      "page_num": 14,
+      "sheet_num": "C31401",
+      "title": "N Tims Outdoor Kitchen ",
+      "category": "CIVIL",
+      "image_path": "blueprints/classified/CIVIL/C31401_N_TIMS_OUTDOOR_KITCHEN-.jpeg",
+      "filename": "C31401_N_TIMS_OUTDOOR_KITCHEN-.jpeg"
+    },
+    {
+      "page_num": 15,
+      "sheet_num": "C31401",
+      "title": "Vitreous China",
+      "category": "CIVIL",
+      "image_path": "blueprints/classified/CIVIL/C31401_VITREOUS_CHINA.jpeg",
+      "filename": "C31401_VITREOUS_CHINA.jpeg"
+    },
+    {
+      "page_num": 16,
+      "sheet_num": "00",
+      "title": "Cover Index Projectinfo",
+      "category": "GENERAL",
+      "image_path": "blueprints/classified/GENERAL/00-Cover-Index-ProjectInfo.jpg",
+      "filename": "00-Cover-Index-ProjectInfo.jpg"
+    },
+    {
+      "page_num": 17,
+      "sheet_num": "01",
+      "title": "Schedules Specifications",
+      "category": "GENERAL",
+      "image_path": "blueprints/classified/GENERAL/01-Schedules-Specifications.jpg",
+      "filename": "01-Schedules-Specifications.jpg"
+    },
+    {
+      "page_num": 18,
+      "sheet_num": "24",
+      "title": "Title24 Certificate 1",
+      "category": "GENERAL",
+      "image_path": "blueprints/classified/GENERAL/24-Title24-Certificate-1.jpg",
+      "filename": "24-Title24-Certificate-1.jpg"
+    },
+    {
+      "page_num": 19,
+      "sheet_num": "25",
+      "title": "Title24 Certificate 2",
+      "category": "GENERAL",
+      "image_path": "blueprints/classified/GENERAL/25-Title24-Certificate-2.jpg",
+      "filename": "25-Title24-Certificate-2.jpg"
+    },
+    {
+      "page_num": 20,
+      "sheet_num": "26",
+      "title": "Title24 Mandatorymeasures",
+      "category": "GENERAL",
+      "image_path": "blueprints/classified/GENERAL/26-Title24-MandatoryMeasures.jpg",
+      "filename": "26-Title24-MandatoryMeasures.jpg"
+    },
+    {
+      "page_num": 21,
+      "sheet_num": "12",
+      "title": "Structural Foundationplan",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/12-Structural-FoundationPlan.jpg",
+      "filename": "12-Structural-FoundationPlan.jpg"
+    },
+    {
+      "page_num": 22,
+      "sheet_num": "13",
+      "title": "Structural Foundationiso",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/13-Structural-FoundationISO.jpg",
+      "filename": "13-Structural-FoundationISO.jpg"
+    },
+    {
+      "page_num": 23,
+      "sheet_num": "14",
+      "title": "Structural Shearwallplan",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/14-Structural-ShearWallPlan.jpg",
+      "filename": "14-Structural-ShearWallPlan.jpg"
+    },
+    {
+      "page_num": 24,
+      "sheet_num": "15",
+      "title": "Structural Roofframingplan",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/15-Structural-RoofFramingPlan.jpg",
+      "filename": "15-Structural-RoofFramingPlan.jpg"
+    },
+    {
+      "page_num": 25,
+      "sheet_num": "16",
+      "title": "Structural Details 1",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/16-Structural-Details-1.jpg",
+      "filename": "16-Structural-Details-1.jpg"
+    },
+    {
+      "page_num": 26,
+      "sheet_num": "17",
+      "title": "Structural Details 2",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/17-Structural-Details-2.jpg",
+      "filename": "17-Structural-Details-2.jpg"
+    },
+    {
+      "page_num": 27,
+      "sheet_num": "18",
+      "title": "Structural Details 3",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/18-Structural-Details-3.jpg",
+      "filename": "18-Structural-Details-3.jpg"
+    },
+    {
+      "page_num": 28,
+      "sheet_num": "19",
+      "title": "Structural Details 4",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/19-Structural-Details-4.jpg",
+      "filename": "19-Structural-Details-4.jpg"
+    },
+    {
+      "page_num": 29,
+      "sheet_num": "20",
+      "title": "Structural Details 5",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/20-Structural-Details-5.jpg",
+      "filename": "20-Structural-Details-5.jpg"
+    },
+    {
+      "page_num": 30,
+      "sheet_num": "21",
+      "title": "Structural Details 6",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/21-Structural-Details-6.jpg",
+      "filename": "21-Structural-Details-6.jpg"
+    },
+    {
+      "page_num": 31,
+      "sheet_num": "22",
+      "title": "Structural Details 7",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/22-Structural-Details-7.jpg",
+      "filename": "22-Structural-Details-7.jpg"
+    },
+    {
+      "page_num": 32,
+      "sheet_num": "23",
+      "title": "Structural Standardnotes",
+      "category": "STRUCT",
+      "image_path": "blueprints/classified/STRUCT/23-Structural-StandardNotes.jpg",
+      "filename": "23-Structural-StandardNotes.jpg"
+    },
+    {
+      "page_num": 33,
+      "sheet_num": "K3324",
+      "title": "Vitreous China",
+      "category": "Unmatched",
+      "image_path": "blueprints/classified/Unmatched/K3324_VITREOUS_CHINA.jpeg",
+      "filename": "K3324_VITREOUS_CHINA.jpeg"
+    },
+    {
+      "page_num": 34,
+      "sheet_num": "T24",
+      "title": "Unknown",
+      "category": "Unmatched",
+      "image_path": "blueprints/classified/Unmatched/T24_UNKNOWN.jpeg",
+      "filename": "T24_UNKNOWN.jpeg"
+    }
+  ],
+  "by_category": {
+    "ARCH": [
+      {
+        "page_num": 1,
+        "sheet_num": "02",
+        "title": "Asbuilt Siteplan",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/02-AsBuilt-SitePlan.jpg",
+        "filename": "02-AsBuilt-SitePlan.jpg"
+      },
+      {
+        "page_num": 2,
+        "sheet_num": "03",
+        "title": "Asbuilt Floorplan",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/03-AsBuilt-FloorPlan.jpg",
+        "filename": "03-AsBuilt-FloorPlan.jpg"
+      },
+      {
+        "page_num": 3,
+        "sheet_num": "04",
+        "title": "Asbuilt Roofplan",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/04-AsBuilt-RoofPlan.jpg",
+        "filename": "04-AsBuilt-RoofPlan.jpg"
+      },
+      {
+        "page_num": 4,
+        "sheet_num": "05",
+        "title": "Asbuilt Elevations",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/05-AsBuilt-Elevations.jpg",
+        "filename": "05-AsBuilt-Elevations.jpg"
+      },
+      {
+        "page_num": 5,
+        "sheet_num": "06",
+        "title": "Proposed Siteplan",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/06-Proposed-SitePlan.jpg",
+        "filename": "06-Proposed-SitePlan.jpg"
+      },
+      {
+        "page_num": 6,
+        "sheet_num": "07",
+        "title": "Proposed Floorplan",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg",
+        "filename": "07-Proposed-FloorPlan.jpg"
+      },
+      {
+        "page_num": 7,
+        "sheet_num": "08",
+        "title": "Proposed Roofplan",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/08-Proposed-RoofPlan.jpg",
+        "filename": "08-Proposed-RoofPlan.jpg"
+      },
+      {
+        "page_num": 8,
+        "sheet_num": "10",
+        "title": "Proposed Elevations Front",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/10-Proposed-Elevations-Front.jpg",
+        "filename": "10-Proposed-Elevations-Front.jpg"
+      },
+      {
+        "page_num": 9,
+        "sheet_num": "11",
+        "title": "Proposed Elevations Rear",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/11-Proposed-Elevations-Rear.jpg",
+        "filename": "11-Proposed-Elevations-Rear.jpg"
+      },
+      {
+        "page_num": 10,
+        "sheet_num": "A1.02",
+        "title": "E Driveway",
+        "category": "ARCH",
+        "image_path": "blueprints/classified/ARCH/A1.02_E_DRIVEWAY.jpeg",
+        "filename": "A1.02_E_DRIVEWAY.jpeg"
+      }
+    ],
+    "CIVIL": [
+      {
+        "page_num": 11,
+        "sheet_num": "C31401",
+        "title": "Adobe Masonry Fireplace",
+        "category": "CIVIL",
+        "image_path": "blueprints/classified/CIVIL/C31401_ADOBE_MASONRY_FIREPLACE.jpeg",
+        "filename": "C31401_ADOBE_MASONRY_FIREPLACE.jpeg"
+      },
+      {
+        "page_num": 12,
+        "sheet_num": "C31401",
+        "title": "E Driveway",
+        "category": "CIVIL",
+        "image_path": "blueprints/classified/CIVIL/C31401_E_DRIVEWAY.jpeg",
+        "filename": "C31401_E_DRIVEWAY.jpeg"
+      },
+      {
+        "page_num": 13,
+        "sheet_num": "C31401",
+        "title": "E R I C K N U T S O N",
+        "category": "CIVIL",
+        "image_path": "blueprints/classified/CIVIL/C31401_E_R_I_C_K_N_U_T_S_O_N.jpeg",
+        "filename": "C31401_E_R_I_C_K_N_U_T_S_O_N.jpeg"
+      },
+      {
+        "page_num": 14,
+        "sheet_num": "C31401",
+        "title": "N Tims Outdoor Kitchen ",
+        "category": "CIVIL",
+        "image_path": "blueprints/classified/CIVIL/C31401_N_TIMS_OUTDOOR_KITCHEN-.jpeg",
+        "filename": "C31401_N_TIMS_OUTDOOR_KITCHEN-.jpeg"
+      },
+      {
+        "page_num": 15,
+        "sheet_num": "C31401",
+        "title": "Vitreous China",
+        "category": "CIVIL",
+        "image_path": "blueprints/classified/CIVIL/C31401_VITREOUS_CHINA.jpeg",
+        "filename": "C31401_VITREOUS_CHINA.jpeg"
+      }
+    ],
+    "GENERAL": [
+      {
+        "page_num": 16,
+        "sheet_num": "00",
+        "title": "Cover Index Projectinfo",
+        "category": "GENERAL",
+        "image_path": "blueprints/classified/GENERAL/00-Cover-Index-ProjectInfo.jpg",
+        "filename": "00-Cover-Index-ProjectInfo.jpg"
+      },
+      {
+        "page_num": 17,
+        "sheet_num": "01",
+        "title": "Schedules Specifications",
+        "category": "GENERAL",
+        "image_path": "blueprints/classified/GENERAL/01-Schedules-Specifications.jpg",
+        "filename": "01-Schedules-Specifications.jpg"
+      },
+      {
+        "page_num": 18,
+        "sheet_num": "24",
+        "title": "Title24 Certificate 1",
+        "category": "GENERAL",
+        "image_path": "blueprints/classified/GENERAL/24-Title24-Certificate-1.jpg",
+        "filename": "24-Title24-Certificate-1.jpg"
+      },
+      {
+        "page_num": 19,
+        "sheet_num": "25",
+        "title": "Title24 Certificate 2",
+        "category": "GENERAL",
+        "image_path": "blueprints/classified/GENERAL/25-Title24-Certificate-2.jpg",
+        "filename": "25-Title24-Certificate-2.jpg"
+      },
+      {
+        "page_num": 20,
+        "sheet_num": "26",
+        "title": "Title24 Mandatorymeasures",
+        "category": "GENERAL",
+        "image_path": "blueprints/classified/GENERAL/26-Title24-MandatoryMeasures.jpg",
+        "filename": "26-Title24-MandatoryMeasures.jpg"
+      }
+    ],
+    "STRUCT": [
+      {
+        "page_num": 21,
+        "sheet_num": "12",
+        "title": "Structural Foundationplan",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/12-Structural-FoundationPlan.jpg",
+        "filename": "12-Structural-FoundationPlan.jpg"
+      },
+      {
+        "page_num": 22,
+        "sheet_num": "13",
+        "title": "Structural Foundationiso",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/13-Structural-FoundationISO.jpg",
+        "filename": "13-Structural-FoundationISO.jpg"
+      },
+      {
+        "page_num": 23,
+        "sheet_num": "14",
+        "title": "Structural Shearwallplan",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/14-Structural-ShearWallPlan.jpg",
+        "filename": "14-Structural-ShearWallPlan.jpg"
+      },
+      {
+        "page_num": 24,
+        "sheet_num": "15",
+        "title": "Structural Roofframingplan",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/15-Structural-RoofFramingPlan.jpg",
+        "filename": "15-Structural-RoofFramingPlan.jpg"
+      },
+      {
+        "page_num": 25,
+        "sheet_num": "16",
+        "title": "Structural Details 1",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/16-Structural-Details-1.jpg",
+        "filename": "16-Structural-Details-1.jpg"
+      },
+      {
+        "page_num": 26,
+        "sheet_num": "17",
+        "title": "Structural Details 2",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/17-Structural-Details-2.jpg",
+        "filename": "17-Structural-Details-2.jpg"
+      },
+      {
+        "page_num": 27,
+        "sheet_num": "18",
+        "title": "Structural Details 3",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/18-Structural-Details-3.jpg",
+        "filename": "18-Structural-Details-3.jpg"
+      },
+      {
+        "page_num": 28,
+        "sheet_num": "19",
+        "title": "Structural Details 4",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/19-Structural-Details-4.jpg",
+        "filename": "19-Structural-Details-4.jpg"
+      },
+      {
+        "page_num": 29,
+        "sheet_num": "20",
+        "title": "Structural Details 5",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/20-Structural-Details-5.jpg",
+        "filename": "20-Structural-Details-5.jpg"
+      },
+      {
+        "page_num": 30,
+        "sheet_num": "21",
+        "title": "Structural Details 6",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/21-Structural-Details-6.jpg",
+        "filename": "21-Structural-Details-6.jpg"
+      },
+      {
+        "page_num": 31,
+        "sheet_num": "22",
+        "title": "Structural Details 7",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/22-Structural-Details-7.jpg",
+        "filename": "22-Structural-Details-7.jpg"
+      },
+      {
+        "page_num": 32,
+        "sheet_num": "23",
+        "title": "Structural Standardnotes",
+        "category": "STRUCT",
+        "image_path": "blueprints/classified/STRUCT/23-Structural-StandardNotes.jpg",
+        "filename": "23-Structural-StandardNotes.jpg"
+      }
+    ],
+    "Unmatched": [
+      {
+        "page_num": 33,
+        "sheet_num": "K3324",
+        "title": "Vitreous China",
+        "category": "Unmatched",
+        "image_path": "blueprints/classified/Unmatched/K3324_VITREOUS_CHINA.jpeg",
+        "filename": "K3324_VITREOUS_CHINA.jpeg"
+      },
+      {
+        "page_num": 34,
+        "sheet_num": "T24",
+        "title": "Unknown",
+        "category": "Unmatched",
+        "image_path": "blueprints/classified/Unmatched/T24_UNKNOWN.jpeg",
+        "filename": "T24_UNKNOWN.jpeg"
+      }
+    ]
+  }
+}

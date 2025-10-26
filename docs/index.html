@@ -1,123 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blueprint Browser</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects Dashboard</title>
+  <script src="assets/shared-nav.js?v=3"></script>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#0b0e11;color:#e8eef5}
-    header{position:sticky;top:0;background:#12161b;border-bottom:1px solid #1f2630;padding:12px 16px;z-index:10}
-    input,select{background:#0f1317;border:1px solid #303947;color:#e8eef5;padding:8px;border-radius:6px}
-    main{display:grid;grid-template-columns:280px 1fr;gap:16px;padding:16px}
-    aside{border-right:1px solid #1f2630;padding-right:12px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-    .card{background:#12161b;border:1px solid #1f2630;border-radius:8px;overflow:hidden}
-    .card img{width:100%;height:220px;object-fit:contain;background:#0f1317}
-    .meta{padding:8px 10px;font-size:12px;color:#a9b6c6}
-    .text{padding:8px 10px;font-size:11px;color:#91a0b3;border-top:1px solid #1f2630}
-    .pill{display:inline-block;background:#0f1317;border:1px solid #303947;border-radius:999px;padding:2px 8px;margin-right:6px}
-    .counts{font-size:12px;color:#a9b6c6;margin-top:8px}
-    footer{padding:16px;color:#8a98ab}
+    body {background:#0a0e27; color:#e8eef5}
+    .container {max-width:1200px; margin:0 auto; padding:16px 16px 100px}
+    h1 {color:#9cc1ff; margin-bottom:24px}
+    .projects-grid {display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:20px}
+    .project-card {
+      background:#12161b;
+      border:2px solid #667eea;
+      border-radius:12px;
+      padding:24px;
+      color:#e8eef5;
+      cursor:pointer;
+      transition:transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      text-decoration:none;
+      display:block;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
+    .project-card:hover {
+      transform:translateY(-4px); 
+      box-shadow:0 8px 24px rgba(102,126,234,0.5);
+      border-color:#9cc1ff;
+    }
+    .project-name {font-size:22px; font-weight:700; margin-bottom:8px; color:#9cc1ff}
+    .project-address {font-size:14px; opacity:0.8; margin-bottom:16px; color:#a9b6c6}
+    .project-meta {display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px}
+    .meta-item {display:flex; flex-direction:column}
+    .meta-label {font-size:11px; opacity:0.7; text-transform:uppercase; letter-spacing:0.5px; color:#8a98ab}
+    .meta-value {font-size:16px; font-weight:600; margin-top:4px; color:#e8eef5}
+    .progress-bar {
+      background:#1f2630;
+      height:8px;
+      border-radius:4px;
+      margin-top:16px;
+      overflow:hidden;
+    }
+    .progress-fill {background:#667eea; height:100%; transition:width 0.3s}
+    .empty-state {text-align:center; padding:60px 20px; color:#8a98ab}
+    .empty-state-icon {font-size:64px; margin-bottom:16px}
   </style>
 </head>
-<body>
-<header>
-  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-    <strong>Blueprint Browser</strong>
-    <input id="q" placeholder="Search filename… (e.g., A1.1, panel, window)" style="flex:1;min-width:260px"/>
-    <select id="section">
-      <option value="">All</option>
-      <option>ARCH</option>
-      <option>STRUCT</option>
-      <option>MEP/ELEC</option>
-      <option>MEP/MECH</option>
-      <option>MEP/PLUMB</option>
-      <option>CIVIL</option>
-      <option>SITE</option>
-      <option>LANDSCAPE</option>
-      <option>DETAILS</option>
-      <option>SCHEDULES</option>
-      <option>GENERAL</option>
-      <option>_unmatched</option>
-    </select>
-    <span class="counts" id="counts"></span>
+<body data-jsdom-page="dashboard" data-jsdom-title="📊 Projects Dashboard">
+  <div class="container">
+    <h1>🏗️ Construction Projects</h1>
+    <div class="projects-grid" id="projectsGrid"></div>
   </div>
-</header>
-<main>
-  <aside>
-    <div id="folders"></div>
-    <hr style="border-color:#1f2630;margin:12px 0">
-    <div style="font-size:12px;color:#8a98ab">OCR filters</div>
-    <input id="sheetFilter" placeholder="Sheet (e.g., A1.1)" style="margin-top:6px;width:95%"/>
-    <input id="textFilter" placeholder="Text contains…" style="margin-top:6px;width:95%"/>
-  </aside>
-  <section>
-    <div class="grid" id="grid"></div>
-  </section>
-</main>
-<footer>
-  Tip: Click a card to open the full image in a new tab. Use the dropdown to filter by category.
-<footer>Tip: Click a card to open the full image in a new tab. Use the dropdown to filter by category. | <a href="SOP.html" style="color:#9cc1ff">Open SOP</a> | <a href="SOP_detailed.html" style="color:#9cc1ff">Open Detailed SOP</a> | <a href="SOP_tasks.html" style="color:#9cc1ff">Task SOPs</a> | <a href="task_sops/index.html" style="color:#9cc1ff">Per‑Task SOP Index</a> | <a href="SOP_quick.html" style="color:#9cc1ff">Open Quick SOP</a> | <a href="printables/index.html" style="color:#9cc1ff">Printables</a> | <a href="tasks.md" style="color:#9cc1ff">All Tasks (WBS)</a> | <a href="tasks.html" style="color:#9cc1ff">Tasks Dashboard</a> | <a href="tasks.csv" style="color:#9cc1ff">CSV</a></footer>
+
 <script>
-(async function(){
-  const data = await fetch('assets/index.json').then(r=>r.json());
-  let ocr = {};
-  try { ocr = await fetch('assets/ocr.json').then(r=>r.json()); } catch(e) { ocr = {}; }
-  const grid = document.getElementById('grid');
-  const q = document.getElementById('q');
-  const sectionSel = document.getElementById('section');
-  const countsEl = document.getElementById('counts');
-  const foldersEl = document.getElementById('folders');
-
-  function renderFolders(){
-    const sections = Object.keys(data).sort();
-    foldersEl.innerHTML = sections.map(s=>`<div><span class="pill">${s}</span> ${data[s].length} files</div>`).join('');
-  }
-
-  function render(){
-    const term = (q.value||'').toLowerCase();
-    const section = sectionSel.value;
-    const sheetTerm = (document.getElementById('sheetFilter').value||'').trim().toUpperCase();
-    const textTerm = (document.getElementById('textFilter').value||'').toLowerCase();
-    let items = [];
-    Object.entries(data).forEach(([sec,files])=>{
-      if(section && section!==sec) return;
-      files.forEach(f=>{ items.push({sec, ...f}); });
-    });
-    if(term){ items = items.filter(i=> i.name.toLowerCase().includes(term)); }
-    if(sheetTerm){ items = items.filter(i=> (ocr[i.href]?.sheet||'').includes(sheetTerm)); }
-    if(textTerm){ items = items.filter(i=> (ocr[i.href]?.text_sample||'').toLowerCase().includes(textTerm)); }
-    countsEl.textContent = `${items.length} result(s)`;
-    grid.innerHTML = items.map(i=>`
-      <div class="card">
-        <a href="${i.href}" target="_blank" rel="noopener">
-          <img loading="lazy" src="${i.href}" alt="${i.name}">
-        </a>
-        <div class="meta">
-          <span class="pill">${i.sec}</span>
-          <strong>${i.name}</strong>
+    async function loadProjects() {
+      try {
+        // Load REAL construction plan
+        const response = await fetch('assets/real_construction_plan.json');
+        const data = await response.json();
+        
+        // For now, we have one project. In future, this could be an array.
+        const projects = [{
+          id: 'PROJ-001',
+          name: data.project.name,
+          address: data.project.address,
+          status: 'In Progress',
+          total_tasks: data.tasks.length,
+          total_hours: data.summary.total_hours,
+          completed_tasks: 0,
+          progress: 0,
+          scope: data.project.scope,
+          architect: data.project.architect
+        }];
+        
+        const grid = document.getElementById('projectsGrid');
+        
+        if (projects.length === 0) {
+          grid.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-state-icon">🏗️</div>
+              <h2>No Projects Yet</h2>
+              <p>Add your first construction project to get started.</p>
+            </div>
+          `;
+          return;
+        }
+        
+        grid.innerHTML = projects.map(project => `
+          <a href="project.html?id=${project.id}" class="project-card">
+            <div class="project-name">${project.name}</div>
+            <div class="project-address">📍 ${project.address}</div>
+            <div class="project-meta">
+              <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value">${project.status}</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Tasks</span>
+                <span class="meta-value">${project.completed_tasks}/${project.total_tasks}</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Total Hours</span>
+                <span class="meta-value">${project.total_hours}h</span>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:${project.progress}%"></div>
+            </div>
+          </a>
+        `).join('');
+        
+      } catch (err) {
+        console.error('Failed to load projects:', err);
+        document.getElementById('projectsGrid').innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">⚠️</div>
+            <h2>Failed to Load Projects</h2>
+            <p>${err.message}</p>
         </div>
-        ${ocr[i.href]?`<div class="text"><div><b>Sheet:</b> ${ocr[i.href].sheet||'-'} <b>Title:</b> ${ocr[i.href].title_hint||'-'}</div><div>${(ocr[i.href].text_sample||'').slice(0,160)}</div></div>`:''}
-      </div>`).join('');
-  }
-
-  q.addEventListener('input', render);
-  sectionSel.addEventListener('change', render);
-
-  renderFolders();
-  render();
-  // Support deep-linking via query params ?q=...&section=...
-  (function applyQuery(){
-    const params = new URLSearchParams(window.location.search);
-    const qParam = params.get('q') || '';
-    const sParam = params.get('section') || '';
-    if (qParam) { q.value = qParam; }
-    if (sParam) { sectionSel.value = sParam; }
-    if (qParam || sParam) { render(); }
-  })();
-  document.getElementById('sheetFilter').addEventListener('input', render);
-  document.getElementById('textFilter').addEventListener('input', render);
-})();
+        `;
+      }
+    }
+    
+    loadProjects();
 </script>
 </body>
 </html>

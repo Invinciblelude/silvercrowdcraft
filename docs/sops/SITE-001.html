@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SITE-001 - Site Survey & Layout SOP</title>
+  <script src="../assets/shared-nav.js"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui; padding:16px; line-height:1.6}
+    .container {max-width:900px; margin:0 auto; padding-bottom:100px}
+    h1 {color:#667eea; margin-bottom:8px}
+    .meta {display:flex; gap:16px; flex-wrap:wrap; margin:16px 0; padding:12px; background:#12161b; border-radius:8px}
+    .meta-item {display:flex; flex-direction:column}
+    .meta-label {font-size:11px; color:#8a98ab; text-transform:uppercase}
+    .meta-value {font-size:14px; color:#e8eef5; font-weight:600}
+    .section {margin:24px 0; padding:16px; background:#12161b; border-left:4px solid #667eea; border-radius:6px}
+    .section h2 {margin-top:0; color:#9cc1ff; font-size:18px}
+    .section ul {margin:8px 0; padding-left:20px}
+    .section li {margin:6px 0}
+    .steps {counter-reset:step}
+    .steps li {counter-increment:step; margin:12px 0; padding-left:8px}
+    .steps li::marker {content:counter(step) ". "; color:#667eea; font-weight:bold}
+    .qc-check {background:#1a2332; padding:8px 12px; margin:8px 0; border-radius:4px; border-left:3px solid #28a745}
+    .safety-warning {background:#2d1a1a; padding:12px; margin:16px 0; border-radius:6px; border-left:4px solid:#dc3545}
+    .safety-warning::before {content:"⚠️ SAFETY: "; font-weight:bold; color:#dc3545}
+    .blueprint-links {display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+    .bp-link {background:#667eea; color:#fff; padding:6px 12px; border-radius:4px; text-decoration:none; font-size:13px}
+    .bp-link:hover {background:#764ba2}
+    .back-btn {display:inline-block; background:#303947; color:#e8eef5; padding:10px 20px; border-radius:6px; text-decoration:none; margin-bottom:20px}
+    .back-btn:hover {background:#3d4757}
+  </style>
+</head>
+<body data-jsdom-page="sop" data-jsdom-title="📋 SITE-001 SOP">
+  <div class="container">
+    <a href="../project.html" class="back-btn">← Back to Tasks</a>
+    
+    <h1>SITE-001: Site Survey & Layout</h1>
+    
+    <div class="meta">
+      <div class="meta-item">
+        <span class="meta-label">Trade</span>
+        <span class="meta-value">Site & Civil</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Duration</span>
+        <span class="meta-value">8 hours</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Crew Size</span>
+        <span class="meta-value">2 people</span>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>📋 Prerequisites</h2>
+      <ul>
+        <li>Permits approved</li><li>Property corners identified</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>🧰 Materials Needed</h2>
+      <ul>
+        <li>Wooden stakes</li><li>String line</li><li>Marking paint</li><li>Rebar markers</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>🔧 Tools Required</h2>
+      <ul>
+        <li>Transit/Level</li><li>Measuring tape (100ft)</li><li>Sledgehammer</li><li>Plumb bob</li>
+      </ul>
+    </div>
+    
+    <div class="safety-warning">
+      High-vis vest<br>Steel-toe boots<br>Hard hat<br>Traffic cones if near road
+    </div>
+    
+    <div class="section">
+      <h2>📝 Step-by-Step Instructions</h2>
+      <ol class="steps">
+        <li>Review site plan and locate property corners using survey markers</li><li>Set up transit at benchmark elevation</li><li>Drive corner stakes at building footprint corners per plan dimensions</li><li>Run string lines between corner stakes to establish building outline</li><li>Mark foundation excavation lines 2ft beyond building footprint</li><li>Mark utility trenches (water, sewer, electric) per civil plans</li><li>Spray paint all excavation boundaries with bright color</li><li>Photograph staked layout for record</li>
+      </ol>
+    </div>
+    
+    <div class="section">
+      <h2>✅ Quality Control Checks</h2>
+      <div class="qc-check">Building corners are square (3-4-5 method or diagonal measurement)</div><div class="qc-check">All dimensions match site plan within ±1 inch</div><div class="qc-check">Elevation benchmarks established and recorded</div><div class="qc-check">Photo documentation complete</div>
+    </div>
+    
+    <div class="section">
+      <h2>🔍 Required Inspections</h2>
+      <ul>
+        <li>Layout approved by GC before excavation</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>📐 Related Blueprint Pages</h2>
+      <div class="blueprint-links">
+        <a href="../index.html?sheet=C31401" class="bp-link">C31401: E R I C K N U T S O N</a><a href="../index.html?sheet=C31401" class="bp-link">C31401: Untitled</a><a href="../index.html?sheet=C31401" class="bp-link">C31401: VITREOUS CHINA</a><a href="../index.html?sheet=C31401" class="bp-link">C31401: E DRIVEWAY</a><a href="../index.html?sheet=C31401" class="bp-link">C31401: ADOBE MASONRY FIREPLACE</a><a href="../index.html?sheet=C31401" class="bp-link">C31401: E ADOBE MASONRY FIREPLACE</a><a href="../index.html?sheet=C31401" class="bp-link">C31401: N TIMS OUTDOOR KITCHEN-</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

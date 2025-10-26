@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOUND-003 - Stem Wall & Foundation Wall SOP</title>
+  <script src="../assets/shared-nav.js"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui; padding:16px; line-height:1.6}
+    .container {max-width:900px; margin:0 auto; padding-bottom:100px}
+    h1 {color:#667eea; margin-bottom:8px}
+    .meta {display:flex; gap:16px; flex-wrap:wrap; margin:16px 0; padding:12px; background:#12161b; border-radius:8px}
+    .meta-item {display:flex; flex-direction:column}
+    .meta-label {font-size:11px; color:#8a98ab; text-transform:uppercase}
+    .meta-value {font-size:14px; color:#e8eef5; font-weight:600}
+    .section {margin:24px 0; padding:16px; background:#12161b; border-left:4px solid #667eea; border-radius:6px}
+    .section h2 {margin-top:0; color:#9cc1ff; font-size:18px}
+    .section ul {margin:8px 0; padding-left:20px}
+    .section li {margin:6px 0}
+    .steps {counter-reset:step}
+    .steps li {counter-increment:step; margin:12px 0; padding-left:8px}
+    .steps li::marker {content:counter(step) ". "; color:#667eea; font-weight:bold}
+    .qc-check {background:#1a2332; padding:8px 12px; margin:8px 0; border-radius:4px; border-left:3px solid #28a745}
+    .safety-warning {background:#2d1a1a; padding:12px; margin:16px 0; border-radius:6px; border-left:4px solid:#dc3545}
+    .safety-warning::before {content:"⚠️ SAFETY: "; font-weight:bold; color:#dc3545}
+    .blueprint-links {display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+    .bp-link {background:#667eea; color:#fff; padding:6px 12px; border-radius:4px; text-decoration:none; font-size:13px}
+    .bp-link:hover {background:#764ba2}
+    .back-btn {display:inline-block; background:#303947; color:#e8eef5; padding:10px 20px; border-radius:6px; text-decoration:none; margin-bottom:20px}
+    .back-btn:hover {background:#3d4757}
+  </style>
+</head>
+<body data-jsdom-page="sop" data-jsdom-title="📋 FOUND-003 SOP">
+  <div class="container">
+    <a href="../project.html" class="back-btn">← Back to Tasks</a>
+    
+    <h1>FOUND-003: Stem Wall & Foundation Wall</h1>
+    
+    <div class="meta">
+      <div class="meta-item">
+        <span class="meta-label">Trade</span>
+        <span class="meta-value">Foundation</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Duration</span>
+        <span class="meta-value">32 hours</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Crew Size</span>
+        <span class="meta-value">3 people</span>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>📋 Prerequisites</h2>
+      <ul>
+        <li>Footings cured (7 days minimum)</li><li>Footing inspection passed</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>🧰 Materials Needed</h2>
+      <ul>
+        <li>Concrete blocks (CMU) or concrete for poured wall</li><li>Rebar (vertical and horizontal per plan)</li><li>Mortar or concrete</li><li>Anchor bolts (1/2 inch, per plan)</li><li>Form lumber if poured wall (2x10 or 2x12)</li><li>Form ties and walers</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>🔧 Tools Required</h2>
+      <ul>
+        <li>Block saw</li><li>Trowel</li><li>Level</li><li>String line</li><li>Rebar cutter</li><li>Drill for anchor bolts</li>
+      </ul>
+    </div>
+    
+    <div class="safety-warning">
+      Back support belt (blocks are heavy)<br>Gloves<br>Steel-toe boots<br>Eye protection
+    </div>
+    
+    <div class="section">
+      <h2>📝 Step-by-Step Instructions</h2>
+      <ol class="steps">
+        <li>Snap chalk line on footing for stem wall alignment</li><li>If CMU: Lay first course on mortar bed, check level and plumb</li><li>Continue courses, installing horizontal rebar in bond beams</li><li>Fill block cores with grout and vertical rebar per plan</li><li>Install anchor bolts in top course (typically 6ft spacing, 7 inches embedded)</li><li>If poured: Erect forms, install rebar, pour and vibrate concrete</li><li>Cure for 7 days</li><li>Backfill against wall only after curing (use gravel for drainage)</li>
+      </ol>
+    </div>
+    
+    <div class="section">
+      <h2>✅ Quality Control Checks</h2>
+      <div class="qc-check">Wall is plumb and level</div><div class="qc-check">Height matches plan</div><div class="qc-check">Anchor bolts are vertical and at correct spacing</div><div class="qc-check">Rebar is fully grouted (no voids)</div><div class="qc-check">Top of wall is level for sill plate</div>
+    </div>
+    
+    <div class="section">
+      <h2>🔍 Required Inspections</h2>
+      <ul>
+        <li>Foundation wall inspection before backfill</li>
+      </ul>
+    </div>
+    
+    <div class="section">
+      <h2>📐 Related Blueprint Pages</h2>
+      <div class="blueprint-links">
+        <a href="../index.html?sheet=A0.01" class="bp-link">A0.01: PROJECT DIRECTORY</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

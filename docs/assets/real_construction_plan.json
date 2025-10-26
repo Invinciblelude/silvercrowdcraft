@@ -1,0 +1,2236 @@
+{
+  "project": {
+    "name": "728 Cortlandt Drive Addition",
+    "address": "728 Cortlandt Drive, Sacramento, CA 95864",
+    "parcel": "292-0162-010-0000",
+    "architect": "Eric Knutson",
+    "permit_date": "6/1/2025",
+    "existing_sf": 2611,
+    "new_addition_sf": 3200,
+    "total_sf": 5811
+  },
+  "tasks": [
+    {
+      "id": "01-DEMO-001",
+      "phase": "01. Demolition & Site Prep",
+      "name": "Demo Existing Fences",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2025-10-27",
+      "end_date": "2025-10-28",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "06"
+        }
+      ],
+      "from_plans": "Sheets 07, 06"
+    },
+    {
+      "id": "01-DEMO-002",
+      "phase": "01. Demolition & Site Prep",
+      "name": "Site Layout & Staking",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2025-10-28",
+      "end_date": "2025-10-29",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "12"
+        }
+      ],
+      "from_plans": "Sheets 07, 12"
+    },
+    {
+      "id": "01-DEMO-003",
+      "phase": "01. Demolition & Site Prep",
+      "name": "Excavate for Utilities",
+      "duration_hours": 24,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.0,
+      "start_date": "2025-10-29",
+      "end_date": "2025-10-30",
+      "blueprint_pages": [
+        {
+          "sheet_num": "06"
+        },
+        {
+          "sheet_num": "12"
+        }
+      ],
+      "from_plans": "Sheets 06, 12"
+    },
+    {
+      "id": "01-DEMO-004",
+      "phase": "01. Demolition & Site Prep",
+      "name": "Temp Power & Water",
+      "duration_hours": 8,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 0.5,
+      "start_date": "2025-10-30",
+      "end_date": "2025-10-31",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "01-DEMO-005",
+      "phase": "01. Demolition & Site Prep",
+      "name": "Erosion Control",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2025-10-31",
+      "end_date": "2025-11-03",
+      "blueprint_pages": [
+        {
+          "sheet_num": "06"
+        }
+      ],
+      "from_plans": "Sheets 06"
+    },
+    {
+      "id": "02-FOUND-001",
+      "phase": "02. Foundation & Concrete",
+      "name": "Excavate Footings",
+      "duration_hours": 40,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2025-11-03",
+      "end_date": "2025-11-05",
+      "blueprint_pages": [
+        {
+          "sheet_num": "12"
+        },
+        {
+          "sheet_num": "13"
+        }
+      ],
+      "from_plans": "Sheets 12, 13"
+    },
+    {
+      "id": "02-FOUND-002",
+      "phase": "02. Foundation & Concrete",
+      "name": "Footing Forms & Rebar",
+      "duration_hours": 64,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.0,
+      "start_date": "2025-11-05",
+      "end_date": "2025-11-07",
+      "blueprint_pages": [
+        {
+          "sheet_num": "12"
+        },
+        {
+          "sheet_num": "16"
+        },
+        {
+          "sheet_num": "17"
+        }
+      ],
+      "from_plans": "Sheets 12, 16, 17"
+    },
+    {
+      "id": "02-FOUND-003",
+      "phase": "02. Foundation & Concrete",
+      "name": "Pour Footings",
+      "duration_hours": 24,
+      "crew_size": 5,
+      "crew_assigned": 5,
+      "days": 0.5,
+      "start_date": "2025-11-07",
+      "end_date": "2025-11-10",
+      "blueprint_pages": [
+        {
+          "sheet_num": "12"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 12, 01"
+    },
+    {
+      "id": "02-FOUND-004",
+      "phase": "02. Foundation & Concrete",
+      "name": "Strip Forms & Cure (7 days)",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2025-11-10",
+      "end_date": "2025-11-11",
+      "blueprint_pages": [
+        {
+          "sheet_num": "12"
+        }
+      ],
+      "from_plans": "Sheets 12"
+    },
+    {
+      "id": "02-FOUND-005",
+      "phase": "02. Foundation & Concrete",
+      "name": "Stem Wall Forms & Rebar",
+      "duration_hours": 64,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.0,
+      "start_date": "2025-11-11",
+      "end_date": "2025-11-13",
+      "blueprint_pages": [
+        {
+          "sheet_num": "12"
+        },
+        {
+          "sheet_num": "16"
+        }
+      ],
+      "from_plans": "Sheets 12, 16"
+    },
+    {
+      "id": "02-FOUND-006",
+      "phase": "02. Foundation & Concrete",
+      "name": "Pour Stem Walls",
+      "duration_hours": 32,
+      "crew_size": 5,
+      "crew_assigned": 5,
+      "days": 1.0,
+      "start_date": "2025-11-13",
+      "end_date": "2025-11-14",
+      "blueprint_pages": [
+        {
+          "sheet_num": "12"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 12, 01"
+    },
+    {
+      "id": "02-FOUND-007",
+      "phase": "02. Foundation & Concrete",
+      "name": "Steel Columns & Beams",
+      "duration_hours": 40,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 1.0,
+      "start_date": "2025-11-14",
+      "end_date": "2025-11-17",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "18"
+        },
+        {
+          "sheet_num": "19"
+        }
+      ],
+      "from_plans": "Sheets 07, 18, 19"
+    },
+    {
+      "id": "02-FOUND-008",
+      "phase": "02. Foundation & Concrete",
+      "name": "Waterproofing",
+      "duration_hours": 32,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.0,
+      "start_date": "2025-11-17",
+      "end_date": "2025-11-19",
+      "blueprint_pages": [
+        {
+          "sheet_num": "12"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 12, 01"
+    },
+    {
+      "id": "02-FOUND-009",
+      "phase": "02. Foundation & Concrete",
+      "name": "Backfill Foundation",
+      "duration_hours": 24,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.0,
+      "start_date": "2025-11-19",
+      "end_date": "2025-11-20",
+      "blueprint_pages": [
+        {
+          "sheet_num": "12"
+        }
+      ],
+      "from_plans": "Sheets 12"
+    },
+    {
+      "id": "02-FOUND-010",
+      "phase": "02. Foundation & Concrete",
+      "name": "Pour Slab-on-Grade",
+      "duration_hours": 64,
+      "crew_size": 5,
+      "crew_assigned": 5,
+      "days": 1.5,
+      "start_date": "2025-11-20",
+      "end_date": "2025-11-24",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "12"
+        }
+      ],
+      "from_plans": "Sheets 07, 12"
+    },
+    {
+      "id": "03-FRAME-001",
+      "phase": "03. Rough Framing",
+      "name": "Install Sill Plates",
+      "duration_hours": 24,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.0,
+      "start_date": "2025-11-24",
+      "end_date": "2025-11-25",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "12"
+        }
+      ],
+      "from_plans": "Sheets 07, 12"
+    },
+    {
+      "id": "03-FRAME-002",
+      "phase": "03. Rough Framing",
+      "name": "Floor Joists & Subfloor",
+      "duration_hours": 80,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.5,
+      "start_date": "2025-11-25",
+      "end_date": "2025-11-28",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "15"
+        }
+      ],
+      "from_plans": "Sheets 07, 15"
+    },
+    {
+      "id": "03-FRAME-003",
+      "phase": "03. Rough Framing",
+      "name": "Frame 2x8 Exterior Walls",
+      "duration_hours": 120,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 4.0,
+      "start_date": "2025-11-28",
+      "end_date": "2025-12-04",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "14"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 07, 14, 01"
+    },
+    {
+      "id": "03-FRAME-004",
+      "phase": "03. Rough Framing",
+      "name": "Frame Bedroom Walls (2 + Primary)",
+      "duration_hours": 64,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.0,
+      "start_date": "2025-12-04",
+      "end_date": "2025-12-08",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "03-FRAME-005",
+      "phase": "03. Rough Framing",
+      "name": "Frame Bathroom Walls (3 total)",
+      "duration_hours": 48,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 1.5,
+      "start_date": "2025-12-08",
+      "end_date": "2025-12-10",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "03-FRAME-006",
+      "phase": "03. Rough Framing",
+      "name": "Frame Kitchen & Laundry Walls",
+      "duration_hours": 56,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.0,
+      "start_date": "2025-12-10",
+      "end_date": "2025-12-12",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "03-FRAME-007",
+      "phase": "03. Rough Framing",
+      "name": "Frame Living Areas (Great Rm, Dining, Office)",
+      "duration_hours": 64,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.0,
+      "start_date": "2025-12-12",
+      "end_date": "2025-12-16",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "03-FRAME-008",
+      "phase": "03. Rough Framing",
+      "name": "Install Headers & Beams",
+      "duration_hours": 40,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2025-12-16",
+      "end_date": "2025-12-18",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "16"
+        }
+      ],
+      "from_plans": "Sheets 07, 16"
+    },
+    {
+      "id": "03-FRAME-009",
+      "phase": "03. Rough Framing",
+      "name": "Shear Wall Plywood",
+      "duration_hours": 56,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.5,
+      "start_date": "2025-12-18",
+      "end_date": "2025-12-23",
+      "blueprint_pages": [
+        {
+          "sheet_num": "14"
+        },
+        {
+          "sheet_num": "20"
+        },
+        {
+          "sheet_num": "21"
+        }
+      ],
+      "from_plans": "Sheets 14, 20, 21"
+    },
+    {
+      "id": "03-FRAME-010",
+      "phase": "03. Rough Framing",
+      "name": "Ceiling Joists (Flat Areas)",
+      "duration_hours": 64,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.0,
+      "start_date": "2025-12-23",
+      "end_date": "2025-12-25",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "15"
+        }
+      ],
+      "from_plans": "Sheets 07, 15"
+    },
+    {
+      "id": "03-FRAME-011",
+      "phase": "03. Rough Framing",
+      "name": "Coffered Ceiling Framing",
+      "duration_hours": 48,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.0,
+      "start_date": "2025-12-25",
+      "end_date": "2025-12-29",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "10"
+        },
+        {
+          "sheet_num": "11"
+        }
+      ],
+      "from_plans": "Sheets 07, 10, 11"
+    },
+    {
+      "id": "03-FRAME-012",
+      "phase": "03. Rough Framing",
+      "name": "Steel Trusses",
+      "duration_hours": 48,
+      "crew_size": 5,
+      "crew_assigned": 5,
+      "days": 1.0,
+      "start_date": "2025-12-29",
+      "end_date": "2025-12-30",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "15"
+        },
+        {
+          "sheet_num": "18"
+        }
+      ],
+      "from_plans": "Sheets 07, 15, 18"
+    },
+    {
+      "id": "03-FRAME-013",
+      "phase": "03. Rough Framing",
+      "name": "Blocking & Fire Stops",
+      "duration_hours": 32,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2025-12-30",
+      "end_date": "2026-01-01",
+      "blueprint_pages": [
+        {
+          "sheet_num": "23"
+        }
+      ],
+      "from_plans": "Sheets 23"
+    },
+    {
+      "id": "03-FRAME-014",
+      "phase": "03. Rough Framing",
+      "name": "Framing Inspection",
+      "duration_hours": 8,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 1.0,
+      "start_date": "2026-01-01",
+      "end_date": "2026-01-02",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "03-FRAME-015",
+      "phase": "03. Rough Framing",
+      "name": "Fix Inspection Items",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-01-02",
+      "end_date": "2026-01-05",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "04-ROOF-001",
+      "phase": "04. Roof Framing & Sheathing",
+      "name": "Roof Trusses (Vaulted Areas)",
+      "duration_hours": 120,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 4.0,
+      "start_date": "2026-01-05",
+      "end_date": "2026-01-09",
+      "blueprint_pages": [
+        {
+          "sheet_num": "08"
+        },
+        {
+          "sheet_num": "15"
+        }
+      ],
+      "from_plans": "Sheets 08, 15"
+    },
+    {
+      "id": "04-ROOF-002",
+      "phase": "04. Roof Framing & Sheathing",
+      "name": "Roof Sheathing",
+      "duration_hours": 80,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.5,
+      "start_date": "2026-01-09",
+      "end_date": "2026-01-14",
+      "blueprint_pages": [
+        {
+          "sheet_num": "08"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 08, 01"
+    },
+    {
+      "id": "04-ROOF-003",
+      "phase": "04. Roof Framing & Sheathing",
+      "name": "Underlayment & Flashing",
+      "duration_hours": 56,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.5,
+      "start_date": "2026-01-14",
+      "end_date": "2026-01-19",
+      "blueprint_pages": [
+        {
+          "sheet_num": "08"
+        }
+      ],
+      "from_plans": "Sheets 08"
+    },
+    {
+      "id": "04-ROOF-004",
+      "phase": "04. Roof Framing & Sheathing",
+      "name": "Patio Roof Extension",
+      "duration_hours": 64,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 2.0,
+      "start_date": "2026-01-19",
+      "end_date": "2026-01-21",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "08"
+        }
+      ],
+      "from_plans": "Sheets 07, 08"
+    },
+    {
+      "id": "04-ROOF-005",
+      "phase": "04. Roof Framing & Sheathing",
+      "name": "Fascia & Soffit",
+      "duration_hours": 72,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 3.0,
+      "start_date": "2026-01-21",
+      "end_date": "2026-01-26",
+      "blueprint_pages": [
+        {
+          "sheet_num": "08"
+        },
+        {
+          "sheet_num": "10"
+        },
+        {
+          "sheet_num": "11"
+        }
+      ],
+      "from_plans": "Sheets 08, 10, 11"
+    },
+    {
+      "id": "04-ROOF-006",
+      "phase": "04. Roof Framing & Sheathing",
+      "name": "Install Roofing",
+      "duration_hours": 88,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 3.5,
+      "start_date": "2026-01-26",
+      "end_date": "2026-01-30",
+      "blueprint_pages": [
+        {
+          "sheet_num": "08"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 08, 01"
+    },
+    {
+      "id": "05-EXT-001",
+      "phase": "05. Exterior Finishes",
+      "name": "House Wrap",
+      "duration_hours": 32,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2026-01-30",
+      "end_date": "2026-02-03",
+      "blueprint_pages": [
+        {
+          "sheet_num": "10"
+        },
+        {
+          "sheet_num": "11"
+        }
+      ],
+      "from_plans": "Sheets 10, 11"
+    },
+    {
+      "id": "05-EXT-002",
+      "phase": "05. Exterior Finishes",
+      "name": "Install Windows",
+      "duration_hours": 80,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 3.5,
+      "start_date": "2026-02-03",
+      "end_date": "2026-02-09",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 07, 01"
+    },
+    {
+      "id": "05-EXT-003",
+      "phase": "05. Exterior Finishes",
+      "name": "Install Exterior Doors",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-12",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 07, 01"
+    },
+    {
+      "id": "05-EXT-004",
+      "phase": "05. Exterior Finishes",
+      "name": "Stucco/Siding Prep",
+      "duration_hours": 64,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.5,
+      "start_date": "2026-02-12",
+      "end_date": "2026-02-17",
+      "blueprint_pages": [
+        {
+          "sheet_num": "10"
+        },
+        {
+          "sheet_num": "11"
+        }
+      ],
+      "from_plans": "Sheets 10, 11"
+    },
+    {
+      "id": "05-EXT-005",
+      "phase": "05. Exterior Finishes",
+      "name": "Apply Stucco (3 coats)",
+      "duration_hours": 160,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 5.0,
+      "start_date": "2026-02-17",
+      "end_date": "2026-02-24",
+      "blueprint_pages": [
+        {
+          "sheet_num": "10"
+        },
+        {
+          "sheet_num": "11"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 10, 11, 01"
+    },
+    {
+      "id": "05-EXT-006",
+      "phase": "05. Exterior Finishes",
+      "name": "Paint Exterior Trim",
+      "duration_hours": 64,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 4.0,
+      "start_date": "2026-02-24",
+      "end_date": "2026-03-02",
+      "blueprint_pages": [
+        {
+          "sheet_num": "10"
+        },
+        {
+          "sheet_num": "11"
+        }
+      ],
+      "from_plans": "Sheets 10, 11"
+    },
+    {
+      "id": "05-EXT-007",
+      "phase": "05. Exterior Finishes",
+      "name": "Gutters & Downspouts",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-03-02",
+      "end_date": "2026-03-05",
+      "blueprint_pages": [
+        {
+          "sheet_num": "08"
+        }
+      ],
+      "from_plans": "Sheets 08"
+    },
+    {
+      "id": "05-EXT-008",
+      "phase": "05. Exterior Finishes",
+      "name": "Patio Paving",
+      "duration_hours": 48,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.0,
+      "start_date": "2026-03-05",
+      "end_date": "2026-03-09",
+      "blueprint_pages": [
+        {
+          "sheet_num": "06"
+        },
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 06, 07"
+    },
+    {
+      "id": "05-EXT-009",
+      "phase": "05. Exterior Finishes",
+      "name": "Exterior Inspection",
+      "duration_hours": 8,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 1.0,
+      "start_date": "2026-03-09",
+      "end_date": "2026-03-10",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "05-EXT-010",
+      "phase": "05. Exterior Finishes",
+      "name": "Atrium & Fountain",
+      "duration_hours": 24,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.5,
+      "start_date": "2026-03-10",
+      "end_date": "2026-03-12",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "06-PLUMB-001",
+      "phase": "06. Rough Plumbing",
+      "name": "Underground Drains",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-03-12",
+      "end_date": "2026-03-17",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "12"
+        }
+      ],
+      "from_plans": "Sheets 07, 12"
+    },
+    {
+      "id": "06-PLUMB-002",
+      "phase": "06. Rough Plumbing",
+      "name": "Water Supply Lines",
+      "duration_hours": 56,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 3.5,
+      "start_date": "2026-03-17",
+      "end_date": "2026-03-23",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "06-PLUMB-003",
+      "phase": "06. Rough Plumbing",
+      "name": "Water Heater Install",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-03-23",
+      "end_date": "2026-03-24",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "06-PLUMB-004",
+      "phase": "06. Rough Plumbing",
+      "name": "Drain Lines (3 Bathrooms)",
+      "duration_hours": 48,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 3.0,
+      "start_date": "2026-03-24",
+      "end_date": "2026-03-27",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "06-PLUMB-005",
+      "phase": "06. Rough Plumbing",
+      "name": "Kitchen Plumbing (Island + Appliances)",
+      "duration_hours": 32,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.0,
+      "start_date": "2026-03-27",
+      "end_date": "2026-03-31",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "06-PLUMB-006",
+      "phase": "06. Rough Plumbing",
+      "name": "Laundry Room Connections",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-03-31",
+      "end_date": "2026-04-01",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "06-PLUMB-007",
+      "phase": "06. Rough Plumbing",
+      "name": "Vent Pipes",
+      "duration_hours": 24,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.5,
+      "start_date": "2026-04-01",
+      "end_date": "2026-04-03",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "08"
+        }
+      ],
+      "from_plans": "Sheets 07, 08"
+    },
+    {
+      "id": "06-PLUMB-008",
+      "phase": "06. Rough Plumbing",
+      "name": "Pressure Test",
+      "duration_hours": 8,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 0.5,
+      "start_date": "2026-04-03",
+      "end_date": "2026-04-06",
+      "blueprint_pages": [
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 01"
+    },
+    {
+      "id": "07-ELEC-001",
+      "phase": "07. Rough Electrical",
+      "name": "Install Subpanel",
+      "duration_hours": 24,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.5,
+      "start_date": "2026-04-06",
+      "end_date": "2026-04-08",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "07-ELEC-002",
+      "phase": "07. Rough Electrical",
+      "name": "Kitchen Circuits (7 circuits)",
+      "duration_hours": 56,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 3.5,
+      "start_date": "2026-04-08",
+      "end_date": "2026-04-14",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 07, 01"
+    },
+    {
+      "id": "07-ELEC-003",
+      "phase": "07. Rough Electrical",
+      "name": "Bathroom Circuits (GFCI)",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-04-14",
+      "end_date": "2026-04-17",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "07-ELEC-004",
+      "phase": "07. Rough Electrical",
+      "name": "Bedroom Circuits (3 rooms)",
+      "duration_hours": 48,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 3.0,
+      "start_date": "2026-04-17",
+      "end_date": "2026-04-22",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "07-ELEC-005",
+      "phase": "07. Rough Electrical",
+      "name": "Living Area Circuits",
+      "duration_hours": 56,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 3.5,
+      "start_date": "2026-04-22",
+      "end_date": "2026-04-28",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "07-ELEC-006",
+      "phase": "07. Rough Electrical",
+      "name": "Lighting Circuits",
+      "duration_hours": 48,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 3.0,
+      "start_date": "2026-04-28",
+      "end_date": "2026-05-01",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "07-ELEC-007",
+      "phase": "07. Rough Electrical",
+      "name": "Laundry Circuits",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-05-01",
+      "end_date": "2026-05-04",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "07-ELEC-008",
+      "phase": "07. Rough Electrical",
+      "name": "Smoke/CO Detectors",
+      "duration_hours": 16,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 2.0,
+      "start_date": "2026-05-04",
+      "end_date": "2026-05-06",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 07, 01"
+    },
+    {
+      "id": "07-ELEC-009",
+      "phase": "07. Rough Electrical",
+      "name": "Rough Electrical Inspection",
+      "duration_hours": 8,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 1.0,
+      "start_date": "2026-05-06",
+      "end_date": "2026-05-07",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "07-ELEC-010",
+      "phase": "07. Rough Electrical",
+      "name": "Fix Inspection Items",
+      "duration_hours": 8,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 0.5,
+      "start_date": "2026-05-07",
+      "end_date": "2026-05-08",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "08-HVAC-001",
+      "phase": "08. HVAC Installation",
+      "name": "Install HVAC Unit",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-05-08",
+      "end_date": "2026-05-13",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "08"
+        }
+      ],
+      "from_plans": "Sheets 07, 08"
+    },
+    {
+      "id": "08-HVAC-002",
+      "phase": "08. HVAC Installation",
+      "name": "Main Trunk Lines",
+      "duration_hours": 48,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 3.0,
+      "start_date": "2026-05-13",
+      "end_date": "2026-05-18",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "08-HVAC-003",
+      "phase": "08. HVAC Installation",
+      "name": "Branch Ducts to All Rooms",
+      "duration_hours": 80,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 5.0,
+      "start_date": "2026-05-18",
+      "end_date": "2026-05-25",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "08-HVAC-004",
+      "phase": "08. HVAC Installation",
+      "name": "Return Air Grille",
+      "duration_hours": 24,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.5,
+      "start_date": "2026-05-25",
+      "end_date": "2026-05-27",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "08-HVAC-005",
+      "phase": "08. HVAC Installation",
+      "name": "Seal & Insulate Ducts",
+      "duration_hours": 32,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.0,
+      "start_date": "2026-05-27",
+      "end_date": "2026-05-29",
+      "blueprint_pages": [
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 01"
+    },
+    {
+      "id": "08-HVAC-006",
+      "phase": "08. HVAC Installation",
+      "name": "HVAC Inspection",
+      "duration_hours": 8,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 1.0,
+      "start_date": "2026-05-29",
+      "end_date": "2026-06-01",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "08-HVAC-007",
+      "phase": "08. HVAC Installation",
+      "name": "Fix Inspection Items",
+      "duration_hours": 8,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 0.5,
+      "start_date": "2026-06-01",
+      "end_date": "2026-06-02",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "09-INSUL-001",
+      "phase": "09. Insulation",
+      "name": "Wall Insulation",
+      "duration_hours": 80,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 3.5,
+      "start_date": "2026-06-02",
+      "end_date": "2026-06-08",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 07, 01"
+    },
+    {
+      "id": "09-INSUL-002",
+      "phase": "09. Insulation",
+      "name": "Ceiling Insulation (Flat)",
+      "duration_hours": 40,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2026-06-08",
+      "end_date": "2026-06-10",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "09-INSUL-003",
+      "phase": "09. Insulation",
+      "name": "Attic/Vault Insulation",
+      "duration_hours": 32,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2026-06-10",
+      "end_date": "2026-06-12",
+      "blueprint_pages": [
+        {
+          "sheet_num": "08"
+        }
+      ],
+      "from_plans": "Sheets 08"
+    },
+    {
+      "id": "09-INSUL-004",
+      "phase": "09. Insulation",
+      "name": "Insulation Inspection",
+      "duration_hours": 8,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 1.0,
+      "start_date": "2026-06-12",
+      "end_date": "2026-06-15",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "10-DRY-001",
+      "phase": "10. Drywall",
+      "name": "Hang Drywall - Ceilings",
+      "duration_hours": 120,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 4.0,
+      "start_date": "2026-06-15",
+      "end_date": "2026-06-19",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "10-DRY-002",
+      "phase": "10. Drywall",
+      "name": "Hang Drywall - Walls",
+      "duration_hours": 160,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 5.0,
+      "start_date": "2026-06-19",
+      "end_date": "2026-06-26",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "10-DRY-003",
+      "phase": "10. Drywall",
+      "name": "Coffered Ceiling Drywall",
+      "duration_hours": 32,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2026-06-26",
+      "end_date": "2026-06-30",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "10-DRY-004",
+      "phase": "10. Drywall",
+      "name": "Tape & Mud (1st coat)",
+      "duration_hours": 80,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 3.5,
+      "start_date": "2026-06-30",
+      "end_date": "2026-07-06",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "10-DRY-005",
+      "phase": "10. Drywall",
+      "name": "Tape & Mud (2nd coat)",
+      "duration_hours": 64,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.5,
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-09",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "10-DRY-006",
+      "phase": "10. Drywall",
+      "name": "Tape & Mud (3rd coat)",
+      "duration_hours": 48,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.0,
+      "start_date": "2026-07-09",
+      "end_date": "2026-07-13",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "10-DRY-007",
+      "phase": "10. Drywall",
+      "name": "Sand Drywall",
+      "duration_hours": 48,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.0,
+      "start_date": "2026-07-13",
+      "end_date": "2026-07-15",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "10-DRY-008",
+      "phase": "10. Drywall",
+      "name": "Texture Ceilings",
+      "duration_hours": 8,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 0.5,
+      "start_date": "2026-07-15",
+      "end_date": "2026-07-16",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "11-TRIM-001",
+      "phase": "11. Interior Trim & Doors",
+      "name": "Install Interior Doors",
+      "duration_hours": 80,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 5.0,
+      "start_date": "2026-07-16",
+      "end_date": "2026-07-23",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 07, 01"
+    },
+    {
+      "id": "11-TRIM-002",
+      "phase": "11. Interior Trim & Doors",
+      "name": "Baseboard All Rooms",
+      "duration_hours": 120,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 5.0,
+      "start_date": "2026-07-23",
+      "end_date": "2026-07-30",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "11-TRIM-003",
+      "phase": "11. Interior Trim & Doors",
+      "name": "Crown Molding",
+      "duration_hours": 80,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 5.0,
+      "start_date": "2026-07-30",
+      "end_date": "2026-08-06",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "11-TRIM-004",
+      "phase": "11. Interior Trim & Doors",
+      "name": "Window Casing",
+      "duration_hours": 64,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 4.0,
+      "start_date": "2026-08-06",
+      "end_date": "2026-08-12",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "11-TRIM-005",
+      "phase": "11. Interior Trim & Doors",
+      "name": "Closet Systems",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-08-12",
+      "end_date": "2026-08-17",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "11-TRIM-006",
+      "phase": "11. Interior Trim & Doors",
+      "name": "Shelving & Built-ins",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-08-17",
+      "end_date": "2026-08-18",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "12-FLOOR-001",
+      "phase": "12. Flooring",
+      "name": "Tile Bathroom Floors (3)",
+      "duration_hours": 64,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 4.0,
+      "start_date": "2026-08-18",
+      "end_date": "2026-08-24",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "12-FLOOR-002",
+      "phase": "12. Flooring",
+      "name": "Tile Bathroom Showers (2)",
+      "duration_hours": 80,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 5.0,
+      "start_date": "2026-08-24",
+      "end_date": "2026-08-31",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "12-FLOOR-003",
+      "phase": "12. Flooring",
+      "name": "Kitchen Floor",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-08-31",
+      "end_date": "2026-09-03",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "12-FLOOR-004",
+      "phase": "12. Flooring",
+      "name": "Laundry Room Floor",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-09-03",
+      "end_date": "2026-09-04",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "12-FLOOR-005",
+      "phase": "12. Flooring",
+      "name": "Hardwood/LVP Living Areas",
+      "duration_hours": 80,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 3.5,
+      "start_date": "2026-09-04",
+      "end_date": "2026-09-10",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "12-FLOOR-006",
+      "phase": "12. Flooring",
+      "name": "Carpet Bedrooms",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-09-10",
+      "end_date": "2026-09-15",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "13-KITCH-001",
+      "phase": "13. Kitchen Installation",
+      "name": "Install Base Cabinets",
+      "duration_hours": 48,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 2.0,
+      "start_date": "2026-09-15",
+      "end_date": "2026-09-17",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "13-KITCH-002",
+      "phase": "13. Kitchen Installation",
+      "name": "Install Wall Cabinets",
+      "duration_hours": 40,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2026-09-17",
+      "end_date": "2026-09-21",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "13-KITCH-003",
+      "phase": "13. Kitchen Installation",
+      "name": "Build Tim's Island",
+      "duration_hours": 40,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 1.5,
+      "start_date": "2026-09-21",
+      "end_date": "2026-09-23",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "13-KITCH-004",
+      "phase": "13. Kitchen Installation",
+      "name": "Install Countertops",
+      "duration_hours": 32,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.0,
+      "start_date": "2026-09-23",
+      "end_date": "2026-09-25",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "13-KITCH-005",
+      "phase": "13. Kitchen Installation",
+      "name": "Install Sink & Faucet",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-09-25",
+      "end_date": "2026-09-28",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "13-KITCH-006",
+      "phase": "13. Kitchen Installation",
+      "name": "Install Appliances (Range, D/W, etc)",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-09-28",
+      "end_date": "2026-10-01",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "13-KITCH-007",
+      "phase": "13. Kitchen Installation",
+      "name": "Backsplash Tile",
+      "duration_hours": 24,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.5,
+      "start_date": "2026-10-01",
+      "end_date": "2026-10-05",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "14-BATH-001",
+      "phase": "14. Bathroom Finishes",
+      "name": "Install Vanities (4 total)",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-10-05",
+      "end_date": "2026-10-08",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "14-BATH-002",
+      "phase": "14. Bathroom Finishes",
+      "name": "Install K-3324 Toilets (3)",
+      "duration_hours": 24,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.5,
+      "start_date": "2026-10-08",
+      "end_date": "2026-10-12",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        },
+        {
+          "sheet_num": "01"
+        }
+      ],
+      "from_plans": "Sheets 07, 01"
+    },
+    {
+      "id": "14-BATH-003",
+      "phase": "14. Bathroom Finishes",
+      "name": "Install Shower Fixtures",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-10-12",
+      "end_date": "2026-10-15",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "14-BATH-004",
+      "phase": "14. Bathroom Finishes",
+      "name": "Install Shower Doors",
+      "duration_hours": 32,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.0,
+      "start_date": "2026-10-15",
+      "end_date": "2026-10-19",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "14-BATH-005",
+      "phase": "14. Bathroom Finishes",
+      "name": "Mirrors & Accessories",
+      "duration_hours": 24,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.5,
+      "start_date": "2026-10-19",
+      "end_date": "2026-10-21",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "14-BATH-006",
+      "phase": "14. Bathroom Finishes",
+      "name": "Test All Fixtures",
+      "duration_hours": 8,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 0.5,
+      "start_date": "2026-10-21",
+      "end_date": "2026-10-22",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "15-PAINT-001",
+      "phase": "15. Paint",
+      "name": "Prime All Walls",
+      "duration_hours": 80,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 3.5,
+      "start_date": "2026-10-22",
+      "end_date": "2026-10-28",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "15-PAINT-002",
+      "phase": "15. Paint",
+      "name": "Paint Walls (2 coats)",
+      "duration_hours": 160,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 6.5,
+      "start_date": "2026-10-28",
+      "end_date": "2026-11-06",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "15-PAINT-003",
+      "phase": "15. Paint",
+      "name": "Paint Ceilings",
+      "duration_hours": 80,
+      "crew_size": 3,
+      "crew_assigned": 3,
+      "days": 3.5,
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-12",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "15-PAINT-004",
+      "phase": "15. Paint",
+      "name": "Paint Trim",
+      "duration_hours": 64,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 4.0,
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-18",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "15-PAINT-005",
+      "phase": "15. Paint",
+      "name": "Touch-ups",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-19",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "16-FINAL-001",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Install Light Fixtures",
+      "duration_hours": 48,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 3.0,
+      "start_date": "2026-11-19",
+      "end_date": "2026-11-24",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "16-FINAL-002",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Install Outlets & Switches",
+      "duration_hours": 40,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 2.5,
+      "start_date": "2026-11-24",
+      "end_date": "2026-11-27",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "16-FINAL-003",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Install Cover Plates",
+      "duration_hours": 16,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 2.0,
+      "start_date": "2026-11-27",
+      "end_date": "2026-12-01",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "16-FINAL-004",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Test All Electrical",
+      "duration_hours": 16,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.0,
+      "start_date": "2026-12-01",
+      "end_date": "2026-12-02",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "16-FINAL-005",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Final Plumbing Connections",
+      "duration_hours": 24,
+      "crew_size": 2,
+      "crew_assigned": 2,
+      "days": 1.5,
+      "start_date": "2026-12-02",
+      "end_date": "2026-12-04",
+      "blueprint_pages": [
+        {
+          "sheet_num": "07"
+        }
+      ],
+      "from_plans": "Sheets 07"
+    },
+    {
+      "id": "16-FINAL-006",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Final Electrical Inspection",
+      "duration_hours": 8,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 1.0,
+      "start_date": "2026-12-04",
+      "end_date": "2026-12-07",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "16-FINAL-007",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Final Plumbing Inspection",
+      "duration_hours": 8,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 1.0,
+      "start_date": "2026-12-07",
+      "end_date": "2026-12-08",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "16-FINAL-008",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Final Building Inspection",
+      "duration_hours": 8,
+      "crew_size": 1,
+      "crew_assigned": 1,
+      "days": 1.0,
+      "start_date": "2026-12-08",
+      "end_date": "2026-12-09",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    },
+    {
+      "id": "16-FINAL-009",
+      "phase": "16. Final Electrical & Plumbing",
+      "name": "Cleanup & Punchlist",
+      "duration_hours": 32,
+      "crew_size": 4,
+      "crew_assigned": 4,
+      "days": 1.0,
+      "start_date": "2026-12-09",
+      "end_date": "2026-12-10",
+      "blueprint_pages": [
+        {
+          "sheet_num": "ALL"
+        }
+      ],
+      "from_plans": "Sheets ALL"
+    }
+  ],
+  "summary": {
+    "total_tasks": 122,
+    "total_hours": 5536,
+    "total_days": 265.5,
+    "weeks": 53.1,
+    "months": 12.2
+  }
+}

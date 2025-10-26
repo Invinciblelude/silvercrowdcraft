@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Tasks</title>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5}
+    .container {max-width:1200px; margin:0 auto; padding:16px 16px 100px}
+    .header {margin-bottom:24px}
+    .back-btn {display:inline-block; background:#303947; color:#e8eef5; padding:10px 20px; border-radius:6px; text-decoration:none; margin-bottom:16px}
+    .back-btn:hover {background:#3d4757}
+    h1 {color:#9cc1ff; margin:8px 0}
+    .project-info {display:flex; gap:24px; flex-wrap:wrap; margin:16px 0; padding:16px; background:#12161b; border:1px solid #1f2630; border-radius:8px}
+    .info-item {display:flex; flex-direction:column}
+    .info-label {font-size:11px; color:#8a98ab; text-transform:uppercase}
+    .info-value {font-size:16px; color:#e8eef5; font-weight:600; margin-top:4px}
+    
+    .filters {display:flex; gap:12px; flex-wrap:wrap; margin:20px 0}
+    .filters input, .filters select {background:#0f1317; border:1px solid #303947; color:#e8eef5; padding:10px 16px; border-radius:6px; font-size:14px}
+    .filters input {flex:1; min-width:250px}
+    
+    .trade-section {margin:32px 0}
+    .trade-header {
+      background:linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      color:#fff;
+      padding:12px 20px;
+      border-radius:8px;
+      font-size:20px;
+      font-weight:700;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      cursor:pointer;
+    }
+    .trade-header:hover {opacity:0.9}
+    .trade-count {font-size:14px; opacity:0.9}
+    
+    .tasks-list {padding:16px 0}
+    .task-card {
+      background:#12161b;
+      border-left:4px solid #667eea;
+      border-radius:6px;
+      padding:16px;
+      margin:12px 0;
+      cursor:pointer;
+      transition:transform 0.2s, box-shadow 0.2s;
+      text-decoration:none;
+      display:block;
+      color:#e8eef5;
+    }
+    .task-card:hover {transform:translateX(4px); box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+    .task-header {display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px}
+    .task-id {font-size:12px; color:#667eea; font-weight:700}
+    .task-name {font-size:18px; font-weight:600; margin-top:4px}
+    .task-status {
+      padding:4px 12px;
+      border-radius:12px;
+      font-size:12px;
+      font-weight:600;
+    }
+    .status-pending {background:#444; color:#aaa}
+    .status-in-progress {background:#1a3a52; color:#4da6ff}
+    .status-complete {background:#1a4d2e; color:#4ade80}
+    
+    .task-meta {display:flex; gap:20px; flex-wrap:wrap; margin-top:12px}
+    .task-meta-item {font-size:13px; color:#9ca9bb}
+    .task-meta-item strong {color:#e8eef5}
+    
+    .empty-state {text-align:center; padding:40px 20px; color:#8a98ab}
+  </style>
+</head>
+<body data-jsdom-page="tasks" data-jsdom-title="📋 Project Tasks">
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back-btn">← Back to Dashboard</a>
+      <h1 id="projectName">Loading...</h1>
+      <div class="project-info" id="projectInfo"></div>
+    </div>
+    
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="🔍 Search: roof, kitchen, shear wall, plumbing..." style="flex:1; min-width:300px" />
+      <select id="statusFilter">
+        <option value="">All Status</option>
+        <option value="pending">Pending</option>
+        <option value="in-progress">In Progress</option>
+        <option value="complete">Complete</option>
+      </select>
+    </div>
+    <div class="search-hint" style="font-size:12px; color:#8a98ab; margin:-12px 0 20px 0">
+      💡 Try: "roof", "kitchen", "2x8", "shear wall", "inspection", "Tim's Island", "K-3324 toilet"
+    </div>
+    
+    <div id="tasksContainer"></div>
+  </div>
+
+  <script>
+    let allTasks = [];
+    let projectData = null;
+    
+    async function loadProject() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('id') || 'PROJ-001';
+      
+      try {
+        // Load REAL construction plan from blueprints
+        const response = await fetch('assets/real_construction_plan.json');
+        const data = await response.json();
+        projectData = data.project;
+        allTasks = data.tasks;
+        
+        // Load saved task states from localStorage
+        const savedStates = JSON.parse(localStorage.getItem('taskStates') || '{}');
+        allTasks = allTasks.map(task => ({
+          ...task,
+          status: savedStates[task.id]?.status || 'pending',
+          notes: savedStates[task.id]?.notes || ''
+        }));
+        
+        renderProject();
+        renderTasks(allTasks);
+        
+      } catch (err) {
+        console.error('Failed to load project:', err);
+        document.getElementById('projectName').textContent = 'Error Loading Project';
+      }
+    }
+    
+    function renderProject() {
+      document.getElementById('projectName').textContent = projectData.name;
+      
+      const completedTasks = allTasks.filter(t => t.status === 'complete').length;
+      const inProgressTasks = allTasks.filter(t => t.status === 'in-progress').length;
+      const totalHours = allTasks.reduce((sum, t) => sum + t.duration_hours, 0);
+      
+      document.getElementById('projectInfo').innerHTML = `
+        <div class="info-item">
+          <span class="info-label">Address</span>
+          <span class="info-value">${projectData.address}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Scope</span>
+          <span class="info-value">${projectData.new_addition_sf} SF Addition</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Progress</span>
+          <span class="info-value">${completedTasks}/${allTasks.length} tasks</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">In Progress</span>
+          <span class="info-value">${inProgressTasks} active</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Total Hours</span>
+          <span class="info-value">${totalHours}h</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Architect</span>
+          <span class="info-value">${projectData.architect}</span>
+        </div>
+      `;
+    }
+    
+    function renderTasks(tasks) {
+      // Group tasks by phase (not trade, since real data uses "phase")
+      const tasksByPhase = {};
+      tasks.forEach(task => {
+        const phase = task.phase || task.trade || 'General';
+        if (!tasksByPhase[phase]) {
+          tasksByPhase[phase] = [];
+        }
+        tasksByPhase[phase].push(task);
+      });
+      
+      const container = document.getElementById('tasksContainer');
+      
+      if (tasks.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <h3>No tasks found</h3>
+            <p>Try adjusting your filters</p>
+          </div>
+        `;
+        return;
+      }
+      
+      container.innerHTML = Object.entries(tasksByPhase).map(([phase, phaseTasks]) => `
+        <div class="trade-section">
+          <div class="trade-header">
+            <span>${phase}</span>
+            <span class="trade-count">${phaseTasks.length} tasks • ${phaseTasks.reduce((sum, t) => sum + t.duration_hours, 0)}h</span>
+          </div>
+          <div class="tasks-list">
+            ${phaseTasks.map(task => `
+              <a href="sops/${task.id}.html" class="task-card">
+                <div class="task-header">
+                  <div>
+                    <div class="task-id">${task.id}</div>
+                    <div class="task-name">${task.name}</div>
+                  </div>
+                  <span class="task-status status-${task.status}">${task.status.replace('-', ' ')}</span>
+                </div>
+                <div class="task-meta">
+                  <span class="task-meta-item"><strong>${task.days}</strong> days | <strong>${task.crew_assigned}</strong> crew</span>
+                  <span class="task-meta-item">📅 ${task.start_date} to ${task.end_date}</span>
+                  ${task.from_plans ? `<span class="task-meta-item" style="font-size:11px;color:#667eea">📋 ${task.from_plans}</span>` : ''}
+                  ${task.blueprint_pages && task.blueprint_pages.length > 0 ? `<span class="task-meta-item" style="font-size:11px;color:#9cc1ff">📐 ${task.blueprint_pages.length} blueprints</span>` : ''}
+                </div>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    // Search and filter
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const statusFilter = document.getElementById('statusFilter');
+      
+      function filterTasks() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const statusValue = statusFilter.value;
+        
+        if (!searchTerm && !statusValue) {
+          renderTasks(allTasks);
+          return;
+        }
+        
+        const filtered = allTasks.filter(task => {
+          // Search in multiple fields
+          const phase = (task.phase || task.trade || '').toLowerCase();
+          const taskName = task.name.toLowerCase();
+          const taskId = task.id.toLowerCase();
+          const fromPlans = (task.from_plans || '').toLowerCase();
+          
+          // Also search in blueprint sheet numbers
+          const blueprintSheets = task.blueprint_pages 
+            ? task.blueprint_pages.map(bp => bp.sheet_num).join(' ').toLowerCase()
+            : '';
+          
+          const matchesSearch = !searchTerm || 
+                              taskName.includes(searchTerm) ||
+                              taskId.includes(searchTerm) ||
+                              phase.includes(searchTerm) ||
+                              fromPlans.includes(searchTerm) ||
+                              blueprintSheets.includes(searchTerm);
+          
+          const matchesStatus = !statusValue || task.status === statusValue;
+          return matchesSearch && matchesStatus;
+        });
+        
+        renderTasks(filtered);
+        
+        // Show results count
+        const hint = document.querySelector('.search-hint');
+        if (hint && searchTerm) {
+          hint.textContent = `Found ${filtered.length} task${filtered.length !== 1 ? 's' : ''} matching "${searchInput.value}"`;
+        } else if (hint) {
+          hint.textContent = '💡 Try: "roof", "kitchen", "2x8", "shear wall", "inspection", "Tim\'s Island", "K-3324 toilet"';
+        }
+      }
+      
+      searchInput.addEventListener('input', filterTasks);
+      statusFilter.addEventListener('change', filterTasks);
+    });
+    
+    loadProject();
+  </script>
+</body>
+</html>
+

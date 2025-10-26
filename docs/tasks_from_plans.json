@@ -1,0 +1,974 @@
+[
+  {
+    "id": "SP-01",
+    "phase": "Site Prep",
+    "task": "Mobilization & site setup",
+    "crew": 7,
+    "hours": 16,
+    "trade": "GC",
+    "sheets": [
+      "00-Cover"
+    ]
+  },
+  {
+    "id": "SP-02",
+    "phase": "Site Prep",
+    "task": "Install temp fence/protection around existing house",
+    "crew": 3,
+    "hours": 8,
+    "trade": "GC"
+  },
+  {
+    "id": "SP-03",
+    "phase": "Site Prep",
+    "task": "Demo existing carport (330 SF)",
+    "crew": 4,
+    "hours": 16,
+    "trade": "Demo",
+    "sheets": [
+      "02-AsBuilt-SitePlan"
+    ]
+  },
+  {
+    "id": "SP-04",
+    "phase": "Site Prep",
+    "task": "Demo existing garage (487 SF)",
+    "crew": 4,
+    "hours": 24,
+    "trade": "Demo",
+    "sheets": [
+      "02-AsBuilt-SitePlan"
+    ]
+  },
+  {
+    "id": "SP-05",
+    "phase": "Site Prep",
+    "task": "Demo existing wood fences (3 locations per plans)",
+    "crew": 2,
+    "hours": 8,
+    "trade": "Demo",
+    "sheets": [
+      "02-AsBuilt-SitePlan",
+      "06-Proposed-SitePlan"
+    ]
+  },
+  {
+    "id": "SP-06",
+    "phase": "Site Prep",
+    "task": "Remove overhead electrical service & J-pole",
+    "crew": 2,
+    "hours": 8,
+    "trade": "Electrical",
+    "notes": "Coordinate with SMUD",
+    "sheets": [
+      "06-Proposed-SitePlan"
+    ]
+  },
+  {
+    "id": "SP-07",
+    "phase": "Site Prep",
+    "task": "Remove solar panels & switching (existing)",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Electrical",
+    "notes": "Licensed solar contractor",
+    "sheets": [
+      "06-Proposed-SitePlan"
+    ]
+  },
+  {
+    "id": "SP-08",
+    "phase": "Site Prep",
+    "task": "Protect existing adobe fireplace & chimney",
+    "crew": 2,
+    "hours": 4,
+    "trade": "GC"
+  },
+  {
+    "id": "SP-09",
+    "phase": "Site Prep",
+    "task": "Haul demo debris",
+    "crew": 2,
+    "hours": 8,
+    "trade": "GC"
+  },
+  {
+    "id": "UG-01",
+    "phase": "Underground",
+    "task": "Trench for 400A SMUD service (135' \u00b1 in 3\" Sch40 conduit)",
+    "crew": 3,
+    "hours": 24,
+    "trade": "Electrical",
+    "notes": "Per SMUD inspector",
+    "sheets": [
+      "06-Proposed-SitePlan",
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "UG-02",
+    "phase": "Underground",
+    "task": "Install underground conduit with pull tape",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Electrical",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "UG-03",
+    "phase": "Underground",
+    "task": "Stub-up for 200A main panel (17\"x30\"x18\")",
+    "crew": 2,
+    "hours": 8,
+    "trade": "Electrical",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "UG-04",
+    "phase": "Underground",
+    "task": "Underground to ADU sub-panel then to main residence sub-panel",
+    "crew": 2,
+    "hours": 24,
+    "trade": "Electrical",
+    "notes": "Separate permit"
+  },
+  {
+    "id": "UG-05",
+    "phase": "Underground",
+    "task": "Gas line extensions (verify existing meter location)",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Plumbing"
+  },
+  {
+    "id": "UG-06",
+    "phase": "Underground",
+    "task": "Water line extensions for new additions",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Plumbing"
+  },
+  {
+    "id": "UG-07",
+    "phase": "Underground",
+    "task": "Sewer/septic connections for new additions",
+    "crew": 2,
+    "hours": 24,
+    "trade": "Plumbing"
+  },
+  {
+    "id": "UG-08",
+    "phase": "Underground",
+    "task": "Backfill & compact trenches",
+    "crew": 3,
+    "hours": 16,
+    "trade": "GC"
+  },
+  {
+    "id": "UG-09",
+    "phase": "Underground",
+    "task": "Underground utilities inspection",
+    "crew": 1,
+    "hours": 2,
+    "trade": "Inspector"
+  },
+  {
+    "id": "FDN-01",
+    "phase": "Foundation",
+    "task": "Layout new addition footings per structural plans (S-1)",
+    "crew": 3,
+    "hours": 8,
+    "trade": "Foundation",
+    "sheets": [
+      "12-Structural-FoundationPlan"
+    ]
+  },
+  {
+    "id": "FDN-02",
+    "phase": "Foundation",
+    "task": "Excavate footings for addition",
+    "crew": 4,
+    "hours": 24,
+    "trade": "Foundation",
+    "sheets": [
+      "12-Structural-FoundationPlan",
+      "13-Structural-FoundationISO"
+    ]
+  },
+  {
+    "id": "FDN-03",
+    "phase": "Foundation",
+    "task": "Install rebar per structural (see S-1, SD series)",
+    "crew": 3,
+    "hours": 24,
+    "trade": "Foundation",
+    "sheets": [
+      "12-Structural-FoundationPlan",
+      "16-Structural-Details-1"
+    ]
+  },
+  {
+    "id": "FDN-04",
+    "phase": "Foundation",
+    "task": "Set anchor bolts per structural",
+    "crew": 2,
+    "hours": 8,
+    "trade": "Foundation"
+  },
+  {
+    "id": "FDN-05",
+    "phase": "Foundation",
+    "task": "Foundation inspection",
+    "crew": 1,
+    "hours": 2,
+    "trade": "Inspector"
+  },
+  {
+    "id": "FDN-06",
+    "phase": "Foundation",
+    "task": "Pour concrete footings",
+    "crew": 4,
+    "hours": 16,
+    "trade": "Concrete"
+  },
+  {
+    "id": "FDN-07",
+    "phase": "Foundation",
+    "task": "Cure footings (3-5 days)",
+    "crew": 0,
+    "hours": 0,
+    "trade": "Wait"
+  },
+  {
+    "id": "FDN-08",
+    "phase": "Foundation",
+    "task": "Form stemwalls",
+    "crew": 3,
+    "hours": 24,
+    "trade": "Foundation"
+  },
+  {
+    "id": "FDN-09",
+    "phase": "Foundation",
+    "task": "Pour stemwalls",
+    "crew": 4,
+    "hours": 16,
+    "trade": "Concrete"
+  },
+  {
+    "id": "FDN-10",
+    "phase": "Foundation",
+    "task": "Backfill foundation",
+    "crew": 3,
+    "hours": 16,
+    "trade": "Foundation"
+  },
+  {
+    "id": "FR-01",
+    "phase": "Framing",
+    "task": "Frame 2x8 walls per structural (callout on A1.01)",
+    "crew": 5,
+    "hours": 40,
+    "trade": "Framing",
+    "sheets": [
+      "07-Proposed-FloorPlan"
+    ]
+  },
+  {
+    "id": "FR-02",
+    "phase": "Framing",
+    "task": "Install steel columns (4\" \u00d8 painted steel per plans)",
+    "crew": 3,
+    "hours": 24,
+    "trade": "Steel",
+    "sheets": [
+      "07-Proposed-FloorPlan",
+      "15-Structural-RoofFramingPlan"
+    ]
+  },
+  {
+    "id": "FR-03",
+    "phase": "Framing",
+    "task": "Install steel trusses per structural (S-3)",
+    "crew": 4,
+    "hours": 32,
+    "trade": "Steel",
+    "sheets": [
+      "08-Proposed-RoofPlan",
+      "15-Structural-RoofFramingPlan"
+    ]
+  },
+  {
+    "id": "FR-04",
+    "phase": "Framing",
+    "task": "Install steel ridge beam extension per structural",
+    "crew": 3,
+    "hours": 16,
+    "trade": "Steel",
+    "sheets": [
+      "08-Proposed-RoofPlan",
+      "15-Structural-RoofFramingPlan"
+    ]
+  },
+  {
+    "id": "FR-05",
+    "phase": "Framing",
+    "task": "Install wood beam extensions to match existing",
+    "crew": 3,
+    "hours": 24,
+    "trade": "Framing"
+  },
+  {
+    "id": "FR-06",
+    "phase": "Framing",
+    "task": "Roof framing per structural (S-3 roof framing plan)",
+    "crew": 5,
+    "hours": 64,
+    "trade": "Framing",
+    "sheets": [
+      "15-Structural-RoofFramingPlan"
+    ]
+  },
+  {
+    "id": "FR-07",
+    "phase": "Framing",
+    "task": "Install shear walls per structural (S-2)",
+    "crew": 4,
+    "hours": 32,
+    "trade": "Framing",
+    "sheets": [
+      "14-Structural-ShearWallPlan"
+    ]
+  },
+  {
+    "id": "FR-08",
+    "phase": "Framing",
+    "task": "Frame interior walls per A1.01 floor plan",
+    "crew": 4,
+    "hours": 48,
+    "trade": "Framing",
+    "sheets": [
+      "07-Proposed-FloorPlan"
+    ]
+  },
+  {
+    "id": "FR-09",
+    "phase": "Framing",
+    "task": "Install headers per structural details",
+    "crew": 3,
+    "hours": 16,
+    "trade": "Framing"
+  },
+  {
+    "id": "FR-10",
+    "phase": "Framing",
+    "task": "Framing inspection",
+    "crew": 1,
+    "hours": 2,
+    "trade": "Inspector"
+  },
+  {
+    "id": "EXT-01",
+    "phase": "Exterior",
+    "task": "Install comp shingle roofing to match existing",
+    "crew": 4,
+    "hours": 48,
+    "trade": "Roofing",
+    "sheets": [
+      "08-Proposed-RoofPlan"
+    ]
+  },
+  {
+    "id": "EXT-02",
+    "phase": "Exterior",
+    "task": "Install 5\" min ogee rain gutters",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Roofing"
+  },
+  {
+    "id": "EXT-03",
+    "phase": "Exterior",
+    "task": "Install roof flashing & waterproofing",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Roofing"
+  },
+  {
+    "id": "EXT-04",
+    "phase": "Exterior",
+    "task": "Install Portella sliding door systems (or eq.)",
+    "crew": 3,
+    "hours": 32,
+    "trade": "Doors/Windows",
+    "sheets": [
+      "10-Proposed-Elevations-Front",
+      "11-Proposed-Elevations-Rear"
+    ]
+  },
+  {
+    "id": "EXT-05",
+    "phase": "Exterior",
+    "task": "Install Portella sliding pocket door system",
+    "crew": 3,
+    "hours": 24,
+    "trade": "Doors/Windows",
+    "sheets": [
+      "11-Proposed-Elevations-Rear"
+    ]
+  },
+  {
+    "id": "EXT-06",
+    "phase": "Exterior",
+    "task": "Install awning windows per elevations",
+    "crew": 2,
+    "hours": 24,
+    "trade": "Doors/Windows",
+    "sheets": [
+      "10-Proposed-Elevations-Front"
+    ]
+  },
+  {
+    "id": "EXT-07",
+    "phase": "Exterior",
+    "task": "Install casement/emergency egress windows at bedrooms",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Doors/Windows",
+    "sheets": [
+      "10-Proposed-Elevations-Front"
+    ]
+  },
+  {
+    "id": "EXT-08",
+    "phase": "Exterior",
+    "task": "Install glazed front entry door",
+    "crew": 2,
+    "hours": 8,
+    "trade": "Doors/Windows",
+    "sheets": [
+      "10-Proposed-Elevations-Front"
+    ]
+  },
+  {
+    "id": "EXT-09",
+    "phase": "Exterior",
+    "task": "Apply smooth-troweled stucco exterior walls",
+    "crew": 4,
+    "hours": 64,
+    "trade": "Stucco",
+    "sheets": [
+      "10-Proposed-Elevations-Front",
+      "11-Proposed-Elevations-Rear"
+    ]
+  },
+  {
+    "id": "EXT-10",
+    "phase": "Exterior",
+    "task": "Build stuccoed CMU site walls with lockable gates",
+    "crew": 4,
+    "hours": 48,
+    "trade": "Masonry",
+    "sheets": [
+      "06-Proposed-SitePlan",
+      "10-Proposed-Elevations-Front"
+    ]
+  },
+  {
+    "id": "MEP-01",
+    "phase": "MEP Rough",
+    "task": "Install 200A sub-panel per A1.03 electrical plan",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Electrical",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "MEP-02",
+    "phase": "MEP Rough",
+    "task": "Rough electrical per A1.03 (outlets at 12\" AFF typ)",
+    "crew": 3,
+    "hours": 64,
+    "trade": "Electrical",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "MEP-03",
+    "phase": "MEP Rough",
+    "task": "Install GFCI outlets per plan (kitchen, baths, exterior)",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Electrical",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "MEP-04",
+    "phase": "MEP Rough",
+    "task": "Install 240V circuits (range, oven, dryer, compressors)",
+    "crew": 2,
+    "hours": 24,
+    "trade": "Electrical",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "MEP-05",
+    "phase": "MEP Rough",
+    "task": "Rough plumbing (3x Kohler K-3324 toilets, sinks, shower)",
+    "crew": 3,
+    "hours": 48,
+    "trade": "Plumbing",
+    "sheets": [
+      "07-Proposed-FloorPlan"
+    ]
+  },
+  {
+    "id": "MEP-06",
+    "phase": "MEP Rough",
+    "task": "Install gas lines (range, outdoor kitchen, water heater)",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Plumbing",
+    "sheets": [
+      "07-Proposed-FloorPlan",
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "MEP-07",
+    "phase": "MEP Rough",
+    "task": "Install HVAC ductwork for split systems",
+    "crew": 3,
+    "hours": 40,
+    "trade": "HVAC",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "MEP-08",
+    "phase": "MEP Rough",
+    "task": "Install mini-split wall units (vol. ceil. locations)",
+    "crew": 2,
+    "hours": 24,
+    "trade": "HVAC",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "MEP-09",
+    "phase": "MEP Rough",
+    "task": "Rough inspection (electrical, plumbing, HVAC)",
+    "crew": 1,
+    "hours": 3,
+    "trade": "Inspector"
+  },
+  {
+    "id": "INS-01",
+    "phase": "Insulation",
+    "task": "Install batt insulation per Title 24 (T24-M)",
+    "crew": 3,
+    "hours": 48,
+    "trade": "Insulation",
+    "sheets": [
+      "24-Title24-Certificate-1",
+      "26-Title24-MandatoryMeasures"
+    ]
+  },
+  {
+    "id": "INS-02",
+    "phase": "Insulation",
+    "task": "Air sealing per CA Energy Code 2022",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Insulation"
+  },
+  {
+    "id": "INS-03",
+    "phase": "Insulation",
+    "task": "Insulation inspection",
+    "crew": 1,
+    "hours": 2,
+    "trade": "Inspector"
+  },
+  {
+    "id": "DRY-01",
+    "phase": "Drywall",
+    "task": "Hang drywall (gypsum board) on walls",
+    "crew": 4,
+    "hours": 64,
+    "trade": "Drywall"
+  },
+  {
+    "id": "DRY-02",
+    "phase": "Drywall",
+    "task": "Hang drywall on flat ceilings",
+    "crew": 4,
+    "hours": 32,
+    "trade": "Drywall"
+  },
+  {
+    "id": "DRY-03",
+    "phase": "Drywall",
+    "task": "Hang drywall on vaulted/coffered ceilings",
+    "crew": 4,
+    "hours": 40,
+    "trade": "Drywall"
+  },
+  {
+    "id": "DRY-04",
+    "phase": "Drywall",
+    "task": "Tape & mud (3 coats)",
+    "crew": 3,
+    "hours": 72,
+    "trade": "Drywall"
+  },
+  {
+    "id": "DRY-05",
+    "phase": "Drywall",
+    "task": "Sand & texture",
+    "crew": 3,
+    "hours": 32,
+    "trade": "Drywall"
+  },
+  {
+    "id": "FIN-01",
+    "phase": "Finishes",
+    "task": "Prime & paint walls/ceilings (2 coats)",
+    "crew": 3,
+    "hours": 80,
+    "trade": "Paint"
+  },
+  {
+    "id": "FIN-02",
+    "phase": "Finishes",
+    "task": "Install interior doors & trim",
+    "crew": 2,
+    "hours": 32,
+    "trade": "Trim"
+  },
+  {
+    "id": "FIN-03",
+    "phase": "Finishes",
+    "task": "Install baseboard & crown molding",
+    "crew": 2,
+    "hours": 40,
+    "trade": "Trim"
+  },
+  {
+    "id": "FIN-04",
+    "phase": "Finishes",
+    "task": "Install closet shelving & rods",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Trim"
+  },
+  {
+    "id": "FIN-05",
+    "phase": "Finishes",
+    "task": "Install kitchen cabinets per A1.01",
+    "crew": 3,
+    "hours": 40,
+    "trade": "Cabinets",
+    "sheets": [
+      "07-Proposed-FloorPlan"
+    ]
+  },
+  {
+    "id": "FIN-06",
+    "phase": "Finishes",
+    "task": "Install bathroom vanities (3 locations)",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Cabinets"
+  },
+  {
+    "id": "FIN-07",
+    "phase": "Finishes",
+    "task": "Install countertops (kitchen, baths)",
+    "crew": 2,
+    "hours": 24,
+    "trade": "Countertops"
+  },
+  {
+    "id": "FIN-08",
+    "phase": "Finishes",
+    "task": "Install tile floors (baths, entry, laundry)",
+    "crew": 3,
+    "hours": 48,
+    "trade": "Tile",
+    "sheets": [
+      "07-Proposed-FloorPlan"
+    ]
+  },
+  {
+    "id": "FIN-09",
+    "phase": "Finishes",
+    "task": "Install main flooring (verify type with owner)",
+    "crew": 4,
+    "hours": 64,
+    "trade": "Flooring"
+  },
+  {
+    "id": "TRIM-01",
+    "phase": "MEP Trim",
+    "task": "Install light fixtures per A1.03 (owner-supplied)",
+    "crew": 2,
+    "hours": 32,
+    "trade": "Electrical",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "TRIM-02",
+    "phase": "MEP Trim",
+    "task": "Install recessed LED downlights (JA8 compliant)",
+    "crew": 2,
+    "hours": 24,
+    "trade": "Electrical",
+    "sheets": [
+      "09-Proposed-ElectricalPlan"
+    ]
+  },
+  {
+    "id": "TRIM-03",
+    "phase": "MEP Trim",
+    "task": "Install under-cabinet & up-lights",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Electrical"
+  },
+  {
+    "id": "TRIM-04",
+    "phase": "MEP Trim",
+    "task": "Install ceiling fans with lighting",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Electrical"
+  },
+  {
+    "id": "TRIM-05",
+    "phase": "MEP Trim",
+    "task": "Install dimmer & occupancy sensor switches",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Electrical"
+  },
+  {
+    "id": "TRIM-06",
+    "phase": "MEP Trim",
+    "task": "Install smoke & CO detectors (interconnected)",
+    "crew": 2,
+    "hours": 8,
+    "trade": "Electrical"
+  },
+  {
+    "id": "TRIM-07",
+    "phase": "MEP Trim",
+    "task": "Install Kohler K-3324 toilets (3x)",
+    "crew": 2,
+    "hours": 12,
+    "trade": "Plumbing",
+    "sheets": [
+      "07-Proposed-FloorPlan"
+    ]
+  },
+  {
+    "id": "TRIM-08",
+    "phase": "MEP Trim",
+    "task": "Install sinks, faucets, disposal",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Plumbing"
+  },
+  {
+    "id": "TRIM-09",
+    "phase": "MEP Trim",
+    "task": "Install shower fixtures & outdoor shower",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Plumbing"
+  },
+  {
+    "id": "TRIM-10",
+    "phase": "MEP Trim",
+    "task": "Install appliances (range, oven, microwave, d/w, refer, ice maker)",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Appliances"
+  },
+  {
+    "id": "TRIM-11",
+    "phase": "MEP Trim",
+    "task": "Install A/C compressors (wall-mounted for ADU system)",
+    "crew": 2,
+    "hours": 16,
+    "trade": "HVAC"
+  },
+  {
+    "id": "TRIM-12",
+    "phase": "MEP Trim",
+    "task": "Commission HVAC systems",
+    "crew": 2,
+    "hours": 8,
+    "trade": "HVAC"
+  },
+  {
+    "id": "SITE-01",
+    "phase": "Site Work",
+    "task": "Build stucco mailbox with stone cap",
+    "crew": 2,
+    "hours": 8,
+    "trade": "Masonry",
+    "sheets": [
+      "06-Proposed-SitePlan"
+    ]
+  },
+  {
+    "id": "SITE-02",
+    "phase": "Site Work",
+    "task": "Install 6' wood fences (2 locations)",
+    "crew": 2,
+    "hours": 16,
+    "trade": "Fencing"
+  },
+  {
+    "id": "SITE-03",
+    "phase": "Site Work",
+    "task": "Pour patio paving (TBD material)",
+    "crew": 3,
+    "hours": 32,
+    "trade": "Concrete",
+    "sheets": [
+      "06-Proposed-SitePlan"
+    ]
+  },
+  {
+    "id": "SITE-04",
+    "phase": "Site Work",
+    "task": "Build covered patio structure (steel truss & columns)",
+    "crew": 4,
+    "hours": 32,
+    "trade": "Steel",
+    "sheets": [
+      "11-Proposed-Elevations-Rear"
+    ]
+  },
+  {
+    "id": "SITE-05",
+    "phase": "Site Work",
+    "task": "Landscape/hardscape per L/S plans (coordinate)",
+    "crew": 4,
+    "hours": 48,
+    "trade": "Landscape"
+  },
+  {
+    "id": "SITE-06",
+    "phase": "Site Work",
+    "task": "Install outdoor kitchen per L/S",
+    "crew": 3,
+    "hours": 24,
+    "trade": "Masonry"
+  },
+  {
+    "id": "SITE-07",
+    "phase": "Site Work",
+    "task": "Final grading & cleanup",
+    "crew": 4,
+    "hours": 16,
+    "trade": "GC"
+  },
+  {
+    "id": "FINAL-01",
+    "phase": "Final",
+    "task": "Final electrical inspection",
+    "crew": 1,
+    "hours": 2,
+    "trade": "Inspector"
+  },
+  {
+    "id": "FINAL-02",
+    "phase": "Final",
+    "task": "Final plumbing inspection",
+    "crew": 1,
+    "hours": 2,
+    "trade": "Inspector"
+  },
+  {
+    "id": "FINAL-03",
+    "phase": "Final",
+    "task": "Final HVAC inspection",
+    "crew": 1,
+    "hours": 2,
+    "trade": "Inspector"
+  },
+  {
+    "id": "FINAL-04",
+    "phase": "Final",
+    "task": "Final building inspection",
+    "crew": 1,
+    "hours": 2,
+    "trade": "Inspector"
+  },
+  {
+    "id": "FINAL-05",
+    "phase": "Final",
+    "task": "Title 24 energy compliance verification",
+    "crew": 1,
+    "hours": 4,
+    "trade": "Inspector"
+  },
+  {
+    "id": "FINAL-06",
+    "phase": "Final",
+    "task": "Punch list walkthrough with owner",
+    "crew": 3,
+    "hours": 8,
+    "trade": "GC"
+  },
+  {
+    "id": "FINAL-07",
+    "phase": "Final",
+    "task": "Complete punch list items",
+    "crew": 4,
+    "hours": 32,
+    "trade": "All"
+  },
+  {
+    "id": "FINAL-08",
+    "phase": "Final",
+    "task": "Final cleaning",
+    "crew": 3,
+    "hours": 16,
+    "trade": "GC"
+  },
+  {
+    "id": "FINAL-09",
+    "phase": "Final",
+    "task": "Owner orientation & handoff",
+    "crew": 2,
+    "hours": 4,
+    "trade": "GC"
+  },
+  {
+    "id": "FINAL-10",
+    "phase": "Final",
+    "task": "Demobilize & closeout",
+    "crew": 7,
+    "hours": 8,
+    "trade": "GC"
+  }
+]
