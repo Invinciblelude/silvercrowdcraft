@@ -1,0 +1,7 @@
+# Keep the construction system clean
+node_modules/
+.next/
+.vercel/
+*.log
+.DS_Store
+.env*
