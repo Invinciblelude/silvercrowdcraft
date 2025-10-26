@@ -44,13 +44,17 @@
       border-radius:6px;
       padding:16px;
       margin:12px 0;
-      cursor:pointer;
       transition:transform 0.2s, box-shadow 0.2s;
-      text-decoration:none;
-      display:block;
       color:#e8eef5;
+      position:relative;
     }
     .task-card:hover {transform:translateX(4px); box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+    .task-link {text-decoration:none; color:inherit; display:block}
+    .task-actions {display:flex; gap:12px; align-items:center; margin-top:12px; padding-top:12px; border-top:1px solid #1f2630}
+    .status-select {background:#1f2630; border:1px solid #303947; color:#e8eef5; padding:8px 12px; border-radius:6px; cursor:pointer; font-size:14px}
+    .status-select:hover {background:#303947}
+    .complete-btn {background:#28a745; color:#fff; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600}
+    .complete-btn:hover {background:#218838}
     .task-header {display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px}
     .task-id {font-size:12px; color:#667eea; font-weight:700}
     .task-name {font-size:18px; font-weight:600; margin-top:4px}
@@ -193,21 +197,31 @@
           </div>
           <div class="tasks-list">
             ${phaseTasks.map(task => `
-              <a href="sops/${task.id}.html" class="task-card">
-                <div class="task-header">
-                  <div>
-                    <div class="task-id">${task.id}</div>
-                    <div class="task-name">${task.name}</div>
+              <div class="task-card">
+                <a href="sops/${task.id}.html" class="task-link">
+                  <div class="task-header">
+                    <div>
+                      <div class="task-id">${task.id}</div>
+                      <div class="task-name">${task.name}</div>
+                    </div>
+                    <span class="task-status status-${task.status}">${task.status.replace('-', ' ')}</span>
                   </div>
-                  <span class="task-status status-${task.status}">${task.status.replace('-', ' ')}</span>
+                  <div class="task-meta">
+                    <span class="task-meta-item"><strong>${task.days}</strong> days | <strong>${task.crew_assigned}</strong> crew | <strong>${task.duration_hours}h</strong></span>
+                    <span class="task-meta-item">📅 ${task.start_date} to ${task.end_date}</span>
+                    ${task.from_plans ? `<span class="task-meta-item" style="font-size:11px;color:#667eea">📋 ${task.from_plans}</span>` : ''}
+                    ${task.blueprint_pages && task.blueprint_pages.length > 0 ? `<span class="task-meta-item" style="font-size:11px;color:#9cc1ff">📐 ${task.blueprint_pages.length} blueprints</span>` : ''}
+                  </div>
+                </a>
+                <div class="task-actions">
+                  <select class="status-select" onchange="updateTaskStatus('${task.id}', this.value)" onclick="event.stopPropagation()">
+                    <option value="pending" ${task.status === 'pending' ? 'selected' : ''}>⏳ Pending</option>
+                    <option value="in-progress" ${task.status === 'in-progress' ? 'selected' : ''}>🔨 In Progress</option>
+                    <option value="complete" ${task.status === 'complete' ? 'selected' : ''}>✅ Complete</option>
+                  </select>
+                  ${task.status !== 'complete' ? `<button class="complete-btn" onclick="quickComplete('${task.id}'); event.stopPropagation()">✅ Mark Complete</button>` : ''}
                 </div>
-                <div class="task-meta">
-                  <span class="task-meta-item"><strong>${task.days}</strong> days | <strong>${task.crew_assigned}</strong> crew</span>
-                  <span class="task-meta-item">📅 ${task.start_date} to ${task.end_date}</span>
-                  ${task.from_plans ? `<span class="task-meta-item" style="font-size:11px;color:#667eea">📋 ${task.from_plans}</span>` : ''}
-                  ${task.blueprint_pages && task.blueprint_pages.length > 0 ? `<span class="task-meta-item" style="font-size:11px;color:#9cc1ff">📐 ${task.blueprint_pages.length} blueprints</span>` : ''}
-                </div>
-              </a>
+              </div>
             `).join('')}
           </div>
         </div>
@@ -265,6 +279,38 @@
       searchInput.addEventListener('input', filterTasks);
       statusFilter.addEventListener('change', filterTasks);
     });
+    
+    // Update task status
+    function updateTaskStatus(taskId, newStatus) {
+      const task = allTasks.find(t => t.id === taskId);
+      if (task) {
+        task.status = newStatus;
+        saveTaskStates();
+        renderTasks(allTasks);
+        loadProject(); // Refresh stats
+      }
+    }
+    
+    // Quick complete button
+    function quickComplete(taskId) {
+      updateTaskStatus(taskId, 'complete');
+      alert(`✅ Task ${taskId} marked as complete!`);
+    }
+    
+    // Save task states to localStorage
+    function saveTaskStates() {
+      const states = {};
+      allTasks.forEach(task => {
+        states[task.id] = {
+          status: task.status,
+          actual_hours: task.actual_hours || 0,
+          completed_by: task.completed_by || '',
+          completed_date: task.status === 'complete' ? new Date().toISOString() : null
+        };
+      });
+      localStorage.setItem('taskStates', JSON.stringify(states));
+      console.log('✅ Task states saved');
+    }
     
     loadProject();
   </script>
