@@ -55,6 +55,13 @@
     .status-select:hover {background:#303947}
     .complete-btn {background:#28a745; color:#fff; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600}
     .complete-btn:hover {background:#218838}
+    .photo-btn {background:#667eea; color:#fff; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600}
+    .photo-btn:hover {background:#5568d3}
+    .notes-btn {background:#ffc107; color:#000; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600}
+    .notes-btn:hover {background:#e0a800}
+    .task-photos {display:flex; gap:8px; margin-top:8px; flex-wrap:wrap}
+    .task-photo {width:60px; height:60px; object-fit:cover; border-radius:4px; border:2px solid #667eea; cursor:pointer}
+    .task-notes {background:#1f2630; padding:8px; border-radius:4px; margin-top:8px; font-size:12px; color:#a9b6c6}
     .task-header {display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px}
     .task-id {font-size:12px; color:#667eea; font-weight:700}
     .task-name {font-size:18px; font-weight:600; margin-top:4px}
@@ -219,8 +226,16 @@
                     <option value="in-progress" ${task.status === 'in-progress' ? 'selected' : ''}>🔨 In Progress</option>
                     <option value="complete" ${task.status === 'complete' ? 'selected' : ''}>✅ Complete</option>
                   </select>
-                  ${task.status !== 'complete' ? `<button class="complete-btn" onclick="quickComplete('${task.id}'); event.stopPropagation()">✅ Mark Complete</button>` : ''}
+                  ${task.status !== 'complete' ? `<button class="complete-btn" onclick="quickComplete('${task.id}'); event.stopPropagation()">✅ Complete</button>` : ''}
+                  <button class="photo-btn" onclick="addPhoto('${task.id}'); event.stopPropagation()">📷 Photo</button>
+                  <button class="notes-btn" onclick="addNote('${task.id}'); event.stopPropagation()">📝 Note</button>
                 </div>
+                ${task.photos && task.photos.length > 0 ? `
+                  <div class="task-photos">
+                    ${task.photos.map((photo, i) => `<img src="${photo.url}" class="task-photo" onclick="viewPhoto('${task.id}', ${i})" title="${photo.note || 'Photo ' + (i+1)}" />`).join('')}
+                  </div>
+                ` : ''}
+                ${task.notes ? `<div class="task-notes">📝 ${task.notes}</div>` : ''}
               </div>
             `).join('')}
           </div>
@@ -305,11 +320,123 @@
           status: task.status,
           actual_hours: task.actual_hours || 0,
           completed_by: task.completed_by || '',
-          completed_date: task.status === 'complete' ? new Date().toISOString() : null
+          completed_date: task.status === 'complete' ? new Date().toISOString() : null,
+          photos: task.photos || [],
+          notes: task.notes || '',
+          changelog: task.changelog || []
         };
       });
       localStorage.setItem('taskStates', JSON.stringify(states));
       console.log('✅ Task states saved');
+      saveChangelog();
+    }
+    
+    // Add photo to task
+    function addPhoto(taskId) {
+      const task = allTasks.find(t => t.id === taskId);
+      if (!task) return;
+      
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.capture = 'camera'; // Use camera on mobile
+      
+      input.onchange = function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const photoNote = prompt('Add a note for this photo (optional):');
+          
+          if (!task.photos) task.photos = [];
+          task.photos.push({
+            url: event.target.result,
+            note: photoNote,
+            date: new Date().toISOString(),
+            filename: file.name
+          });
+          
+          addToChangelog(taskId, `📷 Photo added: ${photoNote || file.name}`);
+          saveTaskStates();
+          renderTasks(allTasks);
+        };
+        reader.readAsDataURL(file);
+      };
+      
+      input.click();
+    }
+    
+    // View photo full size
+    function viewPhoto(taskId, photoIndex) {
+      const task = allTasks.find(t => t.id === taskId);
+      if (!task || !task.photos || !task.photos[photoIndex]) return;
+      
+      const photo = task.photos[photoIndex];
+      const modal = document.createElement('div');
+      modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px';
+      
+      const img = document.createElement('img');
+      img.src = photo.url;
+      img.style.cssText = 'max-width:90%; max-height:80%; object-fit:contain; border-radius:8px';
+      
+      const info = document.createElement('div');
+      info.style.cssText = 'color:#fff; margin-top:16px; text-align:center';
+      info.innerHTML = `
+        <div style="font-size:14px; margin-bottom:8px">${photo.note || 'Photo ' + (photoIndex + 1)}</div>
+        <div style="font-size:12px; opacity:0.7">${new Date(photo.date).toLocaleString()}</div>
+        <button onclick="this.parentElement.parentElement.remove()" style="margin-top:12px; padding:8px 20px; background:#dc3545; color:#fff; border:none; border-radius:6px; cursor:pointer">Close</button>
+      `;
+      
+      modal.appendChild(img);
+      modal.appendChild(info);
+      modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+      document.body.appendChild(modal);
+    }
+    
+    // Add note to task
+    function addNote(taskId) {
+      const task = allTasks.find(t => t.id === taskId);
+      if (!task) return;
+      
+      const note = prompt('Add a note for this task:', task.notes || '');
+      if (note !== null) {
+        task.notes = note;
+        addToChangelog(taskId, `📝 Note updated: ${note.substring(0, 50)}${note.length > 50 ? '...' : ''}`);
+        saveTaskStates();
+        renderTasks(allTasks);
+      }
+    }
+    
+    // Add entry to changelog
+    function addToChangelog(taskId, message) {
+      const task = allTasks.find(t => t.id === taskId);
+      if (!task) return;
+      
+      if (!task.changelog) task.changelog = [];
+      task.changelog.push({
+        date: new Date().toISOString(),
+        message: message,
+        user: 'Foreman' // Could be dynamic
+      });
+    }
+    
+    // Save changelog to localStorage
+    function saveChangelog() {
+      const changelog = [];
+      allTasks.forEach(task => {
+        if (task.changelog && task.changelog.length > 0) {
+          task.changelog.forEach(entry => {
+            changelog.push({
+              taskId: task.id,
+              taskName: task.name,
+              ...entry
+            });
+          });
+        }
+      });
+      changelog.sort((a, b) => new Date(b.date) - new Date(a.date));
+      localStorage.setItem('projectChangelog', JSON.stringify(changelog));
     }
     
     loadProject();

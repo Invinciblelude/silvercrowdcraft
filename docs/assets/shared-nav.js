@@ -169,11 +169,15 @@ const SHARED_NAV_HTML = `
         <span class="icon">📐</span>
         <span>Plans</span>
     </a>
-    <a href="schedule/baseline.html" class="jsdom-nav-item" data-section="schedule">
-        <span class="icon">📅</span>
-        <span>Schedule</span>
-    </a>
-</nav>
+        <a href="schedule/baseline.html" class="jsdom-nav-item" data-section="schedule">
+            <span class="icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="changelog.html" class="jsdom-nav-item" data-section="changelog">
+            <span class="icon">📋</span>
+            <span>Changelog</span>
+        </a>
+    </nav>
 `;
 
 // Navigation Controller

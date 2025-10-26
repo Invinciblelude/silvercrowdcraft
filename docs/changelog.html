@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Changelog</title>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5}
+    .container {max-width:1000px; margin:0 auto; padding:16px 16px 100px}
+    .back-btn {display:inline-block; background:#303947; color:#e8eef5; padding:10px 20px; border-radius:6px; text-decoration:none; margin-bottom:20px}
+    h1 {color:#9cc1ff; margin-bottom:8px}
+    
+    .filters {display:flex; gap:12px; margin:20px 0; flex-wrap:wrap}
+    .filter-btn {background:#1f2630; border:1px solid #303947; color:#e8eef5; padding:8px 16px; border-radius:6px; cursor:pointer}
+    .filter-btn.active {background:#667eea; border-color:#667eea}
+    
+    .timeline {position:relative; padding-left:40px; margin-top:30px}
+    .timeline::before {content:''; position:absolute; left:12px; top:0; bottom:0; width:2px; background:#667eea}
+    
+    .changelog-entry {position:relative; margin-bottom:24px; background:#12161b; padding:16px; border-radius:8px; border-left:4px solid #667eea}
+    .changelog-entry::before {content:''; position:absolute; left:-44px; top:20px; width:12px; height:12px; border-radius:50%; background:#667eea; border:3px solid #0a0e27}
+    
+    .entry-header {display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px}
+    .entry-task {font-size:14px; color:#667eea; font-weight:700}
+    .entry-date {font-size:12px; color:#8a98ab}
+    .entry-message {font-size:15px; margin:8px 0}
+    .entry-user {font-size:12px; color:#a9b6c6; font-style:italic}
+    
+    .empty-state {text-align:center; padding:60px 20px; color:#8a98ab}
+    .empty-icon {font-size:64px; margin-bottom:16px}
+    
+    .stats {display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin-bottom:24px}
+    .stat-card {background:#12161b; padding:16px; border-radius:8px; border-left:4px solid #667eea}
+    .stat-value {font-size:28px; font-weight:700; color:#9cc1ff}
+    .stat-label {font-size:12px; color:#8a98ab; text-transform:uppercase; margin-top:4px}
+  </style>
+</head>
+<body data-jsdom-page="changelog" data-jsdom-title="📋 Changelog">
+  <div class="container">
+    <a href="project.html" class="back-btn">← Back to Tasks</a>
+    
+    <h1>📋 Project Changelog</h1>
+    <p style="color:#a9b6c6; margin-bottom:24px">Complete history of all task updates, photos, and notes</p>
+    
+    <div class="stats" id="stats"></div>
+    
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterChangelog('all')">All</button>
+      <button class="filter-btn" onclick="filterChangelog('status')">Status Changes</button>
+      <button class="filter-btn" onclick="filterChangelog('photo')">Photos</button>
+      <button class="filter-btn" onclick="filterChangelog('note')">Notes</button>
+      <button class="filter-btn" onclick="filterChangelog('today')">Today</button>
+    </div>
+    
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <script>
+    let changelog = [];
+    let currentFilter = 'all';
+    
+    async function loadChangelog() {
+      // Load changelog from localStorage
+      const stored = localStorage.getItem('projectChangelog');
+      changelog = stored ? JSON.parse(stored) : [];
+      
+      // Calculate stats
+      const today = new Date().toDateString();
+      const todayEntries = changelog.filter(e => new Date(e.date).toDateString() === today);
+      const photoCount = changelog.filter(e => e.message.includes('📷')).length;
+      const noteCount = changelog.filter(e => e.message.includes('📝')).length;
+      
+      document.getElementById('stats').innerHTML = `
+        <div class="stat-card">
+          <div class="stat-value">${changelog.length}</div>
+          <div class="stat-label">Total Changes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">${todayEntries.length}</div>
+          <div class="stat-label">Changes Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">${photoCount}</div>
+          <div class="stat-label">Photos Added</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">${noteCount}</div>
+          <div class="stat-label">Notes Added</div>
+        </div>
+      `;
+      
+      renderChangelog();
+    }
+    
+    function filterChangelog(filter) {
+      currentFilter = filter;
+      
+      // Update active button
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      renderChangelog();
+    }
+    
+    function renderChangelog() {
+      let filtered = changelog;
+      
+      // Apply filters
+      if (currentFilter === 'status') {
+        filtered = changelog.filter(e => e.message.includes('✅') || e.message.includes('⏳') || e.message.includes('🔨'));
+      } else if (currentFilter === 'photo') {
+        filtered = changelog.filter(e => e.message.includes('📷'));
+      } else if (currentFilter === 'note') {
+        filtered = changelog.filter(e => e.message.includes('📝'));
+      } else if (currentFilter === 'today') {
+        const today = new Date().toDateString();
+        filtered = changelog.filter(e => new Date(e.date).toDateString() === today);
+      }
+      
+      const timeline = document.getElementById('timeline');
+      
+      if (filtered.length === 0) {
+        timeline.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">📋</div>
+            <h3>No changes yet</h3>
+            <p>Updates will appear here as you work on tasks</p>
+          </div>
+        `;
+        return;
+      }
+      
+      timeline.innerHTML = filtered.map(entry => {
+        const date = new Date(entry.date);
+        const dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        
+        return `
+          <div class="changelog-entry">
+            <div class="entry-header">
+              <div>
+                <div class="entry-task">${entry.taskId} - ${entry.taskName}</div>
+                <div class="entry-date">${dateStr}</div>
+              </div>
+            </div>
+            <div class="entry-message">${entry.message}</div>
+            <div class="entry-user">by ${entry.user}</div>
+          </div>
+        `;
+      }).join('');
+    }
+    
+    loadChangelog();
+  </script>
+</body>
+</html>
+
