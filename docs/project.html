@@ -61,7 +61,10 @@
     .notes-btn:hover {background:#e0a800}
     .task-photos {display:flex; gap:8px; margin-top:8px; flex-wrap:wrap}
     .task-photo {width:60px; height:60px; object-fit:cover; border-radius:4px; border:2px solid #667eea; cursor:pointer}
-    .task-notes {background:#1f2630; padding:8px; border-radius:4px; margin-top:8px; font-size:12px; color:#a9b6c6}
+    .task-notes {background:#1f2630; padding:12px; border-radius:4px; margin-top:8px; font-size:12px; color:#a9b6c6}
+    .note-entry {margin:8px 0; padding:8px; background:#12161b; border-radius:4px; border-left:3px solid #ffc107}
+    .note-timestamp {font-size:10px; color:#8a98ab; margin-bottom:4px}
+    .note-text {color:#e8eef5; line-height:1.4}
     .task-header {display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px}
     .task-id {font-size:12px; color:#667eea; font-weight:700}
     .task-name {font-size:18px; font-weight:600; margin-top:4px}
@@ -123,11 +126,31 @@
         
         // Load saved task states from localStorage
         const savedStates = JSON.parse(localStorage.getItem('taskStates') || '{}');
-        allTasks = allTasks.map(task => ({
-          ...task,
-          status: savedStates[task.id]?.status || 'pending',
-          notes: savedStates[task.id]?.notes || ''
-        }));
+        allTasks = allTasks.map(task => {
+          const savedState = savedStates[task.id] || {};
+          
+          // Migrate old notes format to new notesList format
+          let notesList = savedState.notesList || [];
+          if (!notesList.length && savedState.notes && savedState.notes.trim()) {
+            // If there's old notes but no notesList, convert it
+            notesList = [{
+              text: savedState.notes,
+              timestamp: 'Migrated from old format'
+            }];
+          }
+          
+          return {
+            ...task,
+            status: savedState.status || 'pending',
+            actual_hours: savedState.actual_hours || 0,
+            completed_by: savedState.completed_by || '',
+            completed_date: savedState.completed_date || null,
+            photos: savedState.photos || [],
+            notes: savedState.notes || '',
+            notesList: notesList,
+            changelog: savedState.changelog || []
+          };
+        });
         
         renderProject();
         renderTasks(allTasks);
@@ -235,7 +258,17 @@
                     ${task.photos.map((photo, i) => `<img src="${photo.url}" class="task-photo" onclick="viewPhoto('${task.id}', ${i})" title="${photo.note || 'Photo ' + (i+1)}" />`).join('')}
                   </div>
                 ` : ''}
-                ${task.notes ? `<div class="task-notes">📝 ${task.notes}</div>` : ''}
+                ${task.notesList && task.notesList.length > 0 ? `
+                  <div class="task-notes">
+                    <div style="font-weight:600; margin-bottom:8px; color:#ffc107;">📝 Notes (${task.notesList.length})</div>
+                    ${task.notesList.map(note => `
+                      <div class="note-entry">
+                        <div class="note-timestamp">${note.timestamp}</div>
+                        <div class="note-text">${note.text}</div>
+                      </div>
+                    `).join('')}
+                  </div>
+                ` : ''}
               </div>
             `).join('')}
           </div>
@@ -323,6 +356,7 @@
           completed_date: task.status === 'complete' ? new Date().toISOString() : null,
           photos: task.photos || [],
           notes: task.notes || '',
+          notesList: task.notesList || [],
           changelog: task.changelog || []
         };
       });
@@ -399,10 +433,23 @@
       const task = allTasks.find(t => t.id === taskId);
       if (!task) return;
       
-      const note = prompt('Add a note for this task:', task.notes || '');
-      if (note !== null) {
-        task.notes = note;
-        addToChangelog(taskId, `📝 Note updated: ${note.substring(0, 50)}${note.length > 50 ? '...' : ''}`);
+      const newNote = prompt('Add a note for this task:');
+      if (newNote && newNote.trim()) {
+        // Initialize notes array if it doesn't exist
+        if (!task.notesList) task.notesList = [];
+        
+        // Add new note with timestamp
+        const timestamp = new Date().toLocaleString();
+        const noteEntry = {
+          text: newNote.trim(),
+          timestamp: timestamp
+        };
+        task.notesList.push(noteEntry);
+        
+        // Keep legacy notes field updated with all notes
+        task.notes = task.notesList.map(n => `[${n.timestamp}] ${n.text}`).join('\n\n');
+        
+        addToChangelog(taskId, `📝 Note added: ${newNote.substring(0, 50)}${newNote.length > 50 ? '...' : ''}`);
         saveTaskStates();
         renderTasks(allTasks);
       }
