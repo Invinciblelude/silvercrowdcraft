@@ -34,7 +34,53 @@
     .checklist label {display:block; padding:8px; margin:4px 0; cursor:pointer; border-radius:4px}
     .checklist label:hover {background:#1a1f2e}
     .checklist input {margin-right:10px}
-  </style>
+  
+    .video-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;}
+    .video-card {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      background: #0f1317;
+      border: 1px solid #1f2630;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+    .video-card:hover {
+      transform: translateY(-2px);
+      border-color: #ff6b6b;
+      background: #1a1f2e;
+    }
+    .video-thumbnail {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      background: #667eea;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .video-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .video-title {
+      font-size: 14px;
+      color: #e8eef5;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .video-duration {
+      font-size: 12px;
+      color: #8a98ab;
+    }
+</style>
 </head>
 <body data-jsdom-page="sop" data-jsdom-title="📋 12-FLOOR-005">
   <div class="container">
