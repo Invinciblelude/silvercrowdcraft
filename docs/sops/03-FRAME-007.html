@@ -210,6 +210,78 @@
         <label><input type="checkbox"> Photos taken for documentation</label>
         <label><input type="checkbox"> Supervisor sign-off received</label>
       </div>
+    
+    
+    <div class="section" style="border-left-color: #FF0000;">
+      <h2>🎥 Search YouTube Tutorials</h2>
+      <p style="color: #a9b6c6; font-size: 14px; margin-bottom: 16px;">
+        Search for video tutorials on YouTube. The search is pre-filled with this task, but you can modify it to find exactly what you need.
+      </p>
+      
+      <div class="youtube-search-container">
+        <form id="youtubeSearchForm" onsubmit="event.preventDefault(); searchYouTube();" style="display: flex; gap: 8px; margin-bottom: 12px;">
+          <input 
+            type="text" 
+            id="youtubeSearchInput" 
+            placeholder="Search YouTube tutorials..."
+            value="frame living areas (great rm, dining, office) tutorial"
+            style="flex: 1; padding: 12px 16px; border: 2px solid #667eea; border-radius: 6px; background: #0f1317; color: #e8eef5; font-size: 14px; outline: none;"
+          >
+          <button 
+            type="submit"
+            style="padding: 12px 24px; background: #FF0000; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.2s;"
+            onmouseover="this.style.background='#CC0000'"
+            onmouseout="this.style.background='#FF0000'"
+          >
+            🔍 Search
+          </button>
+        </form>
+        
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;">
+          <button onclick="quickSearch('how to')" class="quick-search-btn">How To</button>
+          <button onclick="quickSearch('tutorial')" class="quick-search-btn">Tutorial</button>
+          <button onclick="quickSearch('step by step')" class="quick-search-btn">Step by Step</button>
+          <button onclick="quickSearch('for beginners')" class="quick-search-btn">For Beginners</button>
+          <button onclick="quickSearch('tips and tricks')" class="quick-search-btn">Tips & Tricks</button>
+        </div>
+        
+        <p style="font-size: 12px; color: #8a98ab; margin-top: 8px;">
+          💡 <strong>Tip:</strong> Add terms like "how to", "tutorial", "step by step", or specific tool names for better results.
+        </p>
+      </div>
+      
+      <script>
+        function searchYouTube() {
+          const searchTerm = document.getElementById('youtubeSearchInput').value;
+          const url = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(searchTerm);
+          window.open(url, '_blank');
+        }
+        
+        function quickSearch(modifier) {
+          const input = document.getElementById('youtubeSearchInput');
+          const currentValue = input.value.replace(/ (how to|tutorial|step by step|for beginners|tips and tricks)$/i, '');
+          input.value = currentValue + ' ' + modifier;
+        }
+      </script>
+      
+      <style>
+        .quick-search-btn {
+          padding: 6px 12px;
+          background: #303947;
+          color: #e8eef5;
+          border: 1px solid #667eea;
+          border-radius: 4px;
+          font-size: 12px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .quick-search-btn:hover {
+          background: #667eea;
+          transform: translateY(-1px);
+        }
+      </style>
+    </div>
+
     </div>
     
     <div class="section">

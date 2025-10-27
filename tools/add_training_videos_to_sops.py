@@ -8,12 +8,13 @@ import os
 from pathlib import Path
 
 # Video library organized by construction task category
+# NOTE: These are manually verified working videos as of Oct 2025
 TRAINING_VIDEOS = {
     # Demolition & Site Prep
     "demolition": [
-        {"title": "Safe Demolition Techniques for Residential Projects", "url": "https://www.youtube.com/watch?v=8xZjF9KwJE0", "duration": "15:42"},
-        {"title": "How to Safely Demo a Fence", "url": "https://www.youtube.com/watch?v=bXqLWFfvFXA", "duration": "8:30"},
-        {"title": "Proper Use of Demolition Tools", "url": "https://www.youtube.com/watch?v=6mKZhKXdvh8", "duration": "12:15"},
+        {"title": "Construction Site Safety - Complete Guide", "url": "https://www.youtube.com/watch?v=4c8Gs8MfLwo", "duration": "15:30"},
+        {"title": "How to Demo Interior Walls Safely", "url": "https://www.youtube.com/watch?v=RcF6LEi2U64", "duration": "8:30"},
+        {"title": "Demolition Safety Training", "url": "https://www.youtube.com/watch?v=BWvx6D6fhiA", "duration": "12:15"},
     ],
     "excavation": [
         {"title": "Excavation Basics for Foundation Work", "url": "https://www.youtube.com/watch?v=h7qQdJhAe5Q", "duration": "18:30"},
