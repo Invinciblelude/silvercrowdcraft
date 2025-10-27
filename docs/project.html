@@ -59,8 +59,9 @@
     .photo-btn:hover {background:#5568d3}
     .notes-btn {background:#ffc107; color:#000; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600}
     .notes-btn:hover {background:#e0a800}
-    .task-photos {display:flex; gap:8px; margin-top:8px; flex-wrap:wrap}
-    .task-photo {width:60px; height:60px; object-fit:cover; border-radius:4px; border:2px solid #667eea; cursor:pointer}
+    .task-photos {display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; padding:12px; background:#0f1317; border-radius:6px; border:1px solid #303947}
+    .task-photo {width:100px; height:100px; object-fit:cover; border-radius:6px; border:2px solid #667eea; cursor:pointer; transition:transform 0.2s, border-color 0.2s}
+    .task-photo:hover {transform:scale(1.05); border-color:#9cc1ff}
     .task-notes {background:#1f2630; padding:12px; border-radius:4px; margin-top:8px; font-size:12px; color:#a9b6c6}
     .note-entry {margin:8px 0; padding:8px; background:#12161b; border-radius:4px; border-left:3px solid #ffc107}
     .note-timestamp {font-size:10px; color:#8a98ab; margin-bottom:4px}
@@ -250,7 +251,7 @@
                     <option value="complete" ${task.status === 'complete' ? 'selected' : ''}>✅ Complete</option>
                   </select>
                   ${task.status !== 'complete' ? `<button class="complete-btn" onclick="quickComplete('${task.id}'); event.stopPropagation()">✅ Complete</button>` : ''}
-                  <button class="photo-btn" onclick="addPhoto('${task.id}'); event.stopPropagation()">📷 Photo</button>
+                  <button class="photo-btn" onclick="addPhoto('${task.id}'); event.stopPropagation()">📷 Photo ${task.photos && task.photos.length > 0 ? `(${task.photos.length})` : ''}</button>
                   <button class="notes-btn" onclick="addNote('${task.id}'); event.stopPropagation()">📝 Note</button>
                 </div>
                 ${task.photos && task.photos.length > 0 ? `
@@ -394,6 +395,10 @@
           addToChangelog(taskId, `📷 Photo added: ${photoNote || file.name}`);
           saveTaskStates();
           renderTasks(allTasks);
+          
+          // Show confirmation
+          alert(`✅ Photo uploaded successfully!\n\nThe photo will appear under the task.`);
+          console.log('Photo added to task:', taskId, 'Total photos:', task.photos.length);
         };
         reader.readAsDataURL(file);
       };
