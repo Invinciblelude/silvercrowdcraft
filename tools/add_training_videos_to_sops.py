@@ -350,9 +350,11 @@ def main():
         video_html = generate_video_section_html(videos)
         
         # Insert before QC checklist section
-        qc_pos = content.find('<div class="section">\n      <h2>✅ Quality Control Checklist</h2>')
+        qc_pos = content.find('<div class="section">\n      <h2>✅ Quality Control Checks</h2>')
         if qc_pos == -1:
-            # Try alternate format
+            # Try alternate formats
+            qc_pos = content.find('<div class="section">\n      <h2>✅ Quality Control Checklist</h2>')
+        if qc_pos == -1:
             qc_pos = content.find('<div class="section">\n      <h2>✅ QC Checklist</h2>')
         
         if qc_pos != -1:
