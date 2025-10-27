@@ -382,6 +382,41 @@
       saveChangelog();
     }
     
+    // Compress image before saving
+    function compressImage(file, maxWidth = 800, quality = 0.7) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = new Image();
+          img.onload = function() {
+            const canvas = document.createElement('canvas');
+            let width = img.width;
+            let height = img.height;
+            
+            // Resize if too large
+            if (width > maxWidth) {
+              height = (height * maxWidth) / width;
+              width = maxWidth;
+            }
+            
+            canvas.width = width;
+            canvas.height = height;
+            
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+            
+            // Convert to compressed JPEG
+            const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+            resolve(compressedDataUrl);
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+    
     // Add photo to task
     function addPhoto(taskId) {
       const task = allTasks.find(t => t.id === taskId);
@@ -392,18 +427,25 @@
       input.accept = 'image/*';
       input.capture = 'camera'; // Use camera on mobile
       
-      input.onchange = function(e) {
+      input.onchange = async function(e) {
         const file = e.target.files[0];
         if (!file) return;
         
-        const reader = new FileReader();
-        reader.onload = function(event) {
+        // Show loading message
+        const loadingAlert = alert('📸 Processing image... Please wait.');
+        
+        try {
+          // Compress the image
+          const compressedDataUrl = await compressImage(file, 800, 0.7);
           const photoNote = prompt('Add a note for this photo (optional):');
           
           if (!task.photos) task.photos = [];
           
+          const originalSize = file.size;
+          const compressedSize = Math.round((compressedDataUrl.length * 3) / 4); // Estimate base64 size
+          
           const photoData = {
-            url: event.target.result,
+            url: compressedDataUrl,
             note: photoNote,
             date: new Date().toISOString(),
             filename: file.name
@@ -411,12 +453,13 @@
           
           task.photos.push(photoData);
           
-          console.log('📷 Photo added:', {
+          console.log('📷 Photo added (compressed):', {
             taskId: taskId,
             filename: file.name,
-            size: file.size,
-            totalPhotos: task.photos.length,
-            dataUrlLength: event.target.result.length
+            originalSize: (originalSize / 1024).toFixed(2) + ' KB',
+            compressedSize: (compressedSize / 1024).toFixed(2) + ' KB',
+            savings: ((1 - compressedSize/originalSize) * 100).toFixed(1) + '%',
+            totalPhotos: task.photos.length
           });
           
           addToChangelog(taskId, `📷 Photo added: ${photoNote || file.name}`);
@@ -426,7 +469,7 @@
             console.log('✅ Task states saved to localStorage');
           } catch (e) {
             console.error('❌ Error saving to localStorage:', e);
-            alert('⚠️ Error saving photo: ' + e.message + '\n\nPhoto may be too large. Try a smaller image.');
+            alert('⚠️ Storage full! Cannot save more photos.\n\nTip: You have too many photos saved. Consider:\n1. Completing and archiving old tasks\n2. Downloading photos externally\n3. Clearing old task data');
             task.photos.pop(); // Remove the photo that failed to save
             return;
           }
@@ -434,9 +477,12 @@
           renderTasks(allTasks);
           
           // Show confirmation
-          alert(`✅ Photo uploaded successfully!\n\nFile: ${file.name}\nSize: ${(file.size/1024).toFixed(0)}KB\nTotal photos: ${task.photos.length}`);
-        };
-        reader.readAsDataURL(file);
+          alert(`✅ Photo uploaded!\n\nOriginal: ${(originalSize/1024).toFixed(0)}KB\nCompressed: ${(compressedSize/1024).toFixed(0)}KB\nSaved ${((1 - compressedSize/originalSize) * 100).toFixed(0)}% space!\n\nTotal photos: ${task.photos.length}`);
+          
+        } catch (error) {
+          console.error('Error processing image:', error);
+          alert('❌ Error processing image: ' + error.message);
+        }
       };
       
       input.click();
