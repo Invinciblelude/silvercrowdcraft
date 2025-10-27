@@ -382,6 +382,25 @@
       saveChangelog();
     }
     
+    // Check localStorage usage
+    function getStorageInfo() {
+      try {
+        const used = JSON.stringify(localStorage).length;
+        const limit = 5 * 1024 * 1024; // ~5MB typical limit
+        return {
+          used: used,
+          usedMB: (used / 1024 / 1024).toFixed(2),
+          limit: limit,
+          limitMB: (limit / 1024 / 1024).toFixed(2),
+          percentUsed: ((used / limit) * 100).toFixed(1),
+          available: limit - used,
+          availableMB: ((limit - used) / 1024 / 1024).toFixed(2)
+        };
+      } catch (e) {
+        return null;
+      }
+    }
+    
     // Compress image before saving
     function compressImage(file, maxWidth = 800, quality = 0.7) {
       return new Promise((resolve, reject) => {
@@ -431,8 +450,8 @@
         const file = e.target.files[0];
         if (!file) return;
         
-        // Show loading message
-        const loadingAlert = alert('📸 Processing image... Please wait.');
+        // Don't block with alert - just log
+        console.log('📸 Processing image...');
         
         try {
           // Compress the image
@@ -464,12 +483,21 @@
           
           addToChangelog(taskId, `📷 Photo added: ${photoNote || file.name}`);
           
+          // Check storage before saving
+          const storageInfo = getStorageInfo();
+          console.log('💾 Storage info:', storageInfo);
+          
+          if (storageInfo && storageInfo.percentUsed > 90) {
+            alert(`⚠️ Storage almost full (${storageInfo.percentUsed}%)!\n\nUsed: ${storageInfo.usedMB}MB / ${storageInfo.limitMB}MB\n\nWarning: You may not be able to add many more photos. Consider clearing old data.`);
+          }
+          
           try {
             saveTaskStates();
             console.log('✅ Task states saved to localStorage');
           } catch (e) {
             console.error('❌ Error saving to localStorage:', e);
-            alert('⚠️ Storage full! Cannot save more photos.\n\nTip: You have too many photos saved. Consider:\n1. Completing and archiving old tasks\n2. Downloading photos externally\n3. Clearing old task data');
+            const info = getStorageInfo();
+            alert(`❌ Storage full! Cannot save photo.\n\nStorage used: ${info ? info.usedMB + 'MB' : 'Unknown'}\n\nTo fix:\n1. Open browser settings\n2. Clear site data for silvercrowdcraft.com\n3. Or use browser console: localStorage.clear()\n\nNote: This will clear all saved task data and photos.`);
             task.photos.pop(); // Remove the photo that failed to save
             return;
           }
