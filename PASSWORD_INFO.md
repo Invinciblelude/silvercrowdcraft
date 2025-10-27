@@ -1,5 +1,7 @@
 # 🔒 Site Password Protection
 
+⚠️ **IMPORTANT:** Keep this file private! Do not share publicly or commit to public repositories.
+
 ## Current Password
 
 **Password:** `SilverCrowd2024`
