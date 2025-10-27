@@ -61,43 +61,7 @@
         "Site & Civil"
       ],
       "task_id": 1,
-      "blueprint_pages": [
-        {
-          "page_num": 2,
-          "sheet_num": "C31401",
-          "title": "E R I C K N U T S O N"
-        },
-        {
-          "page_num": 3,
-          "sheet_num": "C31401",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 4,
-          "sheet_num": "C31401",
-          "title": "VITREOUS CHINA"
-        },
-        {
-          "page_num": 5,
-          "sheet_num": "C31401",
-          "title": "E DRIVEWAY"
-        },
-        {
-          "page_num": 6,
-          "sheet_num": "C31401",
-          "title": "ADOBE MASONRY FIREPLACE"
-        },
-        {
-          "page_num": 11,
-          "sheet_num": "C31401",
-          "title": "E ADOBE MASONRY FIREPLACE"
-        },
-        {
-          "page_num": 12,
-          "sheet_num": "C31401",
-          "title": "N TIMS OUTDOOR KITCHEN-"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "SITE-002",
@@ -148,48 +112,7 @@
         "Foundation"
       ],
       "task_id": 2,
-      "blueprint_pages": [
-        {
-          "page_num": 2,
-          "sheet_num": "C31401",
-          "title": "E R I C K N U T S O N"
-        },
-        {
-          "page_num": 3,
-          "sheet_num": "C31401",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 4,
-          "sheet_num": "C31401",
-          "title": "VITREOUS CHINA"
-        },
-        {
-          "page_num": 5,
-          "sheet_num": "C31401",
-          "title": "E DRIVEWAY"
-        },
-        {
-          "page_num": 6,
-          "sheet_num": "C31401",
-          "title": "ADOBE MASONRY FIREPLACE"
-        },
-        {
-          "page_num": 11,
-          "sheet_num": "C31401",
-          "title": "E ADOBE MASONRY FIREPLACE"
-        },
-        {
-          "page_num": 12,
-          "sheet_num": "C31401",
-          "title": "N TIMS OUTDOOR KITCHEN-"
-        },
-        {
-          "page_num": 1,
-          "sheet_num": "A0.01",
-          "title": "PROJECT DIRECTORY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "FOUND-001",
@@ -249,13 +172,7 @@
         "Foundation"
       ],
       "task_id": 3,
-      "blueprint_pages": [
-        {
-          "page_num": 1,
-          "sheet_num": "A0.01",
-          "title": "PROJECT DIRECTORY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "FOUND-002",
@@ -309,13 +226,7 @@
         "Foundation"
       ],
       "task_id": 4,
-      "blueprint_pages": [
-        {
-          "page_num": 1,
-          "sheet_num": "A0.01",
-          "title": "PROJECT DIRECTORY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "FOUND-003",
@@ -374,13 +285,7 @@
         "Structural"
       ],
       "task_id": 5,
-      "blueprint_pages": [
-        {
-          "page_num": 1,
-          "sheet_num": "A0.01",
-          "title": "PROJECT DIRECTORY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "FRAME-001",
@@ -436,13 +341,7 @@
         "Structural"
       ],
       "task_id": 6,
-      "blueprint_pages": [
-        {
-          "page_num": 1,
-          "sheet_num": "A0.01",
-          "title": "PROJECT DIRECTORY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "FRAME-002",
@@ -505,23 +404,7 @@
         "Architectural"
       ],
       "task_id": 7,
-      "blueprint_pages": [
-        {
-          "page_num": 7,
-          "sheet_num": "A1.00",
-          "title": "N GARAGE"
-        },
-        {
-          "page_num": 8,
-          "sheet_num": "A1.01",
-          "title": "VITREOUS CHINA"
-        },
-        {
-          "page_num": 10,
-          "sheet_num": "A1.03",
-          "title": "VITREOUS CHINA"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "FRAME-003",
@@ -590,23 +473,7 @@
         "Structural"
       ],
       "task_id": 8,
-      "blueprint_pages": [
-        {
-          "page_num": 7,
-          "sheet_num": "A1.00",
-          "title": "N GARAGE"
-        },
-        {
-          "page_num": 8,
-          "sheet_num": "A1.01",
-          "title": "VITREOUS CHINA"
-        },
-        {
-          "page_num": 10,
-          "sheet_num": "A1.03",
-          "title": "VITREOUS CHINA"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "FRAME-004",
@@ -669,13 +536,7 @@
         "Structural"
       ],
       "task_id": 9,
-      "blueprint_pages": [
-        {
-          "page_num": 9,
-          "sheet_num": "A1.02",
-          "title": "E DRIVEWAY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "ROOF-001",
@@ -727,13 +588,7 @@
         "Roofing"
       ],
       "task_id": 10,
-      "blueprint_pages": [
-        {
-          "page_num": 9,
-          "sheet_num": "A1.02",
-          "title": "E DRIVEWAY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "ROOF-002",
@@ -789,13 +644,7 @@
         "Details"
       ],
       "task_id": 11,
-      "blueprint_pages": [
-        {
-          "page_num": 9,
-          "sheet_num": "A1.02",
-          "title": "E DRIVEWAY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "ROOF-003",
@@ -853,13 +702,7 @@
         "Roofing"
       ],
       "task_id": 12,
-      "blueprint_pages": [
-        {
-          "page_num": 9,
-          "sheet_num": "A1.02",
-          "title": "E DRIVEWAY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "ELEC-001",
@@ -1038,73 +881,7 @@
         "Foundation"
       ],
       "task_id": 15,
-      "blueprint_pages": [
-        {
-          "page_num": 13,
-          "sheet_num": "PAGE-13",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 14,
-          "sheet_num": "PAGE-14",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 15,
-          "sheet_num": "PAGE-15",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 16,
-          "sheet_num": "PAGE-16",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 17,
-          "sheet_num": "PAGE-17",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 18,
-          "sheet_num": "PAGE-18",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 19,
-          "sheet_num": "PAGE-19",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 20,
-          "sheet_num": "PAGE-20",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 21,
-          "sheet_num": "PAGE-21",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 22,
-          "sheet_num": "PAGE-22",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 23,
-          "sheet_num": "PAGE-23",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 24,
-          "sheet_num": "PAGE-24",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 1,
-          "sheet_num": "A0.01",
-          "title": "PROJECT DIRECTORY"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "PLUMB-002",
@@ -1163,68 +940,7 @@
         "Plumbing"
       ],
       "task_id": 16,
-      "blueprint_pages": [
-        {
-          "page_num": 13,
-          "sheet_num": "PAGE-13",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 14,
-          "sheet_num": "PAGE-14",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 15,
-          "sheet_num": "PAGE-15",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 16,
-          "sheet_num": "PAGE-16",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 17,
-          "sheet_num": "PAGE-17",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 18,
-          "sheet_num": "PAGE-18",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 19,
-          "sheet_num": "PAGE-19",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 20,
-          "sheet_num": "PAGE-20",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 21,
-          "sheet_num": "PAGE-21",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 22,
-          "sheet_num": "PAGE-22",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 23,
-          "sheet_num": "PAGE-23",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 24,
-          "sheet_num": "PAGE-24",
-          "title": "Untitled"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "PLUMB-003",
@@ -1279,68 +995,7 @@
         "Plumbing"
       ],
       "task_id": 17,
-      "blueprint_pages": [
-        {
-          "page_num": 13,
-          "sheet_num": "PAGE-13",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 14,
-          "sheet_num": "PAGE-14",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 15,
-          "sheet_num": "PAGE-15",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 16,
-          "sheet_num": "PAGE-16",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 17,
-          "sheet_num": "PAGE-17",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 18,
-          "sheet_num": "PAGE-18",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 19,
-          "sheet_num": "PAGE-19",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 20,
-          "sheet_num": "PAGE-20",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 21,
-          "sheet_num": "PAGE-21",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 22,
-          "sheet_num": "PAGE-22",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 23,
-          "sheet_num": "PAGE-23",
-          "title": "Untitled"
-        },
-        {
-          "page_num": 24,
-          "sheet_num": "PAGE-24",
-          "title": "Untitled"
-        }
-      ]
+      "blueprint_pages": []
     },
     {
       "id": "HVAC-001",
