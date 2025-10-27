@@ -199,6 +199,12 @@
     }
     
     function renderTasks(tasks) {
+      console.log('🎨 Rendering tasks:', {
+        totalTasks: tasks.length,
+        tasksWithPhotos: tasks.filter(t => t.photos && t.photos.length > 0).length,
+        tasksWithNotes: tasks.filter(t => t.notesList && t.notesList.length > 0).length
+      });
+      
       // Group tasks by phase (not trade, since real data uses "phase")
       const tasksByPhase = {};
       tasks.forEach(task => {
@@ -257,7 +263,8 @@
                 </div>
                 ${task.photos && task.photos.length > 0 ? `
                   <div class="task-photos">
-                    ${task.photos.map((photo, i) => `<img src="${photo.url}" class="task-photo" onclick="viewPhoto('${task.id}', ${i})" title="${photo.note || 'Photo ' + (i+1)}" />`).join('')}
+                    <div style="width:100%; margin-bottom:8px; font-size:12px; color:#8a98ab;">📷 ${task.photos.length} photo${task.photos.length > 1 ? 's' : ''}</div>
+                    ${task.photos.map((photo, i) => `<img src="${photo.url}" class="task-photo" onclick="viewPhoto('${task.id}', ${i})" title="${photo.note || 'Photo ' + (i+1)}" onerror="console.error('Failed to load photo:', '${task.id}', ${i})" />`).join('')}
                   </div>
                 ` : ''}
                 ${task.notesList && task.notesList.length > 0 ? `
@@ -362,8 +369,16 @@
           changelog: task.changelog || []
         };
       });
-      localStorage.setItem('taskStates', JSON.stringify(states));
-      console.log('✅ Task states saved');
+      
+      const statesJson = JSON.stringify(states);
+      console.log('💾 Saving task states:', {
+        totalTasks: Object.keys(states).length,
+        dataSize: (statesJson.length / 1024).toFixed(2) + ' KB',
+        tasksWithPhotos: Object.values(states).filter(s => s.photos && s.photos.length > 0).length
+      });
+      
+      localStorage.setItem('taskStates', statesJson);
+      console.log('✅ Task states saved to localStorage');
       saveChangelog();
     }
     
@@ -386,20 +401,40 @@
           const photoNote = prompt('Add a note for this photo (optional):');
           
           if (!task.photos) task.photos = [];
-          task.photos.push({
+          
+          const photoData = {
             url: event.target.result,
             note: photoNote,
             date: new Date().toISOString(),
             filename: file.name
+          };
+          
+          task.photos.push(photoData);
+          
+          console.log('📷 Photo added:', {
+            taskId: taskId,
+            filename: file.name,
+            size: file.size,
+            totalPhotos: task.photos.length,
+            dataUrlLength: event.target.result.length
           });
           
           addToChangelog(taskId, `📷 Photo added: ${photoNote || file.name}`);
-          saveTaskStates();
+          
+          try {
+            saveTaskStates();
+            console.log('✅ Task states saved to localStorage');
+          } catch (e) {
+            console.error('❌ Error saving to localStorage:', e);
+            alert('⚠️ Error saving photo: ' + e.message + '\n\nPhoto may be too large. Try a smaller image.');
+            task.photos.pop(); // Remove the photo that failed to save
+            return;
+          }
+          
           renderTasks(allTasks);
           
           // Show confirmation
-          alert(`✅ Photo uploaded successfully!\n\nThe photo will appear under the task.`);
-          console.log('Photo added to task:', taskId, 'Total photos:', task.photos.length);
+          alert(`✅ Photo uploaded successfully!\n\nFile: ${file.name}\nSize: ${(file.size/1024).toFixed(0)}KB\nTotal photos: ${task.photos.length}`);
         };
         reader.readAsDataURL(file);
       };
