@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logout</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+      color: #e8eef5;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #12161b;
+      border: 2px solid #667eea;
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+    }
+    h1 {
+      color: #9cc1ff;
+      margin-top: 0;
+    }
+    .icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+    .message {
+      color: #8a98ab;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      margin: 10px;
+      transition: transform 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    .info {
+      background: rgba(102, 126, 234, 0.1);
+      border: 1px solid #667eea;
+      border-radius: 6px;
+      padding: 16px;
+      margin-top: 20px;
+      font-size: 14px;
+      text-align: left;
+    }
+    .code {
+      background: #0f1317;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: #ffc107;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🔓</div>
+    <h1>Logged Out Successfully</h1>
+    <div class="message">
+      Your authentication has been cleared. You will need to enter the password again to access the site.
+    </div>
+    
+    <a href="index.html" class="btn">🔒 Go to Login Screen</a>
+    
+    <div class="info">
+      <strong>Note:</strong> Opening the site in a new incognito/private window will also show the password screen without needing to logout.
+      <br><br>
+      <strong>Password:</strong> <span class="code">SilverCrowd2024</span>
+    </div>
+  </div>
+
+  <script>
+    // Clear authentication when page loads
+    localStorage.removeItem('silvercrowdcraft_authenticated');
+    console.log('🔓 Logged out - authentication cleared');
+  </script>
+</body>
+</html>
+

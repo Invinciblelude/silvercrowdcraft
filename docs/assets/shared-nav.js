@@ -151,7 +151,10 @@ const SHARED_NAV_HTML = `
 </style>
 <div class="jsdom-header">
     <h1 id="jsdom-page-title"></h1>
-    <div id="jsdom-online-status" class="status-badge"></div>
+    <div style="display:flex; gap:12px; align-items:center;">
+        <div id="jsdom-online-status" class="status-badge"></div>
+        <a href="logout.html" style="color:white; text-decoration:none; padding:8px 16px; background:rgba(255,255,255,0.2); border-radius:6px; font-size:14px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">🔓 Logout</a>
+    </div>
 </div>
 <div class="jsdom-fab" onclick="JSDOMNav.startProblemLog()">
     🎤
