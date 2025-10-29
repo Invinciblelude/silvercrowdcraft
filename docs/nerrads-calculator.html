@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nerrads Project - Financial Calculator</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1400px; margin:0 auto; padding:20px}
+    
+    h1 {color:#9cc1ff; margin-bottom:8px}
+    h2 {color:#9cc1ff; font-size:24px; margin:32px 0 16px; padding-bottom:8px; border-bottom:2px solid #1f2630}
+    .subtitle {color:#8a98ab; margin-bottom:32px; font-size:18px}
+    
+    .calc-grid {display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:32px}
+    
+    .calc-section {background:#12161b; border:2px solid #1f2630; border-radius:12px; padding:24px}
+    .calc-section h3 {color:#9cc1ff; margin:0 0 20px; font-size:20px}
+    
+    .input-group {margin-bottom:20px}
+    .input-label {display:block; color:#a9b6c6; font-size:14px; margin-bottom:8px; font-weight:600}
+    .input-field {
+      width:100%;
+      padding:12px;
+      background:#1f2630;
+      border:2px solid #2a3040;
+      border-radius:8px;
+      color:#e8eef5;
+      font-size:16px;
+      font-family:inherit;
+    }
+    .input-field:focus {outline:none; border-color:#667eea}
+    
+    .result-box {
+      background:#1f2630;
+      padding:20px;
+      border-radius:8px;
+      margin-bottom:16px;
+      border-left:4px solid #667eea;
+    }
+    .result-label {color:#8a98ab; font-size:14px; margin-bottom:4px}
+    .result-value {color:#4ade80; font-size:28px; font-weight:700}
+    .result-value.negative {color:#fb7185}
+    .result-value.warning {color:#fb923c}
+    
+    .btn {
+      width:100%;
+      padding:14px;
+      background:#667eea;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      transition:background 0.2s;
+    }
+    .btn:hover {background:#5568d3}
+    
+    .scenario-tabs {display:flex; gap:12px; margin-bottom:24px}
+    .tab {
+      flex:1;
+      padding:12px;
+      background:#1f2630;
+      border:2px solid #2a3040;
+      border-radius:8px;
+      text-align:center;
+      cursor:pointer;
+      transition:all 0.2s;
+      font-weight:600;
+    }
+    .tab:hover {border-color:#667eea}
+    .tab.active {background:#667eea; border-color:#667eea; color:#fff}
+    
+    .comparison-table {width:100%; border-collapse:collapse; margin-top:20px}
+    .comparison-table th {background:#1f2630; padding:12px; text-align:left; color:#9cc1ff; border-bottom:2px solid #667eea}
+    .comparison-table td {padding:12px; border-bottom:1px solid #2a3040}
+    .comparison-table tr:hover {background:#1f2630}
+    
+    @media (max-width: 1024px) {
+      .calc-grid {grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body data-jsdom-page="nerrads-calc" data-jsdom-title="🧮 Financial Calculator">
+  
+  <div class="container">
+    <h1>🧮 Nerradscali Subdivision - Financial Calculator</h1>
+    <p class="subtitle">Interactive profit and ROI calculator - adjust any numbers to see impact</p>
+    
+    <!-- Scenario Tabs -->
+    <div class="scenario-tabs">
+      <div class="tab active" onclick="loadScenario('lots')">Lot Sales Only</div>
+      <div class="tab" onclick="loadScenario('build')">Build All Homes</div>
+      <div class="tab" onclick="loadScenario('hybrid')">Hybrid Strategy</div>
+      <div class="tab" onclick="loadScenario('custom')">Custom</div>
+    </div>
+    
+    <div class="calc-grid">
+      
+      <!-- LEFT: INPUTS -->
+      <div class="calc-section">
+        <h3>📊 Input Variables</h3>
+        
+        <div class="input-group">
+          <label class="input-label">Development Costs ($)</label>
+          <input type="number" id="devCost" class="input-field" value="679389" onchange="calculate()">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">Number of Lots</label>
+          <input type="number" id="numLots" class="input-field" value="8" onchange="calculate()">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">Average Lot Sale Price ($)</label>
+          <input type="number" id="lotPrice" class="input-field" value="151431" onchange="calculate()">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">Construction Cost per Home ($) - Optional</label>
+          <input type="number" id="buildCost" class="input-field" value="0" onchange="calculate()">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">Average Home Sale Price ($) - Optional</label>
+          <input type="number" id="homePrice" class="input-field" value="0" onchange="calculate()">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">Financing Interest Rate (%)</label>
+          <input type="number" id="interestRate" class="input-field" value="10" step="0.5" onchange="calculate()">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">Project Timeline (months)</label>
+          <input type="number" id="timeline" class="input-field" value="15" onchange="calculate()">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">Sales Commission (%)</label>
+          <input type="number" id="commission" class="input-field" value="4" step="0.5" onchange="calculate()">
+        </div>
+        
+        <div class="input-group">
+          <label class="input-label">Soft Costs & Contingency ($)</label>
+          <input type="number" id="softCosts" class="input-field" value="100000" onchange="calculate()">
+        </div>
+        
+        <button class="btn" onclick="calculate()">🔄 Recalculate</button>
+      </div>
+      
+      <!-- RIGHT: RESULTS -->
+      <div class="calc-section">
+        <h3>💰 Financial Results</h3>
+        
+        <div class="result-box">
+          <div class="result-label">Total Investment</div>
+          <div class="result-value" id="totalInvestment">$0</div>
+        </div>
+        
+        <div class="result-box">
+          <div class="result-label">Total Revenue</div>
+          <div class="result-value" id="totalRevenue">$0</div>
+        </div>
+        
+        <div class="result-box">
+          <div class="result-label">Total Costs</div>
+          <div class="result-value negative" id="totalCosts">$0</div>
+        </div>
+        
+        <div class="result-box" style="border-left-color:#4ade80; background:#1a2e1f">
+          <div class="result-label">NET PROFIT</div>
+          <div class="result-value" id="netProfit">$0</div>
+        </div>
+        
+        <div class="result-box">
+          <div class="result-label">Return on Investment (ROI)</div>
+          <div class="result-value" id="roi">0%</div>
+        </div>
+        
+        <div class="result-box">
+          <div class="result-label">Profit Per Lot/Unit</div>
+          <div class="result-value" id="profitPerUnit">$0</div>
+        </div>
+        
+        <div class="result-box">
+          <div class="result-label">Internal Rate of Return (IRR)</div>
+          <div class="result-value" id="irr">0%</div>
+        </div>
+        
+        <div class="result-box">
+          <div class="result-label">Profit Margin</div>
+          <div class="result-value" id="margin">0%</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- COMPARISON TABLE -->
+    <div class="calc-section">
+      <h3>📈 Scenario Comparison</h3>
+      <table class="comparison-table" id="comparisonTable">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Investment</th>
+            <th>Revenue</th>
+            <th>Profit</th>
+            <th>ROI</th>
+            <th>Timeline</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Lot Sales (Conservative)</strong></td>
+            <td>$929,000</td>
+            <td>$1,211,451</td>
+            <td>$282,451</td>
+            <td>30%</td>
+            <td>15 months</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td><strong>Lot Sales (Optimistic)</strong></td>
+            <td>$850,000</td>
+            <td>$1,420,000</td>
+            <td>$570,000</td>
+            <td>67%</td>
+            <td>12 months</td>
+            <td>Low-Med</td>
+          </tr>
+          <tr>
+            <td><strong>Build All (Conservative)</strong></td>
+            <td>$5,506,124</td>
+            <td>$6,730,000</td>
+            <td>$1,223,876</td>
+            <td>22%</td>
+            <td>30 months</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td><strong>Build All (Optimistic)</strong></td>
+            <td>$5,200,000</td>
+            <td>$7,200,000</td>
+            <td>$2,000,000</td>
+            <td>38%</td>
+            <td>28 months</td>
+            <td>Medium-High</td>
+          </tr>
+          <tr>
+            <td><strong>Hybrid (Sell 3, Build 5)</strong></td>
+            <td>$3,264,389</td>
+            <td>$4,757,324</td>
+            <td>$1,492,935</td>
+            <td>46%</td>
+            <td>26 months</td>
+            <td>Medium</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- COST BREAKDOWN -->
+    <h2>💸 Detailed Cost Breakdown</h2>
+    <div class="calc-grid">
+      <div class="calc-section">
+        <h3>Development Costs (From Engineering)</h3>
+        <table class="comparison-table">
+          <tr><td>Off-Site Improvements</td><td>$102,166</td></tr>
+          <tr><td>On-Site Grading & Paving</td><td>$182,039</td></tr>
+          <tr><td>Storm Drain System</td><td>$76,204</td></tr>
+          <tr><td>Sanitary Sewer</td><td>$51,990</td></tr>
+          <tr><td>Water System</td><td>$42,820</td></tr>
+          <tr><td>Fencing & Landscaping</td><td>$148,880</td></tr>
+          <tr><td>Contingency (15%)</td><td>$75,290</td></tr>
+          <tr style="background:#1f2630"><td><strong>TOTAL</strong></td><td><strong>$679,389</strong></td></tr>
+        </table>
+      </div>
+      
+      <div class="calc-section">
+        <h3>Cost Reduction Opportunities</h3>
+        <table class="comparison-table">
+          <tr><td>Competitive Bidding (10-15%)</td><td class="result-value" style="font-size:16px">-$68K-102K</td></tr>
+          <tr><td>Landscaping Reduction</td><td class="result-value" style="font-size:16px">-$70K-109K</td></tr>
+          <tr><td>Contingency to 10%</td><td class="result-value" style="font-size:16px">-$30K</td></tr>
+          <tr><td>Grading Optimization</td><td class="result-value" style="font-size:16px">-$20K-40K</td></tr>
+          <tr><td>Storm Drain Optimization</td><td class="result-value" style="font-size:16px">-$10K-20K</td></tr>
+          <tr style="background:#1f2630"><td><strong>POTENTIAL SAVINGS</strong></td><td class="result-value" style="font-size:16px"><strong>-$198K-301K</strong></td></tr>
+          <tr style="background:#1a2e1f"><td><strong>OPTIMIZED COST</strong></td><td class="result-value" style="font-size:16px"><strong>$378K-481K</strong></td></tr>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+  
+  <script>
+    // Load preset scenarios
+    function loadScenario(type) {
+      // Update tab styling
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      if (type === 'lots') {
+        // Conservative lot sales
+        document.getElementById('devCost').value = 679389;
+        document.getElementById('numLots').value = 8;
+        document.getElementById('lotPrice').value = 151431;
+        document.getElementById('buildCost').value = 0;
+        document.getElementById('homePrice').value = 0;
+        document.getElementById('interestRate').value = 10;
+        document.getElementById('timeline').value = 15;
+        document.getElementById('commission').value = 4;
+        document.getElementById('softCosts').value = 250000;
+      } else if (type === 'build') {
+        // Build all homes
+        document.getElementById('devCost').value = 679389;
+        document.getElementById('numLots').value = 8;
+        document.getElementById('lotPrice').value = 0;
+        document.getElementById('buildCost').value = 432500;
+        document.getElementById('homePrice').value = 841250;
+        document.getElementById('interestRate').value = 10;
+        document.getElementById('timeline').value = 30;
+        document.getElementById('commission').value = 5;
+        document.getElementById('softCosts').value = 400000;
+      } else if (type === 'hybrid') {
+        // Hybrid: sell 3, build 5
+        document.getElementById('devCost').value = 679389;
+        document.getElementById('numLots').value = 5;
+        document.getElementById('lotPrice').value = 0;
+        document.getElementById('buildCost').value = 517000;
+        document.getElementById('homePrice').value = 840000;
+        document.getElementById('interestRate').value = 10;
+        document.getElementById('timeline').value = 26;
+        document.getElementById('commission').value = 5;
+        document.getElementById('softCosts').value = 300000;
+      }
+      
+      calculate();
+    }
+    
+    // Calculate financials
+    function calculate() {
+      const devCost = parseFloat(document.getElementById('devCost').value) || 0;
+      const numLots = parseFloat(document.getElementById('numLots').value) || 0;
+      const lotPrice = parseFloat(document.getElementById('lotPrice').value) || 0;
+      const buildCost = parseFloat(document.getElementById('buildCost').value) || 0;
+      const homePrice = parseFloat(document.getElementById('homePrice').value) || 0;
+      const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
+      const timeline = parseFloat(document.getElementById('timeline').value) || 0;
+      const commission = parseFloat(document.getElementById('commission').value) || 0;
+      const softCosts = parseFloat(document.getElementById('softCosts').value) || 0;
+      
+      // Determine if lot sales or home sales
+      const isLotSales = lotPrice > 0 && buildCost === 0;
+      const isBuildOut = buildCost > 0;
+      
+      // Calculate revenue
+      let revenue = 0;
+      if (isLotSales) {
+        revenue = numLots * lotPrice;
+      } else if (isBuildOut) {
+        revenue = numLots * homePrice;
+      }
+      
+      // Calculate costs
+      const totalBuildCost = numLots * buildCost;
+      const financingCost = (devCost + totalBuildCost) * (interestRate / 100) * (timeline / 12);
+      const commissionCost = revenue * (commission / 100);
+      const totalCosts = devCost + totalBuildCost + financingCost + commissionCost + softCosts;
+      
+      // Calculate profit
+      const profit = revenue - totalCosts;
+      const roi = (profit / (devCost + totalBuildCost + softCosts)) * 100;
+      const profitPerUnit = profit / numLots;
+      
+      // Calculate IRR (simplified annual return)
+      const years = timeline / 12;
+      const irr = (Math.pow(1 + (roi / 100), 1 / years) - 1) * 100;
+      
+      // Calculate margin
+      const margin = (profit / revenue) * 100;
+      
+      // Update UI
+      document.getElementById('totalInvestment').textContent = formatCurrency(devCost + totalBuildCost + softCosts);
+      document.getElementById('totalRevenue').textContent = formatCurrency(revenue);
+      document.getElementById('totalCosts').textContent = formatCurrency(totalCosts);
+      document.getElementById('netProfit').textContent = formatCurrency(profit);
+      document.getElementById('netProfit').className = profit > 0 ? 'result-value' : 'result-value negative';
+      
+      document.getElementById('roi').textContent = roi.toFixed(1) + '%';
+      document.getElementById('roi').className = roi > 30 ? 'result-value' : roi > 15 ? 'result-value warning' : 'result-value negative';
+      
+      document.getElementById('profitPerUnit').textContent = formatCurrency(profitPerUnit);
+      document.getElementById('irr').textContent = irr.toFixed(1) + '%';
+      document.getElementById('margin').textContent = margin.toFixed(1) + '%';
+    }
+    
+    function formatCurrency(num) {
+      return '$' + num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    
+    // Initialize on load
+    calculate();
+  </script>
+
+</body>
+</html>
+
