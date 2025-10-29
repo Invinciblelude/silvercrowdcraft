@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nerradscali - Complete Resource Library</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1200px; margin:0 auto; padding:20px 20px 100px}
+    
+    h1 {color:#9cc1ff; font-size:42px; margin-bottom:16px}
+    h2 {color:#9cc1ff; font-size:28px; margin-top:48px; margin-bottom:24px; padding-bottom:12px; border-bottom:2px solid #1f2630}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:40px;
+      box-shadow:0 8px 32px rgba(102,126,234,0.4);
+    }
+    
+    .resource-grid {display:grid; grid-template-columns:repeat(auto-fill, minmax(350px, 1fr)); gap:24px; margin-bottom:40px}
+    
+    .resource-card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:24px;
+      transition:all 0.3s;
+      cursor:pointer;
+    }
+    .resource-card:hover {
+      border-color:#667eea;
+      transform:translateY(-4px);
+      box-shadow:0 8px 24px rgba(102,126,234,0.3);
+    }
+    
+    .resource-icon {font-size:48px; margin-bottom:16px}
+    .resource-title {font-size:22px; font-weight:700; color:#9cc1ff; margin-bottom:12px}
+    .resource-desc {font-size:14px; color:#8a98ab; margin-bottom:16px; line-height:1.6}
+    .resource-meta {display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px}
+    .meta-badge {
+      background:#1f2630;
+      padding:4px 12px;
+      border-radius:12px;
+      font-size:12px;
+      font-weight:600;
+      color:#a9b6c6;
+    }
+    
+    .btn {
+      display:inline-block;
+      padding:12px 24px;
+      background:#667eea;
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:600;
+      transition:all 0.2s;
+    }
+    .btn:hover {
+      background:#5568d3;
+      transform:translateY(-1px);
+    }
+    
+    .back-link {
+      display:inline-block;
+      margin-bottom:24px;
+      color:#667eea;
+      text-decoration:none;
+      font-weight:600;
+    }
+    .back-link:hover {color:#9cc1ff}
+    
+    @media (max-width: 768px) {
+      .resource-grid {grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body data-jsdom-page="resources" data-jsdom-title="📚 Resources">
+  
+  <div class="container">
+    <a href="nerrads-project.html" class="back-link">← Back to Project Dashboard</a>
+    
+    <div class="hero">
+      <h1 style="margin:0 0 16px; color:#fff">📚 Complete Resource Library</h1>
+      <p style="font-size:18px; margin:0; opacity:0.95">Everything you need to execute the Nerradscali Subdivision successfully</p>
+    </div>
+    
+    <h2>🎯 Core Strategy Documents</h2>
+    <div class="resource-grid">
+      
+      <div class="resource-card" onclick="window.open('nerrads-realistic-analysis.html', '_blank')">
+        <div class="resource-icon">📊</div>
+        <div class="resource-title">Realistic Market Analysis</div>
+        <div class="resource-desc">
+          Complete honest assessment with real Sacramento market data. Includes accurate costs ($679K), 
+          realistic lot prices ($87K-$242K), honest profit projections, and strategy comparisons.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">⭐ MUST READ</span>
+          <span class="meta-badge">30 min read</span>
+          <span class="meta-badge">12 sections</span>
+        </div>
+        <a href="nerrads-realistic-analysis.html" target="_blank" class="btn">Read Analysis →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_COST_REDUCTION.md', '_blank')">
+        <div class="resource-icon">💰</div>
+        <div class="resource-title">Cost Reduction Strategy</div>
+        <div class="resource-desc">
+          How to save $150K-$300K on development costs. Includes competitive bidding strategies, 
+          landscaping reductions, contingency negotiations, and contractor bid templates.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">⭐ HIGH PRIORITY</span>
+          <span class="meta-badge">25 min read</span>
+          <span class="meta-badge">$150K+ savings</span>
+        </div>
+        <a href="../NERRADS_COST_REDUCTION.md" target="_blank" class="btn">View Strategy →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_PRESALE_STRATEGY.md', '_blank')">
+        <div class="resource-icon">📈</div>
+        <div class="resource-title">Pre-Sale Strategy</div>
+        <div class="resource-desc">
+          Complete system to pre-sell lots to builders BEFORE development. Includes email templates, 
+          phone scripts, objection handling, and week-by-week action plan.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">⭐ CRITICAL</span>
+          <span class="meta-badge">30 min read</span>
+          <span class="meta-badge">+$200K profit</span>
+        </div>
+        <a href="../NERRADS_PRESALE_STRATEGY.md" target="_blank" class="btn">View Strategy →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_JV_PARTNERSHIP.md', '_blank')">
+        <div class="resource-icon">🤝</div>
+        <div class="resource-title">JV Partnership Guide</div>
+        <div class="resource-desc">
+          Complete guide to finding and structuring partnerships. Includes 3 partnership structures, 
+          email templates, agreement terms, and negotiation strategies.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">⭐ ESSENTIAL</span>
+          <span class="meta-badge">35 min read</span>
+          <span class="meta-badge">Share risk</span>
+        </div>
+        <a href="../NERRADS_JV_PARTNERSHIP.md" target="_blank" class="btn">View Guide →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_BUILDER_CONTACTS.md', '_blank')">
+        <div class="resource-icon">🏗️</div>
+        <div class="resource-title">Builder Contact List</div>
+        <div class="resource-desc">
+          75+ Sacramento builders with contact info, tracking system, email templates, 
+          phone scripts, and complete outreach system ready to execute.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">⭐ ACTION READY</span>
+          <span class="meta-badge">20 min read</span>
+          <span class="meta-badge">75+ contacts</span>
+        </div>
+        <a href="../NERRADS_BUILDER_CONTACTS.md" target="_blank" class="btn">View List →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_BUILD_OUT_ANALYSIS.md', '_blank')">
+        <div class="resource-icon">🏠</div>
+        <div class="resource-title">Build-Out Analysis</div>
+        <div class="resource-desc">
+          Analysis of building homes instead of selling lots. Includes construction costs, 
+          revenue projections ($6.7M), profit analysis ($1.2M-$2M), and hybrid strategies.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">Advanced</span>
+          <span class="meta-badge">25 min read</span>
+          <span class="meta-badge">Max profit</span>
+        </div>
+        <a href="../NERRADS_BUILD_OUT_ANALYSIS.md" target="_blank" class="btn">View Analysis →</a>
+      </div>
+      
+    </div>
+    
+    <h2>💼 Investor & Pitch Materials</h2>
+    <div class="resource-grid">
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_PITCH_DECK.md', '_blank')">
+        <div class="resource-icon">🎯</div>
+        <div class="resource-title">Investor Pitch Deck</div>
+        <div class="resource-desc">
+          Professional 22-slide presentation covering opportunity overview, market analysis, 
+          financial projections, risk analysis, team, and investment structure.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">Investor Ready</span>
+          <span class="meta-badge">22 slides</span>
+          <span class="meta-badge">3 versions</span>
+        </div>
+        <a href="../NERRADS_PITCH_DECK.md" target="_blank" class="btn">View Deck →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_PLACE_DEVELOPMENT_PROFORMA.md', '_blank')">
+        <div class="resource-icon">📋</div>
+        <div class="resource-title">Development Pro Forma</div>
+        <div class="resource-desc">
+          Detailed financial template with line-by-line cost breakdown, revenue waterfall, 
+          capital stack structure, and investor return calculations.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">Professional</span>
+          <span class="meta-badge">Template</span>
+          <span class="meta-badge">Fill-in format</span>
+        </div>
+        <a href="../NERRADS_PLACE_DEVELOPMENT_PROFORMA.md" target="_blank" class="btn">View Template →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_SIMPLE_FILL_IN.md', '_blank')">
+        <div class="resource-icon">⚡</div>
+        <div class="resource-title">Quick Worksheet</div>
+        <div class="resource-desc">
+          Simple 17-question worksheet for quick back-of-envelope calculations. 
+          No financial expertise needed, 2-page format.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">Quick Start</span>
+          <span class="meta-badge">5 min</span>
+          <span class="meta-badge">Simple</span>
+        </div>
+        <a href="../NERRADS_SIMPLE_FILL_IN.md" target="_blank" class="btn">View Worksheet →</a>
+      </div>
+      
+    </div>
+    
+    <h2>🧮 Interactive Tools</h2>
+    <div class="resource-grid">
+      
+      <div class="resource-card" onclick="window.location='nerrads-calculator.html'">
+        <div class="resource-icon">💻</div>
+        <div class="resource-title">Financial Calculator</div>
+        <div class="resource-desc">
+          Interactive ROI and profit calculator. Adjust any number and see instant results. 
+          4 preset scenarios: lot sales, build-out, hybrid, and custom.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">⭐ INTERACTIVE</span>
+          <span class="meta-badge">Live tool</span>
+          <span class="meta-badge">Model scenarios</span>
+        </div>
+        <a href="nerrads-calculator.html" class="btn">Open Calculator →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.location='nerrads-project.html'">
+        <div class="resource-icon">📊</div>
+        <div class="resource-title">Project Dashboard</div>
+        <div class="resource-desc">
+          Complete project overview with 9 tabs: Overview, Lots, Costs, Build Homes, 
+          Timeline, Milestones, Analysis, Action Plans, and Documents.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">Main Hub</span>
+          <span class="meta-badge">9 sections</span>
+          <span class="meta-badge">Visual</span>
+        </div>
+        <a href="nerrads-project.html" class="btn">View Dashboard →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.location='nerrads-documents.html'">
+        <div class="resource-icon">📄</div>
+        <div class="resource-title">Document Library</div>
+        <div class="resource-desc">
+          Complete document repository with all analysis documents, strategy guides, 
+          pitch materials, and engineering reports organized by category.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">Full Library</span>
+          <span class="meta-badge">All docs</span>
+          <span class="meta-badge">Organized</span>
+        </div>
+        <a href="nerrads-documents.html" class="btn">Browse Documents →</a>
+      </div>
+      
+    </div>
+    
+    <h2>📖 Summary & Overview</h2>
+    <div class="resource-grid">
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_COMPLETE_PACKAGE_SUMMARY.md', '_blank')">
+        <div class="resource-icon">📦</div>
+        <div class="resource-title">Complete Package Summary</div>
+        <div class="resource-desc">
+          Master document explaining everything created, what each document contains, 
+          immediate action steps, and 30-day execution plan. START HERE!
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">⭐ START HERE</span>
+          <span class="meta-badge">Overview</span>
+          <span class="meta-badge">Action plan</span>
+        </div>
+        <a href="../NERRADS_COMPLETE_PACKAGE_SUMMARY.md" target="_blank" class="btn">View Summary →</a>
+      </div>
+      
+      <div class="resource-card" onclick="window.open('../NERRADS_COMPLETE_ANALYSIS.md', '_blank')">
+        <div class="resource-icon">📈</div>
+        <div class="resource-title">Original Complete Analysis</div>
+        <div class="resource-desc">
+          Original 30+ page comprehensive analysis with all scenarios modeled. 
+          Note: Some numbers optimistic - use Realistic Analysis for accurate data.
+        </div>
+        <div class="resource-meta">
+          <span class="meta-badge">Reference</span>
+          <span class="meta-badge">30+ pages</span>
+          <span class="meta-badge">Comprehensive</span>
+        </div>
+        <a href="../NERRADS_COMPLETE_ANALYSIS.md" target="_blank" class="btn">View Analysis →</a>
+      </div>
+      
+    </div>
+    
+    <div style="background:#1f2630; border-radius:12px; padding:32px; margin-top:48px; border-left:4px solid #4ade80">
+      <h2 style="margin-top:0; color:#4ade80">🎯 Recommended Reading Order</h2>
+      <ol style="font-size:18px; line-height:2; color:#a9b6c6">
+        <li><strong style="color:#9cc1ff">Complete Package Summary</strong> - Get the big picture (20 min)</li>
+        <li><strong style="color:#9cc1ff">Realistic Market Analysis</strong> - Understand true numbers (30 min)</li>
+        <li><strong style="color:#9cc1ff">Cost Reduction Strategy</strong> - Learn how to save $150K+ (25 min)</li>
+        <li><strong style="color:#9cc1ff">Pre-Sale Strategy</strong> - Start builder outreach (30 min)</li>
+        <li><strong style="color:#9cc1ff">JV Partnership Guide</strong> - Find partners (35 min)</li>
+        <li><strong style="color:#9cc1ff">Builder Contact List</strong> - Take action (20 min)</li>
+      </ol>
+      <p style="font-size:16px; color:#8a98ab; margin-bottom:0">
+        <strong>Total time:</strong> 2.5 hours to go from zero to fully prepared!
+      </p>
+    </div>
+    
+    <a href="nerrads-project.html" class="back-link" style="margin-top:48px; display:inline-block">← Back to Project Dashboard</a>
+  </div>
+
+</body>
+</html>
+
