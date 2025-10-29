@@ -55,23 +55,43 @@
 <script>
     async function loadProjects() {
       try {
-        // Load REAL construction plan
-        const response = await fetch('assets/real_construction_plan.json');
-        const data = await response.json();
+        // Load both projects
+        const [cordantResponse, nerradsResponse] = await Promise.all([
+          fetch('assets/real_construction_plan.json'),
+          fetch('assets/nerrads_project_data.json')
+        ]);
         
-        // For now, we have one project. In future, this could be an array.
-        const projects = [{
-          id: 'PROJ-001',
-          name: data.project.name,
-          address: data.project.address,
-          status: 'In Progress',
-          total_tasks: data.tasks.length,
-          total_hours: data.summary.total_hours,
-          completed_tasks: 0,
-          progress: 0,
-          scope: data.project.scope,
-          architect: data.project.architect
-        }];
+        const cordantData = await cordantResponse.json();
+        const nerradsData = await nerradsResponse.json();
+        
+        // Build projects array
+        const projects = [
+          {
+            id: 'PROJ-001',
+            name: cordantData.project.name,
+            address: cordantData.project.address,
+            status: 'In Progress',
+            type: 'Construction',
+            total_tasks: cordantData.tasks.length,
+            total_hours: cordantData.summary.total_hours,
+            completed_tasks: 0,
+            progress: 0,
+            link: 'project.html?id=PROJ-001'
+          },
+          {
+            id: 'PROJ-002',
+            name: nerradsData.project.name,
+            address: nerradsData.project.address,
+            status: 'Planning',
+            type: 'Subdivision',
+            total_tasks: nerradsData.summary.total_lots,
+            total_cost: nerradsData.summary.total_cost,
+            estimated_profit: nerradsData.summary.estimated_profit,
+            roi: nerradsData.summary.roi_percentage,
+            progress: nerradsData.derisking_status.percentage_complete,
+            link: 'nerrads-project.html'
+          }
+        ];
         
         const grid = document.getElementById('projectsGrid');
         
@@ -86,29 +106,65 @@
           return;
         }
         
-        grid.innerHTML = projects.map(project => `
-          <a href="project.html?id=${project.id}" class="project-card">
-            <div class="project-name">${project.name}</div>
-            <div class="project-address">📍 ${project.address}</div>
-            <div class="project-meta">
-              <div class="meta-item">
-                <span class="meta-label">Status</span>
-                <span class="meta-value">${project.status}</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Tasks</span>
-                <span class="meta-value">${project.completed_tasks}/${project.total_tasks}</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Total Hours</span>
-                <span class="meta-value">${project.total_hours}h</span>
-              </div>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:${project.progress}%"></div>
-            </div>
-          </a>
-        `).join('');
+        grid.innerHTML = projects.map(project => {
+          if (project.type === 'Construction') {
+            return `
+              <a href="${project.link}" class="project-card">
+                <div class="project-name">${project.name}</div>
+                <div class="project-address">📍 ${project.address}</div>
+                <div class="project-meta">
+                  <div class="meta-item">
+                    <span class="meta-label">Type</span>
+                    <span class="meta-value">🏗️ ${project.type}</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Tasks</span>
+                    <span class="meta-value">${project.completed_tasks}/${project.total_tasks}</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Total Hours</span>
+                    <span class="meta-value">${project.total_hours}h</span>
+                  </div>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width:${project.progress}%"></div>
+                </div>
+              </a>
+            `;
+          } else {
+            // Subdivision project
+            return `
+              <a href="${project.link}" class="project-card">
+                <div class="project-name">${project.name}</div>
+                <div class="project-address">📍 ${project.address}</div>
+                <div class="project-meta">
+                  <div class="meta-item">
+                    <span class="meta-label">Type</span>
+                    <span class="meta-value">🏘️ ${project.type}</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Lots</span>
+                    <span class="meta-value">${project.total_tasks}</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">Est. Profit</span>
+                    <span class="meta-value">$${(project.estimated_profit/1000).toFixed(0)}K</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">ROI</span>
+                    <span class="meta-value">${project.roi}%</span>
+                  </div>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width:${project.progress}%"></div>
+                </div>
+                <div style="margin-top:12px; font-size:12px; color:#8a98ab;">
+                  ✅ ${project.progress}% De-Risked
+                </div>
+              </a>
+            `;
+          }
+        }).join('');
         
       } catch (err) {
         console.error('Failed to load projects:', err);

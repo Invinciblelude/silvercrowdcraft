@@ -1,0 +1,202 @@
+{
+  "project": {
+    "id": "PROJ-002",
+    "name": "Nerradscali Subdivision",
+    "address": "905 North Avenue / 4929 Nerrads Place, Sacramento, CA 95838",
+    "type": "Subdivision Development",
+    "status": "Planning/Pre-Development",
+    "scope": "8-Lot Residential Subdivision Development",
+    "size": "56,853 total SF (8 lots)",
+    "timeline": "12-18 months",
+    "start_date": "TBD",
+    "completion_date": "TBD"
+  },
+  "summary": {
+    "total_lots": 8,
+    "total_cost": 679389,
+    "estimated_revenue": 2000000,
+    "estimated_profit": 1122672,
+    "roi_percentage": 128,
+    "phases": 4
+  },
+  "lots": [
+    {
+      "lot_number": 1,
+      "size_sf": 4601,
+      "estimated_value": 215000,
+      "status": "Planning"
+    },
+    {
+      "lot_number": 2,
+      "size_sf": 3961,
+      "estimated_value": 190000,
+      "status": "Planning"
+    },
+    {
+      "lot_number": 3,
+      "size_sf": 5761,
+      "estimated_value": 240000,
+      "status": "Planning"
+    },
+    {
+      "lot_number": 4,
+      "size_sf": 5275,
+      "estimated_value": 225000,
+      "status": "Planning"
+    },
+    {
+      "lot_number": 5,
+      "size_sf": 12108,
+      "estimated_value": 400000,
+      "status": "Planning"
+    },
+    {
+      "lot_number": 6,
+      "size_sf": 10430,
+      "estimated_value": 350000,
+      "status": "Planning"
+    },
+    {
+      "lot_number": 7,
+      "size_sf": 7006,
+      "estimated_value": 275000,
+      "status": "Planning"
+    },
+    {
+      "lot_number": 8,
+      "size_sf": 7711,
+      "estimated_value": 295000,
+      "status": "Planning"
+    }
+  ],
+  "phases": [
+    {
+      "phase": "Phase 1: Final Approvals & Mobilization",
+      "duration": "Months 1-2",
+      "tasks": [
+        "Final permit approval",
+        "Secure construction financing",
+        "Contractor selection & bidding",
+        "Mobilization"
+      ],
+      "status": "Not Started"
+    },
+    {
+      "phase": "Phase 2: Site Development",
+      "duration": "Months 3-8",
+      "tasks": [
+        "Clear & grub site",
+        "Rough grading & earthwork",
+        "Off-site utility connections",
+        "On-site utilities installation",
+        "Storm drain & detention basin",
+        "Street paving & curbs",
+        "Lot grading",
+        "Landscaping & fencing",
+        "Final inspections"
+      ],
+      "status": "Not Started"
+    },
+    {
+      "phase": "Phase 3: Marketing & Sales",
+      "duration": "Months 6-15",
+      "tasks": [
+        "Pre-marketing to builders",
+        "Lots ready for sale",
+        "Rolling closings"
+      ],
+      "status": "Not Started"
+    },
+    {
+      "phase": "Phase 4: Closeout",
+      "duration": "Months 15-18",
+      "tasks": [
+        "Final lot sales",
+        "HOA turnover",
+        "Warranty period",
+        "Project closeout"
+      ],
+      "status": "Not Started"
+    }
+  ],
+  "costs": {
+    "offsite_improvements": 102166,
+    "onsite_improvements": 577223,
+    "total_development": 679389,
+    "cost_per_lot": 84924
+  },
+  "milestones": [
+    {
+      "milestone": "Final Map Recorded",
+      "status": "Complete",
+      "date": "Recorded"
+    },
+    {
+      "milestone": "Engineering Plans Submitted",
+      "status": "Complete",
+      "date": "2023"
+    },
+    {
+      "milestone": "Geotechnical Report",
+      "status": "Complete",
+      "date": "March 2022"
+    },
+    {
+      "milestone": "CC&Rs Recorded",
+      "status": "Complete",
+      "date": "Book 20240228"
+    },
+    {
+      "milestone": "Public Report Approved",
+      "status": "Complete",
+      "date": "2023"
+    },
+    {
+      "milestone": "School Fees Paid",
+      "status": "Complete",
+      "date": "Paid"
+    },
+    {
+      "milestone": "Performance Bond Executed",
+      "status": "Complete",
+      "date": "2024"
+    },
+    {
+      "milestone": "Final Permit Approval",
+      "status": "Pending",
+      "date": "TBD"
+    },
+    {
+      "milestone": "Construction Start",
+      "status": "Pending",
+      "date": "TBD"
+    },
+    {
+      "milestone": "First Lot Sale",
+      "status": "Pending",
+      "date": "TBD"
+    }
+  ],
+  "derisking_status": {
+    "percentage_complete": 75,
+    "completed_items": [
+      "Final Map Recorded",
+      "Engineering Plans Submitted",
+      "Geotechnical Report Complete",
+      "CC&Rs Recorded",
+      "Public Report Approved",
+      "School Fees Paid",
+      "Performance Bond Executed",
+      "SIA Recorded",
+      "EIS Complete",
+      "Cost Estimates Prepared"
+    ],
+    "remaining_items": [
+      "Final Permit Approval",
+      "Construction Financing",
+      "Contractor Selection",
+      "Construction Execution"
+    ]
+  }
+}
+
