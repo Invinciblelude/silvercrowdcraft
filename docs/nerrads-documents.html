@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nerrads Place - Documents & Analysis</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1200px; margin:0 auto; padding:20px 20px 100px}
+    
+    h1 {color:#9cc1ff; margin-bottom:8px}
+    .subtitle {color:#8a98ab; margin-bottom:32px; font-size:18px}
+    
+    .doc-grid {display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:20px; margin-bottom:40px}
+    
+    .doc-card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:24px;
+      transition:border-color 0.2s, transform 0.2s;
+      cursor:pointer;
+    }
+    .doc-card:hover {
+      border-color:#667eea;
+      transform:translateY(-2px);
+    }
+    
+    .doc-icon {font-size:48px; margin-bottom:16px}
+    .doc-title {font-size:20px; font-weight:700; color:#9cc1ff; margin-bottom:8px}
+    .doc-description {font-size:14px; color:#8a98ab; margin-bottom:16px; line-height:1.6}
+    .doc-meta {display:flex; justify-content:space-between; font-size:12px; color:#6b7785; margin-bottom:16px}
+    
+    .doc-actions {display:flex; gap:12px; margin-top:16px}
+    .btn {
+      padding:10px 20px;
+      border-radius:8px;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+      font-size:14px;
+      transition:all 0.2s;
+      text-decoration:none;
+      display:inline-block;
+      text-align:center;
+    }
+    .btn-primary {background:#667eea; color:#fff}
+    .btn-primary:hover {background:#5568d3; transform:translateY(-1px)}
+    .btn-secondary {background:#1f2630; color:#9cc1ff; border:1px solid #667eea}
+    .btn-secondary:hover {background:#2a3040}
+    
+    .section-title {
+      color:#9cc1ff;
+      font-size:24px;
+      font-weight:700;
+      margin:40px 0 24px;
+      padding-bottom:12px;
+      border-bottom:2px solid #1f2630;
+    }
+    
+    .alert {
+      background:#1f2630;
+      border-left:4px solid #667eea;
+      padding:16px 20px;
+      border-radius:8px;
+      margin-bottom:24px;
+    }
+    .alert-title {font-weight:700; color:#9cc1ff; margin-bottom:8px}
+    .alert-text {color:#a9b6c6; font-size:14px; line-height:1.6}
+    
+    @media (max-width: 768px) {
+      .doc-grid {grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body data-jsdom-page="nerrads-docs" data-jsdom-title="📄 Nerrads Documents">
+  
+  <div class="container">
+    <h1>📄 Nerradscali Subdivision - Documents & Analysis</h1>
+    <p class="subtitle">Complete project documentation, analysis, and investor materials</p>
+    
+    <div class="alert">
+      <div class="alert-title">🔒 Confidential - For Qualified Investors Only</div>
+      <div class="alert-text">
+        These documents contain proprietary financial information and should not be shared publicly. 
+        All materials are provided for evaluation purposes to potential partners and investors.
+      </div>
+    </div>
+
+    <!-- Investment Analysis Documents -->
+    <h2 class="section-title">📊 Investment Analysis & Pro Formas</h2>
+    <div class="doc-grid">
+      
+      <div class="doc-card">
+        <div class="doc-icon">📈</div>
+        <div class="doc-title">Complete Investment Analysis</div>
+        <div class="doc-description">
+          Full 30+ page analysis with costs, revenue projections, ROI calculations, market comps, 
+          risk analysis, and investment options. Everything you need for decision-making.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 28, 2025</span>
+          <span>📄 30 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../NERRADS_COMPLETE_ANALYSIS.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../NERRADS_COMPLETE_ANALYSIS.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">🏠</div>
+        <div class="doc-title">Build-Out Analysis (Optional)</div>
+        <div class="doc-description">
+          Detailed analysis of building homes on the lots (instead of just selling lots). 
+          Includes construction costs, timeline, profit comparison, and hybrid strategy options.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 28, 2025</span>
+          <span>📄 15 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../NERRADS_BUILD_OUT_ANALYSIS.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../NERRADS_BUILD_OUT_ANALYSIS.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">📋</div>
+        <div class="doc-title">Development Pro Forma Template</div>
+        <div class="doc-description">
+          Detailed pro forma template with line-by-line cost breakdown, revenue analysis, 
+          capital stack structure, and investor return waterfall calculations.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 28, 2025</span>
+          <span>📄 20 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../NERRADS_PLACE_DEVELOPMENT_PROFORMA.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../NERRADS_PLACE_DEVELOPMENT_PROFORMA.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">⚡</div>
+        <div class="doc-title">Quick Fill-In Worksheet</div>
+        <div class="doc-description">
+          Simple questionnaire to quickly calculate project economics. 
+          Answer 17 questions and get instant profit projections.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 28, 2025</span>
+          <span>📄 2 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../NERRADS_SIMPLE_FILL_IN.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../NERRADS_SIMPLE_FILL_IN.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Business Strategy Documents -->
+    <h2 class="section-title">🚀 Business Strategy & REDF Roadmap</h2>
+    <div class="doc-grid">
+      
+      <div class="doc-card">
+        <div class="doc-icon">🗺️</div>
+        <div class="doc-title">Zero to REDF Roadmap</div>
+        <div class="doc-description">
+          Complete guide to building a Real Estate Development Firm with NO CAPITAL. 
+          Includes 90-day launch plan, no-money strategies, marketing tactics, and action steps.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 27, 2025</span>
+          <span>📄 40 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../ZERO_TO_REDF_ROADMAP.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../ZERO_TO_REDF_ROADMAP.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">💼</div>
+        <div class="doc-title">Acquisition Firm System Prompt</div>
+        <div class="doc-description">
+          Complete business system blueprint for a real estate acquisition and development firm. 
+          Includes 13 major systems, tools, workflows, and scaling strategies.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 27, 2025</span>
+          <span>📄 25 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../ACQUISITION_FIRM_PROMPT.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../ACQUISITION_FIRM_PROMPT.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">🏗️</div>
+        <div class="doc-title">Reusable Project Prompt</div>
+        <div class="doc-description">
+          Template for creating construction project management systems for future projects. 
+          Copy-paste prompt for building similar sites quickly.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 27, 2025</span>
+          <span>📄 18 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../REUSABLE_PROJECT_PROMPT.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../REUSABLE_PROJECT_PROMPT.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Project Status & Updates -->
+    <h2 class="section-title">📌 Project Status & Updates</h2>
+    <div class="doc-grid">
+      
+      <div class="doc-card">
+        <div class="doc-icon">📊</div>
+        <div class="doc-title">Site Update Summary</div>
+        <div class="doc-description">
+          Summary of the website features, what's included on the Nerrads project page, 
+          and how to use the dashboard for tracking and pitching.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 28, 2025</span>
+          <span>📄 8 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../SITE_UPDATE_SUMMARY.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../SITE_UPDATE_SUMMARY.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">📜</div>
+        <div class="doc-title">Session Summary</div>
+        <div class="doc-description">
+          Detailed log of all work completed, files created, decisions made, and next steps 
+          for the project development and website creation.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Oct 27, 2025</span>
+          <span>📄 5 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../SESSION_SUMMARY.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../SESSION_SUMMARY.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">📝</div>
+        <div class="doc-title">Changelog</div>
+        <div class="doc-description">
+          Version history and updates to the project documentation, website features, 
+          and analysis documents over time.
+        </div>
+        <div class="doc-meta">
+          <span>📅 Ongoing</span>
+          <span>📄 3 pages</span>
+        </div>
+        <div class="doc-actions">
+          <a href="../CHANGELOG.md" target="_blank" class="btn btn-primary">📖 View Online</a>
+          <a href="../CHANGELOG.md" download class="btn btn-secondary">⬇️ Download</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Key Metrics Summary -->
+    <h2 class="section-title">💰 Quick Reference - Key Numbers</h2>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-icon">📈</div>
+        <div class="doc-title">Project Economics Summary</div>
+        <div class="doc-description" style="font-family:monospace; background:#0a0e27; padding:16px; border-radius:8px; line-height:1.8">
+          <strong style="color:#9cc1ff">INVESTMENT:</strong><br>
+          Development Cost: $679,389<br>
+          Cost Per Lot: $84,924<br><br>
+          
+          <strong style="color:#9cc1ff">REVENUE:</strong><br>
+          8 Lots × $250K avg = $2,000,000<br>
+          Revenue Range: $1.86M - $2.52M<br><br>
+          
+          <strong style="color:#9cc1ff">PROFIT:</strong><br>
+          Net Profit: $1,122,672<br>
+          ROI: 128%<br>
+          Timeline: 12-18 months<br><br>
+          
+          <strong style="color:#4ade80">STATUS: 75% De-Risked ✓</strong>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">🏠</div>
+        <div class="doc-title">Build-Out Option Summary</div>
+        <div class="doc-description" style="font-family:monospace; background:#0a0e27; padding:16px; border-radius:8px; line-height:1.8">
+          <strong style="color:#9cc1ff">IF BUILDING HOMES:</strong><br>
+          Lot Development: $679,389<br>
+          Construction (8 homes): $3,743,500<br>
+          Total Investment: $5.7M<br><br>
+          
+          <strong style="color:#9cc1ff">REVENUE:</strong><br>
+          8 Homes Sold: $7,800,000<br><br>
+          
+          <strong style="color:#9cc1ff">PROFIT:</strong><br>
+          Net Profit: $2,092,111<br>
+          ROI: 37%<br>
+          Timeline: 24-36 months<br><br>
+          
+          <strong style="color:#fb923c">RISK: Medium-High</strong>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-icon">🎯</div>
+        <div class="doc-title">Recommended Strategy</div>
+        <div class="doc-description" style="background:#0a0e27; padding:16px; border-radius:8px; line-height:1.8">
+          <strong style="color:#4ade80; font-size:16px">START WITH LOT SALES:</strong><br><br>
+          
+          ✅ Lower risk ($679K vs $5.7M)<br>
+          ✅ Faster timeline (12-18 vs 36 months)<br>
+          ✅ Higher ROI (128% vs 37%)<br>
+          ✅ Less complexity<br>
+          ✅ Proven buyer demand<br><br>
+          
+          <strong style="color:#9cc1ff">THEN CONSIDER:</strong><br>
+          • Use profits to fund spec homes<br>
+          • Partner with builders (50/50)<br>
+          • Hybrid: Sell 4 lots, build 4 homes<br>
+          • Scale to next subdivision
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="alert" style="margin-top:40px; border-left-color:#4ade80">
+      <div class="alert-title">🚀 Ready to Move Forward?</div>
+      <div class="alert-text">
+        <strong>Next Steps:</strong><br>
+        1. Review the Complete Investment Analysis<br>
+        2. Consider the Build-Out option if desired<br>
+        3. Schedule a call to discuss partnership structure<br>
+        4. Finalize financing and timeline<br>
+        5. Start development!<br><br>
+        
+        <a href="nerrads-project.html" class="btn btn-primary" style="margin-top:12px">← Back to Project Dashboard</a>
+        <a href="mailto:your@email.com" class="btn btn-secondary" style="margin-top:12px">📧 Contact for More Info</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
