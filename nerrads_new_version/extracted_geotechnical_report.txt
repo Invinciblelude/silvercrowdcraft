@@ -1,0 +1,2045 @@
+Services Geotechnical Engineering Study
+Project Proposed Nerradscali Subdivision
+(cid:17)oc(cid:18)tion
+Sacramento, California
+Client Mr. Darren Brown
+Project No. 05-22016G
+(cid:19)(cid:18)te March 23, 2022
+Roseville|Redding|Yreka|San(cid:17)eandro
+(cid:18)eo(cid:19)e(cid:20)(cid:21)ni(cid:20)al|(cid:22)ons(cid:23)l(cid:19)ingServi(cid:20)es|(cid:24)(cid:23)ali(cid:19)(cid:25)(cid:22)on(cid:19)rol(cid:26)anage(cid:27)en(cid:19)|(cid:28)nviron(cid:27)en(cid:19)al
+Copyright©22002221byAll(cid:17)rio(cid:18)Co(cid:18)(cid:19)(cid:20)lti(cid:18)g(cid:21)ro(cid:20)p(cid:22)(cid:23)(cid:18)(cid:24)(cid:25)(cid:23)(cid:18)t(cid:17)ll(cid:17)(cid:24)t(cid:20)(cid:26)l(cid:27)rop(cid:17)rty(cid:25)Allright(cid:19)r(cid:17)(cid:19)(cid:17)r(cid:28)(cid:17)(cid:29)(cid:25)
+
+
+
+TABLE OF CONTENTS
+INTRODUCTION ................................................................................................................. 4
+PURPOSE AND SCOPE OF STUDY ........................................................................................................................ 4
+PROJECT LOCATION ........................................................................................................................................... 4
+PROPOSED PROJECT INFORMATION .................................................................................................................. 5
+FINDINGS .......................................................................................................................... 5
+SITE HISTORICAL BACKGROUND ........................................................................................................................ 5
+SITE DESCRIPTION .............................................................................................................................................. 5
+GEOLOGY AND SEISMICITY ................................................................................................................................ 5
+EARTH MATERIAL CONDITIONS ......................................................................................................................... 6
+PERCOLATION TESTING ..................................................................................................................................... 7
+GROUNDWATER CONDITIONS ........................................................................................................................... 8
+CONCLUSIONS AND DISCUSSIONS ..................................................................................... 8
+SITE SUITABILITY AND GEOTECHNICAL CONSIDERATIONS ................................................................................. 8
+BEARING CAPABILITY ......................................................................................................................................... 8
+COMPRESSIBLE AND EXPANSIVE SOILS .............................................................................................................. 9
+GROUNDWATER AND SEASONAL MOISTURE .................................................................................................... 9
+SEISMIC HAZARDS ............................................................................................................................................ 10
+Fault Rupture .............................................................................................................................................. 10
+Seismic Ground Shaking .............................................................................................................................. 10
+Liquefaction and Seismic Settlement Evaluation ........................................................................................ 11
+Ground Lurching ......................................................................................................................................... 12
+Earthquake Induced Landsliding ................................................................................................................. 12
+Tsunamis and Seiche Evaluation ................................................................................................................. 12
+ON-SITE EARTH MATERIALS SUITABILITY ......................................................................................................... 12
+EXCAVATION CONDITIONS .............................................................................................................................. 12
+POTENTIAL SLOPE STABILITY ............................................................................................................................ 13
+RECOMMENDATIONS ...................................................................................................... 13
+EARTHWORK .................................................................................................................................................... 13
+Site Clearing and Stripping .......................................................................................................................... 13
+Subgrade Preparation ................................................................................................................................. 14
+Material for Fill ........................................................................................................................................... 15
+Fill Placement and Compaction .................................................................................................................. 16
+Utility Trench Backfill .................................................................................................................................. 17
+Finish Grading and Site Drainage ............................................................................................................... 18
+Cut and Fill Slopes ....................................................................................................................................... 19
+Earthwork Construction Considerations ..................................................................................................... 19
+Geotechnical Engineering Earthwork Construction Observation ................................................................ 21
+Guide Specifications .................................................................................................................................... 21
+CRITERIA FOR FOUNDATION DESIGN ............................................................................................................... 22
+Lateral Resistance ....................................................................................................................................... 22
+General Foundation Considerations ............................................................................................................ 23
+Foundation Setback .................................................................................................................................... 24
+INTERIOR FLOOR SLAB-ON-GROUND SUPPORT ............................................................................................... 24
+Floor Slab Moisture Penetration Resistance ............................................................................................... 26
+EXTERIOR FLATWORK ...................................................................................................................................... 27
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+PAVEMENT SECTION ALTERNATIVES ............................................................................................................... 28
+Pavement Construction Considerations ...................................................................................................... 30
+SUBDRAINAGE ................................................................................................................................................. 32
+LIMITATIONS ................................................................................................................... 32
+REFERENCES .................................................................................................................... 34
+APPENDICES
+APPENDIX A VICINITY AND EXPLORATIONS MAPS
+APPENDIX B FIELD EXPLORATION METHODS AND LOGS OF SUBSURFACE EXPLORATIONS
+APPENDIX C LABORATORY TESTING
+APPENDIX D GUIDE SPECIFICATIONS FOR EARTHWORK
+APPENDIX E SEAOC/OSHPD U.S. SEISMIC HAZARD MAPS
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 4
+GEOTECHNICAL ENGINEERING STUDY
+PROPOSED NERRADSCALI SUBDIVISION
+905 NORTH AVENUE
+SACRAMENTO, CALIFORNIA 95838
+INTRODUCTION
+PURPOSE AND SCOPE OF STUDY
+This report presents the results of our Geotechnical Engineering Study for the proposed improvements
+to be designed and constructed on the above referenced subject site (refer to the Location Plan, Figure
+1, Appendix A). The purpose of the study is to evaluate the general conditions of the earth materials at
+the site to provide conclusions and recommendations related to the geotechnical and geological aspects
+of the project as discussed in our proposal / agreement of February 9, 2022, and executed February 10,
+2022.
+The scope of our work included a site reconnaissance, review of client provided and readily available
+published documents (including aerial images, topographic maps, and nearby groundwater levels),
+exploring and sampling the general subsurface earth and groundwater conditions, performing soil
+mechanics laboratory tests, assessing potential for geological hazards (including liquefaction and
+expansive soil conditions), performing geotechnical analysis, and making recommendations for
+earthwork, foundation design, lateral resistance, floor slab-on-grade support, and on-site pavements.
+The attached Appendices contain further information including graphic presentations (Site Vicinity Map
+and Map of Explorations - Appendix A); field exploration procedures and logs of subsurface explorations
+(Appendix B); laboratory testing and procedures used (Appendix C); Guide Specifications for Earthwork
+(Appendix D); and SEAOC/OSHPD U.S. Seismic Design Maps (Appendix E).
+PROJECT LOCATION
+The project is proposed on a 1.32+/- acre residential parcel (APN: 237-020-009-200). The subject site is
+bounded by North Avenue to the south, residential properties to the east and west, and City of
+Sacramento easement and I-80 to the North.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 5
+PROPOSED PROJECT INFORMATION
+In preparing this report we reviewed the grading plan by RFE Engineering, Inc. January 24, 2022, “On-
+Site Improvement Plans” (Sheet No. C6), and reviewed Google Earth aerial photography (5/14/2021)
+related to the subject site. Based on the referenced plan and information provided by the client, the
+proposed project consists of the design and construction of one (1) single-family residential home with
+a footprint area of 1,700 +/- square feet, four (4) half plex’s with footprints of 1,150+/- square feet and
+two (2) half plex’s with footprints of 1,280 +/- square feet. A stormwater detention pond is proposed in
+the northeastern portion of the site. The proposed improvements also include landscaping, concrete
+driveways, asphalt driving aisles, paved parking area and on-site concrete sidewalks.
+FINDINGS
+SITE HISTORICAL BACKGROUND
+Google Earth aerial images dating back to May 1993 indicate the site and surrounding properties
+appeared as described in the Site Description section below and Project Location section above.
+SITE DESCRIPTION
+During our site visit, the subject site was relatively flat lying with minor surface elevation changes. The
+eastern portion of the parcel was vacant and covered with volunteer grasses. A dense cluster of trees
+was in the northeastern portion of the site as well as metal scraps and various other debris. A single-
+story residential home enclosed by a wooden fence was in the southwestern portion of the parcel. In
+the northeastern corner of the site was a tower supporting southerly trending high tension electric lines.
+Two concrete slabs were in the northwestern portion of the site. Overall drainage of the subject site
+trended generally to the north toward a canal.
+GEOLOGY AND SEISMICITY
+The site is located within California's Great Valley Geomorphic Province, a geologically young, large, flat-
+lying alluvial plain in the central portion of California. The Province is 40 to 60 miles (60 to 100 km) wide
+and stretches approximately 450 miles (720 km) from north-northwest to south-southeast, inland from
+and parallel to the Pacific Ocean Coast Ranges to the west and Sierra Nevada Mountains to the east. The
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 6
+Great Valley has been filled with hundreds to thousands of feet of eroded sediments, ranging in age from
+Pleistocene to Holocene.
+Based on our review of readily available published geologic literature/maps (CGS “Preliminary Geologic
+Map of the Sacramento 30’ X 60’ Quadrangle, California”, 2011; scale 1:100,000) the site is mapped to
+be underlain by Quaternary-aged Fan Deposits (Map Symbol: Qf). The total thickness of the formation
+was not determined and is beyond the scope of this study. The native earth materials discovered in the
+explorations are considered to be consistent with the mapped earth materials.
+EARTH MATERIAL CONDITIONS
+As shown on the Exploratory Logs (Appendix B), the subsurface earth material conditions were generally
+consistent throughout the site. The uppermost soils encountered to a depth of approximately 1½ feet
+below existing ground surface (begs) consisted of medium stiff, moist, dark brown, Sandy SILT, with
+occasional Gravel (Unified Soil Classification: ML). Underlying the silt was discovered stiff to very stiff,
+moist, light brown and dark brown, Sandy Silty CLAY (CL) to varying depths between 2½ to 3 feet begs.
+The earth materials encountered below the upper soil to a depth of approximately 13 feet begs consisted
+of very stiff and hard, moist, light brown with orange mottles and red-brown, Sandy SILT (ML). The earth
+materials encountered below this layer consisted of dense, moist, dark brown to brown, SAND (SP) to a
+depth of approximately 19 feet begs. Underlying the sand layer was found hard, moist, light brown,
+Sandy SILT (ML) to the maximum explored depth of approximately 21½ feet begs.
+Since the earth material profile is generalized, the reader is advised to consult the Explorations Logs
+contained in Appendix B, if the earth material conditions at a specific depth and location are desired.
+The logs contain a more detailed earth material description regarding color, earth material type, and
+Unified Soil Classification System (USCS) symbol.
+Earth material conditions cannot be fully determined by surface and subsurface explorations and earth
+material sampling. Hence, unexpected earth material conditions might be encountered during
+construction. If earth material conditions are encountered during construction which vary from earth
+materials encountered during the investigation, then appropriate recommendations will be needed
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 7
+during construction. Therefore, we suggest a contingency fund for additional expenditures that might
+have to be made due to unforeseen conditions.
+PERCOLATION TESTING
+One percolation test boring was drilled with a 4-inch outer-diameter continuous flight helical solid stem
+auger (SSA) powered by a truck mounted drill rig to the approximate depth indicated in the table below
+within the proposed detention pond. The approximate depth of the percolation boring was selected per
+the referenced grading plans. Please refer the attached “Exploration Location Map – Figure 2” for
+approximate location of the percolation test.
+The outer wall of the boring was scored to reduce the effects of smearing. Approximately six (6)-inches
+of clean gravel was added to the bottom of the test hole. In the test boring a 2-inch inner diameter (ID)
+PVC slotted pipe was installed into the hole on top of the gravel. Clean gravel was placed in the annular
+space between the boring wall and pipe.
+The boring was filled with water to the presoak level to let the soils presoak before performing the test.
+Following the presoak time water was adjusted in each hole to at least 12 inches above the bottom of
+the boring. The drop in water level was measured at specific time intervals until a steady rate of drop in
+water level was obtained when at least three consecutive readings were within 10 percent from each
+other. Pre-adjusted percolation rate was determined by dividing the drop in water level over the time
+required for the drop in water level. The infiltration rate was determined using the percolation rate
+divided by a Conversion Factor. The test results are shown on Table 1, below.
+TABLE 1. RESULTS OF PERCOLATION TEST
+BORING BORING STEADY FLOW CALCULATED
+PERCOLATION
+DEPTH DIAMETER PERCOLATION INFILTRATION TESTED SOIL DESCRIPTION
+TEST NO.
+(ft) (in) RATE (in/hr) RATE (in/hr)
+P-1 6 4.0 0.12 0.02 Sandy SILT
+The infiltration rate (per the test method referenced above) of the soils shown on the above table could
+be used by the General Civil Engineer as preliminary infiltration rates of the soils at the location and
+depth indicated. A safety factor was not applied to these values. Once the basins have been constructed,
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 8
+we suggest the infiltration rates be confirmed by double ring infiltrometer tests in the soil exposed in
+the bottoms of the basins.
+GROUNDWATER CONDITIONS
+Observations of groundwater conditions were made during and just after drilling the exploratory
+borings. Free groundwater was not encountered in any of the subsurface explorations.
+CONCLUSIONS AND DISCUSSIONS
+SITE SUITABILITY AND GEOTECHNICAL CONSIDERATIONS
+From a geotechnical standpoint, the site is considered suitable for the proposed construction provided
+the conclusions and recommendations presented in this report are incorporated into the design and
+construction of the project. Geotechnical considerations that were evaluated by our office include
+disturbed soils due to historic agriculture usage and loose topsoil, which are discussed in the following
+sections of this report.
+BEARING CAPABILITY
+Field and laboratory tests show that the affirmed undisturbed, native earth materials encountered at
+the exploration locations are considered competent for support of the proposed construction. The
+upper loose / soft soils and any disturbed soils (including undocumented fill, materials
+disturbed/backfilled of the soils loosened due to agriculture, clearing trees, etc.) that are present at the
+time of construction are not considered stable and should not be utilized to directly support new
+structural elements. Mitigation measures for unsuitable soil conditions are discussed in the
+Recommendations section of this report. Mitigation measures considered include removal and replacing
+the disturbed and/or loose soils with engineered fill; or, foundation elements designed to extend
+through the unsuitable soils.
+Engineered fill, composed of approved materials placed and compacted according to the following
+recommendations, and undisturbed native soils are considered competent for support of low to
+moderate loading increases.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 9
+COMPRESSIBLE AND EXPANSIVE SOILS
+Compressible materials consisting of surficial disturbed material, loose soils, undocumented fills, debris,
+rubble, rubbish, etc., are considered unsuitable materials for support of the proposed structures. Such
+materials can differentially settle. We consider that any undocumented fill encountered and disturbed
+and / or soft/loose soil materials in the construction areas should be removed and replaced with
+engineered fill, or special foundation mitigation measures designed. Overexcavated earth materials
+deemed suitable for re-use as engineered fill could be stockpiled. If the unsuitable materials are not
+removed, then special foundation systems should be designed to account for the potential settlements.
+In areas where unsuitable or loose, wet soils are encountered, remedial grading should be undertaken
+to remove the loose soils and ensure the removal of the entire disturbed soils.
+Engineered fill, composed of approved granular materials placed and compacted according to those
+discussed in the recommendations section, below, and undisturbed native soils are considered
+competent for support of low to moderate loading increases anticipated for this project.
+Based on visual observation and on laboratory test results performed on a representative soil sample of
+the underlying, relatively thin layer of clay soil (Plasticity Index (PI) of 16, percent fines of 59) we consider
+the expansion potential of the subsurface soils to be low.
+Mitigation measures for potentially compressible soils would be to assure that native, undisturbed,
+granular earth materials, recompacted soil, and/or engineered fill comprised of non- to low-expansive
+soil is beneath the rough pad soil grade. Mitigation measures are presented in the Recommendations
+section below for potentially compressible soils.
+GROUNDWATER AND SEASONAL MOISTURE
+As previously mentioned, free groundwater was not encountered during our subsurface investigation.
+However, groundwater levels could be seasonal – varying between the winter and summer months. It is
+our opinion that perched groundwater could have an impact on the proposed design or construction
+depending on the foundation system selected by designers and depths of underground structures. If
+wet-season construction is undertaken, then groundwater seepage into excavations is expected to be
+generally controllable by pumping/diversion; likewise, inflow from surface (dependent on quantity and
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 10
+duration of storm intensity/rainfall) is expected to be similarly controllable as temporarily necessary. If
+the uppermost soils should become saturated, then this condition would likely impede or delay
+grading operations.
+Groundwater levels can fluctuate on a seasonal basis due to changes in precipitation, irrigation,
+pumping, etc. We consider groundwater levels might change based on site topography and the time our
+investigation was performed. Excavations below perched groundwater (if encountered) might be
+impacted by seepage; therefore, we recommend grading and utility excavations be performed during
+dry season when groundwater levels are lowest.
+SEISMIC HAZARDS
+Seismic ground shaking of the earth materials underlying the site can cause ground failures, including
+fault rupture, liquefaction and densification, lateral spreading, landsliding, and tsunamis / seiches. The
+following sections discuss our conclusions / opinions regarding these conditions based on our findings
+and literature review.
+Fault Rupture
+Fault rupture hazards are important near active faults and tend to reoccur along the surface
+traces of previous fault movements. The site is not located within an Alquist-Priolo Special
+Studies Zone. We consider the potential for fault rupture, damage from fault displacement, or
+fault movement directly below the site to be very low. However, the site is located within an area
+where shaking from earthquake generated ground motion waves should be considered likely.
+Seismic Ground Shaking
+The mapped and design spectral response accelerations (refer to Appendix E) presents seismic
+design criteria for the subject project site obtained from the SEAOC/OSHPD Seismic Design Maps
+(https://seismicmaps.org) that are based on data provided by ASCE 7-16 and are for use with the
+2019 California Building Code (CBC). The values for spectral response accelerations with a Risk
+Category of II are summarized on the following table.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 11
+Mapped and Design Spectral Accelerations
+Description Value
+Site Soil Classification1 D
+Seismic Design Category2 D
+Site Latitude, Longitude 38.6404947, -121.445908
+S - Spectral Acceleration for a Short Period 0.523 g
+S
+S - Spectral Acceleration for a 1-Second Period 0.2g4 2 g
+1
+S - MCE , 5% damped Spectral Acceleration for a Short Period 0.722 g
+MS R
+S - MCE , Spectral Acceleration for a 1-Second Period1 0.512 g
+M1 R
+S - design, 5% damped, Spectral Acceleration for a Short Period 0.48 1 g
+DS
+S - design, 5% damped, Spectral Accel. for a 1-Second Period1 0.341 g
+D1
+T 12
+L
+PGA 0.22
+PGA 0.303
+M
+F 1.38
+PGA
+1 The 2019 CBC requires an earth material profile determination extending to a depth of 100 feet for site soil classification.
+ACG’s explorations extended to depth of about 21.5 feet begs, and Exception 2 of ASCE 7-16 Section 11.4.8 for Site Class D is
+used to calculate S M1 and S D1. 2 In general accordance with the 2019 CBC (refers to ASCE 7-16) Seismic Design Category is
+based on spectral acceleration for a 1-sec Period, short & 1-sec period response acceleration parameters (S , S & S ,
+1 DS D1
+respectively) and corresponding Risk Category. Please refer to ASCE/SEI 7-16 Section 11.4.8 for base shear (V) calculations.
+Please refer to Appendix E for the U.S. Seismic Design Maps.
+Liquefaction and Seismic Settlement Evaluation
+Liquefaction occurs when saturated fine-grained sands and/or silts lose their physical strength
+temporarily during earthquake induced shaking and behave as a liquid. This is due to loss of
+point-to-point grain contact and transfer of normal stress to the pore water. Liquefaction
+potential varies with water level, soil type, material gradation, relative density, and probable
+intensity and duration of ground shaking. Dynamic settlement of the soils that experience
+liquefaction may occur after earthquake shaking has ceased.
+The California Geological Survey (CGS) has designated certain areas within California as potential
+liquefaction hazard zones. These are areas considered at risk of liquefaction-related ground
+failure during a seismic event based upon mapped surficial deposits and the depth to the areal
+groundwater table. The project site is not currently mapped for potential liquefaction hazard by
+the CGS (refer to CGS website: https://www.conservation.ca.gov/cgs/earthquakes).
+Subsurface exploration information indicates the site is predominately underlain by generally
+dense sand soils and very stiff to hard sandy silt soils to the maximum depth explored of
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 12
+approximately 21½ feet begs. Based on the information discussed above, it is our opinion that
+the potential for liquefaction at the site is very low if a seismic event should occur that might
+impact the site.
+Ground Lurching
+Ground lurching is a result of the rolling motion imparted to the ground surface due to seismic
+waves released by an earthquake that can cause cracks in weaker soils. The potential for cracking
+at this site is considered low due to the generally dense relative densities and hard soil
+consistencies.
+Earthquake Induced Landsliding
+Based on information available on the California Geological Survey (CGS) website the subject site
+is not currently within a State of California Seismic Hazard Zone for seismically induced
+landsliding. In addition, there are no steep slopes on or adjacent to the subject site. Therefore,
+seismically induced and/or other landslides are not considered a significant hazard at the site.
+Tsunamis and Seiche Evaluation
+The site is not located near large bodies of water and the site is located at elevation of
+approximately 35 feet above MSL. Based on the geometry of the site, the potential for tsunami
+damage or damage caused by oscillatory waves (Seiche) is considered unlikely at the site.
+ON-SITE EARTH MATERIALS SUITABILITY
+On-site soils like those encountered in the test borings are generally considered suitable for re-use as
+engineered fill provided the materials are processed to remove excessive moisture, rubble, rubbish,
+oversize materials, significant organic matter, or any other substance deemed unsuitable (as determined
+by an ACG field representative).
+EXCAVATION CONDITIONS
+It is anticipated that the soil materials at the site can be readily moved by conventional earth moving
+equipment to at least the maximum depth explored of approximately 21½ feet begs.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 13
+POTENTIAL SLOPE STABILITY
+No landslides, slumps, or other indications of slope instabilities were observed in the flat-lying site area
+during our field investigation. We consider the potential for slope instability to be negligible.
+RECOMMENDATIONS
+Recommendations for earthwork and the design and construction of the proposed structure(s) and
+associated improvements follow. All recommendations could require modifications based on conditions
+encountered during earthworks and general construction. In addition, changes in the locations of the
+proposed structures and pavements could also necessitate modifications to the recommendations
+provided herein.
+EARTHWORK
+Earthwork specifications which may be used as a guide in the preparation of contract documents for site
+preparation / grading are included in Appendix D. However, recommendations in the text of this report
+supersede those presented in Appendix D. The conclusions and recommendations contained in this
+report should be incorporated into the guide specifications.
+Site Clearing and Stripping
+Each building pad is considered to extend laterally away from (outside of) all perimeter
+foundation/building edges at least five (5) feet in plan view, or to edges of any adjacent features
+restricting this width. The improvement areas should be stripped to sufficient depth to remove
+all organic laden topsoil. The actual stripping depth should be determined by our representative
+at the time of construction. The cleared and stripped materials should be removed from the site
+or stockpiled for possible use as landscape materials.
+We recommend the construction areas be cleared of all obstructions or unsuitable materials,
+including all loose, wet, or disturbed soil, undocumented fill, rubble, rubbish, vegetation,
+structural elements (includes slabs and pavements) to be razed, and any buried utility lines to
+be removed. Any foundations, pavements, cisterns, septic tanks, leach fields, water wells,
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 14
+etcetera, that might be encountered and are to be abandoned should be removed. In addition,
+in areas where trees have been or will be cleared, remedial grading includes removing the entire
+tree root systems and the loosened soils resulting from the removal. The excavated soils could
+be evaluated by ACG for reuse as engineered fill. The resulting subgrades of excavation(s) should
+be prepared and filled to planned project subgrade level with engineered fill as discussed in the
+following sections.
+Excavations resulting from the removal of unsuitable materials and/or loose soils should be
+cleared to expose firm, stable material. The surface of the resulting excavations should be
+scarified to a depth of 8 inches and backfilled with approved earth materials compacted to the
+requirements given below under subgrade preparation. Utilities that extend into the
+construction area and are scheduled to be abandoned should be properly capped or plugged with
+grout at the perimeter of the construction zone or moved as directed in the plans. It may be
+feasible to abandon on-site utilities in-place by filling them with grout, provided they will not
+interfere with future utilities or affect building foundations. The utility lines should be addressed
+on a case-by-case basis.
+Subgrade Preparation
+Once the construction areas have been cleared, any unsuitable soils over-excavated, and any
+other excavations made, then subgrades that will receive engineered fill, that are to be left at
+existing grade, or that represent final subgrades in soil achieved by excavation should be scarified
+to at least 8 inches. Suitability of soils exposed in the bottom of all subgrades should be verified
+by an ACG special inspector during site grading. Upon favorable review, exposed soil subgrades
+should be scarified and recompacted (in-place) an additional 8 inches and/or prior to placing
+engineered fill materials to planned rough pad grade. The scarified soils should be uniformly
+moisture conditioned as determined by ACG’s field representative based upon the compaction
+characteristics of the earth material (typically 1 to 4 percent over optimum) and compacted to at
+least 90 percent relative compaction per ASTM D 1557. The geotechnical engineer’s special
+inspector should observe the recompacted subgrades be proof-rolled with very heavy
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 15
+construction equipment (e.g., loaded water truck) in order to verify subgrade earth material
+stability. Inability to achieve the recommended moisture content, compaction, and/or
+instability of the subgrade materials is/are considered unsuitable conditions and would be
+used as criteria for remediation, such as the removal of loose, wet, or soft soils; or, for the need
+of special stabilizing measures.
+If unsuitable materials are encountered at subgrade such that they are expansive, unstable
+and/or proper compaction cannot be obtained, then mitigation measures would be
+recommended. In addition, construction equipment on saturated soils could destabilize the earth
+materials, sometimes to several feet of depth, which might necessitate further over excavation
+and/or special stabilization.
+An ACG special inspector should observe and approve the subgrade soils exposed in all
+excavations to confirm suitable conditions have been reached and should observe and approve
+the scarification, moisture conditioning and recompaction of the exposed soil subgrades.
+Material for Fill
+All fill materials should be inorganic, low plasticity soils free of vegetation, debris, and fragments
+larger than three inches in size. Pea gravel or other similar non-cementitious, poorly graded
+materials should not be used as fill or backfill without the prior approval of the geotechnical
+engineer. Imported earth materials and or earth materials from onsite borrow areas may be used
+as engineered fill material for general site grading, foundation backfill, foundation areas, trench
+backfill, slab areas, and pavement areas, provided they meet the following soil classification
+criteria. All fill materials from any source (on-site or off-site) to be used for engineered fill should
+be pre-approved by this firm and should be observed by our representative and samples obtained
+for laboratory classification testing at least four days prior to any materials being used for
+engineered fill.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 16
+Gradation (ASTM C 136) Percent Finer by Weight
+3” .................................................................................................. 100
+No. 4 Sieve ..................................................................................... 25 - 100
+No. 200 Sieve ................................................................................. 10 – 35
+o Liquid Limit .............................................................................. 35 (max)
+o Plasticity Index ......................................................................... 15 (max)
+o Maximum expansive index (ASTM D 4829) ................................. 40 (max)
+Fill Placement and Compaction
+Engineered fill should be placed and compacted in horizontal lifts, using equipment and
+procedures that will produce recommended moisture contents and densities throughout the lift.
+Materials for engineered fill should be spread and compacted in lifts not exceeding 8 inches in
+uncompacted thickness. Engineered fill placed at the site and subgrades requiring recompaction
+should be uniformly compacted to at least 90 percent relative compaction in building areas, and
+to at least 95 percent relative compaction in the upper 12-inches of pavement and flatwork areas,
+as determined by ASTM Test Designation D 1557, or to the method as might be determined by
+an ACG special inspector. The moisture content of engineered fill materials should be determined
+by ACG’s field representative based upon the compaction characteristics of the earth material
+(typically 1 to 4 percent over optimum). ACG should continuously observe and test the grading
+and earthwork operations. Such observations and tests are essential to identify field conditions
+that differ from those predicted by this investigation, to adjust these recommendations to actual
+field conditions encountered, and to verify that the grading is in overall accordance with the
+recommendations presented in this report and the 2019 CBC.
+If construction proceeds during or shortly after the wet winter months, it may require time to dry
+the on-site soils since their moisture content will probably be appreciably above the optimum.
+In addition, if subgrade soils are wet at the time of construction, they could be rutted, loosened,
+or otherwise disturbed to several feet of depth by the construction equipment and require
+additional over-excavation and/or stabilization.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 17
+Construction occurring in later summer or early fall (after on-site earth materials becoming dry)
+may require substantial amounts of water to be added during earthwork operations to enable
+the appropriate moisture content and compaction to be achieved.
+Upon completion of filling and grading, care should be taken to maintain the subgrade moisture
+content prior to construction of foundations, exterior flatwork/slabs, and pavements.
+Construction traffic over the completed subgrade should be avoided to prevent disturbance of
+subgrade soils. The site should also be graded to prevent ponding of surface water on the
+prepared subgrades or in excavations. If the subgrade consisting of engineered fill should
+become desiccated, saturated, or disturbed, the affected material should be removed, or these
+materials should be scarified, moisture conditioned, and recompacted prior to construction.
+The geotechnical engineer should be retained during the earthwork construction phase of the
+project to continuously observe earthwork and to perform necessary tests and observations
+during subgrade preparation, backfilling of excavations to the completed subgrade, placement
+and compaction of engineered fills, proof-rolling, backfilling of utility trenches, etc.
+Utility Trench Backfill
+Generally, utility trenches should be backfilled with mechanically compacted fill placed in lifts not
+exceeding 6 inches in uncompacted thickness. Water content of the fill material should be
+adjusted (typically 1 to 4 percent over optimum) during the trench backfilling operations to
+obtain compaction. If on-site soil or import fill material is used, then the material should be
+compacted to at least 90 percent relative compaction. Imported sand could also be used for
+bedding and shading backfill in trenches provided the sand is compacted to at least 95 percent
+relative compaction. Public and private utility companies’ standard plans and specifications
+should be adhered to when backfilling their utility trenches. Excavations parallel with the
+building’s footings should be in compliance with the 2019 CBC Section 1809.14 setback
+requirements.
+Utility trenches should be plugged with lean concrete wherever the utility line passes beneath
+the perimeters of the structures. The plug should be at least one foot on either side of the
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 18
+perimeter of the building perimeter foundation and extend from the bottom of the building
+foundation to the bottom of the trench.
+Finish Grading and Site Drainage
+We consider on-site soils to be moderately susceptible to erosion where drainage concentrations
+occur. Concentrated flowing water should be either dissipated or channeled to appropriate
+discharge facilities. Appropriate erosion control measures should be provided, where applicable,
+by the general civil engineer on his grading and/or winterization plan.
+Positive surface gradients should be provided adjacent to the buildings and pavement areas
+(includes flatwork) to direct surface water away from the buildings and pavements for at least
+ten feet and toward suitable discharge facilities. Ponding of surface water should not be allowed
+adjacent to the buildings or pavements or on top of pavement. Positive drainage should be
+provided during construction and maintained throughout the life of the project. Infiltration of
+water into utility trenches or foundation excavations should be prevented during construction.
+Backfill against foundations, exterior walls, and in utility and sprinkler line trenches should be
+well compacted as previously recommended and free of all construction debris to reduce the
+possibility of moisture infiltration. We recommend a horizontal setback distance of at least 10
+feet from the perimeter of any building and the high-water elevation of the nearest storm-water
+retention.
+Downspouts, roof drains or scuppers should discharge into splash blocks or extensions when the
+ground surface beneath such features is not protected by exterior slabs or paving. Sprinkler
+systems should not be installed within 5 feet of foundation walls. Landscaped irrigation adjacent
+to the foundation system should be minimized or eliminated.
+All grades must provide effective drainage away from the buildings during and after construction.
+Water permitted to pond next to a building can result in greater soil movements than those
+discussed in this report. These greater movements can result in unacceptable differential floor
+slab movements, cracked slabs and walls, vapor transmission issues in interior slabs, and roof
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 19
+leaks. Estimated movements described in this report are based on effective drainage for the life
+of the structures and cannot be relied upon if effective drainage is not maintained.
+Per 2019 CBC Section 1804.4, the soil ground surface should be sloped at least 5 percent (2
+percent for pavement) down and away from the buildings for at least of 10 feet beyond the
+perimeter of the buildings or pavement. After building construction and landscaping, we
+recommend the Civil Engineer and/or surveyor verify final grades to document that effective
+drainage has been achieved. Grades around the structure should also be periodically inspected
+and adjusted as necessary, as part of the structure’s maintenance program.
+Cut and Fill Slopes
+Cut/fill slopes are not anticipated. If slopes should be needed, then permanent excavation and
+embankment slopes up to 10 feet of height in soil should be graded at an inclination of 2
+horizontal to 1 vertical (2H: 1V) or flatter. The crowns of all slopes should be constructed so that
+surface run-off water is not allowed to flow over the faces of the slopes. All cut slopes should be
+observed during grading by the Geotechnical Engineer and/or Engineering Geologist to
+determine if any adverse defects are present. If defects are observed, then additional study
+and/or recommendations would be made at that time.
+For temporary excavations, the individual contractor(s) is/are responsible for designing and
+constructing stable, temporary excavations as required to maintain stability of both the
+excavation sides and bottom. Excavations should be sloped or shored in the interest of safety
+following local and federal regulations, including current OSHA excavation and trench safety
+standards.
+Earthwork Construction Considerations
+At the time of our study, moisture contents of the surface and near-surface native soils were low.
+Based on these moisture contents, some moisture conditioning will likely be needed for the
+project to make the soil compactible and suitable for use as engineered fill. The soils may need
+to be dried by aeration during wet weather conditions, or a chemical treatment, such as cement,
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 20
+lime, or kiln dust, may be needed to stabilize the soil. The soils may need more moisture and
+water during the dry season to make the soil compactible and suitable. Subgrade conditions may
+require a rock protective mat covering of exposed subgrades to limit disturbance of the site soils
+as well as provide a stable base for construction equipment.
+Although the exposed subgrades are anticipated to be relatively stable upon initial exposure, on
+site soils may pump and unstable subgrade conditions could develop during general construction
+operations, particularly if the soils are wet and/or subjected to repetitive construction traffic. The
+use of light construction equipment would aid in reducing subgrade disturbance. The use of
+remotely operated equipment, such as a backhoe, would be beneficial to perform cuts and
+reduce subgrade disturbance. If unstable subgrade conditions develop, then stabilization
+measures will need to be employed. Upon completion of filling and grading, care should be taken
+to maintain the subgrade moisture content just prior to construction of the floor slabs and
+pavements. Construction traffic over the completed subgrades should be avoided to the extent
+practical. The site should also be graded to prevent ponding of surface water on the prepared
+subgrades or in excavations. If the subgrade should become desiccated, saturated, or disturbed,
+the affected material should be removed, or these materials should be scarified, moisture
+conditioned, and recompacted prior to floor slab and pavement construction.
+We anticipate that site grading for concrete foundations, slab construction, pavements and
+shallow utility trenches could be performed with conventional earthmoving equipment.
+We emphasize the contractor is responsible for designing and constructing stable, temporary
+excavations (including utility trenches) as required to maintain stability of both the excavation
+sides and bottom and should be in accordance with OSHA excavation and trench safety
+standards.
+We recommend that the earthwork portion of this project be completed during extended periods
+of dry weather if possible. If earthwork is completed during the wet season (typically November
+through May) it may be necessary to take extra precautionary measures to protect subgrade
+soils. Wet season earthwork may require additional mitigation measures beyond that which
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 21
+would be expected during the drier summer and fall months. This could include diversion of
+surface runoff around exposed soils and draining of ponded water on the site. Once subgrades
+are established, it may be necessary to protect the exposed subgrade soils from construction
+traffic.
+Geotechnical Engineering Earthwork Construction Observation
+As previously discussed, variations in subsurface conditions are possible and may be encountered
+during construction. In order to permit correlation between the preliminary subsurface data
+obtained during this investigation and the actual subsurface conditions encountered during
+construction, as well as affirm substantial conformance with the plans and specifications, a
+representative of this firm should be present during all phases of the site earthwork to make tests
+and observations of the site preparation, selection of satisfactory fill materials, proof rolling,
+placement and compaction of controlled compacted fills, backfilling of excavations to the
+completed subgrade, etc. Additionally, if lime or cement treatment is needed to stabilize or dry
+the soil, then our representative should perform observations during mixing, remixing and
+compaction.
+Any site earthwork performed without the presence of our representative will be entirely at the
+grading contractor's and/or owner's risk and no responsibility for such operations will be
+accepted by our firm. Sufficient notification (at least two working days) is necessary so that our
+special inspections and testing will coincide with the construction schedule.
+We emphasize the importance of ACG’s presence during the observation and testing of the
+grading operations. ACG’s observation of the subsurface soil conditions, especially under the
+loads imposed by construction equipment, is considered an extension of our investigation,
+particularly within those areas away from the subsurface explorations.
+Guide Specifications
+Earthwork guide specifications which may be used as a guide in the preparation of contract
+documents for site grading are included in Appendix D. The conclusions and recommendations
+contained in this report should be incorporated into the guide specifications.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 22
+CRITERIA FOR FOUNDATION DESIGN
+Based on the field and laboratory information for this study, we recommend the proposed half plexus
+and the residential home be supported upon isolated and/or continuous spread footings penetrate
+below the lowest adjacent building pad soil grade into the bearing earth materials at least 12-inches for
+one-story structures and 18-inches for 2- to 3-story structures. Foundation dimensions and
+reinforcement should be based on allowable dead plus live soil bearing values of 1,700 pounds per
+square foot (psf) for continuous footings of at least 15 inches in width and isolated footings at least 24
+inches wide (both directions). The foundations should be supported on engineered fill and/or
+undisturbed, native soil. The allowable foundation bearing pressures apply to dead loads plus design
+live load conditions. The design bearing pressure may be increased by one-third when considering total
+loads that include short duration wind or seismic conditions. The weight of the foundation concrete
+below grade may be neglected in dead load computations.
+Total settlement is estimated at about 1-inch for static compression and is expected to occur the
+structure is built. We recommend that all footings be reinforced as designed by the structural engineer
+to provide structural continuity, to permit strong spanning of local irregularities and to be rigid enough
+to accommodate potential differential movements. Foundations should be proportioned to reduce
+differential foundation movement estimated at ½-inch over 20 linear feet. Proportioning based on equal
+total settlement is recommended; however, proportioning to relative constant dead-load pressure
+would reduce differential settlement between adjacent foundations.
+Lateral Resistance
+Foundations placed in approved soil bearing materials (undisturbed native soil and/or
+engineered fill) could be designed using a coefficient of friction of 0.30 for native and/or
+engineered fill soils. A design passive resistance value of 275 pounds per square foot per foot
+(psf/ft) of depth (with a maximum value of 2,750 pounds per square foot) is recommended for
+native, undisturbed soil and/or engineered fill comprised of pre-approved soil. If both friction
+and passive pressures are combined, then the smaller value should be halved. For fine grained
+soils, in no case should the lateral sliding resistance exceed one-half the dead load.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 23
+The sides of the excavations for the foundations should be nearly vertical and the concrete should
+be placed neat against these vertical faces for the passive earth pressure values to be valid. If the
+loaded side is sloped or benched in the soil, and then backfilled with engineered fill, then the
+nominal passive pressure should be reduced to the soil frictional or adhesive resistance.
+General Foundation Considerations
+ACG’s geotechnical engineer or his representative should observe earth material conditions
+exposed in foundation excavations to confirm the adequacy for structural foundation bearing,
+confirm the appropriateness of these recommendations, and to allow for an opportunity to
+provide additional recommendations if deemed necessary. If the earth material conditions
+encountered differ significantly from those presented in this report, then supplemental
+recommendations will be required.
+An important factor in soils supporting structural improvements is a change in moisture content.
+The recommendations herein are predicated on the soil moisture beneath and within five feet of
+the building perimeters, slabs and pavements being maintained in a uniform condition during
+and after construction. Please be advised that over watering or under watering, types of plants
+(trees should be at least the distance away from the improvement equal to their maximum
+height), altering design site drainage, etc., might be detrimental to the foundation, slabs, and/or
+pavements. We suggest that automatic timing devices be utilized on irrigation systems; however,
+provision should be made to interrupt the normal watering cycle during and following periods of
+rainfall. Additional foundation movements could occur if water, from any source, saturates the
+foundation soils; therefore, proper drainage should be provided during in the final design, during
+construction, and maintained for the life of the development.
+Static and seismic settlement could affect various aspects of the planned development, including
+utilities, building entrances, sidewalks, footings, and grade beams. Design of these elements
+should incorporate features to mitigate the effects of the predicted settlements. Because of the
+anticipated settlements during an earthquake, it may be necessary to replace esthetic features,
+sheetrock, glazing, exterior flatwork, etc., after a major earthquake.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 24
+The foundation excavations should be clean (i.e., free of all loose slough) and maintained in a
+moist condition between 1 to 4 percent over optimum just prior to placing steel and concrete.
+The concrete for the foundation should not be placed against a dry excavation surface.
+The base of all foundation excavations should be free of water, loose soil, and gravel prior to
+placing concrete. Concrete should be placed soon after excavating and placement of engineered
+fill (and lime treatment, if needed) to reduce bearing soil disturbance. Should the soils at bearing
+level become excessively dry, disturbed, or saturated, the affected soil should be removed prior
+to placing concrete. In addition, as previously described, unsuitable soils should be completely
+removed from any proposed construction areas prior to construction. Concrete should not be
+chuted against the excavation sidewalls. Concrete should be pumped or placed by means of a
+tremie or elephant's trunk to avoid aggregate segregation and earth contamination. Rebar
+reinforcement should be properly supported with proper clearances maintained during concrete
+placement. The concrete should be properly vibrated to mitigate formation of voids and to promote
+bonding of the concrete to steel reinforcing. These recommendations are predicated upon ACG’s
+representative observing the bearing materials as well as the manner of concrete placement.
+Foundation Setback
+The bottoms of utility trenches placed along the perimeter of the foundation should be above an
+imaginary plane that projects at a 2H:1V angle projected down from a point on the side of the
+footing that is 9-inches above the lowest outermost edge of the bottom of the foundation per
+the 2019 CBC Section 1809.14. Where trenches pass through the plane, the trench should be
+installed perpendicular to the face of the foundation for at least the distance of the depth of the
+foundation. Alternatively, the foundation could be deepened to attain the recommended
+setback. Foundation details under the influence of this recommendation should be forwarded
+along with the structural load information to the geotechnical engineer for review.
+INTERIOR FLOOR SLAB-ON-GROUND SUPPORT
+On most project sites, the site mass grading is generally accomplished early in the construction phase.
+However, as construction proceeds, the subgrade soils may be disturbed due to utility excavations,
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 25
+construction traffic, desiccation, rainfall, etc. As a result, the floor slab subgrade soils may not be suitable
+for placement of base rock and concrete and corrective action will be required.
+We recommend the subgrade soil underlying the floor slab be graded per the Earthwork section, above,
+and then thoroughly proof rolled with a loaded tandem axle dump truck or water truck prior to final
+grading and placement of base rock. Particular attention should be paid to high traffic areas that were
+rutted and disturbed earlier and to areas where backfilled trenches are located. Areas where unsuitable
+conditions are located should be repaired by removing and replacing the affected material as engineered
+fill.
+A building pad comprised of ACG approved subgrade soil (graded per the criteria contained within the
+above “Earthwork” section) is considered suitable for support of the slabs-on-ground of the building
+without further treatment. The subgrade soils should be maintained at 1 to 4 percent above the
+compaction moisture content in the upper 12 inches. In all cases the floor slab should not be placed on
+a dry subgrade.
+Lightly loaded building floor slab design, thickness and reinforcement should be as designed by the
+structural designer for the anticipated loadings based on a modulus of subgrade soil reaction (k)
+estimated at 75 pounds per square inch per inch (psi/in). We recommend that slabs-on-grade should
+be at least 4-inches thick for light duty use. The slabs should be supported on at least 5-inches thick
+crushed rock or at least 5 inches of Class II aggregate base (compacted to 95% relative compaction)
+that is underlain by approved subgrade soils prepared per the recommendations of this report. The
+exterior ground surface should be at least 6 inches below the top of the floor slab. We emphasize that
+all surfaces should slope to drain away from all sides of the building. Slabs subjected to heavier loads
+may require thicker slab sections and/or increased reinforcement.
+Slabs-on-grade subject to low frequency, light vehicle traffic should be at least five inches thick, or as per
+the project structural engineer, and have at least a six-inch thick layer of Class 2 aggregate base
+(compacted to at least 95 percent relative compaction) placed beneath the slabs. If elastic design is
+utilized for designing slabs-on-grade founded on at least a six-inch thick layer of Class 2 aggregate base
+compacted to at least 95 percent relative compaction, then the design k value may be increased to 125
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 26
+pci. The modulus was provided based on the slab being supported on 6 inches or more of compacted
+aggregate base and estimates obtained from NAVFAC 7.1 design charts. This value is for a small, loaded
+area (1 sq. foot or less) such as for small truck wheel loads or point loads and should be adjusted for
+larger loaded areas. Slabs subjected to heavier loads may require thicker slab sections and/or increased
+reinforcement. The slabs should be separated from the foundations supporting the structures to allow
+for differential movements between the two elements. We suggest the structural designer consider slab
+reinforcement consist of at least #3 reinforcing bars placed on maximum 24-inch centers at mid-slab
+height.
+Floor Slab Moisture Penetration Resistance
+We are not experts regarding measures for mitigating (or preventing) moisture intrusion into
+building’s first floor slab(s)-on-grade. If such should be desired, then an expert regarding
+moisture intrusion should be consulted.
+We suggest the following measures for mitigating (not preventing) moisture intrusion into
+moisture sensitive interior floor slab(s). The floor slabs should be underlain by a 4-inch-thick layer
+of crushed washed rock which is intended to serve as a capillary mitigating moisture break and
+to provide uniform slab support. Gradation of this material should be such that 100 percent will
+pass a 1-inch sieve and 0 to 5 percent passes the No. 4 sieve. When conditions warrant the use
+of a vapor retarder, the slab designer should refer to ACI 302 and/or ACI 360 for procedures and
+cautions regarding the use and placement of a vapor retarder. At a minimum, we recommend in
+areas where it is desired to reduce floor dampness where moisture-sensitive coverings are
+anticipated, construction should have a suitable waterproof vapor retarder (at least 15 mils thick
+polyethylene vapor retarder sheeting, Raven Industries “VaporBlock 15, Stego Industries 15 mil
+“StegoWrap” or W.R. Meadows Sealtight 15 mil “Perminator”) incorporated into the floor slab
+design. The water vapor retarder should be decay resistant material complying with ASTM E96
+not exceeding 0.04 perms, ASTM E154 and ASTM E1745 Class A. The vapor barrier should be
+placed between the concrete slab and the compacted granular aggregate subbase material. The
+water vapor retarder (vapor barrier) should be installed in accordance with ASTM Specification E
+1643-94 or the manufacturer’s recommendations, whichever is more stringent. If maximum two
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 27
+inches of clean sand should be placed above the vapor retarder (not recommended), then we
+recommend a moisture barrier be placed against the outer face of the perimeter foundation.
+Please note that the sand can be a conduit for water beneath the slab. In addition, the sand can
+form boils/pockets in the slab concrete. If proposed floor areas or coverings are considered
+especially sensitive to moisture emissions, additional recommendations from a specialty
+consultant should be obtained. If desired, further resistance to moisture vapor intrusion could
+be achieved with proper curing of the concrete, adding a sealant to the mix (e.g., Moxie), having
+a mix design with low slump (e.g., 2 to 4 inches), low water/cement ratio (we suggest not greater
+than 0.48), and high strength (we suggest at least 3000 psi).
+The structural engineer/Architect and slab-on-grade floor installation contractor should refer to
+ACI 302 and ACI 360 for procedures and cautions regarding the use and placement of a vapor
+barrier. In areas of exposed concrete, control joints should be saw-cut into the slab after concrete
+placement in accordance with ACI Design Manual, Section 302.1R-37 8.3.12 (tooled control joints
+are not recommended). To control the width of cracking, continuous slab reinforcement should
+be considered in exposed concrete slabs.
+Positive separations and/or isolation joints should be provided between slabs and all
+foundations, columns, or utility lines to allow independent movement. Interior trench backfill
+placed beneath slabs should be compacted in accordance with recommendations outlined in the
+Earthwork section of this report and Appendix D. Other design and construction considerations,
+as outlined in the ACI Design Manual, Section 302.1R are recommended.
+EXTERIOR FLATWORK
+We recommend exterior concrete flatwork subject to only pedestrian traffic be at least 4 inches thick
+and underlain by at least 5 inches of Class II aggregate base by approved subgrade soils prepared per the
+“Earthwork” recommendations section of this report.
+To reduce the potential for distress to exterior flatwork that might be caused by differential movement
+of subgrade soils, we recommend that such flatwork be installed with crack-control joints at appropriate
+spacing as designed by the project architect. Flatwork, which should be installed with crack control
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 28
+joints, includes driveways, sidewalks, and architectural features. All subgrades should be prepared
+according to the recommendations in the Earthwork section before placing concrete. Positive drainage
+should be established and maintained adjacent to all flatwork.
+PAVEMENT SECTION ALTERNATIVES
+The R-value test result by exudation at 300 psi is 19 for Sandy Silt subgrade soil that was obtained from
+R-1 location shown in Figure 2 - Explorations Map. Based on the R-value indicated and the Traffic indices
+(T.I.’s) indicated below, pavement section alternatives for the on-site pavement were evaluated per the
+CalTrans "Highway Design Manual" (HDM). A factor of safety per CalTrans HDM was not applied for on-
+site pavements. The Traffic Index selected for the final pavement design should be based upon the
+CalTrans "Highway Design Manual" - latest revision and/or edition - including consideration of the
+vehicular traffic anticipated, number of repetitions, etc., - as determined by your general civil engineer
+or per regulatory agency requirements. Estimated pavement sections for light (T.I. = 5; e.g., daily cars
+and pickups, weekly light delivery trucks, occasional fire trucks up to 40 tons, etc.) to medium duty
+vehicles (T.I. = 6 to 7; e.g., weekly garbage trucks, construction equipment, etc.) are summarized on the
+following table:
+RECOMMENDED PAVEMENT SECTION ALTERNATIVES
+Inches (Feet)
+DESIGN Asphalt Aggregate
+Jointed Portland Aggregate
+TRAFFIC Concrete (AC) Base (AB)
+Cement Concrete** Base (Class 2*)
+INDEX (Type B) (Class 2*)
+2” (0.15’) 10” (0.85’)
+5.0 5” (0.4’) 6” (0.5’)
+2.5” (0.2’) 8” (0.65’)
+2.5” (0.2’) 12” (1.0’)
+6.0 6” (0.6’) 7” (0.6’)
+3” (0.25) 11” (0.9’)
+3” (0.25’) 14” (1.15’)
+7.0 6” (0.6’) 8” (0.65’)
+4” (0.35’) 12” (1.0’)
+(* Caltrans Class 2 aggregate base (AB). ** Portland Cement Concrete (PCC) should have a modulus of rupture of at least 625 psi)
+The above sections should be used for preliminary design and planning purposes only. We recommend
+representative subgrade sample(s) be obtained and "R" Value test(s) be performed on actual earth
+materials exposed once pavement areas have been pioneered. These additional test results may then
+be used to evaluate pavement sections for construction. It is possible that significant variations in
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 29
+pavement sections (vs. those listed above) could result if the resulting test(s) is/are different than that
+used for this study.
+The preliminary sections above should be reviewed and approved by the owner, the civil engineer, and
+the governing authorities prior to construction. In addition, other recommendations for the stated traffic
+indices are available, if needed. The total thickness of most sections would closely approximate those
+given. Thinner sections than those recommended could result in increased maintenance and/or shorter
+pavement life. If desired, please contact this office for further analysis.
+Asphalt concrete paved areas should be designed, constructed, and maintained in accordance with, for
+example, the recommendations of the Asphalt Institute, CalTrans Highway Design Manual, or other
+widely recognized authority. Concrete paved areas should be designed and constructed in accordance
+with the recommendations of the American Concrete Institute, CalTrans Highway Design Manual, or
+other widely recognized authority, particularly regarding thickened edges, joints, and drainage.
+Materials and compaction requirements within the structural sections should conform to the applicable
+provisions of the CalTrans Standard Specifications (latest edition) including at least 95 percent relative
+compaction of at least the uppermost twelve inches of subgrade earth materials. Asphalt concrete
+pavement should conform to the specifications of Type A or B per section 39, and aggregate base should
+conform to the specifications of Class II per Section 26 of the referenced specifications.
+Concrete pavements could be reinforced with nominal rebar, such as at least #4 bars spaced no greater
+than 24 inches, on center, both ways, placed at above mid-slab height, but with proper concrete cover,
+as designed by the pavement engineer or structural engineer. If concrete pavements are to be
+unreinforced, then we suggest the designer use expansion/contraction and/or construction joints
+spaced no greater than 24 times the pavement thickness, both ways, in nearly square patterns, and
+detailed in general accordance with ACI Guidelines. Doweling of concrete pavements at critical pathways
+is also recommended.
+We recommend that reinforced concrete pads be provided for truck pad areas in front of and beneath
+trash receptacles as determined by the structural designer. The trash collection trucks should be parked
+on the rigid concrete pavement when the trash receptacles are lifted. The concrete pads should be at
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 30
+least 6 inches thick and properly reinforced. Thickened edges should be used along outside edges of
+concrete pavements. Edge thickness should be at least 2 inches thicker than concrete pavement
+thickness and taper to the actual concrete pavement thickness 36 inches inward from the edge. Integral
+curbs may be used in lieu of thickened edges.
+The above pavement section alternatives were estimated on the basis that a comparable soil type with
+R-value indicated above would constitute the final subgrade of the pavement. We emphasize that ACG
+should be retained to observe and test final subgrade soil(s) exposed to affirm that the soil is comparable
+to that indicated above. Where differing earth materials are encountered, they should be tested to
+affirm that they will also provide the same or better support for pavement sections like those
+recommended above for preliminary design.
+Adequate drainage systems should be provided to prevent both surface and subsurface saturation of the
+subgrade soils. As a design option, a subdrain system beneath and along the edges of the pavements
+might be considered. The purpose of the system would be to mitigate saturation and loss of
+strength/stability of the subgrade soils. Subdrains should be especially considered beneath valley drains,
+if utilized for the project. As an alternate to edge drains (especially around landscape planters), barrier
+curbing that extends to at least four inches into the soil subgrade below the bottom of the aggregate
+base layer could be considered to limit infiltration of water beneath the adjacent pavement. Drainage
+inlets should be perforated (weep holes installed) at the level of the aggregate base layer. A layer of
+geotextile fabric should be placed on the outside of the drain inlet over the weep holes to reduce the
+potential for migration or piping of fines through the holes.
+Base course or pavement materials should not be placed when the subgrade surface is wet. Surface
+drainage should be provided away from the edge of paved areas to minimize lateral moisture
+transmission into the subgrade.
+Pavement Construction Considerations
+On most project sites, the site grading is generally accomplished early in the construction phase.
+However, as construction proceeds, the subgrades may become disturbed due to utility
+excavations, construction traffic, rainfall, etc. As a result, the pavement subgrade may not be
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 31
+suitable for placement of aggregate base and pavement. We recommend the area underlying
+the pavement be rough graded and proof-rolled prior to placement of aggregate base material.
+Particular attention should be paid to high traffic areas and utility trenches that were backfilled.
+Areas where disturbance has occurred and materials are unsuitable, they should be removed and
+replaced with compacted structural fill.
+The aggregate base should be uniformly moisture-conditioned and compacted to at least 95
+percent relative compaction (modified proctor) in accordance with this report. Base course or
+pavement materials should not be placed when the surface is wet. Surface drainage should be
+provided away from the edge of paved areas to minimize lateral moisture transmission into the
+subgrade.
+Minimizing subgrade saturation is an important factor in maintaining subgrade strength. Water
+allowed to pond on or adjacent to pavements could saturate the subgrade and cause premature
+pavement deterioration. The pavement should be sloped to provide rapid surface drainage, and
+positive surface drainage should be maintained away from the edge of the paved areas. Design
+alternatives which could reduce the risk of subgrade saturation and improve long-term pavement
+performance include crowning the pavement subgrades to drain toward the edges, rather than
+to the center of the pavement areas; and installing surface drains next to any areas where surface
+water could pond. Properly designed and constructed subsurface drainage will reduce the time
+subgrade soils are saturated and can also improve subgrade strength and performance. In areas
+where there will be irrigation adjacent to pavements, we recommend the owner consider
+installing perimeter drains for the pavements.
+Preventative maintenance should be planned and provided for through an on-going pavement
+management program to enhance future pavement performance. Preventative maintenance
+activities are intended to slow the rate of pavement deterioration, and to preserve the pavement
+investment.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 32
+SUBDRAINAGE
+Subdrains might be needed to control subsurface water that might become perched in top and/or fill
+soils. Each case should be evaluated by the Geotechnical Engineer so that he/she could make
+appropriate mitigation recommendations.
+LIMITATIONS
+This report contains statements regarding opinions, conclusions, and recommendations, all of which
+involve certain risks and uncertainties. These statements are often, but are not always, made through
+the use of words or phrases such as “anticipates”, “intends”, “estimates”, “plans”, “expects”, “we
+believe”, “we consider”, “it is our opinion”, “mitigation or mitigate”, “suggest”, “may be”, “expected”,
+“predicated”, “advised”, and similar words or phrases, or future or conditional verbs such as “will”,
+“would”, “should”, “potential”, “can continue”, “could”, “may”, or similar expressions. Actual results
+may differ significantly from the expectations contained in the statements. Among the factors that may
+result in differences are the inherent uncertainties associated with earth material conditions,
+groundwater, project development activities, regulatory requirements, and changes in the planned
+development.
+The analysis and recommendations submitted in this report are based in part upon the data from the
+exploratory borings at the indicated locations and in part on information provided by the client. The
+nature and extent of subsurface variations between the test borings across the site (or due to the
+modifying effects of weather and/or man) may not become evident until further exploration or during
+construction. If variations then appear evident, then the conclusions, opinions, and recommendations
+in this report shall be considered invalid, unless the variations are reviewed and the conclusions,
+opinions, and recommendations are modified or approved in writing.
+This report was prepared to assist the client in the evaluation of the site and to assist the architect and/or
+engineer in the design of the improvements. This firm should be provided the opportunity for a general
+review of final plans and specifications to determine that the recommendations of this report have been
+properly interpreted and implemented in the plans and specifications.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 33
+If there are any significant changes in the project as described herein, then the conclusions and
+recommendations contained in this report shall not be considered valid unless the changes are reviewed,
+and conclusions and recommendations modified or verified in writing.
+This report is issued for the client’s use only. In addition, it is his responsibility to ensure that the
+information and recommendations contained herein are called to the attention of the designer for the
+project; and, that necessary steps are taken to implement the recommendations during construction.
+The findings in this report were developed on the date(s) indicated. Changes in the conditions of the
+property can occur with the passage of time, whether they are due to natural processes or the works of
+man, on this or adjacent properties. In addition, changes in applicable or appropriate standards may
+occur, whether they result from legislation or from the broadening of knowledge. Accordingly, the
+findings in this report might be invalidated, wholly or partially, by changes outside of our control.
+Therefore, this report and the findings on which it is based are subject to our review at the onset of and
+during construction, or within two years, whichever first occurs.
+The scope of services of this project does not include either specifically or by implication any
+environmental or biological (e.g., mold, fungi, bacteria, etc.) assessment of the site or identification or
+prevention of pollutants, hazardous materials, or any other adverse conditions. If the owner is
+concerned about the potential of such contamination or pollution, other studies should be undertaken.
+No warranties, either expressed or implied, are intended or made. Site safety, excavation support, and
+dewatering requirements are the responsibility of others. If any changes in the nature, design, or
+location of the project as outlined in this report are planned, the conclusion and recommendations
+contained in this report shall not be considered valid unless ACG reviews the changes, and either verifies
+or modifies the conclusions of this report in writing.
+This report is applicable only for the project and site studied and should not be used for design and/or
+construction on any other site.
+We appreciate this opportunity to be of service on this project. If you have any questions regarding this
+report, then please do not hesitate to contact us.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+Project No. 05-22016G March 23, 2022
+Geotechnical Engineering Study
+Proposed Nerradscali Subdivision
+905 North Avenue, Sacramento, California
+Page 34
+REFERENCES
+1. American Society for Civil Engineers, 2016 “Minimum Design Loads for Buildings and Other
+Structures,” ASCE/SEI 7-16.
+2. ASTM, “Test Method for Laboratory Compaction Characteristics of Soil Using Modified Effort,”
+Volume 04.08
+3. California Building Code, 2019, “California Code of Regulations, Title 24, Part 2, Volume 2 of 2,”
+California Building Standards Commission, published by ICBO.
+4. CGS “Preliminary Geologic Map of the Sacramento 30’ x 60’ Quadrangle, California”, 2011, scale
+1:100,000. Compilation and Digital Preparation by Carlos I. Gutierrez.
+5. CGS website (https://www.conservation.ca.gov/cgs/earthquakes) for Regulatory Maps, Reports
+and GIS data that includes Earthquake Fault Zones, Landslide and Liquefaction Zones.
+6. Hart, Earl W., Revised 1994, "Fault-Rupture Hazard Zones in California, Alquist Priolo, Special
+Studies Zones Act of 1972,” California Division of Mines and Geology, Special Publication 42.
+7. Jennings, Charles W. and Bryant, William A., 2010, “Fault Activity Map of California” (scale 1:
+750,000) published by CGS, Geologic Data Map No. 6.
+8. SEAOC/OSHPD U.S. Seismic Hazard Maps (reference ASCE/SEI 7-16, 2018 International Building
+Code/2019 California Building Code).
+9. RFE Engineering, Inc., “On-Site Improvement Plans” (Sheet No. C6), dated January 24, 2022.
+10. Google Earth Aerial Photography of the Subject Site.
+1050 Melody Lane Suite 160 • Roseville, CA 95678 • 916-742-5096 • www.AllerionConsulting.com
+Copyrighted © 2022 by Allerion Consulting Group, Inc. Intellectual Property. All rights reserved
+
+APPENDICES
+APPENDIX A
+VICINITY MAP
+EXPLORATIONS MAP
+
+NOTES:
+Location of site (designated by yellow border) is approximate.
+Source for base map: Imagery from Google Earth 2022©.
+ACG JOB NO.
+05-22016G
+VICINITY MAP
+ALLERION CONSULTING GROUP, INC.
+DATE
+1050 Melody Lane, Suite 160 Proposed Nerradscali Subdivision
+Roseville, CA 95678 905 North Avenue 03/23/2022
+Phone: 916-742-5096
+Sacramento, California FIGURE
+1
+
+LEGEND:
+B-x – Approximate Location and Number of Boring
+P-x – Approximate Location and Number of Percolation Test
+R-1 – Approximate Location of R-value Sample
+NOTES:
+Source for base map: RFE Engineering, Inc., “On-Site Improvement Plans” (Sheet No. C6), dated January 24, 2022.
+ACG JOB NO.
+05-22016G
+EXPLORATIONS MAP
+ALLERION CONSULTING GROUP, INC.
+DATE
+1050 Melody Lane, Suite 160 Proposed Nerradscali Subdivision
+Roseville, CA 95678 905 North Avenue 03/23/2022
+Phone: 916-742-5096
+Sacramento, California
+FIGURE
+2
+
+APPENDIX B
+FIELD EXPLORATION METHODS
+LOGS OF SUBSURFACE EXPLORATIONS
+
+FIELD EXPLORATION METHODS
+Field exploration included a general geotechnical engineering reconnaissance within the study area, as well as
+the excavation of subsurface explorations at approximate locations shown on the Explorations Map, Figure
+2, Appendix A. Locations of explorations were determined in the field by estimating from the existing site
+features shown on an aerial photo. The exploration locations should only be considered accurate to the degree
+implied by the means and methods used to define them. The explorations were accomplished, and the soil
+logging and sampling performed by, a Staff Geologist and/or Engineer under the direct supervision of a
+California licensed Geotechnical Engineer. The explorations were conducted to determine the geometry and
+geotechnical characteristics of subsurface geologic deposits at the site.
+The exploratory borings were advanced with a 4-inch outer-diameter continuous flight helical solid stem augers
+(SSA) powered by a truck mounted drill rig. Relatively undisturbed soil samples were recovered from the borings
+at selected intervals by either a 1.4-inch SPT (standard penetration) or 2-inch inner-diameter samplers (Modified
+California) advanced with an automatic hammer driving a 140 lb. hammer freely falling 30 inches (standard 350-
+foot/lb. striking force). The number of blows of the hammer required to drive the samplers each 6-inch to 18-
+inch interval of each drive is denoted as the penetration resistance or "blow count" and provides a field estimate
+of soil consistency/relative density. Blow counts shown on the logs have not been corrected/converted.
+Selected undisturbed samples were retained in moisture-proof containers for laboratory testing and reference.
+Bulk soil samples were recovered directly from excavation cuttings and placed in sealed plastic sample bag(s).
+Soils were logged in the field by the Staff Geologist or Engineer and were field classified based on inspection
+of samples and auger cuttings per the Unified Soil Classification System (ASTM D2487) by color, gradation,
+texture, type, etc. Groundwater observations were made in the explorations during and after drilling.
+Exploration log prepared for the exploration provides soil descriptions and field estimated depths. The
+exploration logs are included in this Appendix B which also contains the Explorations Log Legend. This log
+includes visual classifications of the materials encountered during drilling as well as the field engineer’s
+interpretation of the subsurface conditions. Final exploration logs included with this report represents the
+geotechnical engineer's interpretation of the field logs.
+Samples of the subsurface soil earth materials were obtained from the exploratory borings for use in laboratory
+testing to further determine the soil’s engineering properties and geotechnical design parameters to be used
+for future site improvements. The samples were tagged for identification, sealed to reduce moisture loss, and
+taken to our laboratory for further examination, testing, and classification. Bulk soil samples were recovered
+directly from excavation cuttings and placed in a plastic sample bag. Soil samples were then transported to
+ACG’s soil mechanics laboratory for further testing. Field descriptions within the exploration logs have been
+modified, where appropriate, to reflect laboratory test results. Upon completion of drilling the test borings
+were backfilled from final test boring depth up to original ground surface with soil cuttings.
+
+Project: Proposed Nerradscali Subdivision Log of Boring B-1
+Project Location: Sacramento, CA
+Project Number: 05-22016G
+Date(s)
+2/23/2022 Logged By CH Checked By MK
+Drilled
+Drilling Drill Bit Total Depth
+Solid Stem Auger (SSA) 4" SSA 11.5 feet begs
+Method Size/Type of Borehole
+Drill Rig Drilling Approximate
+CME 45 Cal-Nev Geo Exploration 35 feet above MSL
+Type Contractor Surface Elevation
+Groundwater Level Sampling Hammer
+Not Encountered Modified California, SPT 140 lb., 30", Auto
+and Date Measured Method(s) Data
+Borehole
+Soil Cuttings Location See Explorations Map
+Backfill
+)SCSU(
+epyT
+lairetaM
+ML
+CL
+ML
+seniF
+tnecreP
+%
+,LL
+%
+,IP
+Remarks and
+Other Tests
+goL
+cihparG
+%
+,tnetnoC
+retaW
+16.5
+fcp
+,thgieW
+tinU
+yrD MATERIAL DESCRIPTION
+Medium Stiff, Moist, Dark Brown, Fine Sandy SILT
+Very Stiff, Moist, Light Brown, Fine Sandy Silty CLAY
+106
+Hard, Moist, Light Brown, Fine Sandy SILT
+Red-Brown with Rock Fragments
+Light Brown
+Boring was completed at a depth of approximately 11.5
+feet begs. Free groundwater was not encountered
+during or after the drilling. Boring was backfilled with
+soil cuttings.
+)teef(
+htpeD
+.xrppA
+0
+5
+10
+15
+20
+25
+30
+rebmuN
+elpmaS
+1
+2
+3
+epyT
+elpmaS
+,ecnatsiseR
+gnilpmaS
+sehcni
+6/swolb
+6
+8
+31
+50/6"
+16
+36
+50/6"
+)teef(
+noitavelE
+.xrppA
+35
+30
+25
+20
+15
+10
+5
+]lpt.03-noirellA[4gb.sgoL
+teehskroW
+dleiF/sgoL
+gniroB/otnemarcaS
+,noisividbuS
+ilacsdarreN
+G61022-50/
+lacinhcetoeG/2202/stcejorP
+NOIRELLA/stcejorP
+ECA/lortnoC
+ytilauQ
+ecA/semuloV/
+)tnecrep(
+yrevoceR
+Sheet 1 of 1
+
+Project: Proposed Nerradscali Subdivision Log of Boring B-2
+Project Location: Sacramento, CA
+Project Number: 05-22016G
+Date(s)
+2/23/2022 Logged By CH Checked By MK
+Drilled
+Drilling Drill Bit Total Depth
+Solid Stem Auger (SSA) 4" SSA 11.5 feet begs
+Method Size/Type of Borehole
+Drill Rig Drilling Approximate
+CME 45 Cal-Nev Geo Exploration 34 feet above MSL
+Type Contractor Surface Elevation
+Groundwater Level Sampling Hammer
+Not Encountered Modified California, SPT 140 lb., 30", Auto
+and Date Measured Method(s) Data
+Borehole
+Soil Cuttings Location See Explorations Map
+Backfill
+)SCSU(
+epyT
+lairetaM
+ML
+CL
+ML
+SP
+ML
+%
+,LL
+38
+%
+,IP
+16
+seniF
+tnecreP
+Remarks and
+Other Tests
+59
+goL
+cihparG
+%
+,tnetnoC
+retaW
+18.4
+8.3
+fcp
+,thgieW
+tinU
+yrD MATERIAL DESCRIPTION
+Medium Stiff, Moist, Dark Brown, Fine Sandy SILT
+Very Stiff, Moist, Dark Brown, Fine Sandy Silty CLAY
+Hard, Moist, Dark Brown, Fine Sandy SILT
+Light Brown
+Light Brown with Orange Mottles
+Light Brown, No Mottles
+Dense, Moist, Dark Brown to Brown, Fine to Medium
+SAND
+Hard, Moist, Light Brown, Fine Sandy SILT
+Boring was completed at a depth of approximately 21.5
+feet begs. Free groundwater was not encountered
+during or after the drilling. Boring was backfilled with
+soil cuttings.
+)teef(
+htpeD
+.xrppA
+0
+5
+10
+15
+20
+25
+30
+rebmuN
+elpmaS
+1
+2
+3
+4
+5
+epyT
+elpmaS
+,ecnatsiseR
+gnilpmaS
+sehcni
+6/swolb
+28
+50\1"
+16
+32
+42
+34
+50/1"
+11
+15
+20
+14
+25
+50\6"
+)teef(
+noitavelE
+.xrppA
+34
+29
+24
+19
+14
+9
+4
+]lpt.03-noirellA[4gb.sgoL
+teehskroW
+dleiF/sgoL
+gniroB/otnemarcaS
+,noisividbuS
+ilacsdarreN
+G61022-50/
+lacinhcetoeG/2202/stcejorP
+NOIRELLA/stcejorP
+ECA/lortnoC
+ytilauQ
+ecA/semuloV/
+)tnecrep(
+yrevoceR
+Sheet 1 of 1
+
+Project: Proposed Nerradscali Subdivision Log of Boring B-3
+Project Location: Sacramento, CA
+Project Number: 05-22016G
+Date(s)
+2/23/2022 Logged By CH Checked By MK
+Drilled
+Drilling Drill Bit Total Depth
+Solid Stem Auger (SSA) 4" SSA 21.5 feet begs
+Method Size/Type of Borehole
+Drill Rig Drilling Approximate
+CME 45 Cal-Nev Geo Exploration 37 feet above MSL
+Type Contractor Surface Elevation
+Groundwater Level Sampling Hammer
+Not Encountered Modified California, SPT 140 lb., 30", Auto
+and Date Measured Method(s) Data
+Borehole
+Soil Cuttings Location See Explorations Map
+Backfill
+)SCSU(
+epyT
+lairetaM
+ML
+seniF
+tnecreP
+%
+,LL
+%
+,IP
+Remarks and
+Other Tests
+50
+goL
+cihparG
+%
+,tnetnoC
+retaW
+12.7
+24
+fcp
+,thgieW
+tinU
+yrD MATERIAL DESCRIPTION
+Medium Stiff, Moist, Dark Brown, Fine Sandy SILT with
+Gravel
+Very Stiff, Light Brown with Orange Mottles, Fine
+Sandy SILT
+Hard, No Mottles
+95
+Light Brown with White Streaks
+Light Brown with Orange Mottles
+Boring was completed at a depth of approximately 11.5
+feet begs. Free groundwater was not encountered
+during or after the drilling. Boring was backfilled with
+soil cuttings.
+)teef(
+htpeD
+.xrppA
+0
+5
+10
+15
+20
+25
+30
+rebmuN
+elpmaS
+1
+2
+3
+epyT
+elpmaS
+,ecnatsiseR
+gnilpmaS
+sehcni
+6/swolb
+2
+3
+17
+26
+43
+50\6"
+11
+19
+30
+)teef(
+noitavelE
+.xrppA
+37
+32
+27
+22
+17
+12
+7
+]lpt.03-noirellA[4gb.sgoL
+teehskroW
+dleiF/sgoL
+gniroB/otnemarcaS
+,noisividbuS
+ilacsdarreN
+G61022-50/
+lacinhcetoeG/2202/stcejorP
+NOIRELLA/stcejorP
+ECA/lortnoC
+ytilauQ
+ecA/semuloV/
+)tnecrep(
+yrevoceR
+Sheet 1 of 1
+
+Project: Proposed Nerradscali Subdivision Log of Boring B-4
+Project Location: Sacramento, CA
+Project Number: 05-22016G
+Date(s)
+2/23/2022 Logged By CH Checked By MK
+Drilled
+Drilling Drill Bit Total Depth
+Solid Stem Auger (SSA) 4" SSA 11 feet begs
+Method Size/Type of Borehole
+Drill Rig Drilling Approximate
+CME 45 Cal-Nev Geo Exploration 36 feet above MSL
+Type Contractor Surface Elevation
+Groundwater Level Sampling Hammer
+Not Encountered Modified California, SPT 140 lb., 30", Auto
+and Date Measured Method(s) Data
+Borehole
+Soil Cuttings Location See Explorations Map
+Backfill
+)SCSU(
+epyT
+lairetaM
+ML
+CL
+ML
+seniF
+tnecreP
+%
+,LL
+%
+,IP
+Remarks and
+Other Tests
+goL
+cihparG
+%
+,tnetnoC
+retaW
+16.1
+fcp
+,thgieW
+tinU
+yrD MATERIAL DESCRIPTION
+Medium Stiff, Moist, Dark Brown, Fine Sandy SILT
+Stiff, Moist, light brown, Fine Sandy Silty CLAY
+101
+Hard, Moist, Light Brown, Fine Sandy SILT
+Very Stiff, Light Brown with Orange Mottles
+Hard, Light Brown No Mottles
+Boring was completed at a depth of approximately 11
+feet begs. Free groundwater was not encountered
+during or after the drilling. Boring was backfilled with
+soil cuttings.
+)teef(
+htpeD
+.xrppA
+0
+5
+10
+15
+20
+25
+30
+rebmuN
+elpmaS
+1
+2
+3
+epyT
+elpmaS
+,ecnatsiseR
+gnilpmaS
+sehcni
+6/swolb
+6
+50\6"
+10
+9
+15
+16
+50/6"
+)teef(
+noitavelE
+.xrppA
+36
+31
+26
+21
+16
+11
+6
+]lpt.03-noirellA[4gb.sgoL
+teehskroW
+dleiF/sgoL
+gniroB/otnemarcaS
+,noisividbuS
+ilacsdarreN
+G61022-50/
+lacinhcetoeG/2202/stcejorP
+NOIRELLA/stcejorP
+ECA/lortnoC
+ytilauQ
+ecA/semuloV/
+)tnecrep(
+yrevoceR
+Sheet 1 of 1
+
+Project: Proposed Nerradscali Subdivision Key to Log of Boring
+Project Location: Sacramento, CA
+Project Number: 05-22016G
+)SCSU(
+epyT
+lairetaM
+seniF
+tnecreP
+%
+,LL
+%
+,IP
+Remarks and
+Other Tests
+goL
+cihparG
+%
+,tnetnoC
+retaW
+fcp
+,thgieW
+tinU
+yrD MATERIAL DESCRIPTION
+)teef(
+noitavelE
+.xrppA
+)teef(
+htpeD
+.xrppA
+epyT
+elpmaS
+rebmuN
+elpmaS
+,ecnatsiseR
+gnilpmaS
+sehcni
+6/swolb
+)tnecrep(
+yrevoceR
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+COLUMN DESCRIPTIONS
+1 Apprx. Elevation (feet): Approximate Elevation (MSL, feet). 10 Water Content, %: Water content of the soil sample, expressed as
+2 Apprx. Depth (feet): Approximate Depth in feet below the ground percentage of dry weight of sample.
+surface. 11 Dry Unit Weight, pcf: Dry weight per unit volume of soil sample
+3 Sample Type: Type of soil sample collected at the depth interval measured in laboratory, in pounds per cubic foot.
+shown. 12 Percent Fines: The percent fines (soil passing the No. 200 Sieve)
+4 Sample Number: Sample identification number. in the sample. WA indicates a Wash Sieve, SA indicates a Sieve
+5 Sampling Resistance, blows/6 inches: Number of blows to Analysis.
+advance driven sampler 6 inches (or distance shown) beyond 13 LL, %: Liquid Limit, expressed as a water content.
+seating interval using the hammer identified on the boring log. 14 PI, %: Plasticity Index, expressed as a water content.
+6 Material Type (USCS): Type of material encountered per USCS. 15 Remarks and Other Tests : Comments and observations regarding
+7 Graphic Log: Graphic depiction of the subsurface material drilling or sampling made by driller or field personnel.
+encountered.
+8 MATERIAL DESCRIPTION: Description of material encountered.
+May include consistency, moisture, color, and other descriptive
+text.
+9 Recovery (percent): Percent Recovery
+FIELD AND LABORATORY TEST ABBREVIATIONS
+CHEM: Chemical tests to assess constituents PI: Plasticity Index, percent
+COMP: Compaction test (Proctor) SA: Sieve analysis (percent passing No. 200 Sieve)
+CONS: One-dimensional consolidation test UC: Unconfined compressive strength test, Qu, in ksf
+LL: Liquid Limit, percent WA: Wash sieve (percent passing No. 200 Sieve)
+MATERIAL GRAPHIC SYMBOLS
+Lean CLAY, CLAY w/SAND, SANDY CLAY (CL) SILT, SILT w/SAND, SANDY SILT (ML)
+Poorly graded SAND (SP)
+TYPICAL SAMPLER GRAPHIC SYMBOLS OTHER GRAPHIC SYMBOLS
+2.5-inch-OD Modified
+Water level (at time of drilling, ATD)
+Bulk Sample California w/ 1.91-inch-ID
+stainless steel tube
+3-inch-OD California Water level (after waiting)
+2-inch-OD split spoon
+Modified w/ 2.38-inch-ID Minor change in material properties within a
+(SPT)
+Stainless Steel Tube stratum
+Inferred/gradational contact between strata
+? Queried contact between strata
+GENERAL NOTES
+1: Soil classifications are based on the Unified Soil Classification System (USCS). Descriptions and stratum lines are interpretive, and actual lithologic changes
+may be gradual. Field descriptions may have been modified to reflect results of lab tests.
+2: Descriptions on these logs apply only at the specific boring locations and at the time the borings were advanced. They are not warranted to be representative
+of subsurface conditions at other locations or times.
+]lpt.03-noirellA[4gb.sgoL
+teehskroW
+dleiF/sgoL
+gniroB/otnemarcaS
+,noisividbuS
+ilacsdarreN
+G61022-50/
+lacinhcetoeG/2202/stcejorP
+NOIRELLA/stcejorP
+ECA/lortnoC
+ytilauQ
+ecA/semuloV/
+Sheet 1 of 1
+Figure B-1
+
+APPENDIX C
+LABORATORY TESTING
+
+LABORATORY TESTING
+Samples retrieved during the field exploration were taken to the soil mechanics laboratory for further
+observation by the project geotechnical engineer and were classified in accordance with the Unified Soil
+Classification System (USCS) described in Appendix B. An applicable laboratory testing program was formulated
+for classification testing and to determine engineering properties of the subsurface earth materials. The field
+descriptions were confirmed or modified based on the test results.
+Soil mechanics laboratory tests were performed on soil samples recovered from the explorations to further
+determine the physical and engineering properties of the soils. These tests included R-value test (CTM 301),
+gradation (ASTM D422), dry density (ASTM D 2937), Atterberg limits (ASTM D 4318) and natural moisture
+content (ASTM D 2216). The results of these tests are shown on the Exploration Log at the depth that each
+sample was recovered. The R-value test results are attached. The laboratory test results were used for the
+geotechnical engineering analyses, and the development of engineering, earthwork, and construction
+recommendations.
+
+Resistance "R" Value by Stabilometer Test Performed in
+General Accordance with
+Project Name: Nerradscali Subdivision CTS Job No. 18291
+Project Location: Sacramento, CA Client: ACE Quality Control
+Date Sampled: 2/23/2022 Sample Location: 905 North Ave
+Date Tested: 2/28/2022 Lab Log In: 240494
+Sampled by: Client Source: N/A
+Tested by: James Bridges Description: Silty Sand
+copy graph from "Data Sheet" 50
+45
+40
+35
+30
+25
+20
+15
+10
+5
+0
+800 700 600 500 400 300 200 100 0
+Exudation Expansion
+Dry Density Moisture Corrected R
+Specimen Pressure Pressure
+(pcf) Content %) Value
+(psi) (psf)
+A 114.0 13.5 792 34 128
+B 114.1 14.6 368 22 66 R-Value at 300 psi 19
+C 113.8 15.7 224 14 <1
+Reviewed by: Amy Reeves, EIT
+Title: Staff Engineer
+Date: 3/2/2022
+eulaV-R
+CT 301
+ASTM D 2844-07
+Exudation Pressure (psi)
+Limitations:
+The materials tested was sampled and/or transported to our laboratory by parties other than CTS
+personnel. This report therefore makes no representation of whether the sample tested was
+representative of the subject material. Testing was performed in accordance with the applicable
+test methods by qualified personnel. Pursuant to applicable building codes and/or specifications,
+the results presented in this report are for the items listed herein and for the exclusive use of the
+Client and the registered design professional in responsible charge. The results apply only to the
+samples tested and are not to be considered as a guarantee or warranty, express or implied. In
+the event changes to the specifications (and/or materials) were made and not communicated to
+CTS, then CTS assumes no responsibility for the accuracy of pass/fail statements (meets/did not
+meet), if provided
+4400 Yankee Hill Road, Rocklin, CA 95677 | (916) 419-4747 office | (916) 419-4774 fax
+2118 Rheem Drive, Pleasanton, CA 94588 | (925) 462-5151 office | (925) 462-5183 fax
+
+APPENDIX D
+GUIDE SPECIFICATIONS FOR EARTHWORK
+
+GUIDE SPECIFICATIONS FOR EARTHWORK
+A. General Description
+1. This item shall consist of all clearing and grubbing, removal of existing obstructions, preparation of
+the land to be filled, filling the land, spreading, compaction and control of the fill, and all subsidiary
+work necessary to complete the grading of the cut and fill areas to conform with the lines, grades and
+slopes as shown on the accepted plans.
+2. The Geotechnical Engineer is not responsible for determining line, grade elevations or slope
+gradients. The property owner or his representative shall designate the party that will be responsible
+for those items of work.
+B. Geotechnical Report
+1. The Geotechnical Report has been prepared for this project by Allerion Consulting Group (ACG),
+Roseville, California, (916-742-5096). This report was for design purposes only and may not be
+sufficient to prepare an accurate bid. A copy of the report is available for review at ACG's office.
+2. Contents of these guide specifications shall be integrated with the Geotechnical Report of which they
+are a part and shall not be used as a self-contained document. Where a conflict occurs between
+these guide specifications and the conclusions and recommendations contained in the report, then
+the conclusions and recommendations shall take precedence and these guide specifications adjusted
+accordingly.
+C. Site Preparation
+1. Clearing Area(s) to be Filled: All trees, brush, logs, rubbish, and other debris shall be removed and
+disposed of to leave the areas that have been disturbed with a neat appearance. Underground
+structures shall be removed or may be crushed in place upon approval by the Geotechnical Engineer.
+Excavations and depressions resulting from the removal of the above items shall be cleaned out to
+firm undisturbed soil and backfilled with suitable materials in accordance with the specifications
+contained herein. Stockpiles of clean soil may be reused as filled material provided the soil is free of
+significant vegetation, debris, rubble, and rubbish and is approved by the Geotechnical Engineer.
+2. Surfaces upon which fill is to be placed, as well as subgrades of structure pad(s) left at existing grade,
+shall have all organic material removed; or, with permission of the Geotechnical Engineer, closes cut
+and remove vegetation and thoroughly disc and blend the remaining nominal organics into the upper
+soil. Discing must be thorough enough so that no concentrations of organics remain, which may
+require re-discing or cross-discing several times.
+3. Organic laden material removed per paragraph C.2. above, may be used as fill in landscaped areas
+provided that the material shall not extend closer than ten (10) feet to any structure, shall not exceed
+two (2) feet in thickness or be used where the material could, in the opinion of the Geotechnical
+Engineer, create a slope stability problem, and shall be compacted to at least eighty-two (82) percent
+relative compaction per ASTM Test Designation D 1557. Alternatively, the organic laden material may
+be hauled off-site and suitably disposed of.
+
+4. Upon completion of the organic removal, exposed surface shall be plowed or scarified to a depth of
+at least six (6) inches, and until the surface is free from ruts, hummocks, or other uneven features
+which would tend to prevent uniform compaction by the equipment to be used. Where vegetation
+has been close cut and removed and remaining organics blended with the upper soil, further
+scarifying may not be necessary. Where fills are to be placed on hill slopes, scarifying shall be to
+depths adequate to provide bond between fill and fill foundation. Where considered necessary by
+the Geotechnical Engineer, (typically where the slope ratio of the original ground is steeper than five
+(5) horizontal to one (1) vertical), the ground surface shall be stepped or benched to achieve this
+bond. Vertical dimension of the required benches shall be as determined by the Geotechnical
+Engineer, based upon location, degree, and condition of the hill slope.
+5. After the foundation for the fill has been cleared and scarified, it shall be disced or bladed until it is
+uniform and free from large clods, uniformly moisture conditioned to the range specified by the
+Geotechnical Engineer, and compacted to not less than [refer to report -- if not recommended, use
+90] percent of maximum dry density as determined by ASTM D 1557, or to such other density as may
+be determined appropriate for the materials and conditions and acceptable to the Geotechnical
+Engineer and the owner or his representative.
+D. Fill Materials
+1. Materials for fill shall consist of material approved by the Geotechnical Engineer.
+2. The materials used for fill shall be free from organic matter and other deleterious substances and
+shall not contain rocks, clods, lumps, or cobbles exceeding four (4) inches in greatest dimension with
+not more than fifteen (15) percent larger than two and one-half (2-1/2) inches.
+3. Imported materials to be used for fill shall be non-expansive [typically, have a plasticity index not
+exceeding twelve (12)], shall be of maximum one (1) inch size, and shall be tested and approved by
+the Geotechnical Engineer prior to commencement of grading and before being imported to the site.
+4. The Contractor shall notify the Geotechnical Engineer at least four (4) working days in advance of the
+Contractor's intention to import soil; shall designate the borrow area; and, shall permit the
+Geotechnical Engineer to sample the borrow area for the purposes of examining the material and
+performing the appropriate tests to evaluate the quality and compaction characteristics of the soil.
+Compaction requirements for the material shall be based upon the characteristics of the material as
+determined by the Geotechnical Engineer.
+E. Placement of Fill
+1. The selected fill material shall be placed in level, uniform layers (lifts) which, when compacted, shall
+not exceed six (6) inches in thickness. Water shall be added to the fill, or the fill allowed to dry as
+necessary to obtain fill moisture content at which compaction as specified can be achieved. Each
+layer shall be thoroughly mixed during the spreading to obtain uniformity of moisture in each layer.
+2. The fill material shall be compacted within the appropriate moisture content range (typically
+optimum to slightly above the optimum) as determined by the Geotechnical Engineer for the soil(s)
+being used.
+
+3. Each layer of fill shall be compacted to not less than [refer to report; if not recommended, use 90]
+percent of maximum dry density as determined by ASTM Test Designation D 1557. Compaction
+equipment shall be of such design that it will be able to compact the fill to the specified density.
+Compaction shall be accomplished while the fill material is within the specified moisture content
+range. Compaction of each layer shall be continuous over its entire area and the compaction
+equipment shall make sufficient trips to ensure that the required density has been obtained. No
+ponding or jetting is permitted.
+4. If work has been interrupted for any reason, the Geotechnical Engineer shall be notified by the
+contractor at least two (2) working days prior to the intended resumption of grading.
+F. Geotechnical Engineer
+1. Owner is retaining Geotechnical Engineer to make observations and tests to determine general
+compliance with Plans and Specifications, to verify expected or unexpected variations in subsurface
+conditions, and to give assistance in appropriate decisions. Cost of Geotechnical Engineer will be
+borne by the Owner, except costs incurred for re-tests and/or re-observations caused by failure of
+the Contractor to meet specified requirements will be paid by the Owner and back charged to
+Contractor.
+G. Observation and Testing
+1. Field density tests shall be made by the Geotechnical Engineer or his representative of the
+compaction of each layer of fill. Density tests shall be taken in the compacted material below any
+surfaces disturbed by the construction equipment. When these tests indicate that the density of any
+layer of fill or portion thereof is below the required density or moisture content, the particular layer
+or portion shall be reworked until the required density or moisture content has been obtained.
+2. All aspects of the site earthwork shall be observed and tested as deemed necessary by the
+Geotechnical Engineer or his representative so that he can render a professional opinion of the
+completed fill for substantial compliance with plans and specifications and design concepts. The
+grading contractor shall give the Geotechnical Engineer at least two (2) working days’ notice prior to
+beginning any site earthwork to allow proper scheduling of the work.
+H. Seasonal Limits
+1. No fill material shall be placed, spread, or compacted during unfavorable weather conditions. When
+work is interrupted by heavy rain, fill operations shall not be resumed until the Geotechnical Engineer
+or his representative indicates that the moisture content and density of the previously placed fill are
+as specified.
+GRADING DETAILS
+(On following pages)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+APPENDIX E
+SEAOC/OSHPD U.S. Seismic Hazard Maps
+
+905 N(cid:82)(cid:85)(cid:87)h A(cid:89)e, Sac(cid:85)a(cid:80)e(cid:81)(cid:87)(cid:82), CA 95838, USA
+L(cid:68)(cid:87)(cid:76)(cid:87)(cid:88)(cid:71)(cid:72), L(cid:82)(cid:81)(cid:74)(cid:76)(cid:87)(cid:88)(cid:71)(cid:72): 38.6404947, -121.445908
+Da(cid:87)e 3/21/2022, 12:09:45 PM
+De(cid:86)ig(cid:81) C(cid:82)de Refe(cid:85)e(cid:81)ce D(cid:82)c(cid:88)(cid:80)e(cid:81)(cid:87) A(cid:54)CE7-16
+Ri(cid:86)k Ca(cid:87)eg(cid:82)(cid:85)(cid:92) II
+Si(cid:87)e Cla(cid:86)(cid:86) D - D(cid:72)(cid:73)(cid:68)(cid:88)(cid:79)(cid:87) ((cid:54)(cid:72)(cid:72) (cid:54)(cid:72)(cid:70)(cid:87)(cid:76)(cid:82)(cid:81) 11.4.3)
+T(cid:92)(cid:83)e Val(cid:88)e De(cid:86)c(cid:85)i(cid:83)(cid:87)i(cid:82)(cid:81)
+(cid:54) (cid:54) 0.523 MCE R (cid:74)(cid:85)(cid:82)(cid:88)(cid:81)(cid:71) (cid:80)(cid:82)(cid:87)(cid:76)(cid:82)(cid:81). ((cid:73)(cid:82)(cid:85) 0.2 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71) (cid:83)(cid:72)(cid:85)(cid:76)(cid:82)(cid:71))
+(cid:54) 1 0.242 MCE R (cid:74)(cid:85)(cid:82)(cid:88)(cid:81)(cid:71) (cid:80)(cid:82)(cid:87)(cid:76)(cid:82)(cid:81). ((cid:73)(cid:82)(cid:85) 1.0(cid:86) (cid:83)(cid:72)(cid:85)(cid:76)(cid:82)(cid:71))
+(cid:54) M(cid:54) 0.722 (cid:54)(cid:76)(cid:87)(cid:72)-(cid:80)(cid:82)(cid:71)(cid:76)(cid:73)(cid:76)(cid:72)(cid:71) (cid:86)(cid:83)(cid:72)(cid:70)(cid:87)(cid:85)(cid:68)(cid:79) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72)
+(cid:54) M1 (cid:81)(cid:88)(cid:79)(cid:79) -(cid:54)(cid:72)(cid:72) (cid:54)(cid:72)(cid:70)(cid:87)(cid:76)(cid:82)(cid:81) 11.4.8 (cid:54)(cid:76)(cid:87)(cid:72)-(cid:80)(cid:82)(cid:71)(cid:76)(cid:73)(cid:76)(cid:72)(cid:71) (cid:86)(cid:83)(cid:72)(cid:70)(cid:87)(cid:85)(cid:68)(cid:79) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72)
+(cid:54) D(cid:54) 0.481 N(cid:88)(cid:80)(cid:72)(cid:85)(cid:76)(cid:70) (cid:86)(cid:72)(cid:76)(cid:86)(cid:80)(cid:76)(cid:70) (cid:71)(cid:72)(cid:86)(cid:76)(cid:74)(cid:81) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72) (cid:68)(cid:87) 0.2 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71) (cid:54)A
+(cid:54) D1 (cid:81)(cid:88)(cid:79)(cid:79) -(cid:54)(cid:72)(cid:72) (cid:54)(cid:72)(cid:70)(cid:87)(cid:76)(cid:82)(cid:81) 11.4.8 N(cid:88)(cid:80)(cid:72)(cid:85)(cid:76)(cid:70) (cid:86)(cid:72)(cid:76)(cid:86)(cid:80)(cid:76)(cid:70) (cid:71)(cid:72)(cid:86)(cid:76)(cid:74)(cid:81) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72) (cid:68)(cid:87) 1.0 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71) (cid:54)A
+T(cid:92)(cid:83)e Val(cid:88)e De(cid:86)c(cid:85)i(cid:83)(cid:87)i(cid:82)(cid:81)
+(cid:54)DC (cid:81)(cid:88)(cid:79)(cid:79) -(cid:54)(cid:72)(cid:72) (cid:54)(cid:72)(cid:70)(cid:87)(cid:76)(cid:82)(cid:81) 11.4.8 (cid:54)(cid:72)(cid:76)(cid:86)(cid:80)(cid:76)(cid:70) (cid:71)(cid:72)(cid:86)(cid:76)(cid:74)(cid:81) (cid:70)(cid:68)(cid:87)(cid:72)(cid:74)(cid:82)(cid:85)(cid:92)
+F (cid:68) 1.382 (cid:54)(cid:76)(cid:87)(cid:72) (cid:68)(cid:80)(cid:83)(cid:79)(cid:76)(cid:73)(cid:76)(cid:70)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:73)(cid:68)(cid:70)(cid:87)(cid:82)(cid:85) (cid:68)(cid:87) 0.2 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71)
+F (cid:89) (cid:81)(cid:88)(cid:79)(cid:79) -(cid:54)(cid:72)(cid:72) (cid:54)(cid:72)(cid:70)(cid:87)(cid:76)(cid:82)(cid:81) 11.4.8 (cid:54)(cid:76)(cid:87)(cid:72) (cid:68)(cid:80)(cid:83)(cid:79)(cid:76)(cid:73)(cid:76)(cid:70)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:73)(cid:68)(cid:70)(cid:87)(cid:82)(cid:85) (cid:68)(cid:87) 1.0 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71)
+PGA 0.22 MCE G (cid:83)(cid:72)(cid:68)(cid:78) (cid:74)(cid:85)(cid:82)(cid:88)(cid:81)(cid:71) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81)
+F PGA 1.38 (cid:54)(cid:76)(cid:87)(cid:72) (cid:68)(cid:80)(cid:83)(cid:79)(cid:76)(cid:73)(cid:76)(cid:70)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:73)(cid:68)(cid:70)(cid:87)(cid:82)(cid:85) (cid:68)(cid:87) PGA
+PGA M 0.303 (cid:54)(cid:76)(cid:87)(cid:72) (cid:80)(cid:82)(cid:71)(cid:76)(cid:73)(cid:76)(cid:72)(cid:71) (cid:83)(cid:72)(cid:68)(cid:78) (cid:74)(cid:85)(cid:82)(cid:88)(cid:81)(cid:71) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81)
+(cid:55) L 12 L(cid:82)(cid:81)(cid:74)-(cid:83)(cid:72)(cid:85)(cid:76)(cid:82)(cid:71) (cid:87)(cid:85)(cid:68)(cid:81)(cid:86)(cid:76)(cid:87)(cid:76)(cid:82)(cid:81) (cid:83)(cid:72)(cid:85)(cid:76)(cid:82)(cid:71) (cid:76)(cid:81) (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71)(cid:86)
+(cid:54)(cid:86)(cid:53)(cid:55) 0.523 P(cid:85)(cid:82)(cid:69)(cid:68)(cid:69)(cid:76)(cid:79)(cid:76)(cid:86)(cid:87)(cid:76)(cid:70) (cid:85)(cid:76)(cid:86)(cid:78)-(cid:87)(cid:68)(cid:85)(cid:74)(cid:72)(cid:87)(cid:72)(cid:71) (cid:74)(cid:85)(cid:82)(cid:88)(cid:81)(cid:71) (cid:80)(cid:82)(cid:87)(cid:76)(cid:82)(cid:81). (0.2 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71))
+(cid:54)(cid:86)(cid:56)H 0.549 F(cid:68)(cid:70)(cid:87)(cid:82)(cid:85)(cid:72)(cid:71) (cid:88)(cid:81)(cid:76)(cid:73)(cid:82)(cid:85)(cid:80)-(cid:75)(cid:68)(cid:93)(cid:68)(cid:85)(cid:71) (2% (cid:83)(cid:85)(cid:82)(cid:69)(cid:68)(cid:69)(cid:76)(cid:79)(cid:76)(cid:87)(cid:92) (cid:82)(cid:73) (cid:72)(cid:91)(cid:70)(cid:72)(cid:72)(cid:71)(cid:68)(cid:81)(cid:70)(cid:72) (cid:76)(cid:81) 50 (cid:92)(cid:72)(cid:68)(cid:85)(cid:86)) (cid:86)(cid:83)(cid:72)(cid:70)(cid:87)(cid:85)(cid:68)(cid:79) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81)
+(cid:54)(cid:86)D 1.5 F(cid:68)(cid:70)(cid:87)(cid:82)(cid:85)(cid:72)(cid:71) (cid:71)(cid:72)(cid:87)(cid:72)(cid:85)(cid:80)(cid:76)(cid:81)(cid:76)(cid:86)(cid:87)(cid:76)(cid:70) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72). (0.2 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71))
+(cid:54)1(cid:53)(cid:55) 0.242 P(cid:85)(cid:82)(cid:69)(cid:68)(cid:69)(cid:76)(cid:79)(cid:76)(cid:86)(cid:87)(cid:76)(cid:70) (cid:85)(cid:76)(cid:86)(cid:78)-(cid:87)(cid:68)(cid:85)(cid:74)(cid:72)(cid:87)(cid:72)(cid:71) (cid:74)(cid:85)(cid:82)(cid:88)(cid:81)(cid:71) (cid:80)(cid:82)(cid:87)(cid:76)(cid:82)(cid:81). (1.0 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71))
+(cid:54)1(cid:56)H 0.257 F(cid:68)(cid:70)(cid:87)(cid:82)(cid:85)(cid:72)(cid:71) (cid:88)(cid:81)(cid:76)(cid:73)(cid:82)(cid:85)(cid:80)-(cid:75)(cid:68)(cid:93)(cid:68)(cid:85)(cid:71) (2% (cid:83)(cid:85)(cid:82)(cid:69)(cid:68)(cid:69)(cid:76)(cid:79)(cid:76)(cid:87)(cid:92) (cid:82)(cid:73) (cid:72)(cid:91)(cid:70)(cid:72)(cid:72)(cid:71)(cid:68)(cid:81)(cid:70)(cid:72) (cid:76)(cid:81) 50 (cid:92)(cid:72)(cid:68)(cid:85)(cid:86)) (cid:86)(cid:83)(cid:72)(cid:70)(cid:87)(cid:85)(cid:68)(cid:79) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81).
+(cid:54)1D 0.6 F(cid:68)(cid:70)(cid:87)(cid:82)(cid:85)(cid:72)(cid:71) (cid:71)(cid:72)(cid:87)(cid:72)(cid:85)(cid:80)(cid:76)(cid:81)(cid:76)(cid:86)(cid:87)(cid:76)(cid:70) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72). (1.0 (cid:86)(cid:72)(cid:70)(cid:82)(cid:81)(cid:71))
+PGA(cid:71) 0.5 F(cid:68)(cid:70)(cid:87)(cid:82)(cid:85)(cid:72)(cid:71) (cid:71)(cid:72)(cid:87)(cid:72)(cid:85)(cid:80)(cid:76)(cid:81)(cid:76)(cid:86)(cid:87)(cid:76)(cid:70) (cid:68)(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72). (P(cid:72)(cid:68)(cid:78) G(cid:85)(cid:82)(cid:88)(cid:81)(cid:71) A(cid:70)(cid:70)(cid:72)(cid:79)(cid:72)(cid:85)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81))
+C R(cid:54) 0.952 M(cid:68)(cid:83)(cid:83)(cid:72)(cid:71) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72) (cid:82)(cid:73) (cid:87)(cid:75)(cid:72) (cid:85)(cid:76)(cid:86)(cid:78) (cid:70)(cid:82)(cid:72)(cid:73)(cid:73)(cid:76)(cid:70)(cid:76)(cid:72)(cid:81)(cid:87) (cid:68)(cid:87) (cid:86)(cid:75)(cid:82)(cid:85)(cid:87) (cid:83)(cid:72)(cid:85)(cid:76)(cid:82)(cid:71)(cid:86)
+C R1 0.942 M(cid:68)(cid:83)(cid:83)(cid:72)(cid:71) (cid:89)(cid:68)(cid:79)(cid:88)(cid:72) (cid:82)(cid:73) (cid:87)(cid:75)(cid:72) (cid:85)(cid:76)(cid:86)(cid:78) (cid:70)(cid:82)(cid:72)(cid:73)(cid:73)(cid:76)(cid:70)(cid:76)(cid:72)(cid:81)(cid:87) (cid:68)(cid:87) (cid:68) (cid:83)(cid:72)(cid:85)(cid:76)(cid:82)(cid:71) (cid:82)(cid:73) 1 (cid:86)
+
+DI(cid:54)CLAIME(cid:53)
+(cid:58)(cid:75)(cid:76)(cid:79)(cid:72) (cid:87)(cid:75)(cid:72) (cid:76)(cid:81)(cid:73)(cid:82)(cid:85)(cid:80)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:83)(cid:85)(cid:72)(cid:86)(cid:72)(cid:81)(cid:87)(cid:72)(cid:71) (cid:82)(cid:81) (cid:87)(cid:75)(cid:76)(cid:86) (cid:90)(cid:72)(cid:69)(cid:86)(cid:76)(cid:87)(cid:72) (cid:76)(cid:86) (cid:69)(cid:72)(cid:79)(cid:76)(cid:72)(cid:89)(cid:72)(cid:71) (cid:87)(cid:82) (cid:69)(cid:72) (cid:70)(cid:82)(cid:85)(cid:85)(cid:72)(cid:70)(cid:87), (cid:54)EAOC /O(cid:54)HPD (cid:68)(cid:81)(cid:71) (cid:76)(cid:87)(cid:86) (cid:86)(cid:83)(cid:82)(cid:81)(cid:86)(cid:82)(cid:85)(cid:86) (cid:68)(cid:81)(cid:71) (cid:70)(cid:82)(cid:81)(cid:87)(cid:85)(cid:76)(cid:69)(cid:88)(cid:87)(cid:82)(cid:85)(cid:86) (cid:68)(cid:86)(cid:86)(cid:88)(cid:80)(cid:72) (cid:81)(cid:82) (cid:85)(cid:72)(cid:86)(cid:83)(cid:82)(cid:81)(cid:86)(cid:76)(cid:69)(cid:76)(cid:79)(cid:76)(cid:87)(cid:92) (cid:82)(cid:85)
+(cid:79)(cid:76)(cid:68)(cid:69)(cid:76)(cid:79)(cid:76)(cid:87)(cid:92) (cid:73)(cid:82)(cid:85) (cid:76)(cid:87)(cid:86) (cid:68)(cid:70)(cid:70)(cid:88)(cid:85)(cid:68)(cid:70)(cid:92). (cid:55)(cid:75)(cid:72) (cid:80)(cid:68)(cid:87)(cid:72)(cid:85)(cid:76)(cid:68)(cid:79) (cid:83)(cid:85)(cid:72)(cid:86)(cid:72)(cid:81)(cid:87)(cid:72)(cid:71) (cid:76)(cid:81) (cid:87)(cid:75)(cid:76)(cid:86) (cid:90)(cid:72)(cid:69) (cid:68)(cid:83)(cid:83)(cid:79)(cid:76)(cid:70)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:86)(cid:75)(cid:82)(cid:88)(cid:79)(cid:71) (cid:81)(cid:82)(cid:87) (cid:69)(cid:72) (cid:88)(cid:86)(cid:72)(cid:71) (cid:82)(cid:85) (cid:85)(cid:72)(cid:79)(cid:76)(cid:72)(cid:71) (cid:88)(cid:83)(cid:82)(cid:81) (cid:73)(cid:82)(cid:85) (cid:68)(cid:81)(cid:92) (cid:86)(cid:83)(cid:72)(cid:70)(cid:76)(cid:73)(cid:76)(cid:70) (cid:68)(cid:83)(cid:83)(cid:79)(cid:76)(cid:70)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:90)(cid:76)(cid:87)(cid:75)(cid:82)(cid:88)(cid:87) (cid:70)(cid:82)(cid:80)(cid:83)(cid:72)(cid:87)(cid:72)(cid:81)(cid:87) (cid:72)(cid:91)(cid:68)(cid:80)(cid:76)(cid:81)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81)
+(cid:68)(cid:81)(cid:71) (cid:89)(cid:72)(cid:85)(cid:76)(cid:73)(cid:76)(cid:70)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:82)(cid:73) (cid:76)(cid:87)(cid:86) (cid:68)(cid:70)(cid:70)(cid:88)(cid:85)(cid:68)(cid:70)(cid:92), (cid:86)(cid:88)(cid:76)(cid:87)(cid:68)(cid:69)(cid:76)(cid:79)(cid:76)(cid:87)(cid:92) (cid:68)(cid:81)(cid:71) (cid:68)(cid:83)(cid:83)(cid:79)(cid:76)(cid:70)(cid:68)(cid:69)(cid:76)(cid:79)(cid:76)(cid:87)(cid:92) (cid:69)(cid:92) (cid:72)(cid:81)(cid:74)(cid:76)(cid:81)(cid:72)(cid:72)(cid:85)(cid:86) (cid:82)(cid:85) (cid:82)(cid:87)(cid:75)(cid:72)(cid:85) (cid:79)(cid:76)(cid:70)(cid:72)(cid:81)(cid:86)(cid:72)(cid:71) (cid:83)(cid:85)(cid:82)(cid:73)(cid:72)(cid:86)(cid:86)(cid:76)(cid:82)(cid:81)(cid:68)(cid:79)(cid:86). (cid:54)EAOC / O(cid:54)HPD (cid:71)(cid:82) (cid:81)(cid:82)(cid:87) (cid:76)(cid:81)(cid:87)(cid:72)(cid:81)(cid:71) (cid:87)(cid:75)(cid:68)(cid:87) (cid:87)(cid:75)(cid:72) (cid:88)(cid:86)(cid:72) (cid:82)(cid:73) (cid:87)(cid:75)(cid:76)(cid:86)
+(cid:76)(cid:81)(cid:73)(cid:82)(cid:85)(cid:80)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:85)(cid:72)(cid:83)(cid:79)(cid:68)(cid:70)(cid:72) (cid:87)(cid:75)(cid:72) (cid:86)(cid:82)(cid:88)(cid:81)(cid:71) (cid:77)(cid:88)(cid:71)(cid:74)(cid:80)(cid:72)(cid:81)(cid:87) (cid:82)(cid:73) (cid:86)(cid:88)(cid:70)(cid:75) (cid:70)(cid:82)(cid:80)(cid:83)(cid:72)(cid:87)(cid:72)(cid:81)(cid:87) (cid:83)(cid:85)(cid:82)(cid:73)(cid:72)(cid:86)(cid:86)(cid:76)(cid:82)(cid:81)(cid:68)(cid:79)(cid:86), (cid:75)(cid:68)(cid:89)(cid:76)(cid:81)(cid:74) (cid:72)(cid:91)(cid:83)(cid:72)(cid:85)(cid:76)(cid:72)(cid:81)(cid:70)(cid:72) (cid:68)(cid:81)(cid:71) (cid:78)(cid:81)(cid:82)(cid:90)(cid:79)(cid:72)(cid:71)(cid:74)(cid:72) (cid:76)(cid:81) (cid:87)(cid:75)(cid:72) (cid:73)(cid:76)(cid:72)(cid:79)(cid:71) (cid:82)(cid:73) (cid:83)(cid:85)(cid:68)(cid:70)(cid:87)(cid:76)(cid:70)(cid:72), (cid:81)(cid:82)(cid:85) (cid:87)(cid:82) (cid:86)(cid:88)(cid:69)(cid:86)(cid:87)(cid:76)(cid:87)(cid:88)(cid:87)(cid:72) (cid:73)(cid:82)(cid:85) (cid:87)(cid:75)(cid:72) (cid:86)(cid:87)(cid:68)(cid:81)(cid:71)(cid:68)(cid:85)(cid:71)
+(cid:82)(cid:73) (cid:70)(cid:68)(cid:85)(cid:72) (cid:85)(cid:72)(cid:84)(cid:88)(cid:76)(cid:85)(cid:72)(cid:71) (cid:82)(cid:73) (cid:86)(cid:88)(cid:70)(cid:75) (cid:83)(cid:85)(cid:82)(cid:73)(cid:72)(cid:86)(cid:86)(cid:76)(cid:82)(cid:81)(cid:68)(cid:79)(cid:86) (cid:76)(cid:81) (cid:76)(cid:81)(cid:87)(cid:72)(cid:85)(cid:83)(cid:85)(cid:72)(cid:87)(cid:76)(cid:81)(cid:74) (cid:68)(cid:81)(cid:71) (cid:68)(cid:83)(cid:83)(cid:79)(cid:92)(cid:76)(cid:81)(cid:74) (cid:87)(cid:75)(cid:72) (cid:85)(cid:72)(cid:86)(cid:88)(cid:79)(cid:87)(cid:86) (cid:82)(cid:73) (cid:87)(cid:75)(cid:72) (cid:86)(cid:72)(cid:76)(cid:86)(cid:80)(cid:76)(cid:70) (cid:71)(cid:68)(cid:87)(cid:68) (cid:83)(cid:85)(cid:82)(cid:89)(cid:76)(cid:71)(cid:72)(cid:71) (cid:69)(cid:92) (cid:87)(cid:75)(cid:76)(cid:86) (cid:90)(cid:72)(cid:69)(cid:86)(cid:76)(cid:87)(cid:72). (cid:56)(cid:86)(cid:72)(cid:85)(cid:86) (cid:82)(cid:73) (cid:87)(cid:75)(cid:72) (cid:76)(cid:81)(cid:73)(cid:82)(cid:85)(cid:80)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:73)(cid:85)(cid:82)(cid:80) (cid:87)(cid:75)(cid:76)(cid:86) (cid:90)(cid:72)(cid:69)(cid:86)(cid:76)(cid:87)(cid:72)
+(cid:68)(cid:86)(cid:86)(cid:88)(cid:80)(cid:72) (cid:68)(cid:79)(cid:79) (cid:79)(cid:76)(cid:68)(cid:69)(cid:76)(cid:79)(cid:76)(cid:87)(cid:92) (cid:68)(cid:85)(cid:76)(cid:86)(cid:76)(cid:81)(cid:74) (cid:73)(cid:85)(cid:82)(cid:80) (cid:86)(cid:88)(cid:70)(cid:75) (cid:88)(cid:86)(cid:72). (cid:56)(cid:86)(cid:72) (cid:82)(cid:73) (cid:87)(cid:75)(cid:72) (cid:82)(cid:88)(cid:87)(cid:83)(cid:88)(cid:87) (cid:82)(cid:73) (cid:87)(cid:75)(cid:76)(cid:86) (cid:90)(cid:72)(cid:69)(cid:86)(cid:76)(cid:87)(cid:72) (cid:71)(cid:82)(cid:72)(cid:86) (cid:81)(cid:82)(cid:87) (cid:76)(cid:80)(cid:83)(cid:79)(cid:92) (cid:68)(cid:83)(cid:83)(cid:85)(cid:82)(cid:89)(cid:68)(cid:79) (cid:69)(cid:92) (cid:87)(cid:75)(cid:72) (cid:74)(cid:82)(cid:89)(cid:72)(cid:85)(cid:81)(cid:76)(cid:81)(cid:74) (cid:69)(cid:88)(cid:76)(cid:79)(cid:71)(cid:76)(cid:81)(cid:74) (cid:70)(cid:82)(cid:71)(cid:72) (cid:69)(cid:82)(cid:71)(cid:76)(cid:72)(cid:86) (cid:85)(cid:72)(cid:86)(cid:83)(cid:82)(cid:81)(cid:86)(cid:76)(cid:69)(cid:79)(cid:72) (cid:73)(cid:82)(cid:85) (cid:69)(cid:88)(cid:76)(cid:79)(cid:71)(cid:76)(cid:81)(cid:74)
+(cid:70)(cid:82)(cid:71)(cid:72) (cid:68)(cid:83)(cid:83)(cid:85)(cid:82)(cid:89)(cid:68)(cid:79) (cid:68)(cid:81)(cid:71) (cid:76)(cid:81)(cid:87)(cid:72)(cid:85)(cid:83)(cid:85)(cid:72)(cid:87)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:73)(cid:82)(cid:85) (cid:87)(cid:75)(cid:72) (cid:69)(cid:88)(cid:76)(cid:79)(cid:71)(cid:76)(cid:81)(cid:74) (cid:86)(cid:76)(cid:87)(cid:72) (cid:71)(cid:72)(cid:86)(cid:70)(cid:85)(cid:76)(cid:69)(cid:72)(cid:71) (cid:69)(cid:92) (cid:79)(cid:68)(cid:87)(cid:76)(cid:87)(cid:88)(cid:71)(cid:72)/(cid:79)(cid:82)(cid:81)(cid:74)(cid:76)(cid:87)(cid:88)(cid:71)(cid:72) (cid:79)(cid:82)(cid:70)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81) (cid:76)(cid:81) (cid:87)(cid:75)(cid:72) (cid:86)(cid:72)(cid:68)(cid:85)(cid:70)(cid:75) (cid:85)(cid:72)(cid:86)(cid:88)(cid:79)(cid:87)(cid:86) (cid:82)(cid:73) (cid:87)(cid:75)(cid:76)(cid:86) (cid:90)(cid:72)(cid:69)(cid:86)(cid:76)(cid:87)(cid:72).
+
+Corporate Office:
+1050 Melody Lane, Suite 160
+Roseville, California 95678
+Ph: 916.74(cid:33).5096
+AllerionCon(cid:17)(cid:18)ltin(cid:19)(cid:20)co(cid:21)
+(cid:34)uildin(cid:35) (cid:36)nvelo(cid:37)e (cid:38) (cid:39)eote(cid:40)hni(cid:40)al (cid:38) (cid:36)nviron(cid:41)ental (cid:38) (cid:42)iresto(cid:37) Syste(cid:41)s
+(cid:43)ntelle(cid:40)tualPro(cid:37)erty(cid:44)llerionConsultin(cid:35)(cid:39)rou(cid:37),(cid:43)n(cid:40).©(cid:45)2(cid:33)002(cid:33)21(cid:44)llRi(cid:35)htsReserved
+

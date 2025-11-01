@@ -1,0 +1,58 @@
+Engineer's Opinion of Probable Construction Costs
+NERRADSCALI SUBDIVISION ON-SITE IMPROVEMENTS
+905 North Ave
+Sacramento, CA 95838
+December 6, 2023
+CWE Project No. R21188
+Estimated Cost
+I. On-Site Grading and Paving $182,039
+II. On-Site Storm Drain $76,204
+III. On-Site Sanitary Sewer $51,990
+IV. On-Site Water System $42,820
+V. On-Site Miscellaneous $148,880
+Total On-Site Estimated Costs $501,933
+Subtotal On-Site: $501,933
+15% Contingency: $75,290
+TOTAL OF ESTIMATED COSTS: $577,223
+Item No. Description Quantity Unit Unit Cost Total Item Cost
+I. ON-SITE GRADING & PAVING
+1 Clear & Grub 1.1AC $2,200.00 $2,398
+2 Excavation and Grading 1,100CY $30.00 $33,000
+3 Earthwork Export 690CY $50.00 $34,500
+4 Hot Mix Asphalt 131TON $140.00 $18,361
+5 Class 2 Aggregate Base 340CY $100.00 $34,000
+6 Heavy Duty Concrete Paving 4,630SF $8.00 $37,040
+7 Light Duty Concrete Paving 2,148SF $5.00 $10,740
+8 Tree removal 20EA $600.00 $12,000
+Subtotal $182,039
+II. ON-SITE STORM DRAIN
+9 12" Storm Drain Pipe (SDR-35 PVC) 184LF $90.00 $16,560
+10 18" Storm Drain Pipe (SDR-35 PVC) 250LF $120.00 $30,000
+11 48" Manhole 1EA $4,000.00 $4,000
+12 Type 1 Drain Inlet 3EA $2,000.00 $6,000
+13 24" Nyloplast Drain Basin with Dome Grate 1EA $2,000.00 $2,000
+14 Flared End Section with Rock Slope Protection 3EA $2,000.00 $6,000
+15 Detention Basin 1,500SF $3.00 $4,500
+16 Drainage Swale 760LF $9.40 $7,144
+Subtotal $76,204
+III. ON-SITE SANITARY SEWER
+17 6" Sewer Pipe (SDR-35 PVC) 311LF $65.00 $20,215
+18 4" Sewer Pipe (SDR-35 PVC) 105LF $55.00 $5,775
+19 Two-Way Cleanout 7EA $2,500.00 $17,500
+20 One-Way Cleanout 1EA $2,500.00 $2,500
+21 48" Sewer Manhole 1EA $6,000.00 $6,000
+Subtotal $51,990
+IV. ON-SITE WATER
+22 6" PVC C900 333LF $40.00 $13,320
+23 6" Gate Valve 3EA $2,500.00 $7,500
+24 1" Water Meter Service Connection 8EA $2,500.00 $20,000
+25 2" Blow Off Valve 1EA $2,000.00 $2,000
+Subtotal $42,820
+V. MISCELLANEOUS
+26 Fencing 547LF $30.00 $16,410
+27 6' High Security Fence for Detention Basin 143LF $40.00 $5,720
+28 Erosion & Sediment Control 1.1AC $2,500.00 $2,750
+29 Landscaping 31,000SF $4.00 $124,000
+Subtotal $148,880
+12/6/2023 1 of 1
+

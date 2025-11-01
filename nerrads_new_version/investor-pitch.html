@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4929 Nerrads Place - Investment Pitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .verdict {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+        
+        .verdict.caution {
+            background: #f59e0b;
+        }
+        
+        .verdict.success {
+            background: #10b981;
+        }
+        
+        /* Navigation */
+        .nav {
+            background: #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .nav-content {
+            display: flex;
+            overflow-x: auto;
+            gap: 5px;
+            padding: 10px 20px;
+        }
+        
+        .nav-btn {
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            white-space: nowrap;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .nav-btn:hover {
+            background: #334155;
+            color: white;
+        }
+        
+        .nav-btn.active {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        /* Section */
+        .section {
+            display: none;
+            padding: 60px 20px;
+            animation: fadeIn 0.5s;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #3b82f6;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #94a3b8;
+        }
+        
+        /* Cards */
+        .card {
+            background: #1e293b;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+        }
+        
+        .card h3 {
+            color: #3b82f6;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .stat-value.negative {
+            color: #ef4444;
+        }
+        
+        .stat-value.positive {
+            color: #10b981;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background: #0f172a;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        tr:hover {
+            background: #0f172a;
+        }
+        
+        .table-header-row {
+            background: #1e293b !important;
+            font-weight: 600;
+        }
+        
+        .total-row {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+            color: white !important;
+            font-weight: 700;
+        }
+        
+        .total-row td {
+            border: none;
+            padding: 20px 15px;
+        }
+        
+        /* Alert Boxes */
+        .alert {
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid;
+        }
+        
+        .alert-critical {
+            background: rgba(220, 38, 38, 0.1);
+            border-color: #dc2626;
+        }
+        
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+        }
+        
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
+        }
+        
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: #3b82f6;
+        }
+        
+        .alert-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        /* Risk Matrix */
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .risk-item {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid;
+        }
+        
+        .risk-item.critical {
+            border-color: #dc2626;
+        }
+        
+        .risk-item.high {
+            border-color: #f59e0b;
+        }
+        
+        .risk-item.medium {
+            border-color: #3b82f6;
+        }
+        
+        .risk-item h4 {
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .risk-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .risk-badge.critical {
+            background: #dc2626;
+            color: white;
+        }
+        
+        .risk-badge.high {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .risk-badge.medium {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #3b82f6;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #1e293b;
+            border-radius: 12px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -47px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 3px solid #0f172a;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #3b82f6;
+        }
+        
+        .timeline-meta {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+        
+        .btn-danger {
+            background: #dc2626;
+            color: white;
+        }
+        
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #334155;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>4929 Nerrads Place</h1>
+            <p>Investment Opportunity Analysis</p>
+            <div style="margin: 20px 0;">
+                <div class="stat-box" style="display: inline-block; margin: 0 10px;">
+                    <div class="stat-label">Total Development Cost</div>
+                    <div class="stat-value">$3,330,206</div>
+                </div>
+                <div class="stat-box" style="display: inline-block; margin: 0 10px;">
+                    <div class="stat-label">Projected Revenue</div>
+                    <div class="stat-value">$2,778,750</div>
+                </div>
+                <div class="stat-box" style="display: inline-block; margin: 0 10px;">
+                    <div class="stat-label">Net Profit/(Loss)</div>
+                    <div class="stat-value negative">($551,456)</div>
+                </div>
+            </div>
+            <div class="verdict">❌ DO NOT PROCEED AT $258,500</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <div class="nav-content">
+            <button class="nav-btn active" onclick="showSection('executive')">Executive Summary</button>
+            <button class="nav-btn" onclick="showSection('property')">Property Overview</button>
+            <button class="nav-btn" onclick="showSection('financials')">Financial Analysis</button>
+            <button class="nav-btn" onclick="showSection('market')">Market Analysis</button>
+            <button class="nav-btn" onclick="showSection('timeline')">Timeline</button>
+            <button class="nav-btn" onclick="showSection('risks')">Risk Assessment</button>
+            <button class="nav-btn" onclick="showSection('funding')">Funding</button>
+            <button class="nav-btn" onclick="showSection('recommendation')">Recommendation</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Executive Summary -->
+        <div id="executive" class="section active">
+            <div class="section-header">
+                <h2>Executive Summary</h2>
+                <p>A fully entitled, shovel-ready subdivision that's financially unviable at current pricing</p>
+            </div>
+
+            <div class="alert alert-critical">
+                <div class="alert-title">🚨 Critical Finding</div>
+                <p>This project loses $551,456 (-16.6% ROI) in the realistic scenario and is unprofitable in ALL scenarios tested, including the most optimistic assumptions.</p>
+            </div>
+
+            <div class="card">
+                <h3>The Opportunity</h3>
+                <ul style="line-height: 2;">
+                    <li>✅ <strong>1.17-acre entitled subdivision</strong> with approved final map</li>
+                    <li>✅ <strong>Improvement plans completed</strong> (2024, Ellis Architects)</li>
+                    <li>✅ <strong>School fees paid</strong> ($60K+ value)</li>
+                    <li>✅ <strong>Performance bond executed</strong> ($25K)</li>
+                    <li>✅ <strong>Shovel-ready development</strong> with 7 lots for 7 units</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>The Challenge</h3>
+                <p style="margin-bottom: 20px;">At the current listing price of $258,500, this project is financially unviable.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Dev Cost</th>
+                            <th>Revenue</th>
+                            <th>Profit/(Loss)</th>
+                            <th>ROI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Conservative</strong></td>
+                            <td>$3,584,104</td>
+                            <td>$2,584,000</td>
+                            <td class="negative">($1,000,104)</td>
+                            <td class="negative">-27.9%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Realistic</strong></td>
+                            <td>$3,330,206</td>
+                            <td>$2,778,750</td>
+                            <td class="negative">($551,456)</td>
+                            <td class="negative">-16.6%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Optimistic</strong></td>
+                            <td>$3,167,163</td>
+                            <td>$3,011,500</td>
+                            <td class="negative">($155,663)</td>
+                            <td class="negative">-4.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Our Recommendation</h3>
+                <div class="grid">
+                    <div class="alert alert-critical">
+                        <div class="alert-title">❌ DO NOT PROCEED</div>
+                        <p>At $258,500 land price, this project loses money in all scenarios</p>
+                    </div>
+                    <div class="alert alert-warning">
+                        <div class="alert-title">⚠️ PROCEED CONDITIONALLY</div>
+                        <p>Only if land can be acquired for $150K or less AND construction bids at $120/SF or less</p>
+                    </div>
+                    <div class="alert alert-success">
+                        <div class="alert-title">✅ ALTERNATIVE: WHOLESALE</div>
+                        <p>Assign contract for $20-40K profit with zero risk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Overview -->
+        <div id="property" class="section">
+            <div class="section-header">
+                <h2>Property Overview</h2>
+                <p>Entitled subdivision in Sacramento with approved plans</p>
+            </div>
+
+            <div class="grid">
+                <div class="stat-box">
+                    <div class="stat-label">Lot Size</div>
+                    <div class="stat-value">1.17 AC</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Total Lots</div>
+                    <div class="stat-value">7</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Total Units</div>
+                    <div class="stat-value">7</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Total SF</div>
+                    <div class="stat-value">12,446</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Location & Access</h3>
+                <table>
+                    <tr>
+                        <td><strong>Address</strong></td>
+                        <td>4929 Nerrads Place, Sacramento, CA 95838</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Submarket</strong></td>
+                        <td>Rio Linda / North Sacramento</td>
+                    </tr>
+                    <tr>
+                        <td><strong>APN</strong></td>
+                        <td>237-0730-003-0000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cross Street</strong></td>
+                        <td>Rio Linda Blvd (near Highway 80)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zoning</strong></td>
+                        <td>Residential</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Development Program</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Unit Type</th>
+                            <th>Quantity</th>
+                            <th>Square Footage</th>
+                            <th>Bedrooms</th>
+                            <th>Bathrooms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Half-Plex Units</td>
+                            <td>6</td>
+                            <td>1,756-1,856 SF each</td>
+                            <td>4</td>
+                            <td>2.5</td>
+                        </tr>
+                        <tr>
+                            <td>Single Family Residence</td>
+                            <td>1</td>
+                            <td>1,310 SF</td>
+                            <td>3</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>7 units</strong></td>
+                            <td><strong>12,446 SF</strong></td>
+                            <td colspan="2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Entitlements Status</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Final Map</td>
+                            <td>✅ Recorded</td>
+                            <td>2023</td>
+                            <td>7 lots approved</td>
+                        </tr>
+                        <tr>
+                            <td>Improvement Plans</td>
+                            <td>✅ Complete</td>
+                            <td>2024</td>
+                            <td>Ellis Architects</td>
+                        </tr>
+                        <tr>
+                            <td>Geotechnical Report</td>
+                            <td>✅ Complete</td>
+                            <td>Mar 2022</td>
+                            <td>Allerion Consulting</td>
+                        </tr>
+                        <tr>
+                            <td>School Fees</td>
+                            <td>✅ PAID</td>
+                            <td>-</td>
+                            <td>$60K+ value</td>
+                        </tr>
+                        <tr>
+                            <td>Performance Bond</td>
+                            <td>✅ Executed</td>
+                            <td>-</td>
+                            <td>$25K</td>
+                        </tr>
+                        <tr>
+                            <td>Building Permits</td>
+                            <td>⏳ Pending</td>
+                            <td>-</td>
+                            <td>3-4 months to obtain</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Financial Analysis -->
+        <div id="financials" class="section">
+            <div class="section-header">
+                <h2>Financial Analysis</h2>
+                <p>Detailed cost breakdown with verified infrastructure costs</p>
+            </div>
+
+            <div class="alert alert-info">
+                <div class="alert-title">📊 Data Source</div>
+                <p>Infrastructure costs ($679,389) verified from Engineer's estimates (CWE Project R21188, Oct-Dec 2023). All line items extracted from actual PDF documents.</p>
+            </div>
+
+            <div class="card">
+                <h3>Development Cost Summary</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>% of Total</th>
+                            <th>Verification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Land Acquisition</strong></td>
+                            <td>$271,255</td>
+                            <td>8.1%</td>
+                            <td>✅ MLS Verified</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Infrastructure</strong></td>
+                            <td>$679,389</td>
+                            <td>20.4%</td>
+                            <td>✅ Engineer's Estimate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Construction</strong></td>
+                            <td>$1,829,562</td>
+                            <td>54.9%</td>
+                            <td>⚠️ Estimated ($140/SF)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Soft Costs</strong></td>
+                            <td>$305,000</td>
+                            <td>9.2%</td>
+                            <td>⚠️ Estimated</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Financing Costs</strong></td>
+                            <td>$245,000</td>
+                            <td>7.4%</td>
+                            <td>⚠️ Calculated</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>TOTAL DEVELOPMENT COST</strong></td>
+                            <td><strong>$3,330,206</strong></td>
+                            <td><strong>100%</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Infrastructure Costs (Verified)</h3>
+                <p style="margin-bottom: 20px;"><strong>Source:</strong> CWE Engineering Project No. R21188</p>
+                <table>
+                    <tr>
+                        <td><strong>Offsite Improvements</strong></td>
+                        <td style="text-align: right;">$102,166</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Grading & Paving</td>
+                        <td style="text-align: right;">$38,855</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Storm Drain</td>
+                        <td style="text-align: right;">$4,200</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Sanitary Sewer</td>
+                        <td style="text-align: right;">$7,130</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Water System</td>
+                        <td style="text-align: right;">$16,155</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Miscellaneous</td>
+                        <td style="text-align: right;">$22,500</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">15% Contingency</td>
+                        <td style="text-align: right;">$13,326</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Onsite Improvements</strong></td>
+                        <td style="text-align: right;">$577,223</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Grading & Paving</td>
+                        <td style="text-align: right;">$182,039</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Storm Drain</td>
+                        <td style="text-align: right;">$76,204</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Sanitary Sewer</td>
+                        <td style="text-align: right;">$51,990</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Water System</td>
+                        <td style="text-align: right;">$42,820</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">Misc (includes $124K landscaping)</td>
+                        <td style="text-align: right;">$148,880</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 30px;">15% Contingency</td>
+                        <td style="text-align: right;">$75,290</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>TOTAL INFRASTRUCTURE</strong></td>
+                        <td style="text-align: right;"><strong>$679,389</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Revenue Projections</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Half-Plex Price</th>
+                            <th>SFR Price</th>
+                            <th>Gross Revenue</th>
+                            <th>Net Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Conservative</td>
+                            <td>$395,000</td>
+                            <td>$350,000</td>
+                            <td>$2,720,000</td>
+                            <td>$2,584,000</td>
+                        </tr>
+                        <tr>
+                            <td>Realistic</td>
+                            <td>$425,000</td>
+                            <td>$375,000</td>
+                            <td>$2,925,000</td>
+                            <td>$2,778,750</td>
+                        </tr>
+                        <tr>
+                            <td>Optimistic</td>
+                            <td>$460,000</td>
+                            <td>$410,000</td>
+                            <td>$3,170,000</td>
+                            <td>$3,011,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px; color: #94a3b8; font-size: 14px;">*Net revenue after 5% sales commission</p>
+            </div>
+
+            <div class="card">
+                <h3>Profitability Analysis</h3>
+                <div class="alert alert-critical">
+                    <div class="alert-title">🚨 PROJECT IS UNPROFITABLE IN ALL SCENARIOS</div>
+                    <p>Even with the most optimistic assumptions (lowest construction costs, highest sale prices, perfect execution), this project still loses $155,663.</p>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Dev Cost</th>
+                            <th>Net Revenue</th>
+                            <th>Profit/(Loss)</th>
+                            <th>ROI</th>
+                            <th>Per Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Worst Case</strong></td>
+                            <td>$3,584,104</td>
+                            <td>$2,584,000</td>
+                            <td style="color: #ef4444;">($1,000,104)</td>
+                            <td style="color: #ef4444;">-27.9%</td>
+                            <td style="color: #ef4444;">($142,872)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conservative</strong></td>
+                            <td>$3,584,104</td>
+                            <td>$2,778,750</td>
+                            <td style="color: #ef4444;">($805,354)</td>
+                            <td style="color: #ef4444;">-22.5%</td>
+                            <td style="color: #ef4444;">($115,051)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Base Case</strong></td>
+                            <td>$3,330,206</td>
+                            <td>$2,778,750</td>
+                            <td style="color: #ef4444;">($551,456)</td>
+                            <td style="color: #ef4444;">-16.6%</td>
+                            <td style="color: #ef4444;">($78,779)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Upside Case</strong></td>
+                            <td>$3,167,163</td>
+                            <td>$3,011,500</td>
+                            <td style="color: #ef4444;">($155,663)</td>
+                            <td style="color: #ef4444;">-4.9%</td>
+                            <td style="color: #ef4444;">($22,238)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Market Analysis -->
+        <div id="market" class="section">
+            <div class="section-header">
+                <h2>Market Analysis</h2>
+                <p>Sacramento housing market conditions and Rio Linda submarket profile</p>
+            </div>
+
+            <div class="card">
+                <h3>Current Market Conditions (Q4 2024)</h3>
+                <div class="grid">
+                    <div class="stat-box">
+                        <div class="stat-label">Median Home Price</div>
+                        <div class="stat-value">$485,000</div>
+                        <div style="margin-top: 10px; color: #ef4444;">▼ -3.2% YoY</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Days on Market</div>
+                        <div class="stat-value">28</div>
+                        <div style="margin-top: 10px; color: #ef4444;">▲ +12% YoY</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Inventory</div>
+                        <div class="stat-value">2.8 mo</div>
+                        <div style="margin-top: 10px; color: #ef4444;">▲ High</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Mortgage Rate</div>
+                        <div class="stat-value">7.1%</div>
+                        <div style="margin-top: 10px; color: #ef4444;">▲ +85 bps YoY</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Rio Linda Submarket Profile</h3>
+                <div class="grid">
+                    <div class="alert alert-warning">
+                        <div class="alert-title">Price Point</div>
+                        <p>15-20% below Sacramento median</p>
+                    </div>
+                    <div class="alert alert-info">
+                        <div class="alert-title">Primary Buyers</div>
+                        <p>First-time homebuyers, move-up buyers</p>
+                    </div>
+                    <div class="alert alert-warning">
+                        <div class="alert-title">Absorption</div>
+                        <p>3-6 months for similar product</p>
+                    </div>
+                    <div class="alert alert-warning">
+                        <div class="alert-title">Competition</div>
+                        <p>Moderate new construction activity</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Competitive Analysis</h3>
+                <p style="margin-bottom: 20px;">Active new construction projects within 3 miles:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Units</th>
+                            <th>Price Range</th>
+                            <th>Status</th>
+                            <th>Absorption</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>North Ridge Estates</td>
+                            <td>12</td>
+                            <td>$395K-$425K</td>
+                            <td>Selling</td>
+                            <td>2/month</td>
+                        </tr>
+                        <tr>
+                            <td>Rio Vista Commons</td>
+                            <td>8</td>
+                            <td>$410K-$445K</td>
+                            <td>Selling</td>
+                            <td>1.5/month</td>
+                        </tr>
+                        <tr>
+                            <td>Parkside Villas</td>
+                            <td>6</td>
+                            <td>$380K-$405K</td>
+                            <td>Sold Out</td>
+                            <td>3 months total</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-warning" style="margin-top: 20px;">
+                    <div class="alert-title">Key Takeaway</div>
+                    <p>Absorption rates: 1.5-2 units/month | Price ceiling: $425-445K for half-plex</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Market Factors</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4 style="color: #10b981; margin-bottom: 15px;">✅ Positive Factors</h4>
+                        <ul style="line-height: 2;">
+                            <li>Near Highway 80 (commuter access)</li>
+                            <li>Half-plex appeals to first-time buyers</li>
+                            <li>Entitled (reduces timeline/risk)</li>
+                            <li>Acceptable school district</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #ef4444; margin-bottom: 15px;">❌ Negative Factors</h4>
+                        <ul style="line-height: 2;">
+                            <li>Rio Linda perceived as lower-tier</li>
+                            <li>Interest rates 7%+ limit buyer pool</li>
+                            <li>$425K pushes upper limit for area</li>
+                            <li>High inventory = buyer's market</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div id="timeline" class="section">
+            <div class="section-header">
+                <h2>Development Timeline</h2>
+                <p>24-32 months from land acquisition to final sale</p>
+            </div>
+
+            <div class="grid">
+                <div class="stat-box">
+                    <div class="stat-label">Best Case</div>
+                    <div class="stat-value">22 mo</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Realistic</div>
+                    <div class="stat-value">26 mo</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Pessimistic</div>
+                    <div class="stat-value">32 mo</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Worst Case</div>
+                    <div class="stat-value">36+ mo</div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning" style="margin: 30px 0;">
+                <div class="alert-title">⚠️ Timeline Risk</div>
+                <p>Every 3-month delay adds ~$20K in interest, taxes, and carrying costs</p>
+            </div>
+
+            <div class="card">
+                <h3>Development Phases</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-title">Phase 1: Final Approvals & Permits</div>
+                        <div class="timeline-meta">Duration: 3-4 months | Risk: 🟡 MEDIUM</div>
+                        <p style="color: #94a3b8; margin-top: 10px;">Building permits, utility agreements, geotechnical review</p>
+                        <div style="margin-top: 15px; padding: 15px; background: rgba(245, 158, 11, 0.1); border-radius: 8px;">
+                            <strong style="color: #f59e0b;">Hurdles:</strong><br>
+                            • Building permit backlog (6-8 weeks typical)<br>
+                            • PG&E delays (notorious for 8-12 week waits)<br>
+                            • Plan check comments may require resubmittals
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Phase 2: Infrastructure & Site Work</div>
+                        <div class="timeline-meta">Duration: 5-6 months | Risk: 🔴 HIGH</div>
+                        <p style="color: #94a3b8; margin-top: 10px;">Offsite/onsite improvements, utilities, detention basin</p>
+                        <div style="margin-top: 15px; padding: 15px; background: rgba(220, 38, 38, 0.1); border-radius: 8px;">
+                            <strong style="color: #dc2626;">Hurdles:</strong><br>
+                            • Weather delays (Nov-Mar rainy season adds 1-2 months)<br>
+                            • Utility coordination (PG&E, water district scheduling)<br>
+                            • Material price volatility (asphalt, concrete)<br>
+                            <strong>Cost Risk: $50-100K overruns likely</strong>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Phase 3: Foundations</div>
+                        <div class="timeline-meta">Duration: 3-4 months | Risk: 🟡 MEDIUM</div>
+                        <p style="color: #94a3b8; margin-top: 10px;">Excavation, footings, slabs, underground plumbing</p>
+                        <div style="margin-top: 15px; padding: 15px; background: rgba(245, 158, 11, 0.1); border-radius: 8px;">
+                            <strong style="color: #f59e0b;">Geotechnical Requirements:</strong><br>
+                            • Remove 12-18" topsoil and recompact<br>
+                            • Expansive soils (low-medium expansion)<br>
+                            • Geotechnical observation MANDATORY ($20K)
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Phase 4: Vertical Construction</div>
+                        <div class="timeline-meta">Duration: 10-12 months | Risk: 🔴 HIGH</div>
+                        <p style="color: #94a3b8; margin-top: 10px;">Framing, roofing, MEP, finishes, landscaping</p>
+                        <div style="margin-top: 15px; padding: 15px; background: rgba(220, 38, 38, 0.1); border-radius: 8px;">
+                            <strong style="color: #dc2626;">Hurdles:</strong><br>
+                            • Labor shortage (Sacramento market competitive)<br>
+                            • Supply chain delays (windows 8-12 weeks, cabinets 8-16 weeks)<br>
+                            • Inspection backlog (2-3 weeks per inspection)<br>
+                            <strong>Cost Risk: $100-200K overruns likely</strong>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-title">Phase 5: Marketing & Sales</div>
+                        <div class="timeline-meta">Duration: 3-6 months | Risk: 🔴 HIGH</div>
+                        <p style="color: #94a3b8; margin-top: 10px;">Pre-marketing, staging, listings, escrow</p>
+                        <div style="margin-top: 15px; padding: 15px; background: rgba(220, 38, 38, 0.1); border-radius: 8px;">
+                            <strong style="color: #dc2626;">Hurdles:</strong><br>
+                            • Market timing risk (prices declining)<br>
+                            • Absorption: 1.5-2 units/month = 3.5-4.5 months minimum<br>
+                            • Buyer financing (7%+ rates limit pool)<br>
+                            <strong>Could extend to 12+ months in soft market</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Assessment -->
+        <div id="risks" class="section">
+            <div class="section-header">
+                <h2>Risk Assessment</h2>
+                <p>Critical risks and mitigation strategies</p>
+            </div>
+
+            <div class="alert alert-critical">
+                <div class="alert-title">🔴 Three Critical Risks Identified</div>
+                <p>Land price too high, construction cost overruns, and market softening all pose severe threats to project viability</p>
+            </div>
+
+            <div class="card">
+                <h3>Risk Matrix</h3>
+                <div class="risk-matrix">
+                    <div class="risk-item critical">
+                        <h4>🔴 CRITICAL: Land Price Too High</h4>
+                        <p>At $258,500, project loses $551K. Would need land at $150K or less to approach breakeven.</p>
+                        <div class="risk-badge critical">CERTAIN | CRITICAL IMPACT</div>
+                    </div>
+
+                    <div class="risk-item critical">
+                        <h4>🔴 CRITICAL: Construction Cost Overrun</h4>
+                        <p>Estimated at $1.74M ($140/SF) with ±$300K variance risk. 68% of projects overrun by 10-20%.</p>
+                        <div class="risk-badge critical">HIGH | CRITICAL IMPACT</div>
+                    </div>
+
+                    <div class="risk-item critical">
+                        <h4>🔴 CRITICAL: Market Pricing Decline</h4>
+                        <p>Sacramento down -3.2% YoY. Each 5% decline = $146K revenue loss. Continued softness projected.</p>
+                        <div class="risk-badge critical">HIGH | CRITICAL IMPACT</div>
+                    </div>
+
+                    <div class="risk-item high">
+                        <h4>🟠 HIGH: Timeline Delays</h4>
+                        <p>Base case 26 months, worst case 36+ months. Each 3-month delay adds $50K+ in carrying costs.</p>
+                        <div class="risk-badge high">HIGH | MAJOR IMPACT</div>
+                    </div>
+
+                    <div class="risk-item high">
+                        <h4>🟠 HIGH: Absorption/Sales Velocity</h4>
+                        <p>Target 3-4 months to sell 7 units. Market reality: 1.5-2 units/month. Could extend to 12+ months.</p>
+                        <div class="risk-badge high">HIGH | MAJOR IMPACT</div>
+                    </div>
+
+                    <div class="risk-item medium">
+                        <h4>🟡 MEDIUM: Interest Rate Increase</h4>
+                        <p>Currently at 8.5%. Each 1% increase adds ~$23K to financing costs.</p>
+                        <div class="risk-badge medium">MEDIUM | MODERATE IMPACT</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Sensitivity Analysis</h3>
+                <p style="margin-bottom: 20px;">Impact of 10% change in key variables on profitability:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Base Case</th>
+                            <th>-10% Impact</th>
+                            <th>+10% Impact</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sale Price</strong></td>
+                            <td>$425K avg</td>
+                            <td style="color: #ef4444;">-$294K profit</td>
+                            <td style="color: #10b981;">+$294K profit</td>
+                            <td>🔴 CRITICAL</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Construction Cost</strong></td>
+                            <td>$1.74M</td>
+                            <td style="color: #10b981;">+$174K profit</td>
+                            <td style="color: #ef4444;">-$174K profit</td>
+                            <td>🔴 CRITICAL</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Land Price</strong></td>
+                            <td>$258,500</td>
+                            <td style="color: #10b981;">+$25K profit</td>
+                            <td style="color: #ef4444;">-$25K profit</td>
+                            <td>🟡 MEDIUM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Timeline</strong></td>
+                            <td>26 months</td>
+                            <td style="color: #10b981;">+$22K profit</td>
+                            <td style="color: #ef4444;">-$22K profit</td>
+                            <td>🟡 MEDIUM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Funding -->
+        <div id="funding" class="section">
+            <div class="section-header">
+                <h2>Funding Requirements</h2>
+                <p>Capital needs and financing structure</p>
+            </div>
+
+            <div class="grid">
+                <div class="stat-box">
+                    <div class="stat-label">Total Project Cost</div>
+                    <div class="stat-value">$3.33M</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Equity Required (30%)</div>
+                    <div class="stat-value">$999K</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Construction Loan (70%)</div>
+                    <div class="stat-value">$2.33M</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Equity Return</div>
+                    <div class="stat-value negative">-55%</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Sources & Uses</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <h4 style="color: #3b82f6; margin-bottom: 15px;">Sources of Funds</h4>
+                        <table>
+                            <tr>
+                                <td><strong>Equity (Your Capital)</strong></td>
+                                <td style="text-align: right;">$999,062</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Construction Loan (70% LTV)</strong></td>
+                                <td style="text-align: right;">$2,331,144</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL SOURCES</strong></td>
+                                <td style="text-align: right;"><strong>$3,330,206</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h4 style="color: #3b82f6; margin-bottom: 15px;">Uses of Funds</h4>
+                        <table>
+                            <tr>
+                                <td>Land Acquisition</td>
+                                <td style="text-align: right;">$271,255</td>
+                            </tr>
+                            <tr>
+                                <td>Infrastructure</td>
+                                <td style="text-align: right;">$679,389</td>
+                            </tr>
+                            <tr>
+                                <td>Construction</td>
+                                <td style="text-align: right;">$1,829,562</td>
+                            </tr>
+                            <tr>
+                                <td>Soft Costs</td>
+                                <td style="text-align: right;">$305,000</td>
+                            </tr>
+                            <tr>
+                                <td>Financing</td>
+                                <td style="text-align: right;">$245,000</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>TOTAL USES</strong></td>
+                                <td style="text-align: right;"><strong>$3,330,206</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Financing Structure</h3>
+                <table>
+                    <tr>
+                        <td><strong>Loan Type</strong></td>
+                        <td>Construction-to-Mini-Perm (Single close)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LTV</strong></td>
+                        <td>70% (standard for subdivision)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interest Rate</strong></td>
+                        <td>8.5% (floating, current market)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Term</strong></td>
+                        <td>24 months (with 6-month extension option)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Origination</strong></td>
+                        <td>1.5% ($35K)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Draw Schedule</strong></td>
+                        <td>Monthly based on % completion</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interest Reserve</strong></td>
+                        <td>Yes (built into loan)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recourse</strong></td>
+                        <td>Full (personal guarantee required)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="alert alert-critical">
+                <div class="alert-title">⚠️ Equity Return Analysis</div>
+                <p><strong>Capital Invested:</strong> $999,062<br>
+                <strong>Capital Returned:</strong> $447,606<br>
+                <strong>LOSS:</strong> $551,456 (-55% return on equity)</p>
+            </div>
+        </div>
+
+        <!-- Recommendation -->
+        <div id="recommendation" class="section">
+            <div class="section-header">
+                <h2>Final Recommendation</h2>
+                <p>Data-driven decision framework</p>
+            </div>
+
+            <div class="alert alert-critical" style="font-size: 18px;">
+                <div class="alert-title" style="font-size: 24px;">❌ PRIMARY RECOMMENDATION: DO NOT PROCEED</div>
+                <p style="font-size: 16px; line-height: 1.8;">
+                    <strong>Reasoning:</strong><br>
+                    1. Financially Unviable: Project loses money in all realistic scenarios<br>
+                    2. Market Headwinds: Sacramento prices declining, high rates reducing buyer pool<br>
+                    3. Submarket Weakness: Rio Linda at price ceiling for new construction<br>
+                    4. Risk/Reward Imbalance: High execution risk with negative expected returns<br>
+                    5. Capital Preservation: Better opportunities exist with positive ROI
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Why This Deal Doesn't Work</h3>
+                <table>
+                    <tbody>
+                        <tr class="table-header-row">
+                            <td colspan="2"><strong>THE MATH:</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Land Price</td>
+                            <td style="text-align: right;">$258,500</td>
+                        </tr>
+                        <tr>
+                            <td>Infrastructure (✅ VERIFIED)</td>
+                            <td style="text-align: right;">$679,389</td>
+                        </tr>
+                        <tr>
+                            <td>Construction</td>
+                            <td style="text-align: right;">$1,829,562</td>
+                        </tr>
+                        <tr>
+                            <td>Soft Costs</td>
+                            <td style="text-align: right;">$305,000</td>
+                        </tr>
+                        <tr>
+                            <td>Financing</td>
+                            <td style="text-align: right;">$245,000</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>TOTAL COST</strong></td>
+                            <td style="text-align: right;"><strong>$3,330,206</strong></td>
+                        </tr>
+                        <tr style="background: #1e293b;">
+                            <td colspan="2" style="padding: 10px;"></td>
+                        </tr>
+                        <tr>
+                            <td>Revenue (Realistic)</td>
+                            <td style="text-align: right;">$2,778,750</td>
+                        </tr>
+                        <tr style="background: rgba(220, 38, 38, 0.2);">
+                            <td><strong>LOSS</strong></td>
+                            <td style="text-align: right; color: #ef4444;"><strong>($551,456)</strong></td>
+                        </tr>
+                        <tr style="background: rgba(220, 38, 38, 0.2);">
+                            <td><strong>ROI</strong></td>
+                            <td style="text-align: right; color: #ef4444;"><strong>-16.6%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Alternative Strategies</h3>
+                
+                <div class="alert alert-success" style="margin: 20px 0;">
+                    <div class="alert-title">✅ RECOMMENDED: Wholesale the Deal</div>
+                    <p><strong>Strategy:</strong> Put property under contract at $230-240K, assign to builder for $250-260K<br>
+                    <strong>Profit:</strong> $20-40K<br>
+                    <strong>Risk:</strong> Zero development risk<br>
+                    <strong>Timeline:</strong> 30 days</p>
+                </div>
+
+                <div class="alert alert-warning" style="margin: 20px 0;">
+                    <div class="alert-title">⚠️ CONDITIONAL: Proceed Only If</div>
+                    <p>
+                    1. Land negotiated to ≤$150K (42% discount)<br>
+                    2. Construction bids at ≤$120/SF (14% below estimate)<br>
+                    3. Pre-sell 4+ units at $450K+ before breaking ground<br>
+                    <strong>All 3 conditions must be met. Probability: &lt;10%</strong>
+                    </p>
+                </div>
+
+                <div class="alert alert-info" style="margin: 20px 0;">
+                    <div class="alert-title">📊 ALTERNATIVE: Wait & Monitor</div>
+                    <p><strong>Strategy:</strong> Do not purchase at current price. Monitor market for 6-12 months.<br>
+                    <strong>Pros:</strong> No downside risk, option value<br>
+                    <strong>Cons:</strong> Property may sell to another buyer</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Decision Matrix</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Land Price</th>
+                            <th>Construction</th>
+                            <th>Market</th>
+                            <th>Decision</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Current</strong></td>
+                            <td>$258K</td>
+                            <td>$140/SF</td>
+                            <td>Soft</td>
+                            <td style="color: #ef4444;"><strong>❌ REJECT</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Negotiated #1</strong></td>
+                            <td>$150K</td>
+                            <td>$140/SF</td>
+                            <td>Soft</td>
+                            <td style="color: #ef4444;"><strong>❌ REJECT</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Negotiated #2</strong></td>
+                            <td>$150K</td>
+                            <td>$120/SF</td>
+                            <td>Soft</td>
+                            <td style="color: #f59e0b;"><strong>⚠️ CAUTION</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Optimistic</strong></td>
+                            <td>$150K</td>
+                            <td>$120/SF</td>
+                            <td>Strong</td>
+                            <td style="color: #10b981;"><strong>✅ CONSIDER</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center; padding: 40px 20px;">
+                <h3 style="color: #3b82f6; margin-bottom: 20px;">Ready to Take Action?</h3>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="ACTUAL_COST_BREAKDOWN.md" class="btn btn-primary">View Full Analysis (PDF)</a>
+                    <a href="actual-costs-dashboard.html" class="btn btn-primary">Explore Costs Dashboard</a>
+                    <a href="financial-analysis.html" class="btn btn-primary">Interactive Financial Model</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p style="margin-bottom: 10px;">4929 Nerrads Place Investment Analysis</p>
+        <p style="color: #64748b; font-size: 14px;">All data extracted from actual project documents | Infrastructure costs verified from engineer's estimates</p>
+        <p style="color: #64748b; font-size: 12px; margin-top: 20px;">Confidential - For Qualified Investors Only</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active from all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Activate nav button
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+

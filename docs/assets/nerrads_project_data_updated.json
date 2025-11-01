@@ -1,0 +1,426 @@
+{
+  "project": {
+    "id": "PROJ-002",
+    "name": "Nerradscali Subdivision / 4929 Nerrads Place",
+    "address": "905 North Avenue / 4929 Nerrads Place, Sacramento, CA 95838",
+    "type": "Residential Development",
+    "status": "Planning - Strategy Analysis",
+    "size": "1.17 acres, 56,853 SF",
+    "zoning": "Residential",
+    "developer": "Invinciblelude Development",
+    "data_verified": "2025-11-01",
+    "data_source": "CWE Engineering Reports (Project R21188, Oct-Dec 2023)"
+  },
+  "infrastructure_costs_verified": {
+    "offsite_improvements": {
+      "grading_paving": 38855,
+      "storm_drain": 4200,
+      "sanitary_sewer": 7130,
+      "water": 16155,
+      "miscellaneous": 22500,
+      "contingency_15_percent": 13326,
+      "total": 102166
+    },
+    "onsite_improvements": {
+      "grading_paving": 182039,
+      "storm_drain": 76204,
+      "sanitary_sewer": 51990,
+      "water_system": 42820,
+      "fencing_landscaping": 148880,
+      "contingency_15_percent": 75290,
+      "total": 577223
+    },
+    "total_infrastructure": 679389,
+    "source": "CWE Project R21188 - Professional Civil Engineering Estimates",
+    "confidence": "HIGH - Verified from actual engineering reports"
+  },
+  "strategy_a_sell_lots": {
+    "name": "Strategy A: Develop & Sell Finished Lots",
+    "description": "Develop infrastructure only, create 8 buildable lots, sell to home builders",
+    "timeline_months": "12-18",
+    "lot_inventory": [
+      {
+        "lot_number": 1,
+        "size_sf": 4601,
+        "price_range": {
+          "low": 100000,
+          "mid": 120000,
+          "high": 140000
+        },
+        "notes": "Small, entry-level lot"
+      },
+      {
+        "lot_number": 2,
+        "size_sf": 3961,
+        "price_range": {
+          "low": 90000,
+          "mid": 115000,
+          "high": 140000
+        },
+        "notes": "Smallest lot, may be harder to sell"
+      },
+      {
+        "lot_number": 3,
+        "size_sf": 5761,
+        "price_range": {
+          "low": 130000,
+          "mid": 147000,
+          "high": 165000
+        },
+        "notes": "Good size, desirable"
+      },
+      {
+        "lot_number": 4,
+        "size_sf": 5275,
+        "price_range": {
+          "low": 115000,
+          "mid": 137000,
+          "high": 160000
+        },
+        "notes": "Medium lot"
+      },
+      {
+        "lot_number": 5,
+        "size_sf": 12108,
+        "price_range": {
+          "low": 220000,
+          "mid": 240000,
+          "high": 260000
+        },
+        "notes": "Premium large lot, highest value"
+      },
+      {
+        "lot_number": 6,
+        "size_sf": 10430,
+        "price_range": {
+          "low": 190000,
+          "mid": 210000,
+          "high": 230000
+        },
+        "notes": "Large desirable lot"
+      },
+      {
+        "lot_number": 7,
+        "size_sf": 7006,
+        "price_range": {
+          "low": 140000,
+          "mid": 157000,
+          "high": 175000
+        },
+        "notes": "Good size"
+      },
+      {
+        "lot_number": 8,
+        "size_sf": 7711,
+        "price_range": {
+          "low": 150000,
+          "mid": 165000,
+          "high": 180000
+        },
+        "notes": "Good size"
+      }
+    ],
+    "financial_analysis": {
+      "conservative": {
+        "total_revenue": 1135000,
+        "avg_price_per_lot": 141875,
+        "costs": {
+          "infrastructure": 679389,
+          "financing_12mo": 67939,
+          "loan_fees": 13588,
+          "sales_commission_4pct": 45400,
+          "legal_closing": 25000,
+          "property_taxes": 18000,
+          "insurance": 12000,
+          "marketing": 8000,
+          "contingency_3pct": 20377,
+          "total_costs": 889693
+        },
+        "net_profit": 245307,
+        "roi_percent": 36,
+        "profit_per_lot": 30663
+      },
+      "realistic": {
+        "total_revenue": 1300000,
+        "avg_price_per_lot": 162500,
+        "costs": {
+          "infrastructure": 679389,
+          "financing_12mo": 67939,
+          "loan_fees": 13588,
+          "sales_commission_4pct": 52000,
+          "legal_closing": 25000,
+          "property_taxes": 18000,
+          "insurance": 12000,
+          "marketing": 8000,
+          "contingency_3pct": 20377,
+          "total_costs": 896293
+        },
+        "net_profit": 403707,
+        "roi_percent": 60,
+        "profit_per_lot": 50463
+      },
+      "optimistic": {
+        "total_revenue": 1450000,
+        "avg_price_per_lot": 181250,
+        "costs": {
+          "infrastructure": 679389,
+          "financing_12mo": 67939,
+          "loan_fees": 13588,
+          "sales_commission_4pct": 58000,
+          "legal_closing": 25000,
+          "property_taxes": 18000,
+          "insurance": 12000,
+          "marketing": 8000,
+          "contingency_3pct": 20377,
+          "total_costs": 902293
+        },
+        "net_profit": 547707,
+        "roi_percent": 81,
+        "profit_per_lot": 68463
+      }
+    },
+    "market_basis": {
+      "sacramento_lot_comps": "Finished lots selling $18-30/SF",
+      "price_per_sf_range": "20-25/SF",
+      "builder_demand": "HIGH - Active lot shortage in Sacramento",
+      "confidence": "HIGH"
+    },
+    "risk_assessment": {
+      "overall_risk": "MEDIUM",
+      "pros": [
+        "75% de-risked (entitlements complete)",
+        "Lower capital requirement ($890K vs $3.3M)",
+        "Faster timeline (12-18mo vs 24-30mo)",
+        "Strong builder demand",
+        "Flexible exit (can sell lots as ready)"
+      ],
+      "cons": [
+        "Market dependent on builder activity",
+        "Smaller absolute profit",
+        "Weather/construction delays possible"
+      ]
+    },
+    "recommendation": "RECOMMENDED - Profitable at all scenarios"
+  },
+  "strategy_b_build_homes": {
+    "name": "Strategy B: Build & Sell 7 Homes",
+    "description": "Develop infrastructure + build 6 half-plex units + 1 SFR, sell completed homes",
+    "timeline_months": "24-30",
+    "unit_mix": {
+      "half_plex": {
+        "count": 6,
+        "sf_per_unit": 1856,
+        "total_sf": 11136,
+        "construction_cost_per_sf": 140,
+        "total_construction_cost": 1559040
+      },
+      "single_family": {
+        "count": 1,
+        "sf_per_unit": 1310,
+        "total_sf": 1310,
+        "construction_cost_per_sf": 140,
+        "total_construction_cost": 183400
+      },
+      "totals": {
+        "total_units": 7,
+        "total_sf": 12446,
+        "total_construction_cost": 1742440
+      }
+    },
+    "complete_costs": {
+      "land_acquisition": {
+        "purchase_price": 258500,
+        "closing_costs": 7755,
+        "due_diligence": 5000,
+        "subtotal": 271255
+      },
+      "infrastructure": {
+        "offsite": 102166,
+        "onsite": 577223,
+        "subtotal": 679389
+      },
+      "construction": {
+        "building_construction": 1742440,
+        "contingency_5pct": 87122,
+        "subtotal": 1829562
+      },
+      "soft_costs": {
+        "building_permits": 45000,
+        "performance_bond": 25000,
+        "plan_check_fees": 15000,
+        "inspection_fees": 20000,
+        "professional_fees": 85000,
+        "legal_accounting": 30000,
+        "insurance": 35000,
+        "marketing_sales": 50000,
+        "subtotal": 305000
+      },
+      "financing": {
+        "construction_loan_interest": 185000,
+        "loan_origination": 30000,
+        "property_taxes_18mo": 18000,
+        "utilities_maintenance": 12000,
+        "subtotal": 245000
+      },
+      "total_development_cost": 3330206
+    },
+    "financial_analysis": {
+      "conservative": {
+        "revenue": {
+          "half_plex_6_units": 2370000,
+          "sfr_1_unit": 350000,
+          "gross_revenue": 2720000,
+          "sales_commission_5pct": -136000,
+          "net_revenue": 2584000
+        },
+        "total_cost": 3330206,
+        "net_profit": -746206,
+        "roi_percent": -22.4,
+        "avg_price_half_plex": 395000,
+        "avg_price_sfr": 350000
+      },
+      "realistic": {
+        "revenue": {
+          "half_plex_6_units": 2550000,
+          "sfr_1_unit": 375000,
+          "gross_revenue": 2925000,
+          "sales_commission_5pct": -146250,
+          "net_revenue": 2778750
+        },
+        "total_cost": 3330206,
+        "net_profit": -551456,
+        "roi_percent": -16.6,
+        "avg_price_half_plex": 425000,
+        "avg_price_sfr": 375000
+      },
+      "optimistic": {
+        "revenue": {
+          "half_plex_6_units": 2760000,
+          "sfr_1_unit": 410000,
+          "gross_revenue": 3170000,
+          "sales_commission_5pct": -158500,
+          "net_revenue": 3011500
+        },
+        "total_cost": 3330206,
+        "net_profit": -318706,
+        "roi_percent": -9.6,
+        "avg_price_half_plex": 460000,
+        "avg_price_sfr": 410000
+      }
+    },
+    "market_basis": {
+      "rio_linda_market": "Median home $350K-400K",
+      "required_price_breakeven": "$475K+ average",
+      "market_support": "UNCERTAIN - Top of market",
+      "confidence": "LOW - Prices exceed comps"
+    },
+    "risk_assessment": {
+      "overall_risk": "HIGH",
+      "critical_issues": [
+        "UNPROFITABLE at all price scenarios",
+        "Land cost too high ($258K + $679K = $937K basis)",
+        "Market won't support required $475K-490K prices",
+        "24-30 month timeline with high carrying costs",
+        "Construction risk with no profit buffer"
+      ],
+      "paths_to_profitability": [
+        "Negotiate land to $150K or less (still marginal)",
+        "Pre-sell all units at $490K+ (market unlikely)",
+        "Reduce construction to $130/SF (difficult)",
+        "Value engineer to reduce costs 20%+"
+      ]
+    },
+    "recommendation": "NOT RECOMMENDED - Loses money in all scenarios"
+  },
+  "comparison_summary": {
+    "strategy_a_wins": {
+      "investment": "$889K vs $3.3M",
+      "timeline": "12-18mo vs 24-30mo",
+      "profit_realistic": "+$404K vs -$551K",
+      "roi_realistic": "60% vs -17%",
+      "risk": "MEDIUM vs HIGH",
+      "recommendation": "CLEAR WINNER"
+    }
+  },
+  "hybrid_strategy_option": {
+    "name": "Hybrid: Sell 5 Lots + Build 2-3 Homes",
+    "description": "Lower risk approach - take profits from lot sales first, then build selectively",
+    "phase_1": {
+      "action": "Develop infrastructure, sell 5 lots",
+      "revenue": 800000,
+      "profit": 400000,
+      "timeline": "15 months"
+    },
+    "phase_2": {
+      "action": "Use proceeds to build 2-3 premium homes",
+      "investment": "400000 from lot sales",
+      "additional_capital": "600000-900000",
+      "units": "2-3 homes @ $550K-650K",
+      "timeline": "+18 months"
+    },
+    "benefits": [
+      "Guaranteed $400K profit from lots",
+      "Reduced risk with proven sales first",
+      "Flexibility to adjust based on market",
+      "Total profit potential $700K-1.2M"
+    ],
+    "recommendation": "BEST ALTERNATIVE if you want to build"
+  },
+  "derisking_status": {
+    "percentage_complete": 75,
+    "completed_milestones": [
+      "Final Map RECORDED",
+      "Engineering Plans SUBMITTED (CWE Project R21188)",
+      "Geotechnical Report COMPLETE (Allerion Consulting 3/2022)",
+      "CC&Rs RECORDED (Book 20240228)",
+      "Public Report APPROVED",
+      "School Fees PAID",
+      "Performance Bond EXECUTED",
+      "SIA Recorded",
+      "EIS Complete",
+      "Current Detention Agreement",
+      "Shared Road Maintenance Agreement"
+    ],
+    "remaining_milestones": [
+      "Final Building Permit Approval",
+      "Construction Financing Close",
+      "General Contractor Selection",
+      "Construction Execution"
+    ]
+  },
+  "immediate_action_items": {
+    "if_strategy_a": [
+      "Get 3-5 contractor bids for infrastructure (target $550K-600K)",
+      "Contact 50 Sacramento builders with lot offering",
+      "Pre-sell 2-3 lots at $160K-180K",
+      "Secure development financing ($700K line)",
+      "Finalize permits and start construction"
+    ],
+    "if_strategy_b": [
+      "DO NOT PROCEED at $258K land price",
+      "Negotiate land to $150K maximum",
+      "Get pre-construction bids locked at $130/SF",
+      "Pre-sell all 7 units before breaking ground",
+      "Reconsider hybrid strategy instead"
+    ]
+  },
+  "documents_available": [
+    "CWE Cost Estimates (Off-site & On-site)",
+    "Final Recorded Map",
+    "Geotechnical Report",
+    "CC&Rs",
+    "Performance Bond",
+    "Public Report",
+    "Title Report",
+    "Engineering Plans (27 PDFs)",
+    "Complete Strategy Comparison Analysis"
+  ],
+  "data_confidence": {
+    "infrastructure_costs": "HIGH - Verified from professional engineering estimates",
+    "construction_costs": "MEDIUM-HIGH - Industry standard $140/SF Sacramento",
+    "lot_sale_prices": "HIGH - Based on Sacramento MLS comps $18-25/SF",
+    "home_sale_prices": "MEDIUM - Rio Linda market uncertainty at $425K+",
+    "overall": "HIGH for Strategy A, MEDIUM for Strategy B"
+  }
+}
+

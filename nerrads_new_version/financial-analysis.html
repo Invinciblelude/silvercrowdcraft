@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4929 Nerrads Place - Financial Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .cost-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cost-label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .cost-value {
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .total-row {
+            background: #f8f9ff;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .profit {
+            color: #10b981;
+        }
+        
+        .loss {
+            color: #ef4444;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .success {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .metric-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .timeline {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            border-left: 3px solid #667eea;
+            margin-left: 20px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            position: absolute;
+            left: -8px;
+            top: 20px;
+        }
+        
+        .timeline-content {
+            margin-left: 20px;
+            flex: 1;
+        }
+        
+        .timeline-title {
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-duration {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-details {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .scenario-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .tab:hover {
+            border-color: #667eea;
+        }
+        
+        .tab.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .slider-container {
+            margin: 20px 0;
+        }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .card, .timeline {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 4929 Nerrads Place - Financial Analysis</h1>
+            <div class="subtitle">7 Lots | 1.17 Acres | 6 Half-Plex Units + 1 SFR | Sacramento, CA 95838</div>
+        </div>
+
+        <div class="scenario-tabs">
+            <div class="tab active" onclick="changeScenario('conservative')">
+                <strong>Conservative</strong><br>
+                <small>Worst Case</small>
+            </div>
+            <div class="tab" onclick="changeScenario('realistic')">
+                <strong>Realistic</strong><br>
+                <small>Most Likely</small>
+            </div>
+            <div class="tab" onclick="changeScenario('optimistic')">
+                <strong>Optimistic</strong><br>
+                <small>Best Case</small>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- ROI Metrics -->
+            <div class="card">
+                <div class="metric-box">
+                    <div class="metric-label">Total ROI</div>
+                    <div class="metric-value" id="roi">--</div>
+                </div>
+                <div class="metric-box" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                    <div class="metric-label">Net Profit</div>
+                    <div class="metric-value" id="netProfit">--</div>
+                </div>
+                <div class="metric-box" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                    <div class="metric-label">Profit Per SF</div>
+                    <div class="metric-value" id="profitPerSF">--</div>
+                </div>
+            </div>
+
+            <!-- Acquisition Costs -->
+            <div class="card">
+                <h2>💰 Acquisition Costs</h2>
+                <div class="cost-item">
+                    <span class="cost-label">Purchase Price</span>
+                    <span class="cost-value" id="purchasePrice">$258,500</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Closing Costs (3%)</span>
+                    <span class="cost-value" id="closingCosts">$7,755</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Due Diligence</span>
+                    <span class="cost-value" id="dueDiligence">$5,000</span>
+                </div>
+                <div class="total-row">
+                    <span>Total Acquisition</span>
+                    <span id="totalAcquisition">$271,255</span>
+                </div>
+            </div>
+
+            <!-- Infrastructure Costs -->
+            <div class="card">
+                <h2>🚧 Infrastructure & Site Work</h2>
+                <div class="cost-item">
+                    <span class="cost-label">Offsite Improvements</span>
+                    <span class="cost-value" id="offsiteImprovements">$150,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Onsite Improvements</span>
+                    <span class="cost-value" id="onsiteImprovements">$180,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Grading & Drainage</span>
+                    <span class="cost-value" id="grading">$45,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Utilities Installation</span>
+                    <span class="cost-value" id="utilities">$120,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Detention Pond</span>
+                    <span class="cost-value" id="detention">$35,000</span>
+                </div>
+                <div class="total-row">
+                    <span>Total Infrastructure</span>
+                    <span id="totalInfrastructure">$530,000</span>
+                </div>
+            </div>
+
+            <!-- Construction Costs -->
+            <div class="card">
+                <h2>🏗️ Construction Costs</h2>
+                <div class="cost-item">
+                    <span class="cost-label">6 Half-Plex Units (11,136 SF)</span>
+                    <span class="cost-value" id="halfPlexCost">$1,558,040</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">1 SFR (1,310 SF)</span>
+                    <span class="cost-value" id="sfrCost">$183,400</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Landscaping & Hardscape</span>
+                    <span class="cost-value" id="landscaping">$75,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Contingency (5%)</span>
+                    <span class="cost-value" id="contingency">$90,822</span>
+                </div>
+                <div class="total-row">
+                    <span>Total Construction</span>
+                    <span id="totalConstruction">$1,907,262</span>
+                </div>
+            </div>
+
+            <!-- Soft Costs -->
+            <div class="card">
+                <h2>📄 Soft Costs & Fees</h2>
+                <div class="cost-item">
+                    <span class="cost-label">School Fees (Paid)</span>
+                    <span class="cost-value" id="schoolFees">$0</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Permits & Plan Check</span>
+                    <span class="cost-value" id="permits">$45,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Performance Bond</span>
+                    <span class="cost-value" id="performanceBond">$25,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Professional Fees (Architect, Engineer)</span>
+                    <span class="cost-value" id="professionalFees">$85,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Legal & Accounting</span>
+                    <span class="cost-value" id="legal">$30,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Insurance</span>
+                    <span class="cost-value" id="insurance">$35,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Marketing & Sales</span>
+                    <span class="cost-value" id="marketing">$50,000</span>
+                </div>
+                <div class="total-row">
+                    <span>Total Soft Costs</span>
+                    <span id="totalSoftCosts">$270,000</span>
+                </div>
+            </div>
+
+            <!-- Financing Costs -->
+            <div class="card">
+                <h2>💳 Financing & Carrying Costs</h2>
+                <div class="cost-item">
+                    <span class="cost-label">Construction Loan Interest (18 mo)</span>
+                    <span class="cost-value" id="loanInterest">$185,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Property Taxes (18 mo)</span>
+                    <span class="cost-value" id="propertyTaxes">$18,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Loan Fees & Origination</span>
+                    <span class="cost-value" id="loanFees">$30,000</span>
+                </div>
+                <div class="total-row">
+                    <span>Total Financing</span>
+                    <span id="totalFinancing">$233,000</span>
+                </div>
+            </div>
+
+            <!-- Revenue Projections -->
+            <div class="card">
+                <h2>💵 Revenue Projections</h2>
+                <div class="cost-item">
+                    <span class="cost-label">6 Half-Plex Units @ <span id="halfPlexPrice">$425,000</span></span>
+                    <span class="cost-value" id="halfPlexRevenue">$2,550,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">1 SFR @ <span id="sfrPrice">$375,000</span></span>
+                    <span class="cost-value" id="sfrRevenue">$375,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Gross Revenue</span>
+                    <span class="cost-value" id="grossRevenue">$2,925,000</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Sales Commission (5%)</span>
+                    <span class="cost-value" id="salesCommission">-$146,250</span>
+                </div>
+                <div class="total-row profit">
+                    <span>Net Revenue</span>
+                    <span id="netRevenue">$2,778,750</span>
+                </div>
+            </div>
+
+            <!-- Total Summary -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>📈 Financial Summary</h2>
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="cost-item">
+                        <span class="cost-label">Total Development Cost</span>
+                        <span class="cost-value" id="totalDevCost">$3,211,517</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Net Revenue</span>
+                        <span class="cost-value profit" id="totalRevenue">$2,778,750</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Net Profit</span>
+                        <span class="cost-value" id="finalProfit">-$432,767</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">ROI</span>
+                        <span class="cost-value" id="finalROI">-13.5%</span>
+                    </div>
+                </div>
+                <div id="alert"></div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <h2 style="color: #667eea; margin-bottom: 25px;">⏱️ Development Timeline & Permit Hurdles</h2>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-title">Phase 1: Final Approvals & Permits</div>
+                    <div class="timeline-duration">Duration: 3-4 months | Risk: MEDIUM</div>
+                    <div class="timeline-details">
+                        ✅ Final Map Already Approved & Recorded<br>
+                        ✅ Improvement Plans Complete (2024)<br>
+                        ⚠️ <strong>Building Permits:</strong> Submit and obtain (6-8 weeks)<br>
+                        ⚠️ <strong>Utility Connections:</strong> PG&E, Water, Sewer approvals needed<br>
+                        ⚠️ <strong>Geotechnical Review:</strong> City may require updated soils report
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-title">Phase 2: Infrastructure & Site Work</div>
+                    <div class="timeline-duration">Duration: 4-5 months | Risk: HIGH</div>
+                    <div class="timeline-details">
+                        🚧 <strong>Offsite Work:</strong> Rio Linda Blvd improvements, curb/gutter<br>
+                        🚧 <strong>Onsite Work:</strong> Street installation, utilities, detention pond<br>
+                        ⚠️ <strong>Hurdle:</strong> Weather delays (Nov-Mar rainy season)<br>
+                        ⚠️ <strong>Hurdle:</strong> Utility coordination delays (PG&E notorious for 8-12 week waits)<br>
+                        💰 <strong>Cost Risk:</strong> Material price escalation (concrete, asphalt)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-title">Phase 3: Vertical Construction</div>
+                    <div class="timeline-duration">Duration: 10-12 months | Risk: HIGH</div>
+                    <div class="timeline-details">
+                        🏗️ <strong>Foundation & Framing:</strong> 3-4 months per phase<br>
+                        🏗️ <strong>MEP & Drywall:</strong> 3-4 months<br>
+                        🏗️ <strong>Finish Work:</strong> 2-3 months<br>
+                        ⚠️ <strong>Hurdle:</strong> Labor shortage (Sacramento market competitive)<br>
+                        ⚠️ <strong>Hurdle:</strong> Supply chain delays (windows, cabinets 8-16 weeks)<br>
+                        ⚠️ <strong>Hurdle:</strong> Inspection backlog (City of Sacramento avg 2-3 week wait)<br>
+                        💰 <strong>Cost Risk:</strong> Labor rate increases (10-15% annual)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-title">Phase 4: Final Inspections & Certificate of Occupancy</div>
+                    <div class="timeline-duration">Duration: 1-2 months | Risk: MEDIUM</div>
+                    <div class="timeline-details">
+                        ✅ Final building inspection<br>
+                        ✅ Final utilities inspection<br>
+                        ⚠️ <strong>Hurdle:</strong> Punchlist items and re-inspections<br>
+                        ⚠️ <strong>Hurdle:</strong> HOA formation (if required)<br>
+                        💰 <strong>Carrying Costs:</strong> Interest accruing during delay
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-title">Phase 5: Marketing & Sales</div>
+                    <div class="timeline-duration">Duration: 3-6 months | Risk: HIGH</div>
+                    <div class="timeline-details">
+                        📊 <strong>Market Timing:</strong> Sacramento median price declining (Q3 2024: -3.2% YoY)<br>
+                        📊 <strong>Inventory:</strong> High inventory = slower absorption<br>
+                        ⚠️ <strong>Hurdle:</strong> Interest rates (7%+ = reduced buyer pool)<br>
+                        ⚠️ <strong>Hurdle:</strong> Rio Linda submarket (lower price point, slower sales)<br>
+                        💰 <strong>Cost Risk:</strong> Price reductions, carrying costs, holding period interest
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Controls -->
+        <div class="card" style="margin-top: 20px;">
+            <h2>🎛️ Adjust Your Assumptions</h2>
+            
+            <div class="slider-container">
+                <div class="slider-label">
+                    <span>Half-Plex Sale Price</span>
+                    <span id="halfPlexPriceLabel">$425,000</span>
+                </div>
+                <input type="range" min="375000" max="500000" step="5000" value="425000" 
+                       oninput="updateAssumptions('halfPlex', this.value)">
+            </div>
+            
+            <div class="slider-container">
+                <div class="slider-label">
+                    <span>SFR Sale Price</span>
+                    <span id="sfrPriceLabel">$375,000</span>
+                </div>
+                <input type="range" min="325000" max="450000" step="5000" value="375000" 
+                       oninput="updateAssumptions('sfr', this.value)">
+            </div>
+            
+            <div class="slider-container">
+                <div class="slider-label">
+                    <span>Construction Cost per SF</span>
+                    <span id="costPerSFLabel">$140/SF</span>
+                </div>
+                <input type="range" min="120" max="180" step="5" value="140" 
+                       oninput="updateAssumptions('costPerSF', this.value)">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Financial Data Models
+        const scenarios = {
+            conservative: {
+                halfPlexPrice: 395000,
+                sfrPrice: 350000,
+                costPerSF: 155,
+                offsiteImprovements: 175000,
+                onsiteImprovements: 200000,
+                contingencyRate: 0.08
+            },
+            realistic: {
+                halfPlexPrice: 425000,
+                sfrPrice: 375000,
+                costPerSF: 140,
+                offsiteImprovements: 150000,
+                onsiteImprovements: 180000,
+                contingencyRate: 0.05
+            },
+            optimistic: {
+                halfPlexPrice: 460000,
+                sfrPrice: 410000,
+                costPerSF: 130,
+                offsiteImprovements: 135000,
+                onsiteImprovements: 160000,
+                contingencyRate: 0.03
+            }
+        };
+
+        let currentScenario = 'realistic';
+        let customAssumptions = {};
+
+        function changeScenario(scenario) {
+            currentScenario = scenario;
+            customAssumptions = {};
+            
+            // Update tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.closest('.tab').classList.add('active');
+            
+            // Update sliders
+            const data = scenarios[scenario];
+            document.querySelector('input[oninput*="halfPlex"]').value = data.halfPlexPrice;
+            document.querySelector('input[oninput*="sfr"]').value = data.sfrPrice;
+            document.querySelector('input[oninput*="costPerSF"]').value = data.costPerSF;
+            
+            calculateFinancials();
+        }
+
+        function updateAssumptions(type, value) {
+            customAssumptions[type] = parseFloat(value);
+            
+            // Update labels
+            if (type === 'halfPlex') {
+                document.getElementById('halfPlexPriceLabel').textContent = '$' + parseInt(value).toLocaleString();
+            } else if (type === 'sfr') {
+                document.getElementById('sfrPriceLabel').textContent = '$' + parseInt(value).toLocaleString();
+            } else if (type === 'costPerSF') {
+                document.getElementById('costPerSFLabel').textContent = '$' + value + '/SF';
+            }
+            
+            calculateFinancials();
+        }
+
+        function calculateFinancials() {
+            const data = scenarios[currentScenario];
+            
+            // Use custom values if available
+            const halfPlexPrice = customAssumptions.halfPlex || data.halfPlexPrice;
+            const sfrPrice = customAssumptions.sfr || data.sfrPrice;
+            const costPerSF = customAssumptions.costPerSF || data.costPerSF;
+            
+            // Constants
+            const purchasePrice = 258500;
+            const halfPlexSF = 1856;
+            const halfPlexCount = 6;
+            const sfrSF = 1310;
+            const totalSF = (halfPlexSF * halfPlexCount) + sfrSF;
+            
+            // Acquisition Costs
+            const closingCosts = purchasePrice * 0.03;
+            const dueDiligence = 5000;
+            const totalAcquisition = purchasePrice + closingCosts + dueDiligence;
+            
+            // Infrastructure
+            // REAL DATA FROM ENGINEER'S ESTIMATES (CWE Project R21188)
+            const offsiteImprovements = 102166; // Oct 2023 actual estimate
+            const onsiteImprovements = 577223; // Dec 2023 actual estimate
+            // Infrastructure already includes all these in onsite/offsite totals above
+            const grading = 0;
+            const utilities = 0;
+            const detention = 0;
+            const totalInfrastructure = offsiteImprovements + onsiteImprovements + grading + utilities + detention;
+            
+            // Construction
+            const halfPlexCost = halfPlexSF * halfPlexCount * costPerSF;
+            const sfrCost = sfrSF * costPerSF;
+            const landscaping = 75000;
+            const baseConstruction = halfPlexCost + sfrCost + landscaping;
+            const contingency = baseConstruction * data.contingencyRate;
+            const totalConstruction = baseConstruction + contingency;
+            
+            // Soft Costs
+            const schoolFees = 0; // Already paid
+            const permits = 45000;
+            const performanceBond = 25000;
+            const professionalFees = 85000;
+            const legal = 30000;
+            const insurance = 35000;
+            const marketing = 50000;
+            const totalSoftCosts = schoolFees + permits + performanceBond + professionalFees + legal + insurance + marketing;
+            
+            // Financing
+            const loanInterest = 185000;
+            const propertyTaxes = 18000;
+            const loanFees = 30000;
+            const totalFinancing = loanInterest + propertyTaxes + loanFees;
+            
+            // Total Development Cost
+            const totalDevCost = totalAcquisition + totalInfrastructure + totalConstruction + totalSoftCosts + totalFinancing;
+            
+            // Revenue
+            const halfPlexRevenue = halfPlexPrice * halfPlexCount;
+            const sfrRevenue = sfrPrice;
+            const grossRevenue = halfPlexRevenue + sfrRevenue;
+            const salesCommission = grossRevenue * 0.05;
+            const netRevenue = grossRevenue - salesCommission;
+            
+            // Profit & ROI
+            const netProfit = netRevenue - totalDevCost;
+            const roi = (netProfit / totalDevCost) * 100;
+            const profitPerSF = netProfit / totalSF;
+            
+            // Update UI
+            document.getElementById('purchasePrice').textContent = '$' + purchasePrice.toLocaleString();
+            document.getElementById('closingCosts').textContent = '$' + Math.round(closingCosts).toLocaleString();
+            document.getElementById('dueDiligence').textContent = '$' + dueDiligence.toLocaleString();
+            document.getElementById('totalAcquisition').textContent = '$' + Math.round(totalAcquisition).toLocaleString();
+            
+            document.getElementById('offsiteImprovements').textContent = '$' + offsiteImprovements.toLocaleString();
+            document.getElementById('onsiteImprovements').textContent = '$' + onsiteImprovements.toLocaleString();
+            document.getElementById('grading').textContent = '$' + grading.toLocaleString();
+            document.getElementById('utilities').textContent = '$' + utilities.toLocaleString();
+            document.getElementById('detention').textContent = '$' + detention.toLocaleString();
+            document.getElementById('totalInfrastructure').textContent = '$' + Math.round(totalInfrastructure).toLocaleString();
+            
+            document.getElementById('halfPlexCost').textContent = '$' + Math.round(halfPlexCost).toLocaleString();
+            document.getElementById('sfrCost').textContent = '$' + Math.round(sfrCost).toLocaleString();
+            document.getElementById('landscaping').textContent = '$' + landscaping.toLocaleString();
+            document.getElementById('contingency').textContent = '$' + Math.round(contingency).toLocaleString();
+            document.getElementById('totalConstruction').textContent = '$' + Math.round(totalConstruction).toLocaleString();
+            
+            document.getElementById('schoolFees').textContent = '$' + schoolFees.toLocaleString();
+            document.getElementById('permits').textContent = '$' + permits.toLocaleString();
+            document.getElementById('performanceBond').textContent = '$' + performanceBond.toLocaleString();
+            document.getElementById('professionalFees').textContent = '$' + professionalFees.toLocaleString();
+            document.getElementById('legal').textContent = '$' + legal.toLocaleString();
+            document.getElementById('insurance').textContent = '$' + insurance.toLocaleString();
+            document.getElementById('marketing').textContent = '$' + marketing.toLocaleString();
+            document.getElementById('totalSoftCosts').textContent = '$' + Math.round(totalSoftCosts).toLocaleString();
+            
+            document.getElementById('loanInterest').textContent = '$' + loanInterest.toLocaleString();
+            document.getElementById('propertyTaxes').textContent = '$' + propertyTaxes.toLocaleString();
+            document.getElementById('loanFees').textContent = '$' + loanFees.toLocaleString();
+            document.getElementById('totalFinancing').textContent = '$' + Math.round(totalFinancing).toLocaleString();
+            
+            document.getElementById('halfPlexPrice').textContent = '$' + halfPlexPrice.toLocaleString();
+            document.getElementById('sfrPrice').textContent = '$' + sfrPrice.toLocaleString();
+            document.getElementById('halfPlexRevenue').textContent = '$' + Math.round(halfPlexRevenue).toLocaleString();
+            document.getElementById('sfrRevenue').textContent = '$' + Math.round(sfrRevenue).toLocaleString();
+            document.getElementById('grossRevenue').textContent = '$' + Math.round(grossRevenue).toLocaleString();
+            document.getElementById('salesCommission').textContent = '-$' + Math.round(salesCommission).toLocaleString();
+            document.getElementById('netRevenue').textContent = '$' + Math.round(netRevenue).toLocaleString();
+            
+            document.getElementById('totalDevCost').textContent = '$' + Math.round(totalDevCost).toLocaleString();
+            document.getElementById('totalRevenue').textContent = '$' + Math.round(netRevenue).toLocaleString();
+            document.getElementById('finalProfit').textContent = (netProfit >= 0 ? '$' : '-$') + Math.abs(Math.round(netProfit)).toLocaleString();
+            document.getElementById('finalROI').textContent = roi.toFixed(1) + '%';
+            
+            document.getElementById('roi').textContent = roi.toFixed(1) + '%';
+            document.getElementById('netProfit').textContent = (netProfit >= 0 ? '$' : '-$') + Math.abs(Math.round(netProfit)).toLocaleString();
+            document.getElementById('profitPerSF').textContent = '$' + Math.round(profitPerSF).toLocaleString();
+            
+            // Color coding
+            const profitElements = document.querySelectorAll('#finalProfit, #netProfit');
+            const roiElements = document.querySelectorAll('#finalROI, #roi');
+            
+            profitElements.forEach(el => {
+                if (netProfit >= 0) {
+                    el.classList.remove('loss');
+                    el.classList.add('profit');
+                } else {
+                    el.classList.remove('profit');
+                    el.classList.add('loss');
+                }
+            });
+            
+            // Alert
+            const alertDiv = document.getElementById('alert');
+            if (netProfit < 0) {
+                alertDiv.innerHTML = '<div class="warning">⚠️ <strong>WARNING:</strong> This project is currently unprofitable. Consider negotiating a lower purchase price, increasing sale prices, or reducing construction costs.</div>';
+            } else if (roi < 15) {
+                alertDiv.innerHTML = '<div class="warning">⚠️ <strong>CAUTION:</strong> ROI below 15% may not justify the risk and timeline of this development.</div>';
+            } else {
+                alertDiv.innerHTML = '<div class="success">✅ <strong>VIABLE:</strong> This project shows positive returns. Proceed with detailed due diligence.</div>';
+            }
+        }
+
+        // Initialize
+        calculateFinancials();
+    </script>
+</body>
+</html>
+

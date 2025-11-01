@@ -1,0 +1,614 @@
+{
+  "project": {
+    "address": "4929 Nerrads Place, Sacramento, CA 95838",
+    "acres": 1.17,
+    "lots": 7,
+    "units": {
+      "half_plex": 6,
+      "sfr": 1
+    },
+    "total_sf": 12446,
+    "listing_price": 258500
+  },
+  "phases": [
+    {
+      "id": 1,
+      "name": "Final Approvals & Permits",
+      "duration_weeks": 12,
+      "risk": "MEDIUM",
+      "tasks": [
+        {
+          "id": "P1-T1",
+          "name": "Submit Building Permit Application",
+          "description": "Compile all required documents and submit complete building permit package to City of Sacramento",
+          "duration_hours": 40,
+          "dependencies": [],
+          "sop": "SOP-001",
+          "hurdles": [
+            "Plan check comments may require revisions",
+            "City backlog averages 6-8 weeks"
+          ]
+        },
+        {
+          "id": "P1-T2",
+          "name": "Utility Service Agreements",
+          "description": "Obtain formal service agreements from PG&E, Sacramento County Water, and Sewer District",
+          "duration_hours": 80,
+          "dependencies": [],
+          "sop": "SOP-002",
+          "hurdles": [
+            "PG&E notorious for 8-12 week response time",
+            "May require transformer upgrades"
+          ]
+        },
+        {
+          "id": "P1-T3",
+          "name": "Geotechnical Review & Approval",
+          "description": "Submit updated geotechnical report and obtain City approval for foundation design",
+          "duration_hours": 24,
+          "dependencies": [],
+          "sop": "SOP-003",
+          "hurdles": [
+            "2024 plans may require soil report update",
+            "Special foundation requirements possible"
+          ]
+        },
+        {
+          "id": "P1-T4",
+          "name": "Final Map Recording Verification",
+          "description": "Verify final map recording and obtain certified copies for lenders and title company",
+          "duration_hours": 8,
+          "dependencies": [],
+          "sop": "SOP-004",
+          "hurdles": []
+        },
+        {
+          "id": "P1-T5",
+          "name": "Performance Bond Activation",
+          "description": "Activate performance bond and provide proof to City before permit issuance",
+          "duration_hours": 16,
+          "dependencies": [
+            "P1-T1"
+          ],
+          "sop": "SOP-005",
+          "hurdles": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Infrastructure & Site Work",
+      "duration_weeks": 20,
+      "risk": "HIGH",
+      "tasks": [
+        {
+          "id": "P2-T1",
+          "name": "Site Mobilization & Staging",
+          "description": "Establish construction fencing, temporary utilities, and material staging areas",
+          "duration_hours": 40,
+          "dependencies": [
+            "P1-T1"
+          ],
+          "sop": "SOP-006",
+          "hurdles": []
+        },
+        {
+          "id": "P2-T2",
+          "name": "Rough Grading & Excavation",
+          "description": "Mass grading, pad elevations, cut/fill operations per civil plans",
+          "duration_hours": 200,
+          "dependencies": [
+            "P2-T1"
+          ],
+          "sop": "SOP-007",
+          "hurdles": [
+            "Weather delays during rainy season (Nov-Mar)",
+            "Unsuitable soils may require over-excavation",
+            "Grading inspection required"
+          ]
+        },
+        {
+          "id": "P2-T3",
+          "name": "Offsite Improvements - Rio Linda Blvd",
+          "description": "Curb, gutter, sidewalk, street improvements per City requirements",
+          "duration_hours": 400,
+          "dependencies": [
+            "P2-T2"
+          ],
+          "sop": "SOP-008",
+          "hurdles": [
+            "Caltrans permits if work affects state highway",
+            "Traffic control plan required",
+            "Materials testing (concrete, asphalt)"
+          ]
+        },
+        {
+          "id": "P2-T4",
+          "name": "Onsite Street Installation",
+          "description": "Private street paving, curbs, gutters within subdivision",
+          "duration_hours": 320,
+          "dependencies": [
+            "P2-T3"
+          ],
+          "sop": "SOP-009",
+          "hurdles": [
+            "Base material compaction testing",
+            "Asphalt price volatility"
+          ]
+        },
+        {
+          "id": "P2-T5",
+          "name": "Underground Utilities Installation",
+          "description": "Water, sewer, storm drain, gas, electric, telecom conduits",
+          "duration_hours": 480,
+          "dependencies": [
+            "P2-T2"
+          ],
+          "sop": "SOP-010",
+          "hurdles": [
+            "Utility conflicts/relocations",
+            "Trench safety inspections",
+            "Video inspection of sewer lines required"
+          ]
+        },
+        {
+          "id": "P2-T6",
+          "name": "Detention Pond Construction",
+          "description": "Storm water detention basin per drainage plans",
+          "duration_hours": 200,
+          "dependencies": [
+            "P2-T2"
+          ],
+          "sop": "SOP-011",
+          "hurdles": [
+            "Regional Water Quality Control Board compliance",
+            "SWPPP implementation"
+          ]
+        },
+        {
+          "id": "P2-T7",
+          "name": "Final Grading & Compaction",
+          "description": "Finish grade pads, swales, drainage, compaction testing",
+          "duration_hours": 160,
+          "dependencies": [
+            "P2-T4",
+            "P2-T5",
+            "P2-T6"
+          ],
+          "sop": "SOP-012",
+          "hurdles": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Vertical Construction - Foundations",
+      "duration_weeks": 16,
+      "risk": "HIGH",
+      "tasks": [
+        {
+          "id": "P3-T1",
+          "name": "Foundation Layout & Engineering",
+          "description": "Layout foundation systems, order engineered plans, schedule inspections",
+          "duration_hours": 80,
+          "dependencies": [
+            "P2-T7"
+          ],
+          "sop": "SOP-013",
+          "hurdles": []
+        },
+        {
+          "id": "P3-T2",
+          "name": "Foundation Excavation & Footings",
+          "description": "Dig footings, install rebar, schedule footing inspection",
+          "duration_hours": 240,
+          "dependencies": [
+            "P3-T1"
+          ],
+          "sop": "SOP-014",
+          "hurdles": [
+            "Groundwater management",
+            "Footing inspection required before pour"
+          ]
+        },
+        {
+          "id": "P3-T3",
+          "name": "Foundation Pour & Curing",
+          "description": "Concrete pour, curing, stem wall completion",
+          "duration_hours": 160,
+          "dependencies": [
+            "P3-T2"
+          ],
+          "sop": "SOP-015",
+          "hurdles": [
+            "Concrete strike/shortage risk",
+            "Weather delays for curing",
+            "7-day minimum cure time"
+          ]
+        },
+        {
+          "id": "P3-T4",
+          "name": "Underground Plumbing Rough-In",
+          "description": "ABS/PVC drain, waste, vent systems under slab",
+          "duration_hours": 200,
+          "dependencies": [
+            "P3-T3"
+          ],
+          "sop": "SOP-016",
+          "hurdles": [
+            "Pressure testing required",
+            "Inspection before backfill"
+          ]
+        },
+        {
+          "id": "P3-T5",
+          "name": "Slab Preparation & Pour",
+          "description": "Vapor barrier, rebar, radiant tubing (if applicable), slab pour",
+          "duration_hours": 200,
+          "dependencies": [
+            "P3-T4"
+          ],
+          "sop": "SOP-017",
+          "hurdles": []
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Vertical Construction - Framing & Envelope",
+      "duration_weeks": 24,
+      "risk": "HIGH",
+      "tasks": [
+        {
+          "id": "P4-T1",
+          "name": "Framing Package & Material Ordering",
+          "description": "Submit framing plans to lumber supplier, order materials with lead time",
+          "duration_hours": 40,
+          "dependencies": [
+            "P3-T5"
+          ],
+          "sop": "SOP-018",
+          "hurdles": [
+            "Lumber price volatility",
+            "Engineered lumber lead times 4-6 weeks"
+          ]
+        },
+        {
+          "id": "P4-T2",
+          "name": "Wall Framing",
+          "description": "Frame exterior and interior walls per structural plans",
+          "duration_hours": 800,
+          "dependencies": [
+            "P4-T1"
+          ],
+          "sop": "SOP-019",
+          "hurdles": [
+            "Framing inspection required",
+            "Shear wall inspection critical"
+          ]
+        },
+        {
+          "id": "P4-T3",
+          "name": "Roof Framing & Sheathing",
+          "description": "Install roof trusses, rafters, sheathing, and structural shear",
+          "duration_hours": 600,
+          "dependencies": [
+            "P4-T2"
+          ],
+          "sop": "SOP-020",
+          "hurdles": [
+            "Weather delays",
+            "Crane rental scheduling"
+          ]
+        },
+        {
+          "id": "P4-T4",
+          "name": "Windows & Exterior Doors",
+          "description": "Install all windows, sliding glass doors, entry doors",
+          "duration_hours": 320,
+          "dependencies": [
+            "P4-T2"
+          ],
+          "sop": "SOP-021",
+          "hurdles": [
+            "Window lead times 8-12 weeks",
+            "Flashing inspection required"
+          ]
+        },
+        {
+          "id": "P4-T5",
+          "name": "Roofing Installation",
+          "description": "Felt/underlayment, shingles or tile, flashing, valleys",
+          "duration_hours": 400,
+          "dependencies": [
+            "P4-T3"
+          ],
+          "sop": "SOP-022",
+          "hurdles": [
+            "Weather sensitive",
+            "Roof inspection after felt, before shingles"
+          ]
+        },
+        {
+          "id": "P4-T6",
+          "name": "Exterior Siding/Stucco",
+          "description": "Apply house wrap, lath, stucco/siding per architectural plans",
+          "duration_hours": 600,
+          "dependencies": [
+            "P4-T4"
+          ],
+          "sop": "SOP-023",
+          "hurdles": [
+            "Stucco requires 30 days to cure",
+            "Color matching across units"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "MEP, Finishes & Closeout",
+      "duration_weeks": 20,
+      "risk": "MEDIUM",
+      "tasks": [
+        {
+          "id": "P5-T1",
+          "name": "Rough Mechanical, Electrical, Plumbing",
+          "description": "Install all in-wall/ceiling systems before drywall",
+          "duration_hours": 800,
+          "dependencies": [
+            "P4-T6"
+          ],
+          "sop": "SOP-024",
+          "hurdles": [
+            "MEP rough inspection required",
+            "Coordination between trades critical"
+          ]
+        },
+        {
+          "id": "P5-T2",
+          "name": "Insulation",
+          "description": "Wall and ceiling insulation per Title 24 energy requirements",
+          "duration_hours": 240,
+          "dependencies": [
+            "P5-T1"
+          ],
+          "sop": "SOP-025",
+          "hurdles": [
+            "Insulation inspection before drywall"
+          ]
+        },
+        {
+          "id": "P5-T3",
+          "name": "Drywall Hanging, Taping, Texture",
+          "description": "Hang drywall, tape seams, texture, prime",
+          "duration_hours": 600,
+          "dependencies": [
+            "P5-T2"
+          ],
+          "sop": "SOP-026",
+          "hurdles": [
+            "Drying time between coats",
+            "Labor intensive"
+          ]
+        },
+        {
+          "id": "P5-T4",
+          "name": "Interior Painting",
+          "description": "Prime and paint all walls, ceilings, trim prep",
+          "duration_hours": 400,
+          "dependencies": [
+            "P5-T3"
+          ],
+          "sop": "SOP-027",
+          "hurdles": []
+        },
+        {
+          "id": "P5-T5",
+          "name": "Cabinetry & Countertops",
+          "description": "Install kitchen and bath cabinets, countertops",
+          "duration_hours": 320,
+          "dependencies": [
+            "P5-T4"
+          ],
+          "sop": "SOP-028",
+          "hurdles": [
+            "Cabinet lead time 8-12 weeks",
+            "Granite/quartz template required"
+          ]
+        },
+        {
+          "id": "P5-T6",
+          "name": "Flooring Installation",
+          "description": "Install all flooring (tile, carpet, LVP, hardwood)",
+          "duration_hours": 400,
+          "dependencies": [
+            "P5-T4"
+          ],
+          "sop": "SOP-029",
+          "hurdles": []
+        },
+        {
+          "id": "P5-T7",
+          "name": "Trim & Finish Carpentry",
+          "description": "Baseboards, crown molding, door casings, paint trim",
+          "duration_hours": 400,
+          "dependencies": [
+            "P5-T6"
+          ],
+          "sop": "SOP-030",
+          "hurdles": []
+        },
+        {
+          "id": "P5-T8",
+          "name": "Fixture & Appliance Installation",
+          "description": "Install all plumbing fixtures, light fixtures, appliances",
+          "duration_hours": 240,
+          "dependencies": [
+            "P5-T7"
+          ],
+          "sop": "SOP-031",
+          "hurdles": []
+        },
+        {
+          "id": "P5-T9",
+          "name": "Landscape & Hardscape",
+          "description": "Irrigation, planting, sod, driveways, walkways",
+          "duration_hours": 480,
+          "dependencies": [
+            "P4-T6"
+          ],
+          "sop": "SOP-032",
+          "hurdles": [
+            "Irrigation inspection required"
+          ]
+        },
+        {
+          "id": "P5-T10",
+          "name": "Final Inspections & Certificate of Occupancy",
+          "description": "Schedule and pass all final inspections, obtain CO",
+          "duration_hours": 80,
+          "dependencies": [
+            "P5-T8",
+            "P5-T9"
+          ],
+          "sop": "SOP-033",
+          "hurdles": [
+            "Punchlist items typical",
+            "Re-inspections add 1-2 weeks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Marketing & Sales",
+      "duration_weeks": 24,
+      "risk": "HIGH",
+      "tasks": [
+        {
+          "id": "P6-T1",
+          "name": "Pre-Marketing & Model Home",
+          "description": "Professional photography, staging, MLS listings, open houses",
+          "duration_hours": 120,
+          "dependencies": [
+            "P5-T10"
+          ],
+          "sop": "SOP-034",
+          "hurdles": []
+        },
+        {
+          "id": "P6-T2",
+          "name": "Buyer Qualification & Negotiations",
+          "description": "Work with qualified buyers, negotiate contracts, manage contingencies",
+          "duration_hours": 200,
+          "dependencies": [
+            "P6-T1"
+          ],
+          "sop": "SOP-035",
+          "hurdles": [
+            "Buyer financing contingencies",
+            "Appraisal gaps possible"
+          ]
+        },
+        {
+          "id": "P6-T3",
+          "name": "Escrow & Title Closeout",
+          "description": "Work with title company, final walkthrough, closing documentation",
+          "duration_hours": 40,
+          "dependencies": [
+            "P6-T2"
+          ],
+          "sop": "SOP-036",
+          "hurdles": []
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "phase": "Final Approvals & Permits",
+      "start": "2025-10-28",
+      "end": "2026-01-20",
+      "duration_weeks": 12,
+      "risk": "MEDIUM",
+      "task_count": 5
+    },
+    {
+      "phase": "Infrastructure & Site Work",
+      "start": "2026-01-20",
+      "end": "2026-06-09",
+      "duration_weeks": 20,
+      "risk": "HIGH",
+      "task_count": 7
+    },
+    {
+      "phase": "Vertical Construction - Foundations",
+      "start": "2026-06-09",
+      "end": "2026-09-29",
+      "duration_weeks": 16,
+      "risk": "HIGH",
+      "task_count": 5
+    },
+    {
+      "phase": "Vertical Construction - Framing & Envelope",
+      "start": "2026-09-29",
+      "end": "2027-03-16",
+      "duration_weeks": 24,
+      "risk": "HIGH",
+      "task_count": 6
+    },
+    {
+      "phase": "MEP, Finishes & Closeout",
+      "start": "2027-03-16",
+      "end": "2027-08-03",
+      "duration_weeks": 20,
+      "risk": "MEDIUM",
+      "task_count": 10
+    },
+    {
+      "phase": "Marketing & Sales",
+      "start": "2027-08-03",
+      "end": "2028-01-18",
+      "duration_weeks": 24,
+      "risk": "HIGH",
+      "task_count": 3
+    }
+  ],
+  "labor_analysis": {
+    "total_hours": 9928,
+    "phase_breakdown": [
+      {
+        "phase": "Final Approvals & Permits",
+        "hours": 168,
+        "estimated_cost": 10920
+      },
+      {
+        "phase": "Infrastructure & Site Work",
+        "hours": 1800,
+        "estimated_cost": 117000
+      },
+      {
+        "phase": "Vertical Construction - Foundations",
+        "hours": 880,
+        "estimated_cost": 57200
+      },
+      {
+        "phase": "Vertical Construction - Framing & Envelope",
+        "hours": 2760,
+        "estimated_cost": 179400
+      },
+      {
+        "phase": "MEP, Finishes & Closeout",
+        "hours": 3960,
+        "estimated_cost": 257400
+      },
+      {
+        "phase": "Marketing & Sales",
+        "hours": 360,
+        "estimated_cost": 23400
+      }
+    ],
+    "total_labor_cost": 645320
+  }
+}
