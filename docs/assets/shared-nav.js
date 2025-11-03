@@ -144,9 +144,7 @@ const SHARED_NAV_HTML = `
             border-left-color: transparent;
             border-top-color: #667eea;
         }
-        .jsdom-fab {
-            bottom: 96px;
-        }
+        .jsdom-fab { bottom: 96px; }
     }
 </style>
 <div class="jsdom-header">
@@ -156,125 +154,64 @@ const SHARED_NAV_HTML = `
         <a href="logout.html" style="color:white; text-decoration:none; padding:8px 16px; background:rgba(255,255,255,0.2); border-radius:6px; font-size:14px; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">🔓 Logout</a>
     </div>
 </div>
-<div class="jsdom-fab" onclick="JSDOMNav.startProblemLog()">
-    🎤
-</div>
+<div class="jsdom-fab" onclick="JSDOMNav.startProblemLog()">🎤</div>
 <nav class="jsdom-sidebar-nav">
-    <a href="index.html" class="jsdom-nav-item" data-section="dashboard">
-        <span class="icon">🏗️</span>
-        <span>Projects</span>
-    </a>
-    <a href="project.html" class="jsdom-nav-item" data-section="tasks">
-        <span class="icon">✓</span>
-        <span>Tasks</span>
-    </a>
-    <a href="blueprints.html" class="jsdom-nav-item" data-section="plans">
-        <span class="icon">📐</span>
-        <span>Plans</span>
-    </a>
-        <a href="schedule/baseline.html" class="jsdom-nav-item" data-section="schedule">
-            <span class="icon">📅</span>
-            <span>Schedule</span>
-        </a>
-        <a href="changelog.html" class="jsdom-nav-item" data-section="changelog">
-            <span class="icon">📋</span>
-            <span>Changelog</span>
-        </a>
-    </nav>
+    <a href="index.html" class="jsdom-nav-item" data-section="dashboard"><span class="icon">🏗️</span><span>Projects</span></a>
+    <a href="project.html" class="jsdom-nav-item" data-section="tasks"><span class="icon">✓</span><span>Tasks</span></a>
+    <a href="cordant-blueprints.html" class="jsdom-nav-item" data-section="plans"><span class="icon">📐</span><span>Blueprints</span></a>
+    <a href="schedule/baseline.html" class="jsdom-nav-item" data-section="schedule"><span class="icon">📅</span><span>Schedule</span></a>
+    <a href="changelog.html" class="jsdom-nav-item" data-section="changelog"><span class="icon">📋</span><span>Changelog</span></a>
+    <a href="nerrads-hub.html" class="jsdom-nav-item" data-section="nerrads"><span class="icon">🏡</span><span>Nerrads</span></a>
+    <a href="house-2d-preview.html" class="jsdom-nav-item" data-section="house2d"><span class="icon">📐</span><span>House 2D</span></a>
+    <a href="investor-site.html" class="jsdom-nav-item" data-section="investor"><span class="icon">💼</span><span>Investor</span></a>
+</nav>
 `;
 
 // Navigation Controller
 window.JSDOMNav = {
     init: function(pageName, pageTitle) {
-        // Add body class
         document.body.classList.add('jsdom-page');
-
-        // Create a temporary container
         const temp = document.createElement('div');
         temp.innerHTML = SHARED_NAV_HTML;
-
-        // Extract each element
         const header = temp.querySelector('.jsdom-header');
         const fab = temp.querySelector('.jsdom-fab');
         const bottomNav = temp.querySelector('.jsdom-bottom-nav');
-
-        // Insert header at the beginning
-        if (header) {
-            document.body.insertBefore(header, document.body.firstChild);
-        }
-
-        // Append FAB and bottom nav to the end
-        if (fab) {
-            document.body.appendChild(fab);
-        }
-        if (bottomNav) {
-            document.body.appendChild(bottomNav);
-        }
-
-        // Set page title
+        if (header) document.body.insertBefore(header, document.body.firstChild);
+        if (fab) document.body.appendChild(fab);
+        if (bottomNav) document.body.appendChild(bottomNav);
         if (pageTitle) {
             const titleEl = document.getElementById('jsdom-page-title');
-            if (titleEl) {
-                titleEl.textContent = pageTitle;
-            }
+            if (titleEl) titleEl.textContent = pageTitle;
         }
-
-        // Set active nav item based on current page
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.jsdom-nav-item').forEach(item => {
-            const href = item.getAttribute('href') || '';
-            const hrefPage = href.split('/').pop();
-            
-            if (hrefPage === currentPage || 
-                (currentPage === '' && hrefPage === 'index.html') ||
-                (currentPage.includes('sop') && item.dataset.section === 'tasks')) {
+            const hrefPage = (item.getAttribute('href')||'').split('/').pop();
+            if (hrefPage === currentPage || (currentPage === '' && hrefPage === 'index.html')) {
                 item.classList.add('active');
             }
         });
-
-        // Initialize online status
         this.updateOnlineStatus();
         window.addEventListener('online', () => this.updateOnlineStatus());
         window.addEventListener('offline', () => this.updateOnlineStatus());
     },
-
     updateOnlineStatus: function() {
         const badge = document.getElementById('jsdom-online-status');
-        if (badge) {
-            if (navigator.onLine) {
-                badge.className = 'status-badge online';
-                badge.textContent = '● Online';
-            } else {
-                badge.className = 'status-badge offline';
-                badge.textContent = '● Offline';
-            }
-        }
+        if (!badge) return;
+        if (navigator.onLine) { badge.className='status-badge online'; badge.textContent='● Online'; }
+        else { badge.className='status-badge offline'; badge.textContent='● Offline'; }
     },
-
     startProblemLog: function() {
         const taskName = prompt('Which task/location is this problem for?', 'Current task');
-        if (taskName) {
-            const problem = {
-                task: taskName,
-                timestamp: new Date().toISOString(),
-                status: 'queued',
-                page: window.location.pathname
-            };
-
-            const problems = JSON.parse(localStorage.getItem('problemLogs') || '[]');
-            problems.push(problem);
-            localStorage.setItem('problemLogs', JSON.stringify(problems));
-
-            alert('🎤 Problem log recorded for: ' + taskName + '\n\nWill sync when online.');
-        }
+        if (!taskName) return;
+        const problem = { task: taskName, timestamp: new Date().toISOString(), status: 'queued', page: window.location.pathname };
+        const problems = JSON.parse(localStorage.getItem('problemLogs')||'[]'); problems.push(problem);
+        localStorage.setItem('problemLogs', JSON.stringify(problems));
+        alert('🎤 Problem log recorded for: ' + taskName + '\n\nWill sync when online.');
     }
 };
 
-// Auto-initialize if data-jsdom-page attribute is set on body
 document.addEventListener('DOMContentLoaded', () => {
     const pageAttr = document.body.getAttribute('data-jsdom-page');
     const titleAttr = document.body.getAttribute('data-jsdom-title');
-    if (pageAttr) {
-        JSDOMNav.init(pageAttr, titleAttr);
-    }
+    if (pageAttr) JSDOMNav.init(pageAttr, titleAttr);
 });

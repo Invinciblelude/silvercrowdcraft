@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant – Office Wall Assembly</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1400px; margin:0 auto; padding:20px 20px 120px}
+    .hero {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:16px; padding:24px; margin-bottom:20px}
+    .hero h1 {margin:0 0 8px; font-size:28px; color:#fff}
+    .controls {display:flex; gap:10px; margin:10px 0}
+    .btn {background:#667eea; color:#fff; border:none; border-radius:8px; padding:10px 14px; font-weight:700; cursor:pointer}
+    .legend {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:8px; margin-top:12px}
+    .legend-item {display:flex; align-items:center; gap:8px; background:#0f1318; padding:8px; border-radius:8px}
+    .sw {width:16px; height:16px; border-radius:3px; border:2px solid #1f2630}
+    svg {width:100%; height:auto}
+  </style>
+</head>
+<body data-jsdom-page="office-assembly" data-jsdom-title="🧱 Office Wall Assembly">
+  <div class="container">
+    <div class="hero">
+      <h1>Office – Wall Panel Assembly (12'-8" × 11'-4", H 8'-0")</h1>
+      <p>Studs @ 16" O.C., plates 2x6. North window 4'-0"×4'-0" (sill 3'-0"); East door 3'-0".</p>
+      <div class="controls">
+        <button id="assembleBtn" class="btn">Assemble</button>
+        <button id="explodeBtn" class="btn" style="background:#1f2630; border:1px solid #667eea">Explode</button>
+      </div>
+    </div>
+
+    <svg id="scene" viewBox="0 0 1100 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="studs" width="32" height="8" patternUnits="userSpaceOnUse">
+          <rect x="14" y="0" width="6" height="8" fill="#fbbf24"/>
+        </pattern>
+      </defs>
+      <!-- Background -->
+      <rect x="0" y="0" width="1100" height="800" fill="#0f1318"/>
+
+      <!-- Foundation slab (center) 152×136 inches scaled to pixels (3px/in) -->
+      <g id="foundation" transform="translate(275,240)">
+        <rect x="0" y="0" width="456" height="408" fill="#9aa4b2" opacity="0.25"/>
+        <rect x="0" y="0" width="456" height="408" fill="none" stroke="#94a3b8" stroke-width="3"/>
+        <text x="228" y="-12" fill="#9cc1ff" font-size="14" text-anchor="middle">Foundation (152" × 136")</text>
+      </g>
+
+      <!-- Wall panel groups (start exploded) -->
+      <!-- Common panel builder: plates + studs pattern fill -->
+      <!-- North (top edge of slab) with window -->
+      <g id="north" transform="translate(275,120)">
+        <!-- plate background to show panel extents -->
+        <rect x="0" y="0" width="456" height="96" fill="#0f1318"/>
+        <!-- studs area -->
+        <rect x="0" y="0" width="456" height="96" fill="url(#studs)"/>
+        <!-- bottom plate -->
+        <rect x="0" y="90" width="456" height="6" fill="#fb923c"/>
+        <!-- double top plates -->
+        <rect x="0" y="0" width="456" height="6" fill="#ef4444"/>
+        <rect x="0" y="8" width="456" height="6" fill="#ef4444"/>
+        <!-- window opening 48" wide centered at 48" from left -->
+        <g>
+          <rect x="144" y="42" width="144" height="48" fill="#0f1318" stroke="#67b7d1" stroke-width="3"/>
+          <!-- sill and header -->
+          <rect x="144" y="90" width="144" height="6" fill="#f59e0b"/>
+          <rect x="144" y="36" width="144" height="6" fill="#22c55e"/>
+          <!-- king + jack studs -->
+          <rect x="140" y="0" width="6" height="96" fill="#60a5fa"/>
+          <rect x="288" y="0" width="6" height="96" fill="#60a5fa"/>
+          <rect x="148" y="36" width="6" height="60" fill="#a78bfa"/>
+          <rect x="280" y="36" width="6" height="60" fill="#a78bfa"/>
+        </g>
+        <text x="228" y="-12" fill="#9cc1ff" font-size="14" text-anchor="middle">North wall (window)</text>
+      </g>
+
+      <!-- South (bottom edge of slab) no openings -->
+      <g id="south" transform="translate(275,566)">
+        <rect x="0" y="0" width="456" height="96" fill="#0f1318"/>
+        <rect x="0" y="0" width="456" height="96" fill="url(#studs)"/>
+        <rect x="0" y="90" width="456" height="6" fill="#fb923c"/>
+        <rect x="0" y="0" width="456" height="6" fill="#ef4444"/>
+        <rect x="0" y="8" width="456" height="6" fill="#ef4444"/>
+        <text x="228" y="-12" fill="#9cc1ff" font-size="14" text-anchor="middle">South wall</text>
+      </g>
+
+      <!-- East (right edge) with door -->
+      <g id="east" transform="translate(840,240)">
+        <rect x="0" y="0" width="408" height="96" fill="#0f1318"/>
+        <rect x="0" y="0" width="408" height="96" fill="url(#studs)"/>
+        <rect x="0" y="90" width="408" height="6" fill="#fb923c"/>
+        <rect x="0" y="0" width="408" height="6" fill="#ef4444"/>
+        <rect x="0" y="8" width="408" height="6" fill="#ef4444"/>
+        <!-- centered door 36" wide -->
+        <g>
+          <rect x="186" y="16" width="36" height="80" fill="#0f1318" stroke="#c084fc" stroke-width="3"/>
+          <!-- header over door + kings + jacks -->
+          <rect x="186" y="10" width="36" height="6" fill="#22c55e"/>
+          <rect x="182" y="0" width="6" height="96" fill="#60a5fa"/>
+          <rect x="222" y="0" width="6" height="96" fill="#60a5fa"/>
+          <rect x="190" y="10" width="6" height="86" fill="#a78bfa"/>
+          <rect x="214" y="10" width="6" height="86" fill="#a78bfa"/>
+        </g>
+        <text x="204" y="-12" fill="#9cc1ff" font-size="14" text-anchor="middle">East wall (door)</text>
+      </g>
+
+      <!-- West (left edge) no openings -->
+      <g id="west" transform="translate(216,240)">
+        <rect x="0" y="0" width="408" height="96" fill="#0f1318"/>
+        <rect x="0" y="0" width="408" height="96" fill="url(#studs)"/>
+        <rect x="0" y="90" width="408" height="6" fill="#fb923c"/>
+        <rect x="0" y="0" width="408" height="6" fill="#ef4444"/>
+        <rect x="0" y="8" width="408" height="6" fill="#ef4444"/>
+        <text x="204" y="-12" fill="#9cc1ff" font-size="14" text-anchor="middle">West wall</text>
+      </g>
+
+      <!-- Anchor bolts visual on slab perimeter -->
+      <g id="anchors" fill="#ef4444" transform="translate(275,240)">
+        <circle cx="0" cy="0" r="3"/>
+        <circle cx="228" cy="0" r="3"/>
+        <circle cx="456" cy="0" r="3"/>
+        <circle cx="456" cy="204" r="3"/>
+        <circle cx="456" cy="408" r="3"/>
+        <circle cx="228" cy="408" r="3"/>
+        <circle cx="0" cy="408" r="3"/>
+        <circle cx="0" cy="204" r="3"/>
+      </g>
+    </svg>
+
+    <div class="legend">
+      <div class="legend-item"><span class="sw" style="background:#fb923c"></span><div>Bottom plate (2x6 PT)</div></div>
+      <div class="legend-item"><span class="sw" style="background:#ef4444"></span><div>Double top plates (2x6)</div></div>
+      <div class="legend-item"><span class="sw" style="background:#fbbf24"></span><div>Studs @ 16" O.C.</div></div>
+      <div class="legend-item"><span class="sw" style="background:#60a5fa"></span><div>King studs</div></div>
+      <div class="legend-item"><span class="sw" style="background:#a78bfa"></span><div>Jack studs</div></div>
+      <div class="legend-item"><span class="sw" style="background:#22c55e"></span><div>Header</div></div>
+      <div class="legend-item"><span class="sw" style="background:#f59e0b"></span><div>Sill</div></div>
+      <div class="legend-item"><span class="sw" style="background:#67b7d1"></span><div>Window RO</div></div>
+      <div class="legend-item"><span class="sw" style="background:#c084fc"></span><div>Door RO</div></div>
+      <div class="legend-item"><span class="sw" style="background:#ef4444"></span><div>Anchor bolts (≤6'-0" o.c.)</div></div>
+    </div>
+  </div>
+
+  <script>
+    const north = document.getElementById('north');
+    const south = document.getElementById('south');
+    const east  = document.getElementById('east');
+    const west  = document.getElementById('west');
+
+    // Target transforms when assembled (touching slab edges)
+    const assembled = {
+      north: 'translate(275,240)',    // top of slab
+      south: 'translate(275,552)',    // bottom of slab (240 + 408 - 96)
+      east:  'translate(731,240) rotate(90 204 48)', // rotate panel to stand on right edge
+      west:  'translate(275,240) rotate(90 204 48) translate(-408,0)'
+    };
+
+    const exploded = {
+      north: 'translate(275,120)',
+      south: 'translate(275,566)',
+      east:  'translate(840,240)',
+      west:  'translate(216,240)'
+    };
+
+    function applyTransforms(state){
+      north.setAttribute('transform', state.north);
+      south.setAttribute('transform', state.south);
+      east.setAttribute('transform', state.east);
+      west.setAttribute('transform', state.west);
+    }
+
+    document.getElementById('assembleBtn').addEventListener('click', ()=>applyTransforms(assembled));
+    document.getElementById('explodeBtn').addEventListener('click', ()=>applyTransforms(exploded));
+  </script>
+</body>
+</html>

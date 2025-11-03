@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant - Simple Framing Guide</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1400px; margin:0 auto; padding:20px 20px 100px}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:32px;
+      text-align:center;
+    }
+    .hero h1 {font-size:42px; font-weight:800; margin:0 0 16px; color:#fff}
+    .hero p {font-size:18px; opacity:0.95; margin:0; color:#e8eef5}
+    
+    .alert {
+      padding:20px;
+      border-radius:12px;
+      margin-bottom:24px;
+      border-left:4px solid;
+      background:rgba(74,222,128,0.1);
+      border-left-color:#4ade80;
+    }
+    .alert h3 {margin:0 0 12px; color:#4ade80; font-size:18px}
+    .alert p {margin:8px 0; color:#a9b6c6; line-height:1.6}
+    
+    .card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:32px;
+      margin-bottom:24px;
+    }
+    .card-title {font-size:28px; font-weight:700; margin:0 0 16px; color:#9cc1ff}
+    .card-subtitle {font-size:20px; font-weight:600; margin:24px 0 16px; color:#a9b6c6}
+    
+    .step {
+      background:#0f1318;
+      padding:24px;
+      border-radius:8px;
+      border-left:4px solid #667eea;
+      margin-bottom:20px;
+    }
+    .step-number {
+      display:inline-block;
+      width:36px;
+      height:36px;
+      background:#667eea;
+      color:#fff;
+      border-radius:50%;
+      text-align:center;
+      line-height:36px;
+      font-weight:700;
+      margin-right:12px;
+    }
+    .step-title {font-size:20px; font-weight:700; color:#9cc1ff; margin-bottom:12px}
+    .step-content {color:#a9b6c6; line-height:1.8}
+    .step-content ul {margin:12px 0; padding-left:24px}
+    .step-content li {margin:8px 0}
+    
+    .diagram {
+      background:#0f1318;
+      border:2px solid #1f2630;
+      border-radius:8px;
+      padding:20px;
+      margin:20px 0;
+      text-align:center;
+    }
+    .diagram img {
+      max-width:100%;
+      height:auto;
+      border-radius:4px;
+      border:2px solid #667eea;
+    }
+    .diagram-caption {
+      margin-top:12px;
+      color:#8a98ab;
+      font-size:14px;
+      font-style:italic;
+    }
+    
+    .color-legend {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:16px;
+      margin:24px 0;
+    }
+    .legend-item {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:12px;
+      background:#0f1318;
+      border-radius:8px;
+    }
+    .legend-color {
+      width:40px;
+      height:40px;
+      border-radius:4px;
+      border:2px solid #1f2630;
+    }
+    .legend-label {
+      font-size:14px;
+      font-weight:600;
+      color:#e8eef5;
+    }
+    
+    .blueprint-viewer {
+      position:relative;
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:20px;
+      margin:24px 0;
+    }
+    .blueprint-viewer img {
+      width:100%;
+      height:auto;
+      border-radius:8px;
+    }
+    .blueprint-annotation {
+      position:absolute;
+      background:rgba(102,126,234,0.9);
+      color:#fff;
+      padding:8px 12px;
+      border-radius:6px;
+      font-size:14px;
+      font-weight:600;
+      pointer-events:none;
+      box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    }
+    
+    .material-list {
+      background:#0f1318;
+      border:2px solid #667eea;
+      border-radius:8px;
+      padding:24px;
+      margin:24px 0;
+    }
+    .material-list h4 {
+      margin:0 0 16px;
+      color:#667eea;
+      font-size:18px;
+    }
+    .material-list table {
+      width:100%;
+      border-collapse:collapse;
+    }
+    .material-list th {
+      text-align:left;
+      padding:12px;
+      border-bottom:2px solid #1f2630;
+      color:#9cc1ff;
+      font-size:14px;
+    }
+    .material-list td {
+      padding:12px;
+      border-bottom:1px solid #1f2630;
+      color:#e8eef5;
+    }
+    
+    .tabs {
+      display:flex;
+      gap:16px;
+      margin-bottom:24px;
+      border-bottom:2px solid #1f2630;
+      flex-wrap:wrap;
+    }
+    .tab {
+      padding:12px 24px;
+      background:transparent;
+      border:none;
+      color:#8a98ab;
+      cursor:pointer;
+      font-size:16px;
+      font-weight:600;
+      border-bottom:3px solid transparent;
+      transition:all 0.2s;
+    }
+    .tab:hover {color:#9cc1ff}
+    .tab.active {color:#9cc1ff; border-bottom-color:#667eea}
+    
+    .tab-content {display:none}
+    .tab-content.active {display:block}
+    
+    .tip-box {
+      background:rgba(251,146,60,0.1);
+      border-left:4px solid #fb923c;
+      padding:16px 20px;
+      border-radius:8px;
+      margin:16px 0;
+    }
+    .tip-box strong {color:#fb923c}
+    .tip-box p {margin:8px 0; color:#a9b6c6}
+  </style>
+</head>
+<body data-jsdom-page="framing" data-jsdom-title="🔨 Framing Guide">
+  
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>🔨 728 Cordant Drive - Simple Framing Guide</h1>
+      <p>Understanding Your Blueprints: Step-by-Step Visual Guide for Framing</p>
+    </div>
+
+    <div class="alert">
+      <h3>✅ You Can Do This!</h3>
+      <p>Blueprints look complicated, but I'll break down exactly what you need to do for framing. Follow these steps in order, and you'll have a clear picture of how your house comes together.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('overview')">📊 Overview</button>
+      <button class="tab" onclick="showTab('walls')">🏗️ Wall Framing</button>
+      <button class="tab" onclick="showTab('roof')">🏠 Roof Framing</button>
+      <button class="tab" onclick="showTab('shear')">🔧 Shear Walls</button>
+      <button class="tab" onclick="showTab('materials')">📦 Materials List</button>
+      <button class="tab" onclick="showTab('sequence')">📅 Build Sequence</button>
+    </div>
+
+    <!-- Overview Tab -->
+    <div id="overview" class="tab-content active">
+      <div class="card">
+        <h2 class="card-title">📊 What You're Building - The Big Picture</h2>
+        
+        <div class="diagram">
+          <img src="../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg" alt="Floor Plan">
+          <div class="diagram-caption">Your floor plan - This shows where all the walls go</div>
+        </div>
+        
+        <h3 class="card-subtitle">Wall Framing Parts - What Everything Is Called:</h3>
+        
+        <div style="background:#0f1318; padding:24px; border-radius:8px; margin:24px 0">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23e8eef5' width='800' height='600'/%3E%3Ctext x='400' y='50' text-anchor='middle' font-size='24' font-weight='bold' fill='%23667eea'%3EWALL FRAMING ANATOMY%3C/text%3E%3C!-- Bottom Plate --%3E%3Crect x='100' y='450' width='600' height='40' fill='%23fb923c' stroke='%23000' stroke-width='2'/%3E%3Ctext x='400' y='475' text-anchor='middle' font-size='18' font-weight='bold'%3EBottom Plate%3C/text%3E%3Cline x1='100' y1='490' x2='100' y2='530' stroke='%23667eea' stroke-width='3'/%3E%3Ctext x='110' y='535' font-size='14' fill='%23667eea'%3EBolted to foundation%3C/text%3E%3C!-- Studs --%3E%3Crect x='140' y='150' width='40' height='300' fill='%23fbbf24' stroke='%23000' stroke-width='2'/%3E%3Crect x='300' y='150' width='40' height='300' fill='%23fbbf24' stroke='%23000' stroke-width='2'/%3E%3Crect x='460' y='150' width='40' height='300' fill='%23fbbf24' stroke='%23000' stroke-width='2'/%3E%3Crect x='620' y='150' width='40' height='300' fill='%23fbbf24' stroke='%23000' stroke-width='2'/%3E%3Ctext x='160' y='300' text-anchor='middle' font-size='14' font-weight='bold' transform='rotate(-90 160 300)'%3EStud%3C/text%3E%3Cline x1='180' y1='300' x2='290' y2='300' stroke='%23667eea' stroke-width='2' stroke-dasharray='5,5'/%3E%3Ctext x='235' y='290' text-anchor='middle' font-size='14' fill='%23667eea' font-weight='bold'%3E16" spacing%3C/text%3E%3C!-- Top Plates --%3E%3Crect x='100' y='110' width='600' height='20' fill='%23f87171' stroke='%23000' stroke-width='2'/%3E%3Crect x='100' y='130' width='600' height='20' fill='%23f87171' stroke='%23000' stroke-width='2'/%3E%3Ctext x='750' y='125' font-size='16' font-weight='bold'%3EDouble%3C/text%3E%3Ctext x='750' y='145' font-size='16' font-weight='bold'%3ETop Plate%3C/text%3E%3C!-- Header over opening --%3E%3Crect x='340' y='200' width='120' height='60' fill='%234ade80' stroke='%23000' stroke-width='3'/%3E%3Ctext x='400' y='235' text-anchor='middle' font-size='14' font-weight='bold'%3EHEADER%3C/text%3E%3Ctext x='400' y='180' text-anchor='middle' font-size='12' fill='%23667eea'%3EOver door/window%3C/text%3E%3C!-- King and Jack Studs --%3E%3Crect x='300' y='150' width='40' height='300' fill='%239cc1ff' stroke='%23000' stroke-width='2'/%3E%3Crect x='340' y='260' width='30' height='190' fill='%239cc1ff' stroke='%23000' stroke-width='2'/%3E%3Crect x='490' y='260' width='30' height='190' fill='%239cc1ff' stroke='%23000' stroke-width='2'/%3E%3Crect x='520' y='150' width='40' height='300' fill='%239cc1ff' stroke='%23000' stroke-width='2'/%3E%3Ctext x='270' y='250' font-size='12' fill='%23667eea' font-weight='bold'%3EKing Stud%3C/text%3E%3Ctext x='345' y='280' font-size='10' fill='%23667eea' transform='rotate(-90 345 280)'%3EJack%3C/text%3E%3Ctext x='495' y='280' font-size='10' fill='%23667eea' transform='rotate(-90 495 280)'%3EJack%3C/text%3E%3C!-- Cripple Studs --%3E%3Crect x='380' y='150' width='30' height='50' fill='%23fb923c' stroke='%23000' stroke-width='2'/%3E%3Crect x='440' y='150' width='30' height='50' fill='%23fb923c' stroke='%23000' stroke-width='2'/%3E%3Ctext x='395' y='175' font-size='10' font-weight='bold'%3ECripple%3C/text%3E%3C!-- Window opening --%3E%3Crect x='340' y='280' width='180' height='150' fill='%2367b7d1' opacity='0.3' stroke='%23667eea' stroke-width='3' stroke-dasharray='10,5'/%3E%3Ctext x='430' y='360' text-anchor='middle' font-size='18' font-weight='bold' fill='%23667eea'%3EWINDOW%3C/text%3E%3Ctext x='430' y='380' text-anchor='middle' font-size='14' fill='%23667eea'%3EOPENING%3C/text%3E%3C/svg%3E" style="width:100%; max-width:800px; height:auto; border-radius:8px; border:2px solid #667eea">
+          <div style="margin-top:16px; color:#a9b6c6; line-height:1.8">
+            <p style="margin:0 0 12px"><strong style="color:#9cc1ff">How to read this diagram:</strong></p>
+            <ul style="margin:0; padding-left:20px">
+              <li><strong style="color:#fb923c">Bottom Plate (Orange):</strong> Sits on foundation, bolted down</li>
+              <li><strong style="color:#fbbf24">Studs (Yellow):</strong> Vertical boards every 16" - these are the "bones" of the wall</li>
+              <li><strong style="color:#f87171">Top Plates (Red):</strong> Two boards stacked on top - ties walls together</li>
+              <li><strong style="color:#4ade80">Header (Green):</strong> Horizontal beam over doors/windows - carries weight above opening</li>
+              <li><strong style="color:#9cc1ff">King Studs (Light Blue):</strong> Full-height studs next to openings</li>
+              <li><strong style="color:#9cc1ff">Jack Studs (Light Blue):</strong> Shorter studs that support the header</li>
+              <li><strong style="color:#fb923c">Cripple Studs (Orange):</strong> Short studs above/below openings</li>
+            </ul>
+          </div>
+        </div>
+        
+        <h3 class="card-subtitle">Key Areas to Frame:</h3>
+        
+        <div class="color-legend">
+          <div class="legend-item">
+            <div class="legend-color" style="background:#f87171"></div>
+            <div>
+              <div class="legend-label">Exterior Walls</div>
+              <div style="font-size:12px; color:#8a98ab">Perimeter of the house</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#fb923c"></div>
+            <div>
+              <div class="legend-label">Load-Bearing Walls</div>
+              <div style="font-size:12px; color:#8a98ab">Support roof & 2nd floor</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#fbbf24"></div>
+            <div>
+              <div class="legend-label">Interior Walls</div>
+              <div style="font-size:12px; color:#8a98ab">Room dividers</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#4ade80"></div>
+            <div>
+              <div class="legend-label">Shear Walls</div>
+              <div style="font-size:12px; color:#8a98ab">Extra strong for earthquakes</div>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="card-subtitle">The House Layout (Simplified):</h3>
+        
+        <div style="background:#0f1318; padding:24px; border-radius:8px">
+          <p style="color:#a9b6c6; margin:0 0 16px"><strong>From the blueprints, here's what you're framing:</strong></p>
+          <ul style="color:#a9b6c6; line-height:2; margin:0">
+            <li><strong>Main House:</strong> Rectangular shape with additions on each side</li>
+            <li><strong>Left Side (West):</strong> Garage area + Office/Den</li>
+            <li><strong>Center:</strong> Main living areas (Kitchen, Family Room, Dining)</li>
+            <li><strong>Right Side (East):</strong> Bedrooms + Bathrooms</li>
+            <li><strong>Rear (North):</strong> Covered patio area</li>
+          </ul>
+        </div>
+        
+        <div class="tip-box">
+          <strong>💡 Pro Tip:</strong>
+          <p>Start with the foundation and work your way up. Never skip ahead - each step depends on the one before it!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wall Framing Tab -->
+    <div id="walls" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">🏗️ Wall Framing - Step by Step</h2>
+        
+        <div class="step">
+          <span class="step-number">1</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Mark Your Layout on the Foundation</div>
+            <div class="step-content">
+              <p>Before you cut any wood, snap chalk lines on your foundation slab showing where every wall will go.</p>
+              <ul>
+                <li><strong>Use the floor plan</strong> - all those dimension lines (like "10'-6", "12'-0") tell you exactly where walls go</li>
+                <li><strong>Measure from corners</strong> - start at one corner and measure along to mark each wall location</li>
+                <li><strong>Mark both sides</strong> - walls have thickness (usually 3.5" for interior, 5.5" for exterior)</li>
+                <li><strong>Double-check squares</strong> - use 3-4-5 triangle method to ensure corners are 90°</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">2</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Exterior Walls First</div>
+            <div class="step-content">
+              <p>The outside perimeter walls give you structure to work from.</p>
+              <ul>
+                <li><strong>Wall Height:</strong> Your plans show 8'-0" (8 feet) walls for first floor</li>
+                <li><strong>Stud Spacing:</strong> 16" on center (that means measure 16" from center of one stud to center of next)</li>
+                <li><strong>Materials:</strong> 
+                  <ul>
+                    <li>Bottom plate: 2x6 (exterior walls)</li>
+                    <li>Top plate: Double 2x6 (two stacked on top)</li>
+                    <li>Studs: 2x6 vertical boards every 16"</li>
+                  </ul>
+                </li>
+                <li><strong>Window/Door Openings:</strong> Your plans show openings - you need headers (horizontal beams) above these</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tip-box">
+          <strong>💡 Reading Wall Dimensions:</strong>
+          <p>When you see <strong>"10'-6"</strong> on the plan, that means 10 feet and 6 inches. The small dash after the number is feet, and the quote after is inches.</p>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">3</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Interior Load-Bearing Walls</div>
+            <div class="step-content">
+              <p>These walls support the roof and any second floor weight.</p>
+              <ul>
+                <li><strong>How to identify:</strong> Look at the structural plan - walls marked with special symbols (darker lines, circled numbers)</li>
+                <li><strong>Main load-bearing walls run:</strong>
+                  <ul>
+                    <li>Down the center of the house (north-south)</li>
+                    <li>Where the roof changes direction</li>
+                    <li>Under any beams shown on the roof plan</li>
+                  </ul>
+                </li>
+                <li><strong>Materials:</strong> Same as exterior (2x6 or as shown on plans)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">4</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Interior Non-Load-Bearing Walls</div>
+            <div class="step-content">
+              <p>These are just room dividers - they don't support anything above them.</p>
+              <ul>
+                <li><strong>Materials:</strong> Can use 2x4 (cheaper and thinner)</li>
+                <li><strong>Spacing:</strong> Still 16" on center</li>
+                <li><strong>Height:</strong> Same as exterior walls (8'-0")</li>
+                <li><strong>These create:</strong> Bedrooms, bathrooms, closets, hallways</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="card-subtitle">Window & Door Headers</h3>
+        <div style="background:#0f1318; padding:20px; border-radius:8px">
+          <p style="color:#a9b6c6; margin:0 0 16px"><strong>Every window and door needs a header - a horizontal beam that carries the load above the opening.</strong></p>
+          <ul style="color:#a9b6c6; margin:0">
+            <li><strong>Small openings (up to 3 feet):</strong> Use 2x6 or 2x8</li>
+            <li><strong>Medium openings (3-6 feet):</strong> Use 2x10 or 2x12</li>
+            <li><strong>Large openings (6+ feet):</strong> Check structural details - might need engineered beam</li>
+            <li><strong>Your plans show exact header sizes</strong> - look for notes like "2x8 HDR" or "2x10 HEADER"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roof Framing Tab -->
+    <div id="roof" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">🏠 Roof Framing - Understanding the Roof Plan</h2>
+        
+        <div class="diagram">
+          <img src="../blueprints/classified/STRUCT/15-Structural-RoofFramingPlan.jpg" alt="Roof Framing Plan">
+          <div class="diagram-caption">Roof Framing Plan - The red lines show where beams go, colors show different beam sizes</div>
+        </div>
+        
+        <h3 class="card-subtitle">What Those Colors Mean:</h3>
+        <div class="color-legend">
+          <div class="legend-item">
+            <div class="legend-color" style="background:#f87171"></div>
+            <div>
+              <div class="legend-label">Red Lines</div>
+              <div style="font-size:12px; color:#8a98ab">Main ridge beams (top of roof)</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#fb923c"></div>
+            <div>
+              <div class="legend-label">Orange/Red Fill</div>
+              <div style="font-size:12px; color:#8a98ab">Main load-bearing beams</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#9cc1ff"></div>
+            <div>
+              <div class="legend-label">Blue Lines</div>
+              <div style="font-size:12px; color:#8a98ab">Smaller beams & rafters</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background:#8a98ab"></div>
+            <div>
+              <div class="legend-label">Gray Lines</div>
+              <div style="font-size:12px; color:#8a98ab">Walls below (reference)</div>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="card-subtitle">Roof Framing Steps:</h3>
+        
+        <div class="step">
+          <span class="step-number">1</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Install Ridge Beams First</div>
+            <div class="step-content">
+              <p>The ridge beam is the very top of the roof - it runs along the peak.</p>
+              <ul>
+                <li><strong>Your plans show:</strong> Multiple ridge beams (house has different roof sections)</li>
+                <li><strong>Look for labels like:</strong> "TYP @ GLUE END" or "TYP @ RIDGE"</li>
+                <li><strong>Size:</strong> Plans will say something like "2x10" or "LVL BEAM"</li>
+                <li><strong>Height:</strong> Check the elevation views (side views of house) for ridge height</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">2</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Install Hip & Valley Beams</div>
+            <div class="step-content">
+              <p>Where different roof sections meet, you need hip and valley beams.</p>
+              <ul>
+                <li><strong>Hip:</strong> Outside corner where two roof slopes meet (goes from ridge to wall)</li>
+                <li><strong>Valley:</strong> Inside corner where two roof slopes meet (collects water)</li>
+                <li><strong>On your plan:</strong> These show as diagonal red/orange lines</li>
+                <li><strong>Size:</strong> Usually 2x8 or 2x10 (check plans)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">3</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Install Rafters</div>
+            <div class="step-content">
+              <p>Rafters are the sloped boards that create the roof surface.</p>
+              <ul>
+                <li><strong>Spacing:</strong> Your plans show "24" O.C." - that means 24 inches on center</li>
+                <li><strong>Size:</strong> Look for notes like "2x8 RAFTER" or "2x10 RAFTER"</li>
+                <li><strong>Layout:</strong> They run from the ridge beam down to the top of the wall</li>
+                <li><strong>Cuts:</strong>
+                  <ul>
+                    <li>Bird's mouth: Notch where rafter sits on top plate</li>
+                    <li>Plumb cut: Angled cut at top that meets ridge</li>
+                    <li>Tail cut: Decorative cut at bottom (overhang)</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tip-box">
+          <strong>💡 Reading Roof Slopes:</strong>
+          <p>Your plans show roof pitch like <strong>"4:12"</strong> - this means: for every 12 inches horizontal, the roof rises 4 inches. This determines how steep your rafters are.</p>
+        </div>
+        
+        <h3 class="card-subtitle">Beam Schedule (From Your Plans):</h3>
+        <div style="background:#0f1318; padding:20px; border-radius:8px">
+          <p style="color:#a9b6c6; margin:0 0 16px">Your plans have a "BEAM SCHEDULE" table (upper right corner of roof plan). Here's what it means:</p>
+          <table style="width:100%; color:#a9b6c6; border-collapse:collapse">
+            <tr style="border-bottom:2px solid #1f2630">
+              <th style="padding:12px; text-align:left; color:#9cc1ff">Mark</th>
+              <th style="padding:12px; text-align:left; color:#9cc1ff">Size & Type</th>
+              <th style="padding:12px; text-align:left; color:#9cc1ff">What It Means</th>
+            </tr>
+            <tr style="border-bottom:1px solid #1f2630">
+              <td style="padding:12px">B1</td>
+              <td style="padding:12px">3.5"x11.25" LVL</td>
+              <td style="padding:12px">Laminated Veneer Lumber - main support beam</td>
+            </tr>
+            <tr style="border-bottom:1px solid #1f2630">
+              <td style="padding:12px">B2</td>
+              <td style="padding:12px">5.25"x11.25" LVL</td>
+              <td style="padding:12px">Thicker LVL - for wider spans</td>
+            </tr>
+            <tr style="border-bottom:1px solid #1f2630">
+              <td style="padding:12px">B3, B4, etc.</td>
+              <td style="padding:12px">Various sizes</td>
+              <td style="padding:12px">Each "B" with number corresponds to a location on the plan</td>
+            </tr>
+          </table>
+          <p style="color:#4ade80; margin:16px 0 0"><strong>Find the "B1" label on your plan, then look at the schedule to see what beam to use there!</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shear Walls Tab -->
+    <div id="shear" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">🔧 Shear Walls - Extra Strong Walls for Safety</h2>
+        
+        <div class="diagram">
+          <img src="../blueprints/classified/STRUCT/14-Structural-ShearWallPlan.jpg" alt="Shear Wall Plan">
+          <div class="diagram-caption">Shear Wall Plan - The thick lines show which walls need special reinforcement</div>
+        </div>
+        
+        <h3 class="card-subtitle">What is a Shear Wall?</h3>
+        <div style="background:#0f1318; padding:20px; border-radius:8px; margin-bottom:24px">
+          <p style="color:#a9b6c6; margin:0 0 16px"><strong>Shear walls resist sideways forces like:</strong></p>
+          <ul style="color:#a9b6c6; margin:0">
+            <li><strong>Earthquakes</strong> - lateral movement</li>
+            <li><strong>High winds</strong> - pushing on the house</li>
+            <li><strong>Prevents racking</strong> - house twisting or leaning</li>
+          </ul>
+        </div>
+        
+        <h3 class="card-subtitle">How to Build Shear Walls:</h3>
+        
+        <div class="step">
+          <span class="step-number">1</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Identify Shear Walls on Your Plan</div>
+            <div class="step-content">
+              <p>Look for walls marked with special symbols:</p>
+              <ul>
+                <li><strong>Thick lines</strong> on the shear wall plan</li>
+                <li><strong>Circled numbers</strong> like ①, ②, ③</li>
+                <li><strong>Notes like "16d @ 4" O.C."</strong> - this tells you nailing pattern</li>
+                <li><strong>Your house has shear walls:</strong> Around perimeter and at key interior locations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">2</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Wall Normally, But...</div>
+            <div class="step-content">
+              <p>Shear walls are framed like regular walls, with these additions:</p>
+              <ul>
+                <li><strong>Sheathing:</strong> Must use plywood or OSB (not just drywall)</li>
+                <li><strong>Thickness:</strong> Plans will specify - usually 15/32" or 1/2" plywood</li>
+                <li><strong>Special nailing:</strong> More nails, closer together than normal walls</li>
+                <li><strong>Anchor bolts:</strong> Bottom plate must be bolted to foundation (not just nailed)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">3</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Follow the Nailing Schedule</div>
+            <div class="step-content">
+              <p>Your plans show exact nailing patterns - this is CRITICAL for shear walls!</p>
+              <ul>
+                <li><strong>"16d @ 4" O.C."</strong> means:
+                  <ul>
+                    <li>Use 16-penny (16d) nails</li>
+                    <li>Space them 4 inches apart</li>
+                    <li>O.C. = on center (center to center)</li>
+                  </ul>
+                </li>
+                <li><strong>Edge nailing:</strong> Closer spacing (2", 3", or 4") around perimeter of plywood</li>
+                <li><strong>Field nailing:</strong> Wider spacing (usually 12") in the middle of plywood</li>
+                <li><strong>DO NOT SKIP NAILS</strong> - inspector will check this!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tip-box">
+          <strong>⚠️ IMPORTANT:</strong>
+          <p>Shear walls MUST be built exactly as shown on the structural plans. Building inspectors will specifically check these. If done wrong, you'll have to tear them out and redo them!</p>
+        </div>
+        
+        <h3 class="card-subtitle">Hold-Down Legend (from your plan):</h3>
+        <div style="background:#0f1318; padding:20px; border-radius:8px">
+          <p style="color:#a9b6c6; margin:0 0 16px"><strong>Hold-downs are metal straps/brackets that anchor shear walls to foundation:</strong></p>
+          <ul style="color:#a9b6c6; margin:0">
+            <li><strong>● SIMPSON HD 8 (2) or SIMPSON ANCHOR BOLT (AB1-8)</strong> - Heavy duty hold-down, 2 per location</li>
+            <li><strong>⬤ SIMPSON HPAHD22 (2) or SIMPSON ANCHOR BOLT (AB1-8)</strong> - Medium duty, 2 per location</li>
+            <li><strong>Your plan shows these with dots at the ends of shear walls</strong></li>
+            <li><strong>Install BEFORE framing the wall</strong> - they bolt through foundation into wall studs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Materials Tab -->
+    <div id="materials" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">📦 Materials List - What You Need to Buy</h2>
+        
+        <p style="color:#8a98ab; margin-bottom:24px">
+          Based on your blueprints, here's a complete materials list for framing. Quantities are estimates - always buy 10-15% extra for waste and mistakes.
+        </p>
+        
+        <h3 class="card-subtitle">Lumber for Walls:</h3>
+        <div class="material-list">
+          <table>
+            <tr>
+              <th>Material</th>
+              <th>Size</th>
+              <th>Quantity (est.)</th>
+              <th>Use</th>
+            </tr>
+            <tr>
+              <td>Studs</td>
+              <td>2x6 x 8'</td>
+              <td>~200 pieces</td>
+              <td>Exterior walls (16" O.C.)</td>
+            </tr>
+            <tr>
+              <td>Studs</td>
+              <td>2x4 x 8'</td>
+              <td>~150 pieces</td>
+              <td>Interior walls (16" O.C.)</td>
+            </tr>
+            <tr>
+              <td>Plates</td>
+              <td>2x6 x varies</td>
+              <td>~100 pieces</td>
+              <td>Bottom & top plates (exterior)</td>
+            </tr>
+            <tr>
+              <td>Plates</td>
+              <td>2x4 x varies</td>
+              <td>~80 pieces</td>
+              <td>Bottom & top plates (interior)</td>
+            </tr>
+            <tr>
+              <td>Headers</td>
+              <td>2x8, 2x10, 2x12</td>
+              <td>As per plans</td>
+              <td>Over doors and windows</td>
+            </tr>
+          </table>
+        </div>
+        
+        <h3 class="card-subtitle">Lumber for Roof:</h3>
+        <div class="material-list">
+          <table>
+            <tr>
+              <th>Material</th>
+              <th>Size</th>
+              <th>Quantity (est.)</th>
+              <th>Use</th>
+            </tr>
+            <tr>
+              <td>Rafters</td>
+              <td>2x8 x varies</td>
+              <td>~120 pieces</td>
+              <td>Main roof rafters (24" O.C.)</td>
+            </tr>
+            <tr>
+              <td>Ridge Beams</td>
+              <td>2x10 LVL</td>
+              <td>~8 pieces @ 20'</td>
+              <td>Ridge of roof</td>
+            </tr>
+            <tr>
+              <td>Hip/Valley</td>
+              <td>2x8 or 2x10</td>
+              <td>~12 pieces</td>
+              <td>Hips and valleys</td>
+            </tr>
+            <tr>
+              <td>Blocking</td>
+              <td>2x6 x 14.5"</td>
+              <td>~200 pieces</td>
+              <td>Between rafters</td>
+            </tr>
+          </table>
+        </div>
+        
+        <h3 class="card-subtitle">Engineered Lumber:</h3>
+        <div class="material-list">
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Size</th>
+              <th>Quantity</th>
+              <th>Location</th>
+            </tr>
+            <tr>
+              <td>LVL Beam</td>
+              <td>3.5" x 11.25"</td>
+              <td>Check plans (B1)</td>
+              <td>Main support beams</td>
+            </tr>
+            <tr>
+              <td>LVL Beam</td>
+              <td>5.25" x 11.25"</td>
+              <td>Check plans (B2)</td>
+              <td>Longer spans</td>
+            </tr>
+            <tr>
+              <td>Glulam</td>
+              <td>Various sizes</td>
+              <td>Per beam schedule</td>
+              <td>Main beams</td>
+            </tr>
+          </table>
+        </div>
+        
+        <h3 class="card-subtitle">Sheathing & Panels:</h3>
+        <div class="material-list">
+          <table>
+            <tr>
+              <th>Material</th>
+              <th>Size</th>
+              <th>Quantity (est.)</th>
+              <th>Use</th>
+            </tr>
+            <tr>
+              <td>OSB or Plywood</td>
+              <td>4x8 sheets, 1/2"</td>
+              <td>~80 sheets</td>
+              <td>Roof sheathing</td>
+            </tr>
+            <tr>
+              <td>Plywood</td>
+              <td>4x8 sheets, 15/32"</td>
+              <td>~40 sheets</td>
+              <td>Shear wall sheathing</td>
+            </tr>
+          </table>
+        </div>
+        
+        <h3 class="card-subtitle">Fasteners & Hardware:</h3>
+        <div class="material-list">
+          <table>
+            <tr>
+              <th>Item</th>
+              <th>Size/Type</th>
+              <th>Quantity</th>
+              <th>Use</th>
+            </tr>
+            <tr>
+              <td>Framing Nails</td>
+              <td>16d (3-1/2")</td>
+              <td>~50 lbs</td>
+              <td>General framing</td>
+            </tr>
+            <tr>
+              <td>Framing Nails</td>
+              <td>10d (3")</td>
+              <td>~25 lbs</td>
+              <td>Toenailing, headers</td>
+            </tr>
+            <tr>
+              <td>Shear Wall Nails</td>
+              <td>8d (2-1/2")</td>
+              <td>~30 lbs</td>
+              <td>Plywood sheathing</td>
+            </tr>
+            <tr>
+              <td>Hurricane Ties</td>
+              <td>Simpson H2.5A</td>
+              <td>~120 pieces</td>
+              <td>Rafter to top plate</td>
+            </tr>
+            <tr>
+              <td>Hold-Downs</td>
+              <td>Simpson HD8</td>
+              <td>Per shear plan</td>
+              <td>Shear wall anchors</td>
+            </tr>
+            <tr>
+              <td>Anchor Bolts</td>
+              <td>5/8" x 10"</td>
+              <td>~40 pieces</td>
+              <td>Bottom plate to foundation</td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="tip-box">
+          <strong>💡 Ordering Tip:</strong>
+          <p>Give your lumber yard a copy of the structural plans (pages S-1, S-2, S-3). They can do a complete material takeoff and give you exact quantities. This saves time and reduces waste!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Build Sequence Tab -->
+    <div id="sequence" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">📅 Step-by-Step Build Sequence</h2>
+        
+        <p style="color:#8a98ab; margin-bottom:24px">
+          Follow this exact order - each step depends on the previous one being complete.
+        </p>
+        
+        <div class="step">
+          <span class="step-number">1</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Foundation Complete & Clean</div>
+            <div class="step-content">
+              <ul>
+                <li>Foundation slab poured and cured (7 days minimum)</li>
+                <li>Anchor bolts installed (should be sticking up from concrete)</li>
+                <li>Sweep slab clean of dirt and debris</li>
+                <li>Check for level - slab should be within 1/4" over 10 feet</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">2</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Layout All Walls</div>
+            <div class="step-content">
+              <ul>
+                <li>Snap chalk lines for ALL walls (exterior and interior)</li>
+                <li>Mark door and window openings</li>
+                <li>Double-check all dimensions against floor plan</li>
+                <li>Verify corners are square (3-4-5 method)</li>
+                <li><strong>Time estimate:</strong> 1-2 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">3</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Exterior Walls</div>
+            <div class="step-content">
+              <ul>
+                <li>Build walls flat on slab, then tip up into place</li>
+                <li>Install bottom plate first (drill for anchor bolts)</li>
+                <li>Add studs and top plates</li>
+                <li>Create rough openings for doors and windows</li>
+                <li>Install headers above openings</li>
+                <li>Brace walls temporarily until connected</li>
+                <li><strong>Time estimate:</strong> 3-5 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">4</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Interior Load-Bearing Walls</div>
+            <div class="step-content">
+              <ul>
+                <li>Frame walls that support roof/beams (per structural plan)</li>
+                <li>These tie exterior walls together</li>
+                <li>Install any steel columns or posts shown on plans</li>
+                <li><strong>Time estimate:</strong> 2-3 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">5</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Install Shear Wall Plywood & Hold-Downs</div>
+            <div class="step-content">
+              <ul>
+                <li>Apply plywood to shear walls (per shear wall plan)</li>
+                <li>Follow exact nailing schedule</li>
+                <li>Install hold-down brackets</li>
+                <li><strong>CALL FOR INSPECTION</strong> before proceeding</li>
+                <li><strong>Time estimate:</strong> 2-3 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">6</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Interior Non-Load-Bearing Walls</div>
+            <div class="step-content">
+              <ul>
+                <li>Frame bedroom walls, bathroom walls, closets</li>
+                <li>These can be 2x4 instead of 2x6</li>
+                <li><strong>Time estimate:</strong> 2-3 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">7</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Install Main Support Beams</div>
+            <div class="step-content">
+              <ul>
+                <li>Install LVL beams per beam schedule</li>
+                <li>These sit on top of load-bearing walls</li>
+                <li>Support roof structure</li>
+                <li>Need help lifting - these are HEAVY</li>
+                <li><strong>Time estimate:</strong> 1-2 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">8</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Roof - Ridge Beams</div>
+            <div class="step-content">
+              <ul>
+                <li>Install ridge beams at peak of roof</li>
+                <li>Need scaffolding or lifts</li>
+                <li>Brace securely</li>
+                <li><strong>Time estimate:</strong> 2-3 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">9</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Roof - Rafters</div>
+            <div class="step-content">
+              <ul>
+                <li>Install rafters 24" on center</li>
+                <li>Cut bird's mouth notches</li>
+                <li>Attach to ridge beam and top plate</li>
+                <li>Install hurricane ties at each rafter</li>
+                <li><strong>Time estimate:</strong> 4-6 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">10</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Roof - Hips & Valleys</div>
+            <div class="step-content">
+              <ul>
+                <li>Install hip rafters (outside corners)</li>
+                <li>Install valley rafters (inside corners)</li>
+                <li>Install jack rafters between hip/valley and ridge</li>
+                <li><strong>Time estimate:</strong> 2-3 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step">
+          <span class="step-number">11</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Install Roof Sheathing</div>
+            <div class="step-content">
+              <ul>
+                <li>Apply OSB or plywood to roof rafters</li>
+                <li>Start at bottom, work up to ridge</li>
+                <li>Stagger seams</li>
+                <li>Leave 1/8" gap between sheets for expansion</li>
+                <li><strong>CALL FOR FRAMING INSPECTION</strong></li>
+                <li><strong>Time estimate:</strong> 2-3 days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="alert" style="margin-top:32px">
+          <h3>✅ Framing Complete!</h3>
+          <p><strong>Total estimated time:</strong> 20-30 days with 2-3 person crew</p>
+          <p><strong>Next steps after passing framing inspection:</strong></p>
+          <ul style="margin:8px 0; padding-left:20px">
+            <li>Install windows and doors</li>
+            <li>Apply weather barrier (Tyvek)</li>
+            <li>MEP rough-in (mechanical, electrical, plumbing)</li>
+            <li>Insulation</li>
+            <li>Drywall</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showTab(tabName) {
+      // Hide all tab contents
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+      
+      // Remove active class from all tabs
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      // Show selected tab content
+      document.getElementById(tabName).classList.add('active');
+      
+      // Add active class to clicked tab
+      event.target.classList.add('active');
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>
+

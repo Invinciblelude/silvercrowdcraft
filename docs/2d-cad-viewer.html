@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant - 2D CAD Viewer</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1600px; margin:0 auto; padding:20px 20px 100px}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:32px;
+      text-align:center;
+    }
+    .hero h1 {font-size:42px; font-weight:800; margin:0 0 16px; color:#fff}
+    
+    .diagram-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(600px, 1fr));
+      gap:32px;
+      margin:32px 0;
+    }
+    
+    .diagram-card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:24px;
+    }
+    
+    .diagram-title {
+      font-size:28px;
+      font-weight:700;
+      color:#9cc1ff;
+      margin-bottom:8px;
+    }
+    
+    .diagram-subtitle {
+      color:#8a98ab;
+      font-size:14px;
+      margin-bottom:20px;
+    }
+    
+    .svg-container {
+      background:#0f1318;
+      border:2px solid #667eea;
+      border-radius:8px;
+      padding:20px;
+      overflow:auto;
+      max-height:800px;
+    }
+    
+    .svg-container svg {
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    
+    .file-actions {
+      display:flex;
+      gap:12px;
+      margin-top:20px;
+      flex-wrap:wrap;
+    }
+    
+    .btn {
+      background:#667eea;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      transition:all 0.3s;
+      border:none;
+      cursor:pointer;
+      font-size:16px;
+    }
+    
+    .btn:hover {
+      background:#764ba2;
+      transform:translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background:#1f2630;
+      border:2px solid #667eea;
+    }
+    
+    .info-box {
+      background:#0f1318;
+      border-left:4px solid #10b981;
+      padding:20px;
+      border-radius:8px;
+      margin:24px 0;
+    }
+    
+    .info-box h4 {
+      color:#10b981;
+      font-size:18px;
+      margin:0 0 12px;
+    }
+    
+    h2 {
+      font-size:32px;
+      color:#9cc1ff;
+      margin:40px 0 24px;
+      border-bottom:3px solid #667eea;
+      padding-bottom:12px;
+    }
+  </style>
+</head>
+<body data-jsdom-page="2d-cad-viewer" data-jsdom-title="📐 2D CAD Viewer">
+  
+  <div class="container">
+    <div class="hero">
+      <h1>📐 2D CAD Diagrams</h1>
+      <p style="font-size:18px; opacity:0.95">Visual previews of your AutoCAD DXF files - exact from blueprints</p>
+    </div>
+    
+    <div class="info-box">
+      <h4>✅ What You're Seeing:</h4>
+      <ul style="color:#a9b6c6; line-height:2; margin:8px 0 0 24px">
+        <li><strong style="color:#fb923c">Orange lines:</strong> Bottom plates</li>
+        <li><strong style="color:#ef4444">Red lines:</strong> Top plates</li>
+        <li><strong style="color:#fbbf24">Yellow circles:</strong> Studs @ 16" O.C.</li>
+        <li><strong style="color:#2563eb">Blue lines:</strong> Exterior walls</li>
+        <li><strong style="color:#ef4444">Red circles:</strong> Anchor bolts</li>
+      </ul>
+    </div>
+    
+    <h2>📐 Framing Diagrams</h2>
+    <div class="diagram-grid">
+      <div class="diagram-card">
+        <div class="diagram-title">Office - Framing Plan</div>
+        <div class="diagram-subtitle">12'-8" x 11'-4" • 11 studs N/S, 10 studs E/W</div>
+        <div class="svg-container" id="office-svg-container">
+          <object data="assets/cad-previews/Office_framing.svg" type="image/svg+xml" style="width:100%; height:auto; min-height:400px">
+            <p>SVG preview loading...</p>
+          </object>
+        </div>
+        <div class="file-actions">
+          <a href="cad_outputs/Office_framing.dxf" download class="btn">📥 Download DXF</a>
+          <a href="https://web.autocad.com" target="_blank" class="btn btn-secondary">🌐 Open in AutoCAD</a>
+        </div>
+      </div>
+      
+      <div class="diagram-card">
+        <div class="diagram-title">Great Room - Framing Plan</div>
+        <div class="diagram-subtitle">24'-2" x 19'-8" • 20 studs long, 16 short • VAULTED</div>
+        <div class="svg-container" id="greatroom-svg-container">
+          <object data="assets/cad-previews/Great_Room_framing.svg" type="image/svg+xml" style="width:100%; height:auto; min-height:400px">
+            <p>SVG preview loading...</p>
+          </object>
+        </div>
+        <div class="file-actions">
+          <a href="cad_outputs/Great_Room_framing.dxf" download class="btn">📥 Download DXF</a>
+          <a href="https://web.autocad.com" target="_blank" class="btn btn-secondary">🌐 Open in AutoCAD</a>
+        </div>
+      </div>
+      
+      <div class="diagram-card">
+        <div class="diagram-title">Master Bedroom - Framing Plan</div>
+        <div class="diagram-subtitle">15'-6" x 14'-8" • 13 studs long, 12 short</div>
+        <div class="svg-container" id="master-svg-container">
+          <object data="assets/cad-previews/Master_Bedroom_framing.svg" type="image/svg+xml" style="width:100%; height:auto; min-height:400px">
+            <p>SVG preview loading...</p>
+          </object>
+        </div>
+        <div class="file-actions">
+          <a href="cad_outputs/Master_Bedroom_framing.dxf" download class="btn">📥 Download DXF</a>
+          <a href="https://web.autocad.com" target="_blank" class="btn btn-secondary">🌐 Open in AutoCAD</a>
+        </div>
+      </div>
+    </div>
+    
+    <h2>📋 Build Sequence Diagrams</h2>
+    <div class="diagram-grid">
+      <div class="diagram-card">
+        <div class="diagram-title">Office - Build Sequence</div>
+        <div class="diagram-subtitle">Phase 1: Foundation → Phase 2: Walls</div>
+        <div class="svg-container">
+          <object data="assets/cad-previews/office_sequence_2d.svg" type="image/svg+xml" style="width:100%; height:auto; min-height:400px">
+            <p>SVG preview loading...</p>
+          </object>
+        </div>
+        <div class="file-actions">
+          <a href="build_sequence_outputs/office_sequence_2d.dxf" download class="btn">📥 Download DXF</a>
+          <a href="build_sequence_outputs/office_phase1_foundation.obj" download class="btn btn-secondary">📦 3D Phase 1</a>
+          <a href="build_sequence_outputs/office_phase2_with_walls.obj" download class="btn btn-secondary">📦 3D Phase 2</a>
+        </div>
+      </div>
+      
+      <div class="diagram-card">
+        <div class="diagram-title">Great Room - Build Sequence</div>
+        <div class="diagram-subtitle">Phase 1: Foundation → Phase 2: Walls (Vaulted)</div>
+        <div class="svg-container">
+          <object data="assets/cad-previews/great_room_sequence_2d.svg" type="image/svg+xml" style="width:100%; height:auto; min-height:400px">
+            <p>SVG preview loading...</p>
+          </object>
+        </div>
+        <div class="file-actions">
+          <a href="build_sequence_outputs/great_room_sequence_2d.dxf" download class="btn">📥 Download DXF</a>
+          <a href="build_sequence_outputs/great_room_phase1_foundation.obj" download class="btn btn-secondary">📦 3D Phase 1</a>
+          <a href="build_sequence_outputs/great_room_phase2_with_walls.obj" download class="btn btn-secondary">📦 3D Phase 2</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-box" style="border-left-color:#667eea">
+      <h4 style="color:#667eea">💡 About These Diagrams:</h4>
+      <p style="color:#a9b6c6; line-height:1.8; margin:0">
+        These are <strong>visual previews</strong> of the actual DXF files. The DXF files contain more detail and are editable in AutoCAD.<br><br>
+        <strong>View here:</strong> See the 2D layout visually<br>
+        <strong>Download DXF:</strong> Get the full CAD file for AutoCAD<br>
+        <strong>Open in AutoCAD:</strong> Upload DXF for editing<br><br>
+        All dimensions and stud positions are <strong>exact from your blueprints</strong> - no assumptions!
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant – House 2D Preview (All Sections)</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1400px; margin:0 auto; padding:20px 20px 120px}
+    .hero {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:16px; padding:24px; margin-bottom:20px}
+    .hero h1 {margin:0 0 8px; font-size:28px; color:#fff}
+    .grid {display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px}
+    .card {background:#12161b; border:2px solid #1f2630; border-radius:12px; padding:16px}
+    .card h3 {margin:0 0 6px; color:#9cc1ff}
+    .meta {color:#8a98ab; font-size:12px; margin-bottom:8px}
+    svg {width:100%; height:180px; background:#0f1318; border:2px solid #1f2630; border-radius:8px}
+    .legend {margin-top:16px; color:#8a98ab; font-size:12px}
+  </style>
+</head>
+<body data-jsdom-page="house-2d" data-jsdom-title="📐 House 2D Preview">
+  <div class="container">
+    <div class="hero">
+      <h1>728 Cordant – 2D Preview (All Sections)</h1>
+      <p>Scale on cards: 1 px = 1 inch (fit-to-card). Exterior 2x6 walls (5.5"), interior 2x4 walls (3.5"). This preview updates automatically once OCR JSON is ready.</p>
+    </div>
+
+    <div id="cards" class="grid"></div>
+
+    <div class="legend">Tip: Click any card to open its detailed page (if available).</div>
+  </div>
+
+  <script>
+    // Known sections with approximate sizes from BLUEPRINT_DATA_EXTRACTION.md
+    const sections = [
+      { id:'great-room', name:'Great Room', w: 24*12+2, h: 19*12+8, type:'exterior', link: '3d-house-view.html' },
+      { id:'kitchen', name:'Kitchen', w: 14*12+6, h: 17*12+4, type:'interior' },
+      { id:'nook', name:'Nook', w: 10*12+4, h: 11*12+2, type:'interior' },
+      { id:'pantry', name:'Walk-in Pantry', w: 7*12+6, h: 5*12+8, type:'interior' },
+      { id:'master-bed', name:'Primary Bedroom', w: 15*12+6, h: 14*12+8, type:'exterior', link: 'plan-primary-2d.html' },
+      { id:'master-bath', name:'Primary Bath', w: 14*12+2, h: 13*12+4, type:'interior' },
+      { id:'master-closet', name:'Primary Closet', w: 9*12+8, h: 7*12+4, type:'interior' },
+      { id:'office', name:'Office', w: 12*12+8, h: 11*12+4, type:'exterior', link: 'plan-office-2d.html' },
+      { id:'bed2', name:'Bedroom 2', w: 14*12+4, h: 10*12+8, type:'interior' },
+      { id:'bed3', name:'Bedroom 3', w: 14*12+4, h: 10*12+8, type:'interior' },
+      { id:'laundry', name:'Laundry', w: 8*12+4, h: 7*12+6, type:'interior' },
+      { id:'mud', name:'Mud Room', w: 9*12+2, h: 8*12+6, type:'interior' },
+      { id:'powder', name:'Powder', w: 6*12+0, h: 5*12+4, type:'interior' }
+    ];
+
+    const cards = document.getElementById('cards');
+
+    sections.forEach(sec => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `<h3>${sec.name}</h3><div class="meta">${Math.floor(sec.w)}" × ${Math.floor(sec.h)}" • ${sec.type==='exterior'?'Exterior 2x6':'Interior 2x4'}</div>`;
+
+      const svgns = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(svgns,'svg');
+      svg.setAttribute('viewBox','0 0 260 180');
+      const pad = 12;
+      // Fit rectangle to card while keeping scale aspect
+      const maxW = 260 - pad*2, maxH = 180 - pad*2;
+      const sx = maxW/sec.w, sy = maxH/sec.h; const s = Math.min(sx, sy);
+      const drawW = sec.w*s, drawH = sec.h*s; const ox = (260 - drawW)/2, oy = (180 - drawH)/2;
+
+      // Wall thickness visual
+      const t = sec.type==='exterior' ? 5.5*s : 3.5*s;
+      const outer = document.createElementNS(svgns,'rect');
+      outer.setAttribute('x', ox); outer.setAttribute('y', oy); outer.setAttribute('width', drawW); outer.setAttribute('height', drawH); outer.setAttribute('fill','#1e293b'); svg.appendChild(outer);
+      const inner = document.createElementNS(svgns,'rect');
+      inner.setAttribute('x', ox+t); inner.setAttribute('y', oy+t); inner.setAttribute('width', drawW-2*t); inner.setAttribute('height', drawH-2*t); inner.setAttribute('fill','#0f1318'); inner.setAttribute('stroke', sec.type==='exterior' ? '#2563eb' : '#16a34a'); inner.setAttribute('stroke-width','2'); svg.appendChild(inner);
+
+      const label = document.createElementNS(svgns,'text');
+      label.setAttribute('x','130'); label.setAttribute('y','92'); label.setAttribute('fill','#9cc1ff'); label.setAttribute('font-size','12'); label.setAttribute('text-anchor','middle'); label.textContent = `${sec.name}`; svg.appendChild(label);
+
+      svg.style.cursor = sec.link ? 'pointer':'default';
+      if (sec.link) svg.addEventListener('click', ()=>window.location.href = sec.link);
+      card.appendChild(svg);
+
+      if (sec.link) {
+        const a = document.createElement('a'); a.textContent='Open detail →'; a.href=sec.link; a.style.color='#9cc1ff'; a.style.fontSize='12px'; a.style.textDecoration='none'; a.style.display='inline-block'; a.style.marginTop='8px'; card.appendChild(a);
+      }
+
+      cards.appendChild(card);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant - Build Sequence</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1600px; margin:0 auto; padding:20px 20px 100px}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:32px;
+      text-align:center;
+    }
+    .hero h1 {font-size:42px; font-weight:800; margin:0 0 16px; color:#fff}
+    
+    .sequence-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+      gap:32px;
+      margin:32px 0;
+    }
+    
+    .phase-card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:24px;
+      position:relative;
+    }
+    
+    .phase-number {
+      position:absolute;
+      top:-20px;
+      left:24px;
+      width:60px;
+      height:60px;
+      background:#667eea;
+      color:#fff;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:32px;
+      font-weight:700;
+      border:4px solid #12161b;
+    }
+    
+    .phase-title {
+      font-size:24px;
+      font-weight:700;
+      color:#9cc1ff;
+      margin-top:20px;
+      margin-bottom:16px;
+    }
+    
+    .phase-description {
+      color:#a9b6c6;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+    
+    .file-link {
+      display:inline-block;
+      background:#667eea;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      margin:8px 8px 0 0;
+      transition:all 0.3s;
+    }
+    
+    .file-link:hover {
+      background:#764ba2;
+      transform:translateY(-2px);
+    }
+    
+    .info-box {
+      background:#0f1318;
+      border-left:4px solid #10b981;
+      padding:24px;
+      border-radius:12px;
+      margin:32px 0;
+    }
+    
+    .info-box h3 {
+      color:#10b981;
+      font-size:24px;
+      margin:0 0 16px;
+    }
+    
+    .legend {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:16px;
+      margin:24px 0;
+    }
+    
+    .legend-item {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:12px;
+      background:#12161b;
+      border-radius:8px;
+    }
+    
+    .legend-color {
+      width:40px;
+      height:40px;
+      border-radius:4px;
+    }
+    
+    h2 {font-size:32px; color:#9cc1ff; margin:40px 0 20px}
+  </style>
+</head>
+<body data-jsdom-page="build-sequence" data-jsdom-title="📋 Build Sequence">
+  
+  <div class="container">
+    <div class="hero">
+      <h1>📋 728 Cordant - Build Sequence</h1>
+      <p style="font-size:18px; opacity:0.95">Simple demonstration showing minimums: Foundation → Walls → Roof</p>
+    </div>
+    
+    <div class="info-box">
+      <h3>✅ This System Meets Blueprint Minimums</h3>
+      <ul style="color:#a9b6c6; line-height:2; margin:8px 0 0 24px">
+        <li><strong>Foundation:</strong> Shown first (concrete slab, 4" depth)</li>
+        <li><strong>Walls:</strong> Built on foundation (2x6 @ 16" O.C., 8'-0" height)</li>
+        <li><strong>Sequence:</strong> Proper build order (foundation before walls)</li>
+        <li><strong>Specifications:</strong> Exact dimensions from blueprints</li>
+        <li><strong>2D & 3D:</strong> Both views of same structure</li>
+      </ul>
+    </div>
+    
+    <h2>Office - Build Sequence</h2>
+    <div class="sequence-grid">
+      <div class="phase-card">
+        <div class="phase-number">1</div>
+        <div class="phase-title">Foundation</div>
+        <div class="phase-description">
+          <p><strong>What:</strong> Concrete slab foundation</p>
+          <p><strong>Depth:</strong> 4 inches</p>
+          <p><strong>Size:</strong> 12'-8" x 11'-4"</p>
+          <p><strong>Why First:</strong> All loads transfer to foundation</p>
+        </div>
+        <a href="build_sequence_outputs/office_phase1_foundation.obj" download class="file-link">📦 Download 3D (OBJ)</a>
+      </div>
+      
+      <div class="phase-card">
+        <div class="phase-number">2</div>
+        <div class="phase-title">Walls</div>
+        <div class="phase-description">
+          <p><strong>What:</strong> 2x6 studs @ 16" O.C.</p>
+          <p><strong>Height:</strong> 8'-0" (96 inches)</p>
+          <p><strong>On Top Of:</strong> Foundation</p>
+          <p><strong>Why Second:</strong> Foundation must be stable first</p>
+        </div>
+        <a href="build_sequence_outputs/office_phase2_with_walls.obj" download class="file-link">📦 Download 3D (OBJ)</a>
+      </div>
+      
+      <div class="phase-card">
+        <div class="phase-number">📐</div>
+        <div class="phase-title">2D Diagram</div>
+        <div class="phase-description">
+          <p><strong>View:</strong> Top-down floor plan</p>
+          <p><strong>Shows:</strong> Foundation outline and walls</p>
+          <p><strong>Use For:</strong> Layout and stud placement</p>
+        </div>
+        <a href="build_sequence_outputs/office_sequence_2d.dxf" download class="file-link">📥 Download DXF</a>
+        <a href="https://web.autocad.com" target="_blank" class="file-link" style="background:#10b981">🌐 Open in AutoCAD</a>
+      </div>
+    </div>
+    
+    <h2>Great Room - Build Sequence</h2>
+    <div class="sequence-grid">
+      <div class="phase-card">
+        <div class="phase-number">1</div>
+        <div class="phase-title">Foundation</div>
+        <div class="phase-description">
+          <p><strong>Size:</strong> 24'-2" x 19'-8"</p>
+          <p><strong>Depth:</strong> 4 inches concrete</p>
+          <p><strong>Special:</strong> Larger span - more rebar</p>
+        </div>
+        <a href="build_sequence_outputs/great_room_phase1_foundation.obj" download class="file-link">📦 Download 3D (OBJ)</a>
+      </div>
+      
+      <div class="phase-card">
+        <div class="phase-number">2</div>
+        <div class="phase-title">Walls + VAULTED</div>
+        <div class="phase-description">
+          <p><strong>Walls:</strong> 2x6 @ 16" O.C.</p>
+          <p><strong>Ceiling:</strong> VAULTED (12'-14' peak)</p>
+          <p><strong>Special:</strong> Higher walls for vaulted space</p>
+        </div>
+        <a href="build_sequence_outputs/great_room_phase2_with_walls.obj" download class="file-link">📦 Download 3D (OBJ)</a>
+      </div>
+      
+      <div class="phase-card">
+        <div class="phase-number">📐</div>
+        <div class="phase-title">2D Diagram</div>
+        <div class="phase-description">
+          <p><strong>Largest room:</strong> 24'-2" x 19'-8"</p>
+          <p><strong>Shows:</strong> Foundation and wall layout</p>
+          <p><strong>20 studs:</strong> North/South walls</p>
+          <p><strong>16 studs:</strong> East/West walls</p>
+        </div>
+        <a href="build_sequence_outputs/great_room_sequence_2d.dxf" download class="file-link">📥 Download DXF</a>
+        <a href="https://web.autocad.com" target="_blank" class="file-link" style="background:#10b981">🌐 Open in AutoCAD</a>
+      </div>
+    </div>
+    
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color" style="background:#2563eb"></div>
+        <div>
+          <div style="font-weight:700; color:#e8eef5">Phase 1: Foundation</div>
+          <div style="font-size:12px; color:#8a98ab">Concrete slab, 4" thick</div>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background:#dc2626"></div>
+        <div>
+          <div style="font-weight:700; color:#e8eef5">Phase 2: Walls</div>
+          <div style="font-size:12px; color:#8a98ab">2x6 studs @ 16" O.C.</div>
+        </div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background:#16a34a"></div>
+        <div>
+          <div style="font-weight:700; color:#e8eef5">Phase 3: Roof</div>
+          <div style="font-size:12px; color:#8a98ab">Rafters and sheathing</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-box" style="border-left-color:#667eea">
+      <h3 style="color:#667eea">📋 Minimum Requirements Met</h3>
+      <p style="color:#a9b6c6; line-height:1.8">
+        This simple sequence demonstrates the <strong>minimum information needed</strong> from your blueprint:<br><br>
+        ✅ <strong>Foundation details</strong> - Size, depth, material<br>
+        ✅ <strong>Wall specifications</strong> - Height, stud spacing, type<br>
+        ✅ <strong>Build sequence</strong> - What order to construct<br>
+        ✅ <strong>Relationships</strong> - How pieces connect<br>
+        ✅ <strong>Dimensions</strong> - Exact measurements<br><br>
+        
+        No complicated details - just the essentials to understand how your house is built from the ground up.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+

@@ -93,6 +93,7 @@
       <a href="index.html" class="back-btn">← Back to Dashboard</a>
       <h1 id="projectName">Loading...</h1>
       <div class="project-info" id="projectInfo"></div>
+      <div id="quickLinks" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px"></div>
     </div>
     
     <div class="filters">
@@ -195,6 +196,14 @@
           <span class="info-label">Architect</span>
           <span class="info-value">${projectData.architect}</span>
         </div>
+      `;
+
+      // Quick links for 728 Cordant
+      const quick = document.getElementById('quickLinks');
+      quick.innerHTML = `
+        <a href="cordant-blueprints.html" style="background:#667eea; color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:600">📐 Blueprints</a>
+        <a href="house-2d-preview.html" style="background:#1f2630; color:#9cc1ff; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:600; border:1px solid #667eea">📏 House 2D Preview</a>
+        <a href="2d-cad-viewer.html" style="background:#1f2630; color:#9cc1ff; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:600; border:1px solid #667eea">🖼️ 2D CAD Viewer</a>
       `;
     }
     

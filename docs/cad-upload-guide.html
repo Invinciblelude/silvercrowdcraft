@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload CAD to AutoCAD - 728 Cordant</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1200px; margin:0 auto; padding:20px 20px 100px}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:32px;
+      text-align:center;
+    }
+    .hero h1 {font-size:42px; font-weight:800; margin:0 0 16px; color:#fff}
+    
+    .step-card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:32px;
+      margin-bottom:24px;
+    }
+    
+    .step-number {
+      display:inline-block;
+      width:48px;
+      height:48px;
+      background:#667eea;
+      color:#fff;
+      border-radius:50%;
+      text-align:center;
+      line-height:48px;
+      font-weight:700;
+      font-size:24px;
+      margin-right:20px;
+    }
+    
+    .step-title {
+      font-size:24px;
+      font-weight:700;
+      color:#9cc1ff;
+      margin-bottom:16px;
+    }
+    
+    .file-list {
+      background:#0f1318;
+      border:2px solid #667eea;
+      border-radius:8px;
+      padding:24px;
+      margin:24px 0;
+    }
+    
+    .file-item {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px;
+      background:#12161b;
+      border-radius:8px;
+      margin-bottom:12px;
+    }
+    
+    .file-item:last-child {
+      margin-bottom:0;
+    }
+    
+    .file-name {
+      font-size:18px;
+      font-weight:600;
+      color:#9cc1ff;
+    }
+    
+    .file-size {
+      color:#8a98ab;
+      font-size:14px;
+    }
+    
+    .btn {
+      background:#667eea;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-block;
+      transition:all 0.3s;
+      border:none;
+      cursor:pointer;
+      font-size:16px;
+    }
+    
+    .btn:hover {
+      background:#764ba2;
+      transform:translateY(-2px);
+    }
+    
+    .info-box {
+      background:#0f1318;
+      border-left:4px solid #10b981;
+      padding:20px;
+      border-radius:8px;
+      margin:24px 0;
+    }
+    
+    .info-box h4 {
+      margin:0 0 12px;
+      color:#10b981;
+      font-size:20px;
+    }
+  </style>
+</head>
+<body data-jsdom-page="cad-upload" data-jsdom-title="📤 CAD Upload">
+  
+  <div class="container">
+    <div class="hero">
+      <h1>📤 Upload CAD Files to AutoCAD</h1>
+      <p style="font-size:18px; opacity:0.95">Your DXF files are ready! Follow these steps to open in AutoCAD Web</p>
+    </div>
+    
+    <div class="step-card">
+      <div style="display:flex; align-items:flex-start">
+        <span class="step-number">1</span>
+        <div style="flex:1">
+          <div class="step-title">Open AutoCAD Web</div>
+          <p style="color:#a9b6c6; line-height:1.8; margin:0">
+            Go to <a href="https://web.autocad.com" target="_blank" style="color:#667eea; text-decoration:underline">autocad.com</a><br>
+            Sign in with your Autodesk account (or create free account)<br>
+            Click "New Drawing" or "Upload"
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="step-card">
+      <div style="display:flex; align-items:flex-start">
+        <span class="step-number">2</span>
+        <div style="flex:1">
+          <div class="step-title">Upload Your DXF File</div>
+          <p style="color:#a9b6c6; line-height:1.8; margin:0 0 16px">
+            Click "Upload" button<br>
+            Select one of these files from your computer:
+          </p>
+          
+          <div class="file-list">
+            <div class="file-item">
+              <div>
+                <div class="file-name">Office_framing.dxf</div>
+                <div class="file-size">12'-8" x 11'-4" • 11 studs N/S, 10 studs E/W</div>
+              </div>
+              <a href="cad_outputs/Office_framing.dxf" download class="btn">Download</a>
+            </div>
+            
+            <div class="file-item">
+              <div>
+                <div class="file-name">Great_Room_framing.dxf</div>
+                <div class="file-size">24'-2" x 19'-8" • 20 studs long, 16 studs short • VAULTED</div>
+              </div>
+              <a href="cad_outputs/Great_Room_framing.dxf" download class="btn">Download</a>
+            </div>
+            
+            <div class="file-item">
+              <div>
+                <div class="file-name">Master_Bedroom_framing.dxf</div>
+                <div class="file-size">15'-6" x 14'-8" • 13 studs long, 12 studs short</div>
+              </div>
+              <a href="cad_outputs/Master_Bedroom_framing.dxf" download class="btn">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="step-card">
+      <div style="display:flex; align-items:flex-start">
+        <span class="step-number">3</span>
+        <div style="flex:1">
+          <div class="step-title">Edit and View</div>
+          <p style="color:#a9b6c6; line-height:1.8; margin:0">
+            Once uploaded, your drawing opens in AutoCAD<br>
+            You'll see:
+            <ul style="margin:12px 0; padding-left:24px; line-height:2">
+              <li>Wall outlines with exact dimensions</li>
+              <li>Stud positions (yellow/cyan circles) @ 16" O.C.</li>
+              <li>Bottom plates and top plates</li>
+              <li>Anchor bolt positions (red circles)</li>
+              <li>Room labels and specifications</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-box">
+      <h4>💡 What You'll See in AutoCAD:</h4>
+      <ul style="color:#a9b6c6; line-height:2; margin:8px 0 0 24px">
+        <li><strong style="color:#9cc1ff">Blue lines:</strong> Exterior walls (2x6)</li>
+        <li><strong style="color:#9cc1ff">Cyan lines:</strong> Interior walls (2x4)</li>
+        <li><strong style="color:#9cc1ff">Yellow circles:</strong> 2x6 studs @ 16" O.C.</li>
+        <li><strong style="color:#9cc1ff">Red circles:</strong> Anchor bolts (5/8", 6'-0" spacing)</li>
+        <li><strong style="color:#9cc1ff">Magenta lines:</strong> Bottom plates</li>
+        <li><strong style="color:#9cc1ff">Red lines:</strong> Top plates (double)</li>
+      </ul>
+    </div>
+    
+    <div class="info-box" style="border-left-color:#667eea">
+      <h4 style="color:#667eea">📝 Tips:</h4>
+      <ul style="color:#a9b6c6; line-height:2; margin:8px 0 0 24px">
+        <li>Use layers panel to turn on/off different elements</li>
+        <li>Zoom in to see exact stud positions</li>
+        <li>You can modify, add details, or print from AutoCAD</li>
+        <li>All dimensions are in inches (CAD standard)</li>
+        <li>Scale is 1:1 - actual construction dimensions</li>
+      </ul>
+    </div>
+    
+    <div style="text-align:center; margin-top:40px">
+      <a href="https://web.autocad.com" target="_blank" class="btn" style="font-size:20px; padding:16px 32px">
+        Open AutoCAD Web →
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+

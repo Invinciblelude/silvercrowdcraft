@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant – House Schematic 2D (OCR-less Line Extraction)</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1400px; margin:0 auto; padding:20px 20px 120px}
+    .hero {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:16px; padding:24px; margin-bottom:20px}
+    .hero h1 {margin:0 0 8px; font-size:28px; color:#fff}
+    .board {position:relative; border:2px solid #1f2630; border-radius:12px; background:#0f1318}
+    .bp {display:block; width:100%; height:auto; border-radius:10px}
+    .ov {position:absolute; inset:0}
+    .controls {display:flex; gap:10px; margin:10px 0}
+    .btn {background:#667eea; color:#fff; border:none; border-radius:8px; padding:8px 12px; font-weight:700; cursor:pointer}
+  </style>
+</head>
+<body data-jsdom-page="house-schematic-2d" data-jsdom-title="📐 House Schematic 2D">
+  <div class="container">
+    <div class="hero">
+      <h1>House Schematic – 2D Overlay (Line Extraction)</h1>
+      <p>Floor plan with extracted wall-like lines overlay. Toggle overlay to compare.</p>
+      <div class="controls">
+        <button id="toggle" class="btn">Toggle Overlay</button>
+      </div>
+    </div>
+
+    <div class="board">
+      <img id="bp" class="bp" src="../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg" alt="Floor Plan">
+      <object id="ov" class="ov" type="image/svg+xml" data="assets/cad-previews/floor_lines.svg"></object>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('toggle');
+    const ov = document.getElementById('ov');
+    btn.addEventListener('click', ()=>{
+      ov.style.display = (ov.style.display==='none') ? 'block' : 'none';
+    });
+    // Fit overlay to image size after load
+    const bp = document.getElementById('bp');
+    function syncSize(){
+      ov.style.width = bp.clientWidth+'px';
+      ov.style.height = bp.clientHeight+'px';
+    }
+    window.addEventListener('resize', syncSize);
+    bp.addEventListener('load', syncSize);
+    syncSize();
+  </script>
+</body>
+</html>

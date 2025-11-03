@@ -1,0 +1,757 @@
+  0
+SECTION
+  2
+HEADER
+  9
+$ACADVER
+  1
+AC1015
+  9
+$INSUNITS
+ 70
+     1
+  0
+ENDSEC
+  0
+SECTION
+  2
+TABLES
+  0
+TABLE
+  2
+LAYER
+ 70
+     3
+  0
+LAYER
+  2
+WALLS-EXTERIOR
+ 70
+     0
+ 62
+     1
+  6
+CONTINUOUS
+  0
+LAYER
+  2
+WALLS-INTERIOR
+ 70
+     0
+ 62
+     3
+  6
+CONTINUOUS
+  0
+LAYER
+  2
+DIMENSIONS
+ 70
+     0
+ 62
+     7
+  6
+CONTINUOUS
+  0
+ENDTAB
+  0
+ENDSEC
+  0
+SECTION
+  2
+ENTITIES
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+600.0
+ 20
+500.0
+ 40
+24.0
+  1
+728 CORDANT DRIVE - FLOOR PLAN
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+600.0
+ 20
+470.0
+ 40
+12.0
+  1
+Scale: 1/4" = 1'-0"
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+600.0
+ 20
+450.0
+ 40
+12.0
+  1
+Total: 5,811 SF (3,200 SF new + 2,611 SF existing)
+  0
+COMMENT: OFFICE ROOM (12'-8" x 11'-4")
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+100.0
+ 20
+100.0
+ 11
+252.0
+ 21
+100.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+252.0
+ 20
+100.0
+ 11
+252.0
+ 21
+236.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+252.0
+ 20
+236.0
+ 11
+100.0
+ 21
+236.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+100.0
+ 20
+236.0
+ 11
+100.0
+ 21
+100.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+176.0
+ 20
+168.0
+ 40
+8.0
+  1
+OFFICE
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+176.0
+ 20
+155.0
+ 40
+6.0
+  1
+12'-8" x 11'-4"
+  0
+COMMENT: BEDROOM 2 (14'-4" x 10'-8")
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+100.0
+ 20
+250.0
+ 11
+272.0
+ 21
+250.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+272.0
+ 20
+250.0
+ 11
+272.0
+ 21
+378.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+272.0
+ 20
+378.0
+ 11
+100.0
+ 21
+378.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+100.0
+ 20
+378.0
+ 11
+100.0
+ 21
+250.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+186.0
+ 20
+314.0
+ 40
+8.0
+  1
+BEDROOM 2
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+186.0
+ 20
+301.0
+ 40
+6.0
+  1
+14'-4" x 10'-8"
+  0
+COMMENT: BEDROOM 3 (14'-4" x 10'-8")
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+100.0
+ 20
+392.0
+ 11
+272.0
+ 21
+392.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+272.0
+ 20
+392.0
+ 11
+272.0
+ 21
+520.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+272.0
+ 20
+520.0
+ 11
+100.0
+ 21
+520.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+100.0
+ 20
+520.0
+ 11
+100.0
+ 21
+392.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+186.0
+ 20
+456.0
+ 40
+8.0
+  1
+BEDROOM 3
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+186.0
+ 20
+443.0
+ 40
+6.0
+  1
+14'-4" x 10'-8"
+  0
+COMMENT: GREAT ROOM (24'-2" x 19'-8" - VAULTED)
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+290.0
+ 20
+300.0
+ 11
+580.0
+ 21
+300.0
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+580.0
+ 20
+300.0
+ 11
+580.0
+ 21
+536.0
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+580.0
+ 20
+536.0
+ 11
+290.0
+ 21
+536.0
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+290.0
+ 20
+536.0
+ 11
+290.0
+ 21
+300.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+435.0
+ 20
+418.0
+ 40
+10.0
+  1
+GREAT ROOM
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+435.0
+ 20
+403.0
+ 40
+7.0
+  1
+24'-2" x 19'-8"
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+435.0
+ 20
+390.0
+ 40
+6.0
+  1
+VAULTED CEILING
+  0
+COMMENT: KITCHEN (14'-6" x 17'-4")
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+595.0
+ 20
+300.0
+ 11
+769.0
+ 21
+300.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+769.0
+ 20
+300.0
+ 11
+769.0
+ 21
+508.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+769.0
+ 20
+508.0
+ 11
+595.0
+ 21
+508.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+595.0
+ 20
+508.0
+ 11
+595.0
+ 21
+300.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+682.0
+ 20
+404.0
+ 40
+8.0
+  1
+KITCHEN
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+682.0
+ 20
+391.0
+ 40
+6.0
+  1
+14'-6" x 17'-4"
+  0
+COMMENT: MASTER BEDROOM (15'-6" x 14'-8")
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+800.0
+ 20
+200.0
+ 11
+986.0
+ 21
+200.0
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+986.0
+ 20
+200.0
+ 11
+986.0
+ 21
+376.0
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+986.0
+ 20
+376.0
+ 11
+800.0
+ 21
+376.0
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+800.0
+ 20
+376.0
+ 11
+800.0
+ 21
+200.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+893.0
+ 20
+288.0
+ 40
+8.0
+  1
+MASTER BR
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+893.0
+ 20
+275.0
+ 40
+6.0
+  1
+15'-6" x 14'-8"
+  0
+COMMENT: MASTER BATHROOM (14'-2" x 13'-4")
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+800.0
+ 20
+390.0
+ 11
+970.0
+ 21
+390.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+970.0
+ 20
+390.0
+ 11
+970.0
+ 21
+550.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+970.0
+ 20
+550.0
+ 11
+800.0
+ 21
+550.0
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+800.0
+ 20
+550.0
+ 11
+800.0
+ 21
+390.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+885.0
+ 20
+470.0
+ 40
+8.0
+  1
+MASTER BATH
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+885.0
+ 20
+457.0
+ 40
+6.0
+  1
+14'-2" x 13'-4"
+  0
+COMMENT: LEGEND
+  0
+LINE
+  8
+WALLS-EXTERIOR
+ 10
+50.0
+ 20
+600.0
+ 11
+150.0
+ 21
+600.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+160.0
+ 20
+600.0
+ 40
+8.0
+  1
+Exterior Walls (2x6 studs - 6" thick)
+  0
+LINE
+  8
+WALLS-INTERIOR
+ 10
+50.0
+ 20
+620.0
+ 11
+150.0
+ 21
+620.0
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+160.0
+ 20
+620.0
+ 40
+8.0
+  1
+Interior Walls (2x4 studs - 4.5" thick)
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+50.0
+ 20
+650.0
+ 40
+10.0
+  1
+NOTES:
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+50.0
+ 20
+670.0
+ 40
+7.0
+  1
+- All dimensions in feet and inches
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+50.0
+ 20
+685.0
+ 40
+7.0
+  1
+- Standard ceiling height: 8'-0"
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+50.0
+ 20
+700.0
+ 40
+7.0
+  1
+- Great Room has VAULTED ceiling (12'-14' high)
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+50.0
+ 20
+715.0
+ 40
+7.0
+  1
+- This is a simplified CAD version for reference
+  0
+TEXT
+  8
+DIMENSIONS
+ 10
+50.0
+ 20
+730.0
+ 40
+7.0
+  1
+- Complex angled walls not shown (see original blueprint)
+  0
+  0
+ENDSEC
+  0
+EOF
+
+

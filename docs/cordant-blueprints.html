@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant – Blueprints</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1600px; margin:0 auto; padding:20px 20px 120px}
+    .hero {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:16px; padding:24px; margin-bottom:20px}
+    .hero h1 {margin:0 0 8px; font-size:28px; color:#fff}
+    .grid {display:grid; grid-template-columns:360px 1fr; gap:16px}
+    .panel {background:#12161b; border:2px solid #1f2630; border-radius:12px; padding:14px}
+    .thumb {display:flex; align-items:center; gap:10px; padding:10px; border-radius:10px; cursor:pointer; border:1px solid #1f2630; margin-bottom:8px}
+    .thumb:hover {background:#1a1f2e; border-color:#273042}
+    .thumb.active {background:#1a1f2e; border-color:#667eea}
+    .thumb img {width:64px; height:64px; object-fit:cover; border-radius:6px; border:1px solid #1f2630}
+    .title {font-weight:700; color:#9cc1ff}
+    .meta {color:#8a98ab; font-size:12px}
+    .viewer {width:100%; height:80vh; background:#0f1318; border:2px solid #1f2630; border-radius:12px}
+    .viewer img {width:100%; height:100%; object-fit:contain}
+    .controls {display:flex; gap:8px; margin-top:10px}
+    .btn {background:#667eea; color:#fff; border:none; border-radius:8px; padding:8px 12px; font-weight:700; cursor:pointer}
+    .btn.alt {background:#1f2630; border:1px solid #667eea}
+    .search {width:100%; padding:10px 12px; border-radius:8px; border:1px solid #273042; background:#0f1318; color:#e8eef5; margin-bottom:10px}
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} .viewer{height:60vh} }
+  </style>
+</head>
+<body data-jsdom-page="plans" data-jsdom-title="📐 728 Cordant – Blueprints">
+  <div class="container">
+    <div class="hero">
+      <h1>728 Cordant – Blueprints</h1>
+      <p>Click a sheet on the left to preview. Use “Open Original” for full-resolution.</p>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <input id="search" class="search" placeholder="Search (e.g., floor plan, elevation, shear)">
+        <div id="list"></div>
+      </div>
+      <div class="panel">
+        <div id="viewer" class="viewer"><img id="viewerImg" alt="Blueprint preview"></div>
+        <div class="controls">
+          <button id="openBtn" class="btn">Open Original</button>
+          <a id="copyLink" class="btn alt" href="#" target="_blank">Copy Link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SHEETS = [
+      { id:'03', name:'03 – As-Built Floor Plan', path:'../blueprints/classified/ARCH/03-AsBuilt-FloorPlan.jpg', tags:['floor','plan','as-built'] },
+      { id:'05', name:'05 – As-Built Elevations', path:'../blueprints/classified/ARCH/05-AsBuilt-Elevations.jpg', tags:['elevation','as-built'] },
+      { id:'07', name:'07 – Proposed Floor Plan', path:'../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg', tags:['floor','plan','proposed'] },
+      { id:'14', name:'14 – Structural Shear Wall Plan', path:'../blueprints/classified/ARCH/14-Structural-ShearWallPlan.jpg', tags:['structural','shear'] },
+      { id:'15', name:'15 – Roof Framing Plan', path:'../blueprints/classified/ARCH/15-Structural-RoofFramingPlan.jpg', tags:['roof','framing','structural'] }
+    ];
+
+    const list = document.getElementById('list');
+    const viewerImg = document.getElementById('viewerImg');
+    const openBtn = document.getElementById('openBtn');
+    const copyLink = document.getElementById('copyLink');
+
+    function render(items){
+      list.innerHTML = '';
+      items.forEach((s, i) => {
+        const row = document.createElement('div'); row.className='thumb'; row.dataset.path=s.path;
+        row.innerHTML = `<img src="${s.path}" alt="${s.name}"><div><div class="title">${s.name}</div><div class="meta">${s.tags.join(', ')}</div></div>`;
+        row.addEventListener('click',()=>select(s,row));
+        if(i===0) setTimeout(()=>row.click(), 0);
+        list.appendChild(row);
+      });
+    }
+
+    function select(sheet, row){
+      document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+      row.classList.add('active');
+      viewerImg.src = sheet.path;
+      viewerImg.alt = sheet.name;
+      openBtn.onclick = ()=> window.open(sheet.path,'_blank');
+      copyLink.href = sheet.path;
+    }
+
+    document.getElementById('search').addEventListener('input', (e)=>{
+      const q = e.target.value.toLowerCase();
+      const filtered = SHEETS.filter(s=> s.name.toLowerCase().includes(q) || s.tags.some(t=>t.includes(q)));
+      render(filtered.length? filtered : SHEETS);
+    });
+
+    render(SHEETS);
+  </script>
+</body>
+</html>

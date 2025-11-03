@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant - Section Builder</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1600px; margin:0 auto; padding:20px 20px 100px}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:32px;
+      text-align:center;
+    }
+    .hero h1 {font-size:42px; font-weight:800; margin:0 0 16px; color:#fff}
+    .hero p {font-size:18px; opacity:0.95; margin:0}
+    
+    .sections-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+      gap:24px;
+      margin:24px 0;
+    }
+    
+    .section-card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:24px;
+      cursor:pointer;
+      transition:all 0.3s;
+      position:relative;
+    }
+    
+    .section-card:hover {
+      border-color:#667eea;
+      transform:translateY(-4px);
+      box-shadow:0 8px 24px rgba(102,126,234,0.3);
+    }
+    
+    .section-card.completed {
+      border-color:#4ade80;
+    }
+    
+    .section-card h3 {
+      margin:0 0 12px;
+      color:#9cc1ff;
+      font-size:24px;
+      font-weight:700;
+    }
+    
+    .section-card .badge {
+      position:absolute;
+      top:16px;
+      right:16px;
+      background:#4ade80;
+      color:#000;
+      padding:4px 12px;
+      border-radius:12px;
+      font-size:12px;
+      font-weight:700;
+      display:none;
+    }
+    
+    .section-card.completed .badge {
+      display:block;
+    }
+    
+    .section-details {
+      color:#8a98ab;
+      font-size:14px;
+      line-height:1.8;
+    }
+    
+    .section-details strong {
+      color:#a9b6c6;
+      font-weight:600;
+    }
+    
+    .info-box {
+      background:#0f1318;
+      border-left:4px solid #667eea;
+      padding:20px;
+      border-radius:8px;
+      margin:24px 0;
+    }
+    
+    .info-box h4 {
+      margin:0 0 12px;
+      color:#667eea;
+      font-size:18px;
+    }
+    
+    .info-box p {
+      margin:4px 0;
+      color:#a9b6c6;
+      line-height:1.8;
+    }
+    
+    #builder-container {
+      display:none;
+      background:#12161b;
+      border:2px solid #667eea;
+      border-radius:12px;
+      padding:32px;
+      margin-top:32px;
+    }
+    
+    #builder-container.active {
+      display:block;
+    }
+  </style>
+</head>
+<body data-jsdom-page="section-builder" data-jsdom-title="🏗️ Section Builder">
+  
+  <div class="container">
+    <div class="hero">
+      <h1>🏗️ 728 Cordant - Build One Section at a Time</h1>
+      <p>Click on any room/section below to create detailed framing diagrams with SPECIFIC measurements</p>
+    </div>
+    
+    <div class="info-box">
+      <h4>💡 How This Works:</h4>
+      <p>1. <strong>Select a section</strong> - Click any room/area from your blueprints</p>
+      <p>2. <strong>Get detailed diagrams</strong> - I'll create specific wall framing diagrams with your exact measurements</p>
+      <p>3. <strong>See all details</strong> - Every stud location, header size, and connection shown</p>
+      <p>4. <strong>Work section by section</strong> - Complete one area, then move to the next</p>
+    </div>
+    
+    <h2 style="font-size:28px; color:#9cc1ff; margin:32px 0 16px">Available Sections to Build:</h2>
+    
+    <!-- Main Wing (Left/West) -->
+    <h3 style="font-size:20px; color:#a9b6c6; margin:24px 0 12px; border-bottom:2px solid #1f2630; padding-bottom:8px">🟦 MAIN WING (New Addition - West Side)</h3>
+    <div class="sections-grid">
+      <div class="section-card" onclick="buildSection('bedroom-2')">
+        <h3>🛏️ Bedroom 2</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 14'-4" x 10'-8" (153 SF)</p>
+          <p><strong>Ceiling:</strong> 8'-0" standard</p>
+          <p><strong>Framing:</strong> Interior 2x4 walls</p>
+          <p><strong>Status:</strong> New addition</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('bedroom-3')">
+        <h3>🛏️ Bedroom 3</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 14'-4" x 10'-8" (153 SF)</p>
+          <p><strong>Ceiling:</strong> 8'-0" standard</p>
+          <p><strong>Framing:</strong> Interior 2x4 walls</p>
+          <p><strong>Status:</strong> New addition</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('office')">
+        <h3>💼 Office</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 12'-8" x 11'-4" (144 SF)</p>
+          <p><strong>Location:</strong> Southwest corner</p>
+          <p><strong>Framing:</strong> Mixed interior/exterior</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('laundry')">
+        <h3>🧺 Laundry</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 8'-4" x 7'-6" (63 SF)</p>
+          <p><strong>Location:</strong> Between Bedrooms 2 & 3</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('mud-room')">
+        <h3>🚪 Mud Room</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 9'-2" x 8'-6" (78 SF)</p>
+          <p><strong>Location:</strong> Back entry area</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('powder')">
+        <h3>🚽 Powder Room</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 6'-0" x 5'-4" (32 SF)</p>
+          <p><strong>Location:</strong> Near main entry</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+    </div>
+    
+    <!-- Center Wing -->
+    <h3 style="font-size:20px; color:#a9b6c6; margin:24px 0 12px; border-bottom:2px solid #1f2630; padding-bottom:8px">🟩 CENTER WING (Great Room Area)</h3>
+    <div class="sections-grid">
+      <div class="section-card" onclick="buildSection('great-room')">
+        <h3>🏠 Great Room</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 24'-2" x 19'-8" (476 SF)</p>
+          <p><strong>Ceiling:</strong> VAULTED (12'-14' peak)</p>
+          <p><strong>Features:</strong> Fireplace on north wall</p>
+          <p><strong>Framing:</strong> Exterior 2x6 walls</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('kitchen')">
+        <h3>🍳 Kitchen</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 14'-6" x 17'-4" (252 SF)</p>
+          <p><strong>Island:</strong> 8' x 4' center</p>
+          <p><strong>Ceiling:</strong> 8'-0" standard</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('nook')">
+        <h3>🍽️ Nook (Eating)</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 10'-4" x 11'-2" (116 SF)</p>
+          <p><strong>Layout:</strong> Open to kitchen</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('pantry')">
+        <h3>🥫 Walk-In Pantry</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 7'-6" x 5'-8" (43 SF)</p>
+          <p><strong>Location:</strong> Off kitchen</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+    </div>
+    
+    <!-- East Wing -->
+    <h3 style="font-size:20px; color:#a9b6c6; margin:24px 0 12px; border-bottom:2px solid #1f2630; padding-bottom:8px">🟨 EAST WING (Master Suite)</h3>
+    <div class="sections-grid">
+      <div class="section-card" onclick="buildSection('master-bedroom')">
+        <h3>🛏️ Master Bedroom</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 15'-6" x 14'-8" (228 SF)</p>
+          <p><strong>Ceiling:</strong> 8'-0" standard</p>
+          <p><strong>Framing:</strong> Exterior 2x6 walls</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('master-bath')">
+        <h3>🛁 Master Bathroom</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 14'-2" x 13'-4" (189 SF)</p>
+          <p><strong>Features:</strong> Dual sinks, tub, shower</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+      
+      <div class="section-card" onclick="buildSection('master-closet')">
+        <h3>👔 Master Closet</h3>
+        <div class="section-details">
+          <p><strong>Size:</strong> 9'-8" x 7'-4" (71 SF)</p>
+          <p><strong>Type:</strong> Walk-in</p>
+        </div>
+        <span class="badge">✓ Complete</span>
+      </div>
+    </div>
+    
+    <div id="builder-container">
+      <h2 id="builder-title" style="font-size:32px; color:#9cc1ff; margin-bottom:24px"></h2>
+      <div id="builder-content">
+        <p style="color:#8a98ab">Loading detailed diagrams...</p>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function buildSection(sectionId) {
+      // Show builder container
+      document.getElementById('builder-container').classList.add('active');
+      
+      // Scroll to builder
+      document.getElementById('builder-container').scrollIntoView({behavior:'smooth', block:'start'});
+      
+      // Set title based on section
+      const sectionNames = {
+        'bedroom-2': 'Bedroom 2 - Detailed Framing',
+        'bedroom-3': 'Bedroom 3 - Detailed Framing',
+        'office': 'Office - Detailed Framing',
+        'laundry': 'Laundry Room - Detailed Framing',
+        'mud-room': 'Mud Room - Detailed Framing',
+        'powder': 'Powder Room - Detailed Framing',
+        'great-room': 'Great Room - Detailed Framing',
+        'kitchen': 'Kitchen - Detailed Framing',
+        'nook': 'Nook - Detailed Framing',
+        'pantry': 'Walk-In Pantry - Detailed Framing',
+        'master-bedroom': 'Master Bedroom - Detailed Framing',
+        'master-bath': 'Master Bathroom - Detailed Framing',
+        'master-closet': 'Master Closet - Detailed Framing'
+      };
+      
+      document.getElementById('builder-title').textContent = sectionNames[sectionId] || 'Section Builder';
+      document.getElementById('builder-content').innerHTML = '<p style="color:#8a98ab">Please wait, creating detailed diagrams...</p>';
+      
+      // This will be replaced with actual detailed content
+      setTimeout(() => {
+        document.getElementById('builder-content').innerHTML = `
+          <div style="text-align:center; padding:40px">
+            <h3 style="color:#667eea; font-size:24px; margin-bottom:16px">🚧 Section Builder Coming Soon</h3>
+            <p style="color:#8a98ab; line-height:1.8">
+              I'm working on creating super detailed framing diagrams for ${sectionNames[sectionId]}.<br><br>
+              This will include:
+            </p>
+            <ul style="color:#a9b6c6; text-align:left; max-width:600px; margin:24px auto; line-height:2">
+              <li>Every single stud location with exact measurements</li>
+              <li>Window and door opening details</li>
+              <li>Header sizes and connections</li>
+              <li>Material cut lists</li>
+              <li>Step-by-step build sequence</li>
+            </ul>
+            <p style="color:#8a98ab; margin-top:24px">
+              <strong style="color:#9cc1ff">Ask me to "build the Office section" or "make diagrams for Master Bedroom"</strong>
+            </p>
+          </div>
+        `;
+      }, 500);
+    }
+  </script>
+</body>
+</html>
+

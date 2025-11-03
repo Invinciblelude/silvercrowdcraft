@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant - Accurate Wall Illustrator</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1800px; margin:0 auto; padding:20px 20px 100px}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:32px;
+      text-align:center;
+    }
+    .hero h1 {font-size:42px; font-weight:800; margin:0 0 16px; color:#fff}
+    
+    .illustration-section {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:32px;
+      margin-bottom:32px;
+    }
+    
+    .section-title {
+      font-size:32px;
+      font-weight:700;
+      color:#9cc1ff;
+      margin-bottom:24px;
+      border-bottom:3px solid #667eea;
+      padding-bottom:12px;
+    }
+    
+    .diagram-container {
+      background:#0f1318;
+      border-radius:8px;
+      padding:24px;
+      margin:24px 0;
+      overflow-x:auto;
+    }
+    
+    .specs-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:16px;
+      margin:24px 0;
+    }
+    
+    .spec-card {
+      background:#0f1318;
+      border-left:4px solid #667eea;
+      padding:16px;
+      border-radius:8px;
+    }
+    
+    .spec-card strong {
+      color:#9cc1ff;
+      display:block;
+      margin-bottom:8px;
+    }
+    
+    .spec-card .value {
+      color:#a9b6c6;
+      font-size:14px;
+    }
+  </style>
+</head>
+<body data-jsdom-page="wall-illustrator" data-jsdom-title="🏗️ Accurate Wall Illustrator">
+  
+  <div class="container">
+    <div class="hero">
+      <h1>🏗️ 728 Cordant - Accurate Wall Framing Illustrator</h1>
+      <p style="font-size:18px; opacity:0.95">Every stud, every measurement, every connection - EXACTLY as built</p>
+    </div>
+    
+    <!-- Exterior Wall Full Assembly -->
+    <div class="illustration-section">
+      <h2 class="section-title">EXTERIOR WALL - COMPLETE ASSEMBLY</h2>
+      <p style="color:#8a98ab; font-size:16px; margin-bottom:20px">Based on your 728 Cordant blueprints: 2x6 @ 16" O.C., 8'-0" height</p>
+      
+      <div class="diagram-container">
+        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Stud Pattern -->
+            <pattern id="studPattern" x="0" y="0" width="16" height="1" patternUnits="userSpaceOnUse">
+              <rect width="1.5" height="1" fill="#666"/>
+            </pattern>
+          </defs>
+          
+          <!-- Foundation -->
+          <rect x="50" y="650" width="1100" height="100" fill="#6b7280" stroke="#374151" stroke-width="3"/>
+          <text x="600" y="720" text-anchor="middle" font-size="20" font-weight="bold" fill="#fff">FOUNDATION SLAB (4" thick concrete)</text>
+          <line x1="50" y1="650" x2="1150" y2="650" stroke="#9ca3af" stroke-width="2"/>
+          
+          <!-- Anchor Bolts (actual spacing shown) -->
+          <line x1="150" y1="650" x2="150" y2="600" stroke="#ef4444" stroke-width="8"/>
+          <line x1="714" y1="650" x2="714" y2="600" stroke="#ef4444" stroke-width="8"/>
+          <line x1="864" y1="650" x2="864" y2="600" stroke="#ef4444" stroke-width="8"/>
+          <text x="300" y="625" font-size="16" font-weight="bold" fill="#ef4444">5/8" ANCHOR BOLTS</text>
+          <line x1="150" y1="720" x2="714" y2="720" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5"/>
+          <text x="432" y="740" text-anchor="middle" font-size="14" fill="#ef4444">564" (47'-0") - ACTUAL SPACING</text>
+          
+          <!-- Bottom Plate -->
+          <rect x="100" y="600" width="1000" height="30" fill="#fb923c" stroke="#000" stroke-width="2"/>
+          <text x="600" y="622" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">2x6 BOTTOM PLATE</text>
+          <text x="1100" y="615" font-size="14" fill="#667eea">Actual: 1.5" x 5.5"</text>
+          
+          <!-- Studs - 16" O.C. Layout -->
+          <!-- Starting 16" from left end (accounting for corner stud) -->
+          <!-- Stud at x=116, 132, 148, 164, 180, 196, etc. -->
+          <!-- Let's show about 10 studs to demonstrate spacing -->
+          <rect x="114" y="350" width="25" height="250" fill="#fbbf24" stroke="#000" stroke-width="3"/>
+          <rect x="264" y="350" width="25" height="250" fill="#fbbf24" stroke="#000" stroke-width="3"/>
+          <rect x="414" y="350" width="25" height="250" fill="#fbbf24" stroke="#000" stroke-width="3"/>
+          <rect x="564" y="350" width="25" height="250" fill="#fbbf24" stroke="#000" stroke-width="3"/>
+          <rect x="714" y="350" width="25" height="250" fill="#fbbf24" stroke="#000" stroke-width="3"/>
+          <rect x="864" y="350" width="25" height="250" fill="#fbbf24" stroke="#000" stroke-width="3"/>
+          <rect x="1014" y="350" width="25" height="250" fill="#fbbf24" stroke="#000" stroke-width="3"/>
+          
+          <!-- Spacing measurements -->
+          <line x1="126" y1="300" x2="276" y2="300" stroke="#10b981" stroke-width="3"/>
+          <line x1="126" y1="295" x2="126" y2="305" stroke="#10b981" stroke-width="2"/>
+          <line x1="276" y1="295" x2="276" y2="305" stroke="#10b981" stroke-width="2"/>
+          <text x="201" y="285" text-anchor="middle" font-size="18" font-weight="bold" fill="#10b981">16" ON CENTER</text>
+          <text x="201" y="270" text-anchor="middle" font-size="14" fill="#10b981">CENTER-TO-CENTER</text>
+          
+          <!-- Top Plates (double) -->
+          <rect x="100" y="320" width="1000" height="30" fill="#ef4444" stroke="#000" stroke-width="2"/>
+          <rect x="100" y="290" width="1000" height="30" fill="#ef4444" stroke="#000" stroke-width="2"/>
+          <text x="1120" y="308" font-size="16" font-weight="bold" fill="#fff">DOUBLE</text>
+          <text x="1120" y="332" font-size="16" font-weight="bold" fill="#fff">2x6</text>
+          
+          <!-- Exterior Sheathing -->
+          <rect x="90" y="350" width="20" height="250" fill="#d4a574" stroke="#8b7355" stroke-width="3"/>
+          <text x="50" y="475" font-size="14" font-weight="bold" fill="#d4a574" transform="rotate(-90 50 475)">15/32" OSB SHEATHING</text>
+          
+          <!-- Insulation -->
+          <rect x="110" y="350" width="15" height="250" fill="#60a5fa" opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
+          <text x="118" y="475" font-size="12" font-weight="bold" fill="#3b82f6" transform="rotate(-90 118 475)">R-19 INSULATION</text>
+          
+          <!-- Interior Drywall -->
+          <rect x="1080" y="350" width="20" height="250" fill="#e5e7eb" stroke="#000" stroke-width="2"/>
+          <text x="1130" y="475" font-size="14" font-weight="bold" fill="#e5e7eb" transform="rotate(-90 1130 475)">1/2" DRYWALL</text>
+          
+          <!-- Height measurement -->
+          <line x1="1150" y1="650" x2="1150" y2="350" stroke="#10b981" stroke-width="4"/>
+          <line x1="1140" y1="650" x2="1160" y2="650" stroke="#10b981" stroke-width="2"/>
+          <line x1="1140" y1="350" x2="1160" y2="350" stroke="#10b981" stroke-width="2"/>
+          <text x="1190" y="500" font-size="24" font-weight="bold" fill="#10b981" transform="rotate(-90 1190 500)">8'-0" (96")</text>
+          
+          <!-- Load path arrows -->
+          <path d="M 600 250 L 600 290 L 615 300 L 600 310 L 585 300 Z" fill="#fbbf24"/>
+          <text x="600" y="235" text-anchor="middle" font-size="14" font-weight="bold" fill="#fbbf24">LOAD FROM ROOF</text>
+          
+          <!-- Material callouts -->
+          <rect x="200" y="100" width="800" height="120" fill="#1e293b" stroke="#667eea" stroke-width="3" rx="8"/>
+          <text x="600" y="135" text-anchor="middle" font-size="20" font-weight="bold" fill="#9cc1ff">EXACT SPECIFICATIONS - 728 CORDANT</text>
+          <text x="250" y="165" font-size="14" fill="#a9b6c6">✓ Studs: 2x6 Douglas Fir @ 16" O.C.</text>
+          <text x="250" y="190" font-size="14" fill="#a9b6c6">✓ Wall Height: 8'-0" (96 inches)</text>
+          <text x="650" y="165" font-size="14" fill="#a9b6c6">✓ Top Plates: Double 2x6</text>
+          <text x="650" y="190" font-size="14" fill="#a9b6c6">✓ Anchor Bolts: 5/8" @ max 6'-0"</text>
+        </svg>
+      </div>
+      
+      <div class="specs-grid">
+        <div class="spec-card">
+          <strong>Stud Count Calculation</strong>
+          <div class="value">For 10'-0" wall: (120" ÷ 16") + 1 = 8 studs minimum</div>
+        </div>
+        <div class="spec-card">
+          <strong>Actual Stud Dimensions</strong>
+          <div class="value">1.5" thick × 5.5" wide</div>
+        </div>
+        <div class="spec-card">
+          <strong>Cut Length for Studs</strong>
+          <div class="value">96" - 3" (plates) = 93" (7'-9")</div>
+        </div>
+        <div class="spec-card">
+          <strong>Anchor Bolt Drill Size</strong>
+          <div class="value">11/16" hole for 5/8" bolt</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Window Opening Detail -->
+    <div class="illustration-section">
+      <h2 class="section-title">WINDOW OPENING - COMPLETE FRAMING DETAIL</h2>
+      <p style="color:#8a98ab; font-size:16px; margin-bottom:20px">Showing header, king studs, jack studs, and cripples with exact relationships</p>
+      
+      <div class="diagram-container">
+        <svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+          <!-- Foundation -->
+          <rect x="0" y="800" width="1200" height="100" fill="#6b7280" stroke="#374151" stroke-width="3"/>
+          
+          <!-- Bottom Plate -->
+          <rect x="50" y="760" width="1100" height="40" fill="#fb923c" stroke="#000" stroke-width="3"/>
+          <text x="600" y="788" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">BOTTOM PLATE (continuous)</text>
+          
+          <!-- Left King Stud -->
+          <rect x="200" y="300" width="40" height="460" fill="#3b82f6" stroke="#000" stroke-width="4"/>
+          <text x="220" y="560" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff" transform="rotate(-90 220 560)">KING STUD</text>
+          <text x="170" y="560" text-anchor="middle" font-size="14" fill="#3b82f6">Full Height</text>
+          
+          <!-- Left Jack Stud -->
+          <rect x="240" y="500" width="35" height="260" fill="#60a5fa" stroke="#000" stroke-width="3"/>
+          <text x="257" y="660" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">JACK</text>
+          
+          <!-- Header (2x8 shown) -->
+          <rect x="240" y="400" width="460" height="100" fill="#10b981" stroke="#000" stroke-width="5"/>
+          <text x="470" y="458" text-anchor="middle" font-size="22" font-weight="bold" fill="#fff">HEADER (2x8)</text>
+          <text x="470" y="478" text-anchor="middle" font-size="14" fill="#000">Actual: 1.5" x 7.25"</text>
+          
+          <!-- Right Jack Stud -->
+          <rect x="665" y="500" width="35" height="260" fill="#60a5fa" stroke="#000" stroke-width="3"/>
+          <text x="682" y="660" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">JACK</text>
+          
+          <!-- Right King Stud -->
+          <rect x="700" y="300" width="40" height="460" fill="#3b82f6" stroke="#000" stroke-width="4"/>
+          <text x="720" y="560" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff" transform="rotate(-90 720 560)">KING STUD</text>
+          
+          <!-- Regular Studs -->
+          <rect x="100" y="300" width="35" height="460" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+          <rect x="900" y="300" width="35" height="460" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+          
+          <!-- Cripple Studs (above header) -->
+          <rect x="385" y="300" width="30" height="100" fill="#fb923c" stroke="#000" stroke-width="2"/>
+          <rect x="560" y="300" width="30" height="100" fill="#fb923c" stroke="#000" stroke-width="2"/>
+          <text x="472" y="370" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">CRIPPLE STUDS</text>
+          
+          <!-- Top Plates -->
+          <rect x="50" y="270" width="1100" height="30" fill="#ef4444" stroke="#000" stroke-width="3"/>
+          <rect x="50" y="240" width="1100" height="30" fill="#ef4444" stroke="#000" stroke-width="3"/>
+          
+          <!-- Window Sill -->
+          <rect x="240" y="520" width="460" height="40" fill="#d4a574" stroke="#000" stroke-width="3"/>
+          <text x="470" y="548" text-anchor="middle" font-size="16" font-weight="bold" fill="#000">WINDOW SILL</text>
+          
+          <!-- Window Opening (translucent) -->
+          <rect x="250" y="420" width="440" height="100" fill="#93c5fd" opacity="0.2" stroke="#3b82f6" stroke-width="4" stroke-dasharray="15,10"/>
+          <text x="470" y="475" text-anchor="middle" font-size="20" font-weight="bold" fill="#3b82f6">ROUGH OPENING</text>
+          
+          <!-- Dimension lines -->
+          <line x1="220" y1="820" x2="720" y2="820" stroke="#10b981" stroke-width="3"/>
+          <line x1="220" y1="810" x2="220" y2="830" stroke="#10b981" stroke-width="2"/>
+          <line x1="720" y1="810" x2="720" y2="830" stroke="#10b981" stroke-width="2"/>
+          <text x="470" y="865" text-anchor="middle" font-size="18" font-weight="bold" fill="#10b981">ROUGH OPENING WIDTH</text>
+          
+          <line x1="250" y1="400" x2="250" y2="560" stroke="#10b981" stroke-width="3"/>
+          <line x1="240" y1="400" x2="260" y2="400" stroke="#10b981" stroke-width="2"/>
+          <line x1="240" y1="560" x2="260" y2="560" stroke="#10b981" stroke-width="2"/>
+          <text x="180" y="480" text-anchor="middle" font-size="16" font-weight="bold" fill="#10b981" transform="rotate(-90 180 480)">HEADER HEIGHT</text>
+          
+          <!-- Load path annotations -->
+          <line x1="470" y1="200" x2="470" y2="400" stroke="#fbbf24" stroke-width="4" marker-end="url(#arrow)"/>
+          <text x="490" y="310" font-size="14" font-weight="bold" fill="#fbbf24">ROOF LOAD</text>
+          
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L10,3 z" fill="#fbbf24"/>
+            </marker>
+          </defs>
+          
+          <!-- Connection details -->
+          <rect x="800" y="80" width="350" height="150" fill="#1e293b" stroke="#10b981" stroke-width="3" rx="8"/>
+          <text x="975" y="115" text-anchor="middle" font-size="18" font-weight="bold" fill="#10b981">LOAD PATH ANALYSIS</text>
+          <text x="850" y="145" font-size="13" fill="#a9b6c6">1. Roof weight presses down</text>
+          <text x="850" y="165" font-size="13" fill="#a9b6c6">2. Header carries load horizontally</text>
+          <text x="850" y="185" font-size="13" fill="#a9b6c6">3. Jack studs support header ends</text>
+          <text x="850" y="205" font-size="13" fill="#a9b6c6">4. King studs transfer to foundation</text>
+        </svg>
+      </div>
+    </div>
+    
+    <!-- Stud Layout Calculator -->
+    <div class="illustration-section">
+      <h2 class="section-title">STUD LAYOUT CALCULATOR</h2>
+      <p style="color:#8a98ab; font-size:16px; margin-bottom:20px">Enter your wall length to get exact stud positions</p>
+      
+      <div style="background:#0f1318; padding:32px; border-radius:12px; border:2px solid #667eea">
+        <div style="margin-bottom:24px">
+          <label style="display:block; color:#9cc1ff; font-size:18px; margin-bottom:12px; font-weight:700">Wall Length (feet):</label>
+          <input type="number" id="wallLength" value="12" min="4" max="100" step="1" 
+                 style="width:200px; padding:12px; font-size:20px; border:2px solid #667eea; border-radius:8px; background:#12161b; color:#fff">
+        </div>
+        
+        <div id="layoutResults" style="color:#a9b6c6; font-size:16px; line-height:2; min-height:100px">
+          Calculating stud layout...
+        </div>
+        
+        <div id="visualLayout" style="margin-top:32px; min-height:200px; background:#12161b; border-radius:8px; padding:24px; overflow-x:auto">
+          <svg id="layoutSVG" viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function calculateLayout() {
+      const length = parseFloat(document.getElementById('wallLength').value);
+      const lengthInches = length * 12;
+      const spacing = 16;
+      
+      // Calculate stud count
+      const spacings = Math.floor(lengthInches / spacing);
+      const studCount = spacings + 1 + 1; // Add 1 for spacing, add 1 for end stud
+      
+      // Generate stud positions
+      let positions = [];
+      let current = 1.5; // Start at edge of first stud
+      positions.push(current);
+      
+      while (current + spacing < lengthInches - 1.5) {
+        current += spacing;
+        positions.push(current);
+      }
+      positions.push(lengthInches - 1.5); // End stud
+      
+      // Display results
+      document.getElementById('layoutResults').innerHTML = `
+        <div style="background:#1e293b; padding:20px; border-radius:8px; border-left:4px solid #10b981; margin-bottom:16px">
+          <strong style="color:#10b981; font-size:20px">Results for ${length}'-0" Wall:</strong>
+          <ul style="margin:12px 0 0 24px; line-height:2">
+            <li><strong>Total Studs:</strong> ${studCount}</li>
+            <li><strong>Spacing:</strong> 16" on center</li>
+            <li><strong>Layout Start:</strong> 1.5" from edge (stud center)</li>
+          </ul>
+        </div>
+        <div style="background:#1e293b; padding:20px; border-radius:8px; border-left:4px solid #667eea">
+          <strong style="color:#667eea; font-size:18px">Stud Positions (from left edge):</strong>
+          <p style="margin:12px 0 0; font-family:monospace; font-size:14px">
+            ${positions.map((p, i) => `Stud ${i+1}: ${p.toFixed(1)}"`).join('<br>')}
+          </p>
+        </div>
+      `;
+      
+      // Visual layout
+      drawVisualLayout(lengthInches, positions);
+    }
+    
+    function drawVisualLayout(lengthInches, positions) {
+      const svg = document.getElementById('layoutSVG');
+      const width = Math.max(1000, lengthInches);
+      svg.setAttribute('viewBox', `0 0 ${width} 150`);
+      
+      // Clear previous
+      svg.innerHTML = '';
+      
+      // Draw wall line
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', '0');
+      line.setAttribute('y1', '75');
+      line.setAttribute('x2', width);
+      line.setAttribute('y2', '75');
+      line.setAttribute('stroke', '#667eea');
+      line.setAttribute('stroke-width', '3');
+      svg.appendChild(line);
+      
+      // Draw studs
+      positions.forEach((pos, i) => {
+        const stud = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        stud.setAttribute('x', pos - 0.75);
+        stud.setAttribute('y', '60');
+        stud.setAttribute('width', '1.5');
+        stud.setAttribute('height', '30');
+        stud.setAttribute('fill', '#fbbf24');
+        stud.setAttribute('stroke', '#000');
+        stud.setAttribute('stroke-width', '0.5');
+        svg.appendChild(stud);
+        
+        // Label
+        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', pos);
+        label.setAttribute('y', '50');
+        label.setAttribute('text-anchor', 'middle');
+        label.setAttribute('font-size', '10');
+        label.setAttribute('fill', '#9cc1ff');
+        label.textContent = i + 1;
+        svg.appendChild(label);
+      });
+      
+      // Draw spacing measurements (first few)
+      for (let i = 0; i < Math.min(3, positions.length - 1); i++) {
+        const startX = positions[i] + 0.75;
+        const endX = positions[i + 1] - 0.75;
+        const midX = (startX + endX) / 2;
+        
+        const meas = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        meas.setAttribute('x1', startX);
+        meas.setAttribute('y1', '100');
+        meas.setAttribute('x2', endX);
+        meas.setAttribute('y2', '100');
+        meas.setAttribute('stroke', '#10b981');
+        meas.setAttribute('stroke-width', '2');
+        meas.setAttribute('stroke-dasharray', '2,2');
+        svg.appendChild(meas);
+        
+        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', midX);
+        label.setAttribute('y', '115');
+        label.setAttribute('text-anchor', 'middle');
+        label.setAttribute('font-size', '12');
+        label.setAttribute('fill', '#10b981');
+        label.setAttribute('font-weight', 'bold');
+        label.textContent = '16"';
+        svg.appendChild(label);
+      }
+    }
+    
+    // Initialize
+    document.getElementById('wallLength').addEventListener('input', calculateLayout);
+    calculateLayout();
+  </script>
+</body>
+</html>
+

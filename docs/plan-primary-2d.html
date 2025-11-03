@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant – Primary Bedroom 2D Build Plan (SVG)</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1200px; margin:0 auto; padding:20px 20px 120px}
+    .hero {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:16px; padding:24px; margin-bottom:20px}
+    .hero h1 {margin:0 0 8px; font-size:28px; color:#fff}
+    .hero p {margin:4px 0; color:#d9e3ff}
+    .panel {background:#12161b; border:2px solid #1f2630; border-radius:12px; padding:16px}
+    .legend {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:16px}
+    .legend-item {display:flex; align-items:center; gap:10px; background:#0f1318; padding:10px; border-radius:8px}
+    .sw {width:16px; height:16px; border-radius:3px; border:2px solid #1f2630}
+    svg {width:100%; height:auto}
+    .foot {margin-top:14px; color:#8a98ab; font-size:12px}
+  </style>
+</head>
+<body data-jsdom-page="plan-primary-2d" data-jsdom-title="📐 Primary Bedroom 2D Build Plan">
+  <div class="container">
+    <div class="hero">
+      <h1>Primary Bedroom – 2D Build Plan (No AutoCAD)</h1>
+      <p>Dimensions: 15'-6" (186") x 14'-8" (176") • Scale: 1 px = 1 inch • Plate: 8'-0"</p>
+      <p>Exterior walls assumed 2x6 (5.5"). Openings will be placed from OCR schedule on update.</p>
+    </div>
+
+    <div class="panel">
+      <!-- Drawing area: 1 px = 1 inch. Add 100 px margin. -->
+      <svg viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0,0 L0,8 L8,4 z" fill="#9cc1ff"/>
+          </marker>
+        </defs>
+
+        <!-- Canvas background -->
+        <rect x="0" y="0" width="600" height="520" fill="#0f1318"/>
+
+        <!-- Offsets -->
+        <g transform="translate(100,60)">
+          <!-- Geometry: L=186, W=176, t=5.5 -->
+          <!-- Outer guideline -->
+          <rect x="0" y="0" width="186" height="176" fill="none" stroke="#334155" stroke-dasharray="6,6"/>
+
+          <!-- Wall fill and line (2x6 ext) -->
+          <rect x="0" y="0" width="186" height="176" fill="#1e293b"/>
+          <rect x="5.5" y="5.5" width="175" height="165" fill="#0f1318" stroke="#2563eb" stroke-width="2"/>
+
+          <!-- Dimension lines -->
+          <!-- Horizontal overall 186" -->
+          <line x1="0" y1="190" x2="186" y2="190" stroke="#9cc1ff" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+          <text x="93" y="206" fill="#9cc1ff" font-size="12" text-anchor="middle">186" (15'-6")</text>
+          <!-- Vertical overall 176" -->
+          <line x1="-18" y1="0" x2="-18" y2="176" stroke="#9cc1ff" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+          <text x="-22" y="88" fill="#9cc1ff" font-size="12" text-anchor="end" transform="rotate(-90 -22,88)">176" (14'-8")</text>
+
+          <!-- Labels -->
+          <text x="8" y="20" fill="#9cc1ff" font-size="12">EXTERIOR WALL (2x6, 5.5")</text>
+          <text x="0" y="224" fill="#ef4444" font-size="12">Anchor bolts 5/8" ≤ 6'-0" o.c. (visualized when perimeters added)</text>
+        </g>
+      </svg>
+
+      <div class="legend">
+        <div class="legend-item"><span class="sw" style="background:#2563eb"></span><div>Exterior wall line (2x6)</div></div>
+        <div class="legend-item"><span class="sw" style="background:#9cc1ff"></span><div>Overall dimensions</div></div>
+      </div>
+
+      <div class="foot">This is a to-scale SVG plan (1 px = 1 inch). Openings from the schedule will be inserted after OCR pass.</div>
+    </div>
+  </div>
+</body>
+</html>

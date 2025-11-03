@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant – Primary Bedroom Framing vs Blueprint</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1600px; margin:0 auto; padding:20px 20px 120px}
+    .hero {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:16px; padding:24px; margin-bottom:20px}
+    .hero h1 {margin:0 0 8px; font-size:28px; color:#fff}
+    .grid {display:grid; grid-template-columns:520px 1fr; gap:20px}
+    .panel {background:#12161b; border:2px solid #1f2630; border-radius:12px; padding:14px}
+    .img {width:100%; height:auto; display:block; border:2px solid #667eea; border-radius:8px}
+    .tabs {display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap}
+    .tab {background:#1f2630; color:#9cc1ff; border:1px solid #273042; border-radius:8px; padding:8px 12px; cursor:pointer; font-weight:700}
+    .tab.active {background:#667eea; color:#fff}
+    svg {width:100%; height:auto}
+    .legend {display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px; margin-top:10px}
+    .legend-item {display:flex; align-items:center; gap:8px; background:#0f1318; border-radius:8px; padding:8px}
+    .sw {width:16px; height:16px; border-radius:3px; border:2px solid #1f2630}
+  </style>
+</head>
+<body data-jsdom-page="primary-framing-view" data-jsdom-title="🧱 Primary Bedroom Framing vs Blueprint">
+  <div class="container">
+    <div class="hero">
+      <h1>Primary Bedroom – Blueprint (Sheet 07) vs Framing Elevations</h1>
+      <p>Room: 15'-6" (186") x 14'-8" (176"). Studs @ 16" O.C., plates 2x6, wall height 8'-0".</p>
+      <p>Openings are placeholders until the window/door schedule OCR is applied. I’ll update positions/sizes right after.</p>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <h3 style="margin:0 0 8px; color:#9cc1ff">Blueprint Reference (Floor Plan)</h3>
+        <img class="img" src="../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg" alt="Sheet 07 – Floor Plan">
+        <p style="color:#8a98ab; font-size:12px; margin-top:8px">Framing diagrams on the right show each side (elevation view) for the Primary Bedroom.</p>
+      </div>
+
+      <div class="panel">
+        <div class="tabs">
+          <button class="tab active" data-side="N">North</button>
+          <button class="tab" data-side="S">South</button>
+          <button class="tab" data-side="E">East</button>
+          <button class="tab" data-side="W">West</button>
+        </div>
+        <div id="draw"></div>
+        <div class="legend">
+          <div class="legend-item"><span class="sw" style="background:#fb923c"></span><div>Bottom plate (2x6 PT)</div></div>
+          <div class="legend-item"><span class="sw" style="background:#ef4444"></span><div>Double top plates (2x6)</div></div>
+          <div class="legend-item"><span class="sw" style="background:#fbbf24"></span><div>Studs @ 16" O.C. (2x6)</div></div>
+          <div class="legend-item"><span class="sw" style="background:#60a5fa"></span><div>King studs</div></div>
+          <div class="legend-item"><span class="sw" style="background:#a78bfa"></span><div>Jack studs</div></div>
+          <div class="legend-item"><span class="sw" style="background:#22c55e"></span><div>Header</div></div>
+          <div class="legend-item"><span class="sw" style="background:#f59e0b"></span><div>Sill (window)</div></div>
+          <div class="legend-item"><span class="sw" style="background:#fcd34d"></span><div>Cripple studs</div></div>
+          <div class="legend-item"><span class="sw" style="background:#67b7d1"></span><div>Window RO</div></div>
+          <div class="legend-item"><span class="sw" style="background:#c084fc"></span><div>Door RO</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Spans in inches
+    const L = 186, W = 176, H = 96; const studsOC = 16;
+
+    const sides = {
+      N: { span: L },
+      S: { span: L },
+      E: { span: W },
+      W: { span: W }
+    };
+
+    const drawRoot = document.getElementById('draw');
+
+    function drawSide(sideKey){
+      const s = sides[sideKey];
+      const width = 980, height = 460, margin = 60;
+      const pxPerIn = (width - margin*2) / s.span;
+      const vScale = pxPerIn;
+      const svgns = 'http://www.w3.org/2000/svg';
+
+      drawRoot.innerHTML = '';
+      const svg = document.createElementNS(svgns, 'svg'); svg.setAttribute('viewBox', `0 0 ${width} ${height}`); svg.style.width='100%';
+      const bg = document.createElementNS(svgns, 'rect'); bg.setAttribute('x',0); bg.setAttribute('y',0); bg.setAttribute('width',width); bg.setAttribute('height',height); bg.setAttribute('fill','#0f1318'); svg.appendChild(bg);
+
+      const baseY = height - margin; const leftX = margin; const rightX = width - margin; const wallHeightPx = H*vScale;
+
+      // Plates
+      const bp = document.createElementNS(svgns,'rect'); bp.setAttribute('x',leftX); bp.setAttribute('y',baseY-10); bp.setAttribute('width',s.span*pxPerIn); bp.setAttribute('height',10); bp.setAttribute('fill','#fb923c'); svg.appendChild(bp);
+      const tp1 = document.createElementNS(svgns,'rect'); tp1.setAttribute('x',leftX); tp1.setAttribute('y',baseY-wallHeightPx-6); tp1.setAttribute('width',s.span*pxPerIn); tp1.setAttribute('height',6); tp1.setAttribute('fill','#ef4444'); svg.appendChild(tp1);
+      const tp2 = document.createElementNS(svgns,'rect'); tp2.setAttribute('x',leftX); tp2.setAttribute('y',baseY-wallHeightPx-14); tp2.setAttribute('width',s.span*pxPerIn); tp2.setAttribute('height',6); tp2.setAttribute('fill','#ef4444'); svg.appendChild(tp2);
+
+      // Studs @ 16" O.C.
+      for(let pos=0; pos<=s.span; pos+=studsOC){
+        const x = Math.min(leftX + pos*pxPerIn, rightX);
+        const st = document.createElementNS(svgns,'rect'); st.setAttribute('x', x-3); st.setAttribute('y', baseY - wallHeightPx); st.setAttribute('width',6); st.setAttribute('height', wallHeightPx); st.setAttribute('fill','#fbbf24'); svg.appendChild(st);
+      }
+
+      // Title
+      const title = document.createElementNS(svgns,'text'); title.setAttribute('x',width/2); title.setAttribute('y',28); title.setAttribute('fill','#9cc1ff'); title.setAttribute('font-size','18'); title.setAttribute('font-weight','700'); title.setAttribute('text-anchor','middle'); title.textContent = `${sideKey} Wall – Elevation (16\" O.C., H 8'-0\")`; svg.appendChild(title);
+
+      drawRoot.appendChild(svg);
+    }
+
+    document.querySelectorAll('.tab').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active'); drawSide(btn.dataset.side);
+      });
+    });
+
+    drawSide('N');
+  </script>
+</body>
+</html>

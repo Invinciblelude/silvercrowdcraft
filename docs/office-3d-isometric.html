@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant – Office 3D Isometric (SVG)</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1400px; margin:0 auto; padding:20px 20px 120px}
+    .hero {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:16px; padding:28px; margin-bottom:24px}
+    .hero h1 {margin:0 0 6px; font-size:32px; color:#fff}
+    .hero p {margin:4px 0; color:#d9e3ff}
+    .panel {background:#12161b; border:2px solid #1f2630; border-radius:12px; padding:20px; margin-top:16px}
+    .btn {display:inline-block; background:#667eea; color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:600; margin-right:8px}
+    .legend {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:16px}
+    .legend-item {display:flex; align-items:center; gap:10px; background:#0f1318; padding:12px; border-radius:8px}
+    .swatch {width:18px; height:18px; border-radius:4px; border:2px solid #1f2630}
+    svg {width:100%; height:auto}
+  </style>
+</head>
+<body data-jsdom-page="office-3d-iso" data-jsdom-title="🧱 Office 3D Isometric">
+  <div class="container">
+    <div class="hero">
+      <h1>Office – 3D Isometric (SVG White Model)</h1>
+      <p>Dimensions: 12'-8" (152") x 11'-4" (136") • Plate height: 8'-0" (96") • Simple gable roof</p>
+      <p>Static SVG (no WebGL/CDN). Accurate proportions; labeled parts.</p>
+    </div>
+
+    <div class="panel">
+      <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="roofGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#e5e7eb"/>
+            <stop offset="100%" stop-color="#cbd5e1"/>
+          </linearGradient>
+        </defs>
+
+        <!-- isometric helpers (30deg) -->
+        <!-- scale factor pixels per inch -->
+        <script type="application/ecmascript"><![CDATA[
+          (function(){
+            const svgns = 'http://www.w3.org/2000/svg';
+            const root = document.currentScript.closest('svg');
+            const S = 1.8; // px per inch for this drawing
+            const cos30 = Math.cos(Math.PI/6), sin30 = Math.sin(Math.PI/6);
+            function iso(x,y,z){
+              const X = (x - z) * cos30;
+              const Y = y + (x + z) * sin30;
+              return [X, Y];
+            }
+            function poly(points, attrs){
+              const p = document.createElementNS(svgns,'polygon');
+              p.setAttribute('points', points.map(p=>p.join(',')).join(' '));
+              Object.entries(attrs||{}).forEach(([k,v])=>p.setAttribute(k,v));
+              root.appendChild(p);
+              return p;
+            }
+            function label(text,x,y){
+              const t = document.createElementNS(svgns,'text');
+              t.setAttribute('x', x); t.setAttribute('y', y); t.setAttribute('fill','#9cc1ff');
+              t.setAttribute('font-size','14'); t.setAttribute('font-weight','700');
+              t.textContent = text; root.appendChild(t);
+            }
+            // Office dims
+            const L = 152, W = 136, H = 96, slab = 4, roofH = 36; // simple roof rise
+            // Center model on canvas
+            const cx = 600, cy = 420;
+
+            function T(p){ return [cx + p[0]*S, cy + p[1]*S]; }
+
+            // Base corners (world coords)
+            const A = iso(-L/2, 0, -W/2), B = iso( L/2, 0, -W/2), C = iso( L/2, 0,  W/2), D = iso(-L/2, 0,  W/2);
+            const A1 = iso(-L/2, slab, -W/2), B1 = iso( L/2, slab, -W/2), C1 = iso( L/2, slab,  W/2), D1 = iso(-L/2, slab,  W/2);
+            // Top of wall
+            const A2 = iso(-L/2, slab+H, -W/2), B2 = iso( L/2, slab+H, -W/2), C2 = iso( L/2, slab+H,  W/2), D2 = iso(-L/2, slab+H,  W/2);
+            // Roof ridge along X (simple gable)
+            const ridgeY = slab+H+roofH;
+            const R1 = iso(0, ridgeY, -W/2), R2 = iso(0, ridgeY,  W/2);
+
+            // Foundation
+            poly([T(A),T(B),T(C),T(D)], {fill:'#94a3b8', opacity:'0.25'});
+            poly([T(A1),T(B1),T(C1),T(D1)], {fill:'#94a3b8'});
+            poly([T(A),T(B),T(B1),T(A1)], {fill:'#64748b'});
+            poly([T(B),T(C),T(C1),T(B1)], {fill:'#73839a'});
+            poly([T(C),T(D),T(D1),T(C1)], {fill:'#64748b'});
+            poly([T(D),T(A),T(A1),T(D1)], {fill:'#73839a'});
+
+            // Walls
+            const wallDark = '#e5e7eb', wallLight = '#f3f4f6';
+            // front face (A-B-B2-A2)
+            poly([T(A),T(B),T(B2),T(A2)], {fill:wallDark});
+            // right face (B-C-C2-B2)
+            poly([T(B),T(C),T(C2),T(B2)], {fill:wallLight});
+            // back face (D-C-C2-D2)
+            poly([T(D),T(C),T(C2),T(D2)], {fill:wallDark, opacity:'0.9'});
+            // left face (A-D-D2-A2)
+            poly([T(A),T(D),T(D2),T(A2)], {fill:wallLight});
+
+            // Roof (two planes)
+            const roof1 = [T(A2), T(B2), R1];
+            const roof2 = [T(D2), T(C2), R2];
+            poly(roof1, {fill:'url(#roofGrad)', stroke:'#94a3b8'});
+            poly(roof2, {fill:'url(#roofGrad)', stroke:'#94a3b8'});
+
+            // Labels
+            label('Roof (schematic)', cx+120, cy - (H+roofH)*S*0.7);
+            label('Walls 8\'‑0"', cx+220, cy - H*S*0.2);
+            label('Foundation 4" slab', cx-200, cy + 20);
+          })();
+        ]]></script>
+      </svg>
+
+      <div class="legend">
+        <div class="legend-item"><span class="swatch" style="background:#f3f4f6"></span><div>Walls (white model)</div></div>
+        <div class="legend-item"><span class="swatch" style="background:#94a3b8"></span><div>Foundation slab</div></div>
+        <div class="legend-item"><span class="swatch" style="background:#cbd5e1"></span><div>Roof mass (schematic)</div></div>
+      </div>
+
+      <div style="margin-top:16px">
+        <a class="btn" href="build_sequence_outputs/office_phase2_with_walls.obj" download>📦 Download 3D (OBJ)</a>
+        <a class="btn" href="cad_outputs/Office_framing.dxf" download>📥 Download 2D (DXF)</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

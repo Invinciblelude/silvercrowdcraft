@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant - Blueprint to 3D Viewer</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1800px; margin:0 auto; padding:20px 20px 100px}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:32px;
+      text-align:center;
+    }
+    .hero h1 {font-size:42px; font-weight:800; margin:0 0 16px; color:#fff}
+    .hero p {font-size:18px; opacity:0.95; margin:0; color:#e8eef5}
+    
+    .split-view {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin:24px 0;
+    }
+    @media (max-width: 1200px) {
+      .split-view {grid-template-columns:1fr}
+    }
+    
+    .view-panel {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:24px;
+      min-height:600px;
+    }
+    .panel-title {
+      font-size:24px;
+      font-weight:700;
+      color:#9cc1ff;
+      margin:0 0 16px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .panel-subtitle {
+      font-size:14px;
+      color:#8a98ab;
+      margin:0 0 20px;
+    }
+    
+    .blueprint-viewer {
+      background:#0f1318;
+      border-radius:8px;
+      padding:16px;
+      position:relative;
+      cursor:crosshair;
+    }
+    .blueprint-img {
+      width:100%;
+      height:auto;
+      border-radius:4px;
+      border:2px solid #667eea;
+    }
+    
+    .diagram-3d {
+      background:#0f1318;
+      border-radius:8px;
+      padding:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:600px;
+    }
+    .diagram-3d svg {
+      width:100%;
+      max-width:100%;
+      height:auto;
+    }
+    
+    .tabs {
+      display:flex;
+      gap:16px;
+      margin-bottom:24px;
+      border-bottom:2px solid #1f2630;
+      flex-wrap:wrap;
+      overflow-x:auto;
+    }
+    .tab {
+      padding:12px 20px;
+      background:transparent;
+      border:none;
+      color:#8a98ab;
+      cursor:pointer;
+      font-size:15px;
+      font-weight:600;
+      border-bottom:3px solid transparent;
+      transition:all 0.2s;
+      white-space:nowrap;
+    }
+    .tab:hover {color:#9cc1ff}
+    .tab.active {color:#9cc1ff; border-bottom-color:#667eea}
+    
+    .tab-content {display:none}
+    .tab-content.active {display:block}
+    
+    .highlight-box {
+      position:absolute;
+      border:3px solid #4ade80;
+      background:rgba(74,222,128,0.2);
+      pointer-events:none;
+      border-radius:4px;
+    }
+    
+    .dimension-label {
+      background:#667eea;
+      color:#fff;
+      padding:6px 12px;
+      border-radius:6px;
+      font-size:13px;
+      font-weight:700;
+      display:inline-block;
+      margin:4px;
+    }
+    
+    .info-box {
+      background:#0f1318;
+      border-left:4px solid #667eea;
+      padding:16px;
+      border-radius:8px;
+      margin:16px 0;
+    }
+    .info-box h4 {
+      margin:0 0 8px;
+      color:#9cc1ff;
+      font-size:16px;
+    }
+    .info-box p {
+      margin:4px 0;
+      color:#a9b6c6;
+      font-size:14px;
+      line-height:1.6;
+    }
+    
+    .zoom-controls {
+      position:absolute;
+      top:16px;
+      right:16px;
+      display:flex;
+      gap:8px;
+      z-index:10;
+    }
+    .zoom-btn {
+      width:36px;
+      height:36px;
+      background:#667eea;
+      border:none;
+      border-radius:6px;
+      color:#fff;
+      font-size:20px;
+      cursor:pointer;
+      transition:all 0.2s;
+    }
+    .zoom-btn:hover {
+      background:#764ba2;
+      transform:scale(1.1);
+    }
+  </style>
+</head>
+<body data-jsdom-page="blueprint-3d" data-jsdom-title="📐 Blueprint to 3D">
+  
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>📐 Blueprint to 3D Viewer</h1>
+      <p>See your actual blueprints side-by-side with 3D visualizations of each section</p>
+      <p style="margin-top:12px; font-size:16px; opacity:0.9">Click on sections of the blueprint to highlight them, see the 3D view update in real-time</p>
+    </div>
+
+    <!-- Tabs for different areas -->
+    <div class="tabs">
+      <button class="tab active" onclick="showSection('full-house')">🏠 Full House</button>
+      <button class="tab" onclick="showSection('floor-plan')">📐 Floor Plan</button>
+      <button class="tab" onclick="showSection('foundation')">🏗️ Foundation</button>
+      <button class="tab" onclick="showSection('wall-framing')">🧱 Wall Framing</button>
+      <button class="tab" onclick="showSection('perimeter')">🔷 Perimeter</button>
+      <button class="tab" onclick="showSection('shear-walls')">🔧 Shear Walls</button>
+      <button class="tab" onclick="showSection('roof-framing')">🏠 Roof Framing</button>
+      <button class="tab" onclick="showSection('elevations')">📏 Elevations</button>
+    </div>
+
+    <!-- Full House Tab -->
+    <div id="full-house" class="tab-content active">
+      <div class="split-view">
+        <!-- Left: Blueprint -->
+        <div class="view-panel">
+          <div class="panel-title">
+            <span>📄 Your Actual Blueprint</span>
+          </div>
+          <div class="panel-subtitle">Floor Plan - Sheet 07 (A1.01)</div>
+          
+          <div class="blueprint-viewer">
+            <div class="zoom-controls">
+              <button class="zoom-btn" onclick="zoomBlueprint('in')" title="Zoom In">+</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('out')" title="Zoom Out">−</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('reset')" title="Reset">⟲</button>
+            </div>
+            <img src="../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg" 
+                 class="blueprint-img" 
+                 id="main-blueprint"
+                 alt="Floor Plan">
+          </div>
+          
+          <div class="info-box">
+            <h4>🔍 What You're Looking At:</h4>
+            <p><strong>Type:</strong> Proposed Floor Plan (bird's eye view from above)</p>
+            <p><strong>Total Size:</strong> 3,200 SF new addition + 2,611 SF existing = 5,811 SF total</p>
+            <p><strong>Key Features:</strong> Master bedroom wing (NE), Great room (center), Kitchen, Secondary bedrooms, Office, Entry, Covered patio</p>
+            <p><strong>How to Read:</strong> Each room is labeled. Dimensions are in feet and inches (e.g., 15'-6" = 15 feet, 6 inches). Doors are shown as curved lines. Windows are openings in walls.</p>
+          </div>
+          
+          <div style="margin-top:20px">
+            <h4 style="color:#9cc1ff; margin:0 0 12px">📏 Key Dimensions (from blueprint):</h4>
+            <div style="display:flex; gap:8px; flex-wrap:wrap">
+              <span class="dimension-label">Great Room: ≈ 24' x 30'</span>
+              <span class="dimension-label">Master BR: ≈ 15' x 14'</span>
+              <span class="dimension-label">Kitchen: ≈ 14' x 18'</span>
+              <span class="dimension-label">Bedroom 2: ≈ 12' x 11'</span>
+              <span class="dimension-label">Bedroom 3: ≈ 11' x 12'</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3D View -->
+        <div class="view-panel">
+          <div class="panel-title">
+            <span>🏠 3D Visualization</span>
+          </div>
+          <div class="panel-subtitle">Isometric view showing how walls & roof come together</div>
+          
+          <div class="diagram-3d">
+            <svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#12161b;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              
+              <rect width="1000" height="800" fill="url(#skyGrad)"/>
+              
+              <!-- Title -->
+              <text x="500" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#9cc1ff">
+                3D ISOMETRIC VIEW - YOUR HOUSE
+              </text>
+              <text x="500" y="65" text-anchor="middle" font-size="14" fill="#8a98ab">
+                (Rotated 45° so you can see multiple sides at once)
+              </text>
+              
+              <!-- Foundation/Slab (bottom, dark gray) -->
+              <path d="M 150 650 L 850 650 L 950 550 L 250 550 Z" fill="#4a5568" stroke="#2d3748" stroke-width="3" opacity="0.8"/>
+              <text x="600" y="610" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8eef5">FOUNDATION SLAB</text>
+              
+              <!-- Main house walls - complex shape matching floor plan -->
+              <!-- Great Room section (center-right, largest) -->
+              <path d="M 400 650 L 400 350 L 500 300 L 500 600 Z" fill="#fb923c" stroke="#000" stroke-width="2" opacity="0.85"/>
+              <path d="M 700 650 L 700 350 L 800 300 L 800 600 Z" fill="#f87171" stroke="#000" stroke-width="2" opacity="0.85"/>
+              <path d="M 400 350 L 700 350 L 800 300 L 500 300 Z" fill="#fbbf24" stroke="#000" stroke-width="2" opacity="0.85"/>
+              
+              <!-- Master bedroom wing (right side extension) -->
+              <path d="M 700 450 L 700 350 L 800 300 L 800 400 Z" fill="#f87171" stroke="#000" stroke-width="2" opacity="0.85"/>
+              <path d="M 700 450 L 850 450 L 950 350 L 800 350 Z" fill="#fb923c" stroke="#000" stroke-width="2" opacity="0.85"/>
+              
+              <!-- Secondary bedrooms (left side) -->
+              <path d="M 250 550 L 250 400 L 350 350 L 350 500 Z" fill="#fb923c" stroke="#000" stroke-width="2" opacity="0.85"/>
+              <path d="M 250 400 L 400 400 L 500 350 L 350 350 Z" fill="#fbbf24" stroke="#000" stroke-width="2" opacity="0.85"/>
+              
+              <!-- Interior walls (shown as thinner lines inside) -->
+              <line x1="550" y1="650" x2="550" y2="360" stroke="#667eea" stroke-width="3" opacity="0.7"/>
+              <line x1="450" y1="500" x2="650" y2="500" stroke="#667eea" stroke-width="3" opacity="0.7"/>
+              
+              <!-- Windows (blue translucent rectangles) -->
+              <rect x="420" y="420" width="80" height="60" fill="#67b7d1" opacity="0.5" stroke="#fff" stroke-width="2"/>
+              <text x="460" y="455" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">WINDOW</text>
+              
+              <rect x="600" y="420" width="80" height="60" fill="#67b7d1" opacity="0.5" stroke="#fff" stroke-width="2"/>
+              <text x="640" y="455" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">WINDOW</text>
+              
+              <!-- Roof structure (top) -->
+              <!-- Main ridge line (peak) -->
+              <line x1="300" y1="220" x2="900" y2="220" stroke="#f87171" stroke-width="6"/>
+              
+              <!-- Left roof plane (light blue transparent) -->
+              <path d="M 250 400 L 300 220 L 900 220 L 850 400 Z" fill="#9cc1ff" stroke="#000" stroke-width="2" opacity="0.6"/>
+              
+              <!-- Right roof plane (darker blue transparent) -->
+              <path d="M 300 220 L 350 350 L 950 350 L 900 220 Z" fill="#667eea" stroke="#000" stroke-width="2" opacity="0.6"/>
+              
+              <!-- Roof rafters (visible structural lines) -->
+              <line x1="300" y1="220" x2="250" y2="400" stroke="#fbbf24" stroke-width="2"/>
+              <line x1="400" y1="220" x2="350" y2="400" stroke="#fbbf24" stroke-width="2"/>
+              <line x1="500" y1="220" x2="450" y2="400" stroke="#fbbf24" stroke-width="2"/>
+              <line x1="600" y1="220" x2="550" y2="400" stroke="#fbbf24" stroke-width="2"/>
+              <line x1="700" y1="220" x2="650" y2="400" stroke="#fbbf24" stroke-width="2"/>
+              <line x1="800" y1="220" x2="750" y2="400" stroke="#fbbf24" stroke-width="2"/>
+              
+              <!-- Labels with arrows -->
+              <text x="150" y="480" font-size="14" font-weight="bold" fill="#fb923c">Exterior Walls</text>
+              <line x1="200" y1="485" x2="250" y2="500" stroke="#fb923c" stroke-width="2"/>
+              
+              <text x="520" y="650" font-size="14" font-weight="bold" fill="#667eea">Interior Walls</text>
+              <line x1="550" y1="640" x2="550" y2="600" stroke="#667eea" stroke-width="2"/>
+              
+              <text x="920" y="280" font-size="14" font-weight="bold" fill="#9cc1ff">Roof</text>
+              <line x1="920" y1="290" x2="900" y2="320" stroke="#9cc1ff" stroke-width="2"/>
+              
+              <text x="600" y="665" font-size="14" font-weight="bold" fill="#4a5568">Foundation</text>
+              
+              <!-- Section labels on house -->
+              <text x="300" y="480" font-size="13" font-weight="bold" fill="#fff">BEDROOM</text>
+              <text x="550" y="500" font-size="13" font-weight="bold" fill="#fff">GREAT ROOM</text>
+              <text x="760" y="380" font-size="13" font-weight="bold" fill="#fff">MASTER</text>
+              
+              <!-- Dimension arrows -->
+              <line x1="150" y1="680" x2="850" y2="680" stroke="#fb923c" stroke-width="2"/>
+              <line x1="150" y1="675" x2="150" y2="685" stroke="#fb923c" stroke-width="2"/>
+              <line x1="850" y1="675" x2="850" y2="685" stroke="#fb923c" stroke-width="2"/>
+              <text x="500" y="710" text-anchor="middle" font-size="16" font-weight="bold" fill="#fb923c">≈ 70' WIDE (approximate)</text>
+            </svg>
+          </div>
+          
+          <div class="info-box">
+            <h4>🎨 Understanding the 3D View:</h4>
+            <p><strong>Orange/Red walls:</strong> Exterior perimeter walls (2x6 studs, 8' tall)</p>
+            <p><strong>Blue walls:</strong> Interior load-bearing walls (support roof)</p>
+            <p><strong>Yellow lines:</strong> Roof rafters (2x8 or 2x10, spaced 24" apart)</p>
+            <p><strong>Light blue planes:</strong> Roof surfaces (will be covered with plywood sheathing)</p>
+            <p><strong>Gray base:</strong> Foundation slab (concrete, 4-6" thick)</p>
+          </div>
+        </div>
+      </div>
+      
+      <div style="background:#0f1318; padding:24px; border-radius:12px; margin-top:24px; border-left:4px solid #4ade80">
+        <h3 style="margin:0 0 16px; color:#4ade80">💡 How to Use This Tool:</h3>
+        <ol style="color:#a9b6c6; line-height:2; margin:0">
+          <li><strong>Look at the blueprint (left)</strong> - This is YOUR actual plan</li>
+          <li><strong>Find a room</strong> - Like "BEDROOM 2" or "KITCHEN"</li>
+          <li><strong>Look at the 3D view (right)</strong> - See how that room looks in 3D with walls and roof</li>
+          <li><strong>Use tabs above</strong> - Switch between floor plan, foundation, shear walls, roof, elevations</li>
+          <li><strong>Zoom controls</strong> - Click +/- buttons on blueprint to zoom in/out for details</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Floor Plan Tab -->
+    <div id="floor-plan" class="tab-content">
+      <div class="split-view">
+        <div class="view-panel">
+          <div class="panel-title">📐 Floor Plan Blueprint</div>
+          <div class="panel-subtitle">Sheet 07 - Proposed Floor Plan Revised</div>
+          <div class="blueprint-viewer">
+            <div class="zoom-controls">
+              <button class="zoom-btn" onclick="zoomBlueprint('in')">+</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('out')">−</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('reset')">⟲</button>
+            </div>
+            <img src="../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg" class="blueprint-img" alt="Floor Plan">
+          </div>
+        </div>
+        
+        <div class="view-panel">
+          <div class="panel-title">🏠 3D Floor Layout</div>
+          <div class="panel-subtitle">Looking down at walls (roof removed)</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+              <rect width="900" height="700" fill="#0a0e27"/>
+              <text x="450" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                FLOOR PLAN - TOP-DOWN VIEW (No Roof)
+              </text>
+              
+              <!-- Foundation outline -->
+              <rect x="100" y="100" width="700" height="500" fill="#4a5568" opacity="0.2" stroke="#2d3748" stroke-width="2"/>
+              
+              <!-- Exterior walls (thick orange/red) -->
+              <rect x="100" y="100" width="700" height="30" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <rect x="100" y="570" width="700" height="30" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <rect x="100" y="100" width="30" height="500" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <rect x="770" y="100" width="30" height="500" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              
+              <!-- Interior walls (thinner yellow/blue) -->
+              <!-- Vertical divider (center) -->
+              <rect x="440" y="130" width="20" height="440" fill="#667eea" stroke="#000" stroke-width="1"/>
+              
+              <!-- Horizontal dividers -->
+              <rect x="130" y="280" width="300" height="15" fill="#fbbf24" stroke="#000" stroke-width="1"/>
+              <rect x="480" y="350" width="280" height="15" fill="#fbbf24" stroke="#000" stroke-width="1"/>
+              
+              <!-- Room labels -->
+              <text x="260" y="200" font-size="18" font-weight="bold" fill="#e8eef5">BEDROOM 2</text>
+              <text x="260" y="460" font-size="18" font-weight="bold" fill="#e8eef5">GREAT ROOM</text>
+              <text x="600" y="240" font-size="18" font-weight="bold" fill="#e8eef5">MASTER BR</text>
+              <text x="600" y="470" font-size="18" font-weight="bold" fill="#e8eef5">KITCHEN</text>
+              
+              <!-- Door openings (dashed) -->
+              <rect x="340" y="280" width="50" height="15" fill="none" stroke="#67b7d1" stroke-width="2" stroke-dasharray="3,3"/>
+              <rect x="580" y="350" width="50" height="15" fill="none" stroke="#67b7d1" stroke-width="2" stroke-dasharray="3,3"/>
+              
+              <!-- Windows (on exterior walls) -->
+              <rect x="200" y="100" width="80" height="30" fill="#67b7d1" opacity="0.6" stroke="#fff" stroke-width="2"/>
+              <rect x="500" y="100" width="100" height="30" fill="#67b7d1" opacity="0.6" stroke="#fff" stroke-width="2"/>
+              
+              <!-- Dimension line -->
+              <line x1="100" y1="650" x2="800" y2="650" stroke="#fb923c" stroke-width="2"/>
+              <text x="450" y="680" text-anchor="middle" font-size="15" font-weight="bold" fill="#fb923c">≈ 70' LENGTH</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foundation Tab -->
+    <div id="foundation" class="tab-content">
+      <div class="split-view">
+        <div class="view-panel">
+          <div class="panel-title">🏗️ Foundation Plan Blueprint</div>
+          <div class="panel-subtitle">Sheet 12 - Foundation Plan</div>
+          <div class="blueprint-viewer">
+            <div class="zoom-controls">
+              <button class="zoom-btn" onclick="zoomBlueprint('in')">+</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('out')">−</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('reset')">⟲</button>
+            </div>
+            <img src="../blueprints/classified/STRUCT/12-Structural-FoundationPlan.jpg" class="blueprint-img" alt="Foundation Plan">
+          </div>
+          <div class="info-box">
+            <h4>What This Shows:</h4>
+            <p><strong>Foundation slab:</strong> Concrete pad that house sits on (typically 4-6" thick)</p>
+            <p><strong>Footings:</strong> Deeper concrete under walls for support</p>
+            <p><strong>Anchor bolts:</strong> Circles showing where bolts stick up to attach walls</p>
+            <p><strong>Rebar:</strong> Steel reinforcement grid inside concrete</p>
+          </div>
+        </div>
+        
+        <div class="view-panel">
+          <div class="panel-title">🏗️ 3D Foundation View</div>
+          <div class="panel-subtitle">Underground perspective</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+              <rect width="900" height="600" fill="#0a0e27"/>
+              <text x="450" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                FOUNDATION - 3D CUTAWAY VIEW
+              </text>
+              
+              <!-- Ground level (dirt) -->
+              <rect x="50" y="350" width="800" height="200" fill="#8b7355" opacity="0.6"/>
+              <text x="450" y="460" text-anchor="middle" font-size="16" fill="#e8eef5">GROUND / DIRT</text>
+              
+              <!-- Foundation slab (concrete, 3D view) -->
+              <path d="M 150 350 L 750 350 L 800 300 L 200 300 Z" fill="#6b7280" stroke="#374151" stroke-width="3"/>
+              <text x="450" y="330" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">CONCRETE SLAB (4-6" thick)</text>
+              
+              <!-- Perimeter footings (deeper concrete) -->
+              <rect x="150" y="350" width="600" height="60" fill="#4a5568" stroke="#000" stroke-width="2"/>
+              <text x="450" y="385" text-anchor="middle" font-size="14" fill="#e8eef5">FOOTING (12" deep)</text>
+              
+              <!-- Anchor bolts sticking up -->
+              <circle cx="200" cy="300" r="4" fill="#fb923c"/>
+              <line x1="200" y1="300" x2="200" y2="260" stroke="#fb923c" stroke-width="3"/>
+              <circle cx="300" cy="300" r="4" fill="#fb923c"/>
+              <line x1="300" y1="300" x2="300" y2="260" stroke="#fb923c" stroke-width="3"/>
+              <circle cx="400" cy="300" r="4" fill="#fb923c"/>
+              <line x1="400" y1="300" x2="400" y2="260" stroke="#fb923c" stroke-width="3"/>
+              
+              <text x="200" y="250" text-anchor="middle" font-size="12" fill="#fb923c" font-weight="bold">Anchor Bolts</text>
+              
+              <!-- Rebar grid (shown inside slab) -->
+              <line x1="180" y1="320" x2="720" y2="320" stroke="#f87171" stroke-width="1" opacity="0.7"/>
+              <line x1="200" y1="305" x2="200" y2="340" stroke="#f87171" stroke-width="1" opacity="0.7"/>
+              <line x1="300" y1="305" x2="300" y2="340" stroke="#f87171" stroke-width="1" opacity="0.7"/>
+              <line x1="400" y1="305" x2="400" y2="340" stroke="#f87171" stroke-width="1" opacity="0.7"/>
+              <line x1="500" y1="305" x2="500" y2="340" stroke="#f87171" stroke-width="1" opacity="0.7"/>
+              
+              <text x="750" y="325" font-size="12" fill="#f87171">Rebar grid</text>
+              
+              <!-- Labels -->
+              <line x1="850" y1="300" x2="820" y2="325" stroke="#6b7280" stroke-width="2"/>
+              <text x="860" y="305" font-size="14" fill="#6b7280" font-weight="bold">Slab Surface</text>
+              
+              <line x1="850" y1="380" x2="820" y2="380" stroke="#4a5568" stroke-width="2"/>
+              <text x="860" y="385" font-size="14" fill="#4a5568" font-weight="bold">Footing</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wall Framing Tab -->
+    <div id="wall-framing" class="tab-content">
+      <div class="split-view">
+        <div class="view-panel">
+          <div class="panel-title">🧱 Wall Framing Basics</div>
+          <div class="panel-subtitle">From Floor Plans - How walls are constructed</div>
+          <div class="blueprint-viewer">
+            <div class="zoom-controls">
+              <button class="zoom-btn" onclick="zoomBlueprint('in')">+</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('out')">−</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('reset')">⟲</button>
+            </div>
+            <img src="../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg" class="blueprint-img" alt="Floor Plan">
+          </div>
+          <div class="info-box">
+            <h4>What This Shows:</h4>
+            <p><strong>Wall lines:</strong> Every line on this plan represents a wall</p>
+            <p><strong>Wall thickness:</strong> Exterior walls thicker (2x6), interior thinner (2x4)</p>
+            <p><strong>Openings:</strong> Gaps in lines = doors and windows</p>
+            <p><strong>Dimensions:</strong> Numbers tell you exact wall locations</p>
+          </div>
+        </div>
+        
+        <div class="view-panel">
+          <div class="panel-title">🧱 Exterior Wall - Cross Section</div>
+          <div class="panel-subtitle">2x6 construction, 8'-0" height</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+              <rect width="900" height="600" fill="#0a0e27"/>
+              <text x="450" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                EXTERIOR WALL FRAMING - CROSS SECTION VIEW
+              </text>
+              
+              <!-- Foundation -->
+              <rect x="50" y="500" width="800" height="80" fill="#4a5568" stroke="#2d3748" stroke-width="3"/>
+              <text x="450" y="565" text-anchor="middle" font-size="16" font-weight="bold" fill="#e8eef5">FOUNDATION</text>
+              
+              <!-- Bottom Plate -->
+              <rect x="100" y="470" width="700" height="30" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <text x="450" y="492" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">BOTTOM PLATE (2x6)</text>
+              
+              <!-- Anchor Bolt -->
+              <line x1="150" y1="470" x2="150" y2="450" stroke="#f87171" stroke-width="4"/>
+              <circle cx="150" cy="450" r="8" fill="#f87171"/>
+              <text x="150" y="440" text-anchor="middle" font-size="14" font-weight="bold" fill="#f87171">ANCHOR BOLT</text>
+              
+              <!-- Studs (spaced 16" O.C.) -->
+              <rect x="140" y="200" width="40" height="270" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="270" y="200" width="40" height="270" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="400" y="200" width="40" height="270" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="530" y="200" width="40" height="270" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="660" y="200" width="40" height="270" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              
+              <!-- Spacing indicator -->
+              <line x1="160" y1="150" x2="290" y2="150" stroke="#667eea" stroke-width="2" stroke-dasharray="5,5"/>
+              <text x="225" y="145" text-anchor="middle" font-size="16" font-weight="bold" fill="#667eea">16" SPACING</text>
+              
+              <!-- Top Plates -->
+              <rect x="100" y="150" width="700" height="25" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <rect x="100" y="175" width="700" height="25" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <text x="750" y="170" font-size="16" font-weight="bold" fill="#fff">Double</text>
+              <text x="750" y="193" font-size="16" font-weight="bold" fill="#fff">Top Plate</text>
+              
+              <!-- Exterior Sheathing -->
+              <rect x="95" y="200" width="15" height="270" fill="#d4a574" stroke="#8b7355" stroke-width="3"/>
+              <text x="60" y="335" font-size="14" font-weight="bold" fill="#d4a574" transform="rotate(-90 60 335)">EXTERIOR SHEATHING</text>
+              
+              <!-- Insulation -->
+              <rect x="110" y="200" width="30" height="270" fill="#9cc1ff" opacity="0.4" stroke="#667eea" stroke-width="2"/>
+              <text x="125" y="335" font-size="12" font-weight="bold" fill="#667eea" transform="rotate(-90 125 335)">R-19 INSULATION</text>
+              
+              <!-- Interior Drywall -->
+              <rect x="720" y="200" width="15" height="270" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+              <text x="760" y="335" font-size="14" font-weight="bold" fill="#e8eef5" transform="rotate(-90 760 335)">DRYWALL</text>
+              
+              <!-- Height dimension -->
+              <line x1="850" y1="500" x2="850" y2="200" stroke="#4ade80" stroke-width="3"/>
+              <text x="865" y="350" font-size="18" font-weight="bold" fill="#4ade80" transform="rotate(-90 865 350)">8'-0" HEIGHT</text>
+              
+              <!-- Components Legend -->
+              <line x1="200" y1="100" x2="250" y2="100" stroke="#fbbf24" stroke-width="8"/>
+              <text x="260" y="108" font-size="14" font-weight="bold" fill="#fbbf24">= 2x6 STUD</text>
+              
+              <rect x="100" y="50" width="50" height="30" fill="#fb923c"/>
+              <text x="160" y="68" font-size="14" font-weight="bold" fill="#e8eef5">= BOTTOM PLATE</text>
+              
+              <rect x="350" y="50" width="80" height="25" fill="#f87171"/>
+              <text x="440" y="65" font-size="14" font-weight="bold" fill="#e8eef5">= TOP PLATES</text>
+            </svg>
+          </div>
+          
+          <div class="info-box">
+            <h4>Exterior Wall Construction:</h4>
+            <p><strong>Bottom Plate:</strong> Sits on foundation, bolted every 6 feet</p>
+            <p><strong>Studs:</strong> 2x6 boards spaced 16" apart (center to center)</p>
+            <p><strong>Top Plates:</strong> Double 2x6 boards - ties everything together</p>
+            <p><strong>Sheathing:</strong> OSB or plywood on exterior side (weather barrier)</p>
+            <p><strong>Insulation:</strong> R-19 fiberglass batts between studs</p>
+            <p><strong>Drywall:</strong> Interior finish, 1/2" thick</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Second row: Interior wall and Window opening -->
+      <div class="split-view" style="margin-top:24px">
+        <div class="view-panel">
+          <div class="panel-title">🚪 Wall with Window Opening</div>
+          <div class="panel-subtitle">Shows header, king/jack studs, cripples</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+              <rect width="900" height="600" fill="#0a0e27"/>
+              <text x="450" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                WALL FRAMING WITH WINDOW OPENING - DETAIL VIEW
+              </text>
+              
+              <!-- Foundation -->
+              <rect x="50" y="500" width="800" height="80" fill="#4a5568" stroke="#2d3748" stroke-width="3"/>
+              
+              <!-- Bottom Plate -->
+              <rect x="100" y="460" width="700" height="35" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              
+              <!-- King Stud (left) -->
+              <rect x="180" y="200" width="40" height="260" fill="#9cc1ff" stroke="#000" stroke-width="3"/>
+              <text x="200" y="335" text-anchor="middle" font-size="16" font-weight="bold" fill="#000" transform="rotate(-90 200 335)">KING STUD</text>
+              
+              <!-- Jack Stud (left) -->
+              <rect x="220" y="360" width="35" height="100" fill="#9cc1ff" stroke="#000" stroke-width="2"/>
+              <text x="237" y="420" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">JACK</text>
+              
+              <!-- Header -->
+              <rect x="220" y="280" width="280" height="80" fill="#4ade80" stroke="#000" stroke-width="4"/>
+              <text x="360" y="325" text-anchor="middle" font-size="20" font-weight="bold" fill="#000">HEADER (2x8)</text>
+              
+              <!-- Jack Stud (right) -->
+              <rect x="525" y="360" width="35" height="100" fill="#9cc1ff" stroke="#000" stroke-width="2"/>
+              <text x="542" y="420" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">JACK</text>
+              
+              <!-- King Stud (right) -->
+              <rect x="560" y="200" width="40" height="260" fill="#9cc1ff" stroke="#000" stroke-width="3"/>
+              <text x="580" y="335" text-anchor="middle" font-size="16" font-weight="bold" fill="#000" transform="rotate(-90 580 335)">KING STUD</text>
+              
+              <!-- Regular Studs (far left) -->
+              <rect x="140" y="200" width="40" height="260" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              
+              <!-- Regular Studs (far right) -->
+              <rect x="720" y="200" width="40" height="260" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              
+              <!-- Cripple Studs (above header) -->
+              <rect x="310" y="200" width="30" height="80" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <rect x="430" y="200" width="30" height="80" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <text x="360" y="245" text-anchor="middle" font-size="12" font-weight="bold" fill="#000">CRIPPLE STUDS</text>
+              
+              <!-- Top Plates -->
+              <rect x="100" y="150" width="700" height="25" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <rect x="100" y="175" width="700" height="25" fill="#f87171" stroke="#000" stroke-width="2"/>
+              
+              <!-- Window Sill (bottom of window) -->
+              <rect x="220" y="360" width="340" height="25" fill="#d4a574" stroke="#000" stroke-width="2"/>
+              <text x="390" y="377" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">SILL</text>
+              
+              <!-- Window Opening (translucent) -->
+              <rect x="225" y="280" width="330" height="80" fill="#67b7d1" opacity="0.3" stroke="#667eea" stroke-width="4" stroke-dasharray="10,5"/>
+              <text x="390" y="325" text-anchor="middle" font-size="18" font-weight="bold" fill="#667eea">WINDOW OPENING</text>
+              
+              <!-- Dimension lines -->
+              <line x1="200" y1="480" x2="560" y2="480" stroke="#9cc1ff" stroke-width="2"/>
+              <text x="380" y="515" text-anchor="middle" font-size="16" font-weight="bold" fill="#9cc1ff">ROUGH OPENING WIDTH</text>
+              
+              <line x1="250" y1="280" x2="250" y2="440" stroke="#4ade80" stroke-width="2"/>
+              <text x="270" y="360" text-anchor="middle" font-size="14" font-weight="bold" fill="#4ade80" transform="rotate(-90 270 360)">HEADER HEIGHT</text>
+              
+              <!-- Arrows and labels -->
+              <line x1="70" y1="330" x2="200" y2="330" stroke="#9cc1ff" stroke-width="2"/>
+              <text x="70" y="325" text-anchor="middle" font-size="14" font-weight="bold" fill="#9cc1ff">King</text>
+              <text x="70" y="340" text-anchor="middle" font-size="12" fill="#9cc1ff">Stud</text>
+              
+              <line x1="835" y1="420" x2="560" y2="410" stroke="#9cc1ff" stroke-width="2"/>
+              <text x="835" y="415" text-anchor="start" font-size="14" font-weight="bold" fill="#9cc1ff">Jack</text>
+              <text x="835" y="430" text-anchor="start" font-size="12" fill="#9cc1ff">Stud</text>
+              
+              <line x1="835" y1="240" x2="360" y2="280" stroke="#4ade80" stroke-width="2"/>
+              <text x="835" y="235" text-anchor="start" font-size="14" font-weight="bold" fill="#4ade80">Header</text>
+              <text x="835" y="250" text-anchor="start" font-size="12" fill="#4ade80">Carries load</text>
+              
+              <!-- Height dimension -->
+              <line x1="820" y1="500" x2="820" y2="200" stroke="#4ade80" stroke-width="3"/>
+              <text x="835" y="350" font-size="18" font-weight="bold" fill="#4ade80" transform="rotate(-90 835 350)">8'-0"</text>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="view-panel">
+          <div class="panel-title">🔨 Interior Non-Load-Bearing Wall</div>
+          <div class="panel-subtitle">Simple room divider, 2x4 construction</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+              <rect width="900" height="600" fill="#0a0e27"/>
+              <text x="450" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                INTERIOR WALL - NON-LOAD-BEARING
+              </text>
+              
+              <!-- Floor -->
+              <rect x="50" y="520" width="800" height="60" fill="#6b7280" stroke="#2d3748" stroke-width="3"/>
+              <text x="450" y="565" text-anchor="middle" font-size="16" font-weight="bold" fill="#e8eef5">FLOOR</text>
+              
+              <!-- Bottom Plate -->
+              <rect x="200" y="490" width="500" height="30" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <text x="450" y="512" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">BOTTOM PLATE (2x4)</text>
+              
+              <!-- Studs -->
+              <rect x="240" y="200" width="35" height="290" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="340" y="200" width="35" height="290" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="440" y="200" width="35" height="290" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="540" y="200" width="35" height="290" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="640" y="200" width="35" height="290" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              
+              <!-- Spacing -->
+              <line x1="257" y1="150" x2="357" y2="150" stroke="#667eea" stroke-width="2" stroke-dasharray="5,5"/>
+              <text x="307" y="145" text-anchor="middle" font-size="16" font-weight="bold" fill="#667eea">16" SPACING</text>
+              
+              <!-- Top Plates -->
+              <rect x="200" y="155" width="500" height="20" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <rect x="200" y="175" width="500" height="20" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <text x="720" y="175" font-size="16" font-weight="bold" fill="#fff">Double</text>
+              
+              <!-- Interior Drywall (both sides) -->
+              <rect x="190" y="200" width="10" height="290" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+              <rect x="700" y="200" width="10" height="290" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+              <text x="150" y="345" font-size="12" font-weight="bold" fill="#e8eef5" transform="rotate(-90 150 345)">DRYWALL</text>
+              <text x="750" y="345" font-size="12" font-weight="bold" fill="#e8eef5" transform="rotate(-90 750 345)">DRYWALL</text>
+              
+              <!-- Height -->
+              <line x1="770" y1="520" x2="770" y2="200" stroke="#4ade80" stroke-width="3"/>
+              <text x="785" y="360" font-size="18" font-weight="bold" fill="#4ade80" transform="rotate(-90 785 360)">8'-0"</text>
+              
+              <!-- Notes -->
+              <rect x="100" y="50" width="700" height="80" fill="#0f1318" stroke="#667eea" stroke-width="2" rx="8"/>
+              <text x="450" y="75" text-anchor="middle" font-size="18" font-weight="bold" fill="#9cc1ff">INTERIOR WALL FEATURES</text>
+              <text x="150" y="105" font-size="14" fill="#a9b6c6">✓ Uses 2x4 studs (cheaper, thinner)</text>
+              <text x="150" y="125" font-size="14" fill="#a9b6c6">✓ Same 16" spacing as exterior</text>
+              <text x="500" y="105" font-size="14" fill="#a9b6c6">✓ No sheathing needed</text>
+              <text x="500" y="125" font-size="14" fill="#a9b6c6">✓ Drywall on both sides</text>
+              
+              <!-- Comparison -->
+              <line x1="100" y1="120" x2="100" y2="520" stroke="#667eea" stroke-width="2" stroke-dasharray="5,5"/>
+              <line x1="150" y1="490" x2="150" y2="200" stroke="#667eea" stroke-width="2" stroke-dasharray="5,5"/>
+              <text x="50" y="360" text-anchor="start" font-size="14" fill="#667eea" transform="rotate(-90 50 360)">Thinner!</text>
+            </svg>
+          </div>
+          
+          <div class="info-box">
+            <h4>Interior Wall Features:</h4>
+            <p><strong>2x4 studs:</strong> Lighter and cheaper than exterior 2x6</p>
+            <p><strong>No sheathing:</strong> Doesn't need weather protection</p>
+            <p><strong>No insulation:</strong> Between heated spaces</p>
+            <p><strong>Double top plate:</strong> Still required for structural stability</p>
+            <p><strong>Drywall both sides:</strong> Room divider finished on each room</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Material Sizes -->
+      <div style="background:#0f1318; padding:24px; border-radius:12px; margin-top:24px; border-left:4px solid #4ade80">
+        <h3 style="margin:0 0 20px; color:#4ade80">📐 Key Measurements to Remember:</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px">
+          <div style="background:#12161b; padding:16px; border-radius:8px">
+            <p style="margin:0 0 8px"><strong style="color:#9cc1ff">2x6 Actual Size:</strong></p>
+            <p style="margin:0; color:#a9b6c6">1.5" x 5.5" (nominal is 2x6, actual is smaller)</p>
+          </div>
+          <div style="background:#12161b; padding:16px; border-radius:8px">
+            <p style="margin:0 0 8px"><strong style="color:#9cc1ff">2x4 Actual Size:</strong></p>
+            <p style="margin:0; color:#a9b6c6">1.5" x 3.5" (used for interior walls)</p>
+          </div>
+          <div style="background:#12161b; padding:16px; border-radius:8px">
+            <p style="margin:0 0 8px"><strong style="color:#9cc1ff">16" On Center (O.C.):</strong></p>
+            <p style="margin:0; color:#a9b6c6">Measure from center of stud to center of next stud</p>
+          </div>
+          <div style="background:#12161b; padding:16px; border-radius:8px">
+            <p style="margin:0 0 8px"><strong style="color:#9cc1ff">Wall Height:</strong></p>
+            <p style="margin:0; color:#a9b6c6">8'-0" (96 inches) is standard ceiling height</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perimeter Exterior Walls Tab -->
+    <div id="perimeter" class="tab-content">
+      <div style="text-align:center; padding:24px; background:#0f1318; border-radius:12px; margin-bottom:24px">
+        <h2 style="color:#9cc1ff; font-size:32px; margin:0 0 16px">🔷 PERIMETER EXTERIOR WALLS</h2>
+        <p style="color:#a9b6c6; font-size:18px; margin:0">Complete specifications for ALL exterior walls from your 728 Cordant blueprints</p>
+      </div>
+      
+      <div class="split-view">
+        <div class="view-panel">
+          <div class="panel-title">📐 Exterior Perimeter Layout</div>
+          <div class="panel-subtitle">From Floor Plan - L-Shaped Complex House</div>
+          <div class="blueprint-viewer">
+            <div class="zoom-controls">
+              <button class="zoom-btn" onclick="zoomBlueprint('in')">+</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('out')">−</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('reset')">⟲</button>
+            </div>
+            <img src="../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg" class="blueprint-img" alt="Floor Plan">
+          </div>
+          <div class="info-box">
+            <h4>Overall Building Perimeter:</h4>
+            <p><strong>Total Area:</strong> 3,200 SF (New) + 2,611 SF (Existing) = 5,811 SF</p>
+            <p><strong>Shape:</strong> Complex L-shaped with multiple wings</p>
+            <p><strong>Orientation:</strong> See floor plan for North arrow direction</p>
+          </div>
+        </div>
+        
+        <div class="view-panel">
+          <div class="panel-title">🔷 EXTERIOR WALL Specifications</div>
+          <div class="panel-subtitle">From Structural Plans - Exact Requirements</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+              <rect width="900" height="600" fill="#0a0e27"/>
+              <text x="450" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                728 CORDANT - EXTERIOR WALL SPECIFICATIONS
+              </text>
+              
+              <!-- Foundation -->
+              <rect x="50" y="480" width="800" height="80" fill="#4a5568" stroke="#2d3748" stroke-width="3"/>
+              <text x="450" y="530" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8eef5">FOUNDATION SLAB</text>
+              
+              <!-- Bottom Plate -->
+              <rect x="100" y="450" width="700" height="30" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <text x="450" y="472" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">2x6 BOTTOM PLATE</text>
+              <text x="750" y="465" font-size="12" font-weight="bold" fill="#667eea">5.5" wide</text>
+              
+              <!-- Anchor Bolts -->
+              <line x1="200" y1="450" x2="200" y2="430" stroke="#f87171" stroke-width="4"/>
+              <circle cx="200" cy="430" r="6" fill="#f87171"/>
+              <line x1="500" y1="450" x2="500" y2="430" stroke="#f87171" stroke-width="4"/>
+              <circle cx="500" cy="430" r="6" fill="#f87171"/>
+              <text x="350" y="420" text-anchor="middle" font-size="14" font-weight="bold" fill="#f87171">5/8" ANCHOR BOLTS</text>
+              <text x="350" y="435" text-anchor="middle" font-size="11" fill="#f87171">@ 6'-0" MAX SPACING</text>
+              
+              <!-- Studs -->
+              <rect x="150" y="200" width="35" height="250" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="240" y="200" width="35" height="250" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="330" y="200" width="35" height="250" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="420" y="200" width="35" height="250" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="510" y="200" width="35" height="250" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="600" y="200" width="35" height="250" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              <rect x="690" y="200" width="35" height="250" fill="#fbbf24" stroke="#000" stroke-width="2"/>
+              
+              <!-- Spacing -->
+              <line x1="167" y1="160" x2="257" y2="160" stroke="#667eea" stroke-width="2" stroke-dasharray="5,5"/>
+              <text x="212" y="155" text-anchor="middle" font-size="14" font-weight="bold" fill="#667eea">16" ON CENTER</text>
+              
+              <!-- Top Plates -->
+              <rect x="100" y="160" width="700" height="20" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <rect x="100" y="180" width="700" height="20" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <text x="750" y="175" font-size="14" font-weight="bold" fill="#fff">DOUBLE 2x6</text>
+              
+              <!-- Sheathing -->
+              <rect x="95" y="200" width="12" height="250" fill="#d4a574" stroke="#000" stroke-width="2"/>
+              <text x="70" y="325" font-size="12" font-weight="bold" fill="#d4a574" transform="rotate(-90 70 325)">PLYWOOD SHEATHING</text>
+              
+              <!-- Insulation -->
+              <rect x="107" y="200" width="25" height="250" fill="#9cc1ff" opacity="0.4" stroke="#667eea" stroke-width="1"/>
+              <text x="120" y="325" font-size="11" fill="#667eea" transform="rotate(-90 120 325)">R-19</text>
+              
+              <!-- Drywall -->
+              <rect x="710" y="200" width="12" height="250" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+              <text x="770" y="325" font-size="12" font-weight="bold" fill="#e8eef5" transform="rotate(-90 770 325)">DRYWALL</text>
+              
+              <!-- Height -->
+              <line x1="820" y1="480" x2="820" y2="200" stroke="#4ade80" stroke-width="3"/>
+              <text x="840" y="340" font-size="16" font-weight="bold" fill="#4ade80" transform="rotate(-90 840 340)">8'-0" HEIGHT</text>
+              
+              <!-- Specs Box -->
+              <rect x="350" y="50" width="500" height="120" fill="#0f1318" stroke="#667eea" stroke-width="2" rx="8"/>
+              <text x="600" y="75" text-anchor="middle" font-size="18" font-weight="bold" fill="#9cc1ff">SPECIFICATIONS</text>
+              <text x="400" y="105" font-size="13" fill="#a9b6c6">✓ Studs: 2x6 Douglas Fir</text>
+              <text x="400" y="125" font-size="13" fill="#a9b6c6">✓ Spacing: 16" on center</text>
+              <text x="650" y="105" font-size="13" fill="#a9b6c6">✓ Insulation: R-19 fiberglass</text>
+              <text x="650" y="125" font-size="13" fill="#a9b6c6">✓ Sheathing: 15/32" OSB</text>
+            </svg>
+          </div>
+          
+          <div class="info-box">
+            <h4>ALL Exterior Walls Use These Specifications:</h4>
+            <table style="width:100%; border-collapse:collapse; margin-top:12px; color:#a9b6c6">
+              <tr>
+                <td style="padding:8px; border-bottom:1px solid #1f2630"><strong style="color:#9cc1ff">Component</strong></td>
+                <td style="padding:8px; border-bottom:1px solid #1f2630"><strong style="color:#9cc1ff">Specification</strong></td>
+              </tr>
+              <tr>
+                <td style="padding:8px">Bottom Plate</td>
+                <td style="padding:8px">2x6 (1.5" x 5.5" actual)</td>
+              </tr>
+              <tr>
+                <td style="padding:8px">Wall Studs</td>
+                <td style="padding:8px">2x6 @ 16" O.C.</td>
+              </tr>
+              <tr>
+                <td style="padding:8px">Top Plates</td>
+                <td style="padding:8px">Double 2x6 (stacked)</td>
+              </tr>
+              <tr>
+                <td style="padding:8px">Wall Height</td>
+                <td style="padding:8px">8'-0" (96")</td>
+              </tr>
+              <tr>
+                <td style="padding:8px">Anchor Bolts</td>
+                <td style="padding:8px">5/8" diameter, max 6'-0" spacing</td>
+              </tr>
+              <tr>
+                <td style="padding:8px">Sheathing</td>
+                <td style="padding:8px">15/32" OSB on exterior</td>
+              </tr>
+              <tr>
+                <td style="padding:8px">Insulation</td>
+                <td style="padding:8px">R-19 fiberglass batts</td>
+              </tr>
+              <tr>
+                <td style="padding:8px">Drywall</td>
+                <td style="padding:8px">1/2" on interior</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <div style="background:#0f1318; padding:24px; border-radius:12px; margin-top:24px; border-left:4px solid #4ade80">
+        <h3 style="margin:0 0 20px; color:#4ade80">📏 Critical Measurements for Your Exterior Walls:</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px">
+          <div style="background:#12161b; padding:16px; border-radius:8px">
+            <p style="margin:0 0 8px"><strong style="color:#9cc1ff">Actual Stud Size:</strong></p>
+            <p style="margin:0; color:#a9b6c6">1.5" thick x 5.5" wide</p>
+            <p style="margin:4px 0; color:#8a98ab; font-size:12px">Nominal "2x6" means this actual size</p>
+          </div>
+          <div style="background:#12161b; padding:16px; border-radius:8px">
+            <p style="margin:0 0 8px"><strong style="color:#9cc1ff">16" On Center:</strong></p>
+            <p style="margin:0; color:#a9b6c6">Measure from center of one stud to center of next</p>
+            <p style="margin:4px 0; color:#8a98ab; font-size:12px">NOT edge to edge!</p>
+          </div>
+          <div style="background:#12161b; padding:16px; border-radius:8px">
+            <p style="margin:0 0 8px"><strong style="color:#9cc1ff">Bottom Plate:</strong></p>
+            <p style="margin:0; color:#a9b6c6">Drill 5/8" holes for anchor bolts</p>
+            <p style="margin:4px 0; color:#8a98ab; font-size:12px">Max 6'-0" between bolts</p>
+          </div>
+          <div style="background:#12161b; padding:16px; border-radius:8px">
+            <p style="margin:0 0 8px"><strong style="color:#9cc1ff">Top Plates:</strong></p>
+            <p style="margin:0; color:#a9b6c6">Two 2x6 boards stacked</p>
+            <p style="margin:4px 0; color:#8a98ab; font-size:12px">Required for structural continuity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shear Walls Tab -->
+    <div id="shear-walls" class="tab-content">
+      <div class="split-view">
+        <div class="view-panel">
+          <div class="panel-title">🔧 Shear Wall Plan Blueprint</div>
+          <div class="panel-subtitle">Sheet 14 (S-2) - Shear Wall Plan Main House</div>
+          <div class="blueprint-viewer">
+            <div class="zoom-controls">
+              <button class="zoom-btn" onclick="zoomBlueprint('in')">+</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('out')">−</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('reset')">⟲</button>
+            </div>
+            <img src="../blueprints/classified/STRUCT/14-Structural-ShearWallPlan.jpg" class="blueprint-img" alt="Shear Wall Plan">
+          </div>
+          <div class="info-box">
+            <h4>What Are Shear Walls?</h4>
+            <p><strong>Purpose:</strong> Resist earthquake and wind forces (sideways movement)</p>
+            <p><strong>How to identify:</strong> Thick lines on this plan show which walls are shear walls</p>
+            <p><strong>Special requirements:</strong> Plywood sheathing + special nailing pattern + hold-down brackets</p>
+            <p><strong>⚠️ CRITICAL:</strong> These must be built exactly as shown - inspectors will check!</p>
+          </div>
+        </div>
+        
+        <div class="view-panel">
+          <div class="panel-title">🔧 3D Shear Wall Detail</div>
+          <div class="panel-subtitle">How shear walls are reinforced</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="600" fill="#0a0e27"/>
+              <text x="400" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                SHEAR WALL - EXPLODED VIEW
+              </text>
+              
+              <!-- Regular wall (left, for comparison) -->
+              <text x="150" y="80" text-anchor="middle" font-size="16" fill="#8a98ab">REGULAR WALL</text>
+              <rect x="80" y="120" width="140" height="350" fill="#fb923c" opacity="0.5" stroke="#000" stroke-width="2"/>
+              <line x1="100" y1="130" x2="100" y2="460" stroke="#fbbf24" stroke-width="3"/>
+              <line x1="130" y1="130" x2="130" y2="460" stroke="#fbbf24" stroke-width="3"/>
+              <line x1="160" y1="130" x2="160" y2="460" stroke="#fbbf24" stroke-width="3"/>
+              <line x1="190" y1="130" x2="190" y2="460" stroke="#fbbf24" stroke-width="3"/>
+              <text x="150" y="500" text-anchor="middle" font-size="12" fill="#8a98ab">Just studs</text>
+              
+              <!-- Shear wall (right, reinforced) -->
+              <text x="550" y="80" text-anchor="middle" font-size="16" fill="#4ade80" font-weight="bold">SHEAR WALL ✅</text>
+              <rect x="480" y="120" width="140" height="350" fill="#fb923c" opacity="0.5" stroke="#000" stroke-width="3"/>
+              
+              <!-- Studs -->
+              <line x1="500" y1="130" x2="500" y2="460" stroke="#fbbf24" stroke-width="3"/>
+              <line x1="530" y1="130" x2="530" y2="460" stroke="#fbbf24" stroke-width="3"/>
+              <line x1="560" y1="130" x2="560" y2="460" stroke="#fbbf24" stroke-width="3"/>
+              <line x1="590" y1="130" x2="590" y2="460" stroke="#fbbf24" stroke-width="3"/>
+              
+              <!-- Plywood sheathing (shown as overlay) -->
+              <rect x="470" y="120" width="160" height="350" fill="#d4a574" opacity="0.7" stroke="#8b7355" stroke-width="3"/>
+              <text x="550" y="300" text-anchor="middle" font-size="14" font-weight="bold" fill="#000">PLYWOOD</text>
+              <text x="550" y="320" text-anchor="middle" font-size="12" fill="#000">15/32" OSB</text>
+              
+              <!-- Special nailing pattern (dots showing nails) -->
+              <circle cx="480" cy="140" r="3" fill="#f87171"/>
+              <circle cx="480" cy="160" r="3" fill="#f87171"/>
+              <circle cx="480" cy="180" r="3" fill="#f87171"/>
+              <circle cx="480" cy="200" r="3" fill="#f87171"/>
+              <circle cx="480" cy="220" r="3" fill="#f87171"/>
+              <text x="460" y="180" font-size="10" fill="#f87171" transform="rotate(-90 460 180)">4" spacing</text>
+              
+              <!-- Hold-down bracket at bottom -->
+              <rect x="490" y="460" width="30" height="40" fill="#667eea" stroke="#000" stroke-width="2"/>
+              <text x="505" y="525" text-anchor="middle" font-size="11" fill="#667eea" font-weight="bold">HOLD-DOWN</text>
+              
+              <!-- Arrow pointing to plywood -->
+              <line x1="650" y1="250" x2="630" y2="280" stroke="#4ade80" stroke-width="2"/>
+              <text x="660" y="255" font-size="13" fill="#4ade80" font-weight="bold">Plywood nailed</text>
+              <text x="660" y="270" font-size="11" fill="#4ade80">every 4" on edges</text>
+              
+              <!-- Foundation -->
+              <rect x="50" y="470" width="700" height="30" fill="#4a5568" stroke="#2d3748" stroke-width="2"/>
+              <text x="400" y="490" text-anchor="middle" font-size="14" fill="#e8eef5">FOUNDATION</text>
+            </svg>
+          </div>
+          <div class="info-box">
+            <h4>Key Differences:</h4>
+            <p><strong>Regular wall:</strong> Just studs with drywall</p>
+            <p><strong>Shear wall:</strong> Studs + plywood + special nailing + hold-down brackets</p>
+            <p><strong>Nailing:</strong> Nails every 4" around edges (vs. 12" for regular walls)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roof Framing Tab -->
+    <div id="roof-framing" class="tab-content">
+      <div class="split-view">
+        <div class="view-panel">
+          <div class="panel-title">🏠 Roof Framing Blueprint</div>
+          <div class="panel-subtitle">Sheet 15 (S-3) - Roof Framing Plan Main House</div>
+          <div class="blueprint-viewer">
+            <div class="zoom-controls">
+              <button class="zoom-btn" onclick="zoomBlueprint('in')">+</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('out')">−</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('reset')">⟲</button>
+            </div>
+            <img src="../blueprints/classified/STRUCT/15-Structural-RoofFramingPlan.jpg" class="blueprint-img" alt="Roof Framing Plan">
+          </div>
+          <div class="info-box">
+            <h4>Reading the Roof Plan:</h4>
+            <p><strong>Red/Orange lines:</strong> Main beams and ridge (peak of roof)</p>
+            <p><strong>Blue lines:</strong> Rafters (sloped boards that create roof surface)</p>
+            <p><strong>Numbers:</strong> Labels like "B1", "B2" refer to beam schedule (tells you size)</p>
+            <p><strong>Arrows:</strong> Show direction rafters slope</p>
+          </div>
+        </div>
+        
+        <div class="view-panel">
+          <div class="panel-title">🏠 3D Roof Structure</div>
+          <div class="panel-subtitle">How rafters connect to ridge & walls</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+              <rect width="900" height="600" fill="#0a0e27"/>
+              <text x="450" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                ROOF STRUCTURE - 3D CROSS SECTION
+              </text>
+              
+              <!-- Walls (left and right) -->
+              <rect x="100" y="350" width="40" height="200" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <rect x="760" y="350" width="40" height="200" fill="#fb923c" stroke="#000" stroke-width="2"/>
+              <text x="120" y="460" text-anchor="middle" font-size="12" font-weight="bold" transform="rotate(-90 120 460)">WALL</text>
+              <text x="780" y="460" text-anchor="middle" font-size="12" font-weight="bold" transform="rotate(-90 780 460)">WALL</text>
+              
+              <!-- Top plates -->
+              <rect x="100" y="320" width="40" height="30" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <rect x="760" y="320" width="40" height="30" fill="#f87171" stroke="#000" stroke-width="2"/>
+              
+              <!-- Ridge beam (peak, center) -->
+              <rect x="430" y="100" width="40" height="20" fill="#f87171" stroke="#000" stroke-width="3"/>
+              <text x="450" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#f87171">RIDGE BEAM</text>
+              
+              <!-- Left rafter -->
+              <line x1="120" y1="350" x2="450" y2="120" stroke="#fbbf24" stroke-width="10"/>
+              <text x="280" y="220" text-anchor="middle" font-size="16" font-weight="bold" fill="#fbbf24" transform="rotate(-35 280 220)">RAFTER</text>
+              
+              <!-- Right rafter -->
+              <line x1="780" y1="350" x2="450" y2="120" stroke="#fbbf24" stroke-width="10"/>
+              <text x="620" y="220" text-anchor="middle" font-size="16" font-weight="bold" fill="#fbbf24" transform="rotate(35 620 220)">RAFTER</text>
+              
+              <!-- Bird's mouth notch (where rafter sits on wall) -->
+              <path d="M 120 350 L 120 320 L 150 320 Z" fill="#4ade80" stroke="#000" stroke-width="2"/>
+              <line x1="150" y1="320" x2="180" y2="290" stroke="#4ade80" stroke-width="2"/>
+              <text x="190" y="295" font-size="13" fill="#4ade80" font-weight="bold">BIRD'S MOUTH</text>
+              <text x="190" y="310" font-size="11" fill="#4ade80">(notch in rafter)</text>
+              
+              <!-- Hurricane tie -->
+              <circle cx="120" cy="340" r="8" fill="#f87171" stroke="#000" stroke-width="2"/>
+              <line x1="120" y1="340" x2="80" y2="360" stroke="#f87171" stroke-width="2"/>
+              <text x="30" y="365" font-size="12" fill="#f87171" font-weight="bold">HURRICANE TIE</text>
+              
+              <!-- Roof sheathing (plywood on top) -->
+              <path d="M 120 350 L 450 120 L 470 130 L 140 360 Z" fill="#9cc1ff" opacity="0.3" stroke="#667eea" stroke-width="2"/>
+              <path d="M 780 350 L 450 120 L 470 130 L 800 360 Z" fill="#9cc1ff" opacity="0.3" stroke="#667eea" stroke-width="2"/>
+              <text x="250" y="180" font-size="14" fill="#9cc1ff" font-weight="bold">PLYWOOD SHEATHING</text>
+              
+              <!-- Rafter spacing -->
+              <line x1="120" y1="500" x2="240" y2="500" stroke="#667eea" stroke-width="2" stroke-dasharray="5,5"/>
+              <text x="180" y="520" text-anchor="middle" font-size="14" font-weight="bold" fill="#667eea">24" SPACING</text>
+              
+              <!-- Pitch indicator -->
+              <line x1="450" y1="120" x2="780" y2="120" stroke="#fb923c" stroke-width="2" stroke-dasharray="5,5"/>
+              <line x1="780" y1="120" x2="780" y2="350" stroke="#fb923c" stroke-width="2" stroke-dasharray="5,5"/>
+              <text x="620" y="110" font-size="14" font-weight="bold" fill="#fb923c">RUN (12")</text>
+              <text x="790" y="235" font-size="14" font-weight="bold" fill="#fb923c" transform="rotate(-90 790 235)">RISE (4")</text>
+              <text x="620" y="200" font-size="16" font-weight="bold" fill="#fb923c">PITCH: 4:12</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Elevations Tab -->
+    <div id="elevations" class="tab-content">
+      <div class="split-view">
+        <div class="view-panel">
+          <div class="panel-title">📏 Elevations Blueprint</div>
+          <div class="panel-subtitle">Sheet 10 & 11 - Front & Rear Elevations</div>
+          <div class="blueprint-viewer">
+            <div class="zoom-controls">
+              <button class="zoom-btn" onclick="zoomBlueprint('in')">+</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('out')">−</button>
+              <button class="zoom-btn" onclick="zoomBlueprint('reset')">⟲</button>
+            </div>
+            <img src="../blueprints/classified/ARCH/10-Proposed-Elevations-Front.jpg" class="blueprint-img" alt="Front Elevation">
+          </div>
+          <div class="info-box">
+            <h4>What Are Elevations?</h4>
+            <p><strong>Definition:</strong> Side views of the house (what you see standing in front of it)</p>
+            <p><strong>Shows:</strong> Roof pitch, wall heights, window/door locations, exterior finishes</p>
+            <p><strong>Why important:</strong> Tells you how tall everything is (floor plan only shows width/length)</p>
+          </div>
+        </div>
+        
+        <div class="view-panel">
+          <div class="panel-title">📏 3D Elevation View</div>
+          <div class="panel-subtitle">Front view of house</div>
+          <div class="diagram-3d">
+            <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+              <rect width="900" height="700" fill="#0a0e27"/>
+              <text x="450" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#9cc1ff">
+                FRONT ELEVATION - WHAT YOU SEE FROM STREET
+              </text>
+              
+              <!-- Ground -->
+              <line x1="50" y1="600" x2="850" y2="600" stroke="#8b7355" stroke-width="4"/>
+              
+              <!-- Main house body (rectangle) -->
+              <rect x="150" y="300" width="600" height="300" fill="#fb923c" stroke="#000" stroke-width="3"/>
+              
+              <!-- Roof (triangle on top) -->
+              <path d="M 150 300 L 450 150 L 750 300 Z" fill="#9cc1ff" stroke="#000" stroke-width="3"/>
+              
+              <!-- Windows -->
+              <rect x="250" y="400" width="100" height="120" fill="#67b7d1" opacity="0.7" stroke="#fff" stroke-width="2"/>
+              <rect x="400" y="400" width="100" height="120" fill="#67b7d1" opacity="0.7" stroke="#fff" stroke-width="2"/>
+              <rect x="550" y="400" width="100" height="120" fill="#67b7d1" opacity="0.7" stroke="#fff" stroke-width="2"/>
+              
+              <!-- Door (center) -->
+              <rect x="415" y="500" width="70" height="100" fill="#8b4513" stroke="#000" stroke-width="2"/>
+              <circle cx="470" cy="555" r="5" fill="#fbbf24"/>
+              
+              <!-- Roof peak -->
+              <line x1="450" y1="150" x2="450" y2="120" stroke="#f87171" stroke-width="4"/>
+              <text x="460" y="140" font-size="14" fill="#f87171" font-weight="bold">Ridge</text>
+              
+              <!-- Height dimensions -->
+              <line x1="100" y1="600" x2="100" y2="300" stroke="#fb923c" stroke-width="2"/>
+              <text x="80" y="450" font-size="16" font-weight="bold" fill="#fb923c" transform="rotate(-90 80 450)">8'-0" Wall Height</text>
+              
+              <line x1="800" y1="600" x2="800" y2="150" stroke="#667eea" stroke-width="2"/>
+              <text x="820" y="375" font-size="16" font-weight="bold" fill="#667eea" transform="rotate(-90 820 375)">Total Height ≈ 24'</text>
+              
+              <!-- Labels -->
+              <text x="450" y="450" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">FRONT OF HOUSE</text>
+              <text x="450" y="670" text-anchor="middle" font-size="14" fill="#8a98ab">(What neighbors/street see)</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let currentZoom = 1;
+    
+    function showSection(sectionName) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+      
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      const content = document.getElementById(sectionName);
+      if (content) {
+        content.classList.add('active');
+      }
+      
+      // Find and activate corresponding tab
+      const matchingTab = Array.from(tabs).find(tab => 
+        tab.getAttribute('onclick') && tab.getAttribute('onclick').includes(sectionName)
+      );
+      if (matchingTab) {
+        matchingTab.classList.add('active');
+      }
+      
+      // Reset zoom when switching sections
+      currentZoom = 1;
+      updateBlueprintZoom();
+      
+      window.scrollTo(0, 0);
+    }
+    
+    function zoomBlueprint(action) {
+      if (action === 'in') {
+        currentZoom = Math.min(currentZoom * 1.3, 3);
+      } else if (action === 'out') {
+        currentZoom = Math.max(currentZoom / 1.3, 0.5);
+      } else if (action === 'reset') {
+        currentZoom = 1;
+      }
+      updateBlueprintZoom();
+    }
+    
+    function updateBlueprintZoom() {
+      const blueprints = document.querySelectorAll('.blueprint-img');
+      blueprints.forEach(bp => {
+        bp.style.transform = `scale(${currentZoom})`;
+        bp.style.transformOrigin = 'top left';
+        bp.style.transition = 'transform 0.3s ease';
+      });
+    }
+  </script>
+</body>
+</html>
+
+

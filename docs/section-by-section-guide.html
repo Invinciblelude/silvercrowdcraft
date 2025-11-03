@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>728 Cordant - Section by Section Build Guide</title>
+  <script src="auth.js"></script>
+  <script src="assets/shared-nav.js?v=3"></script>
+  <style>
+    body {background:#0a0e27; color:#e8eef5; font-family:system-ui,-apple-system,sans-serif; margin:0}
+    .container {max-width:1600px; margin:0 auto; padding:20px 20px 100px}
+    
+    .hero {
+      background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius:16px;
+      padding:40px;
+      margin-bottom:32px;
+    }
+    .hero h1 {font-size:42px; font-weight:800; margin:0 0 16px; color:#fff}
+    .hero p {font-size:18px; opacity:0.95; margin:0; color:#e8eef5}
+    
+    .alert {
+      padding:20px;
+      border-radius:12px;
+      margin-bottom:24px;
+      border-left:4px solid #4ade80;
+      background:rgba(74,222,128,0.1);
+    }
+    .alert h3 {margin:0 0 12px; color:#4ade80; font-size:18px}
+    .alert p {margin:8px 0; color:#a9b6c6; line-height:1.6}
+    
+    .section-nav {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:16px;
+      margin:32px 0;
+    }
+    .section-card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:24px;
+      cursor:pointer;
+      transition:all 0.3s;
+      text-decoration:none;
+      color:inherit;
+      display:block;
+    }
+    .section-card:hover {
+      border-color:#667eea;
+      transform:translateY(-4px);
+      box-shadow:0 8px 24px rgba(102,126,234,0.3);
+    }
+    .section-number {
+      width:50px;
+      height:50px;
+      background:#667eea;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      font-weight:800;
+      color:#fff;
+      margin-bottom:16px;
+    }
+    .section-title {
+      font-size:20px;
+      font-weight:700;
+      color:#9cc1ff;
+      margin:0 0 8px;
+    }
+    .section-desc {
+      font-size:14px;
+      color:#8a98ab;
+      margin:0 0 12px;
+      line-height:1.6;
+    }
+    .section-size {
+      font-size:12px;
+      color:#4ade80;
+      font-weight:600;
+    }
+    
+    .tabs {
+      display:flex;
+      gap:16px;
+      margin-bottom:24px;
+      border-bottom:2px solid #1f2630;
+      flex-wrap:wrap;
+    }
+    .tab {
+      padding:12px 24px;
+      background:transparent;
+      border:none;
+      color:#8a98ab;
+      cursor:pointer;
+      font-size:16px;
+      font-weight:600;
+      border-bottom:3px solid transparent;
+      transition:all 0.2s;
+    }
+    .tab:hover {color:#9cc1ff}
+    .tab.active {color:#9cc1ff; border-bottom-color:#667eea}
+    
+    .tab-content {display:none}
+    .tab-content.active {display:block}
+    
+    .card {
+      background:#12161b;
+      border:2px solid #1f2630;
+      border-radius:12px;
+      padding:32px;
+      margin-bottom:24px;
+    }
+    .card-title {font-size:28px; font-weight:700; margin:0 0 16px; color:#9cc1ff}
+    .card-subtitle {font-size:20px; font-weight:600; margin:24px 0 16px; color:#a9b6c6}
+    
+    .blueprint-container {
+      background:#0f1318;
+      padding:20px;
+      border-radius:12px;
+      margin:24px 0;
+      position:relative;
+    }
+    .blueprint-img {
+      width:100%;
+      height:auto;
+      border-radius:8px;
+      border:2px solid #667eea;
+    }
+    
+    .dimension-box {
+      background:#667eea;
+      color:#fff;
+      padding:8px 12px;
+      border-radius:6px;
+      font-size:14px;
+      font-weight:700;
+      display:inline-block;
+      margin:4px;
+    }
+    
+    .step-box {
+      background:#0f1318;
+      border-left:4px solid #667eea;
+      padding:20px;
+      border-radius:8px;
+      margin:16px 0;
+    }
+    .step-number {
+      display:inline-block;
+      width:32px;
+      height:32px;
+      background:#667eea;
+      color:#fff;
+      border-radius:50%;
+      text-align:center;
+      line-height:32px;
+      font-weight:700;
+      margin-right:12px;
+    }
+    .step-title {
+      font-size:18px;
+      font-weight:700;
+      color:#9cc1ff;
+      margin-bottom:12px;
+    }
+    .step-content {
+      color:#a9b6c6;
+      line-height:1.8;
+    }
+    
+    .material-table {
+      background:#0f1318;
+      border-radius:8px;
+      padding:20px;
+      margin:20px 0;
+    }
+    .material-table table {
+      width:100%;
+      border-collapse:collapse;
+    }
+    .material-table th {
+      text-align:left;
+      padding:12px;
+      border-bottom:2px solid #1f2630;
+      color:#9cc1ff;
+      font-size:14px;
+    }
+    .material-table td {
+      padding:12px;
+      border-bottom:1px solid #1f2630;
+      color:#e8eef5;
+    }
+    
+    .diagram-svg {
+      width:100%;
+      max-width:100%;
+      height:auto;
+      background:#0f1318;
+      border-radius:8px;
+      border:2px solid #667eea;
+    }
+  </style>
+</head>
+<body data-jsdom-page="sections" data-jsdom-title="📐 Section by Section">
+  
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>📐 728 Cordant Drive - Section by Section Build Guide</h1>
+      <p>3,200 SF Addition + 2,611 SF Existing = 5,811 SF Total Project</p>
+      <p style="margin-top:12px; font-size:16px">Breaking down your complex house into manageable sections you can build one at a time</p>
+    </div>
+
+    <div class="alert">
+      <h3>🎯 How This Works</h3>
+      <p>Your house is HUGE and complex - trying to frame it all at once would be overwhelming. Instead, I've broken it into logical sections you can tackle one by one.</p>
+      <p><strong>Each section includes:</strong> Dimensions, framing diagram, materials list, step-by-step instructions, and what blueprint sheets to reference.</p>
+    </div>
+
+    <!-- Section Overview -->
+    <h2 style="font-size:32px; color:#9cc1ff; margin:32px 0 24px">Choose a Section to Build:</h2>
+    
+    <div class="section-nav">
+      <a href="#section-1" class="section-card" onclick="showTab('section-1'); return false;">
+        <div class="section-number">1</div>
+        <div class="section-title">Master Bedroom Wing</div>
+        <div class="section-desc">Northeast corner - includes bedroom, walk-in closet, master bath</div>
+        <div class="section-size">≈ 600 SF • Sheets: 07, 12</div>
+      </a>
+      
+      <a href="#section-2" class="section-card" onclick="showTab('section-2'); return false;">
+        <div class="section-number">2</div>
+        <div class="section-title">Great Room / Family Room</div>
+        <div class="section-desc">Central living area - large open space, high ceilings</div>
+        <div class="section-size">≈ 700 SF • Sheets: 07, 15</div>
+      </a>
+      
+      <a href="#section-3" class="section-card" onclick="showTab('section-3'); return false;">
+        <div class="section-number">3</div>
+        <div class="section-title">Kitchen & Dining</div>
+        <div class="section-desc">Kitchen with island, adjacent dining area</div>
+        <div class="section-size">≈ 500 SF • Sheets: 07, 08</div>
+      </a>
+      
+      <a href="#section-4" class="section-card" onclick="showTab('section-4'); return false;">
+        <div class="section-number">4</div>
+        <div class="section-title">Secondary Bedrooms (2 & 3)</div>
+        <div class="section-desc">Two bedrooms with shared bath area</div>
+        <div class="section-size">≈ 550 SF • Sheets: 07, 12</div>
+      </a>
+      
+      <a href="#section-5" class="section-card" onclick="showTab('section-5'); return false;">
+        <div class="section-number">5</div>
+        <div class="section-title">Office / Den</div>
+        <div class="section-desc">West side office space</div>
+        <div class="section-size">≈ 250 SF • Sheets: 07</div>
+      </a>
+      
+      <a href="#section-6" class="section-card" onclick="showTab('section-6'); return false;">
+        <div class="section-number">6</div>
+        <div class="section-title">Entry & Laundry</div>
+        <div class="section-desc">Front entry, mud room, laundry area</div>
+        <div class="section-size">≈ 300 SF • Sheets: 07, 11</div>
+      </a>
+      
+      <a href="#section-7" class="section-card" onclick="showTab('section-7'); return false;">
+        <div class="section-number">7</div>
+        <div class="section-title">Covered Patio</div>
+        <div class="section-desc">South outdoor covered area - roof structure only</div>
+        <div class="section-size">≈ 300 SF • Sheets: 08, 15</div>
+      </a>
+      
+      <a href="#section-8" class="section-card" onclick="showTab('section-8'); return false;">
+        <div class="section-number">8</div>
+        <div class="section-title">Connection to Existing House</div>
+        <div class="section-desc">How new addition ties into existing 2,611 SF house</div>
+        <div class="section-size">Critical! • Sheets: 07, 12, 14</div>
+      </a>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('overview')">📋 Overview</button>
+      <button class="tab" onclick="showTab('section-1')">1️⃣ Master Bedroom</button>
+      <button class="tab" onclick="showTab('section-2')">2️⃣ Great Room</button>
+      <button class="tab" onclick="showTab('section-3')">3️⃣ Kitchen</button>
+      <button class="tab" onclick="showTab('section-4')">4️⃣ Bedrooms 2&3</button>
+      <button class="tab" onclick="showTab('section-5')">5️⃣ Office</button>
+      <button class="tab" onclick="showTab('section-6')">6️⃣ Entry</button>
+      <button class="tab" onclick="showTab('section-7')">7️⃣ Patio</button>
+      <button class="tab" onclick="showTab('section-8')">8️⃣ Connection</button>
+    </div>
+
+    <!-- Overview Tab -->
+    <div id="overview" class="tab-content active">
+      <div class="card">
+        <h2 class="card-title">📋 Complete Project Overview</h2>
+        
+        <div class="blueprint-container">
+          <img src="../blueprints/classified/ARCH/07-Proposed-FloorPlan.jpg" class="blueprint-img" alt="Complete Floor Plan">
+          <p style="margin-top:16px; color:#8a98ab; text-align:center">
+            <strong>Your Complete Floor Plan</strong> - This is the FULL view. Each colored section below is a separate build area.
+          </p>
+        </div>
+        
+        <h3 class="card-subtitle">Project Stats:</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin:24px 0">
+          <div style="background:#0f1318; padding:20px; border-radius:8px; border-left:4px solid #667eea">
+            <div style="font-size:32px; font-weight:800; color:#667eea">3,200 SF</div>
+            <div style="color:#8a98ab; margin-top:8px">New Addition Size</div>
+          </div>
+          <div style="background:#0f1318; padding:20px; border-radius:8px; border-left:4px solid #4ade80">
+            <div style="font-size:32px; font-weight:800; color:#4ade80">2,611 SF</div>
+            <div style="color:#8a98ab; margin-top:8px">Existing House</div>
+          </div>
+          <div style="background:#0f1318; padding:20px; border-radius:8px; border-left:4px solid #fb923c">
+            <div style="font-size:32px; font-weight:800; color:#fb923c">5,811 SF</div>
+            <div style="color:#8a98ab; margin-top:8px">Total Square Footage</div>
+          </div>
+          <div style="background:#0f1318; padding:20px; border-radius:8px; border-left:4px solid #9cc1ff">
+            <div style="font-size:32px; font-weight:800; color:#9cc1ff">8</div>
+            <div style="color:#8a98ab; margin-top:8px">Sections to Frame</div>
+          </div>
+        </div>
+        
+        <h3 class="card-subtitle">Build Order Strategy:</h3>
+        <div style="background:#0f1318; padding:24px; border-radius:8px">
+          <p style="color:#a9b6c6; margin:0 0 16px"><strong style="color:#9cc1ff">Recommended build sequence:</strong></p>
+          <ol style="color:#a9b6c6; line-height:2; margin:0">
+            <li><strong style="color:#e8eef5">Section 8 FIRST:</strong> Connection to existing house (establishes boundaries)</li>
+            <li><strong style="color:#e8eef5">Section 2:</strong> Great Room (central spine, load-bearing walls)</li>
+            <li><strong style="color:#e8eef5">Section 1:</strong> Master Bedroom Wing (northeast corner)</li>
+            <li><strong style="color:#e8eef5">Section 3:</strong> Kitchen & Dining (ties to great room)</li>
+            <li><strong style="color:#e8eef5">Section 4:</strong> Secondary Bedrooms (north side)</li>
+            <li><strong style="color:#e8eef5">Section 5:</strong> Office / Den (west side)</li>
+            <li><strong style="color:#e8eef5">Section 6:</strong> Entry & Laundry (front of house)</li>
+            <li><strong style="color:#e8eef5">Section 7 LAST:</strong> Covered Patio (roof structure, no walls)</li>
+          </ol>
+        </div>
+        
+        <h3 class="card-subtitle">What Each Section Includes:</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin:24px 0">
+          <div style="background:#0f1318; padding:16px; border-radius:8px">
+            <div style="font-size:18px; margin-bottom:8px">📐 Dimensions</div>
+            <div style="font-size:14px; color:#8a98ab">Exact measurements from blueprints</div>
+          </div>
+          <div style="background:#0f1318; padding:16px; border-radius:8px">
+            <div style="font-size:18px; margin-bottom:8px">🏗️ Framing Diagram</div>
+            <div style="font-size:14px; color:#8a98ab">Visual showing wall layout</div>
+          </div>
+          <div style="background:#0f1318; padding:16px; border-radius:8px">
+            <div style="font-size:18px; margin-bottom:8px">📦 Materials List</div>
+            <div style="font-size:14px; color:#8a98ab">Lumber & hardware needed</div>
+          </div>
+          <div style="background:#0f1318; padding:16px; border-radius:8px">
+            <div style="font-size:18px; margin-bottom:8px">📝 Instructions</div>
+            <div style="font-size:14px; color:#8a98ab">Step-by-step how to frame it</div>
+          </div>
+          <div style="background:#0f1318; padding:16px; border-radius:8px">
+            <div style="font-size:18px; margin-bottom:8px">📄 Blueprint Refs</div>
+            <div style="font-size:14px; color:#8a98ab">Which sheets to reference</div>
+          </div>
+          <div style="background:#0f1318; padding:16px; border-radius:8px">
+            <div style="font-size:18px; margin-bottom:8px">⏱️ Time Estimate</div>
+            <div style="font-size:14px; color:#8a98ab">How long this section takes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: Master Bedroom Tab -->
+    <div id="section-1" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">1️⃣ Section 1: Master Bedroom Wing</h2>
+        <p style="color:#8a98ab; margin-bottom:24px">
+          <strong>Location:</strong> Northeast corner of addition<br>
+          <strong>Size:</strong> Approximately 600 SF<br>
+          <strong>Includes:</strong> Master Bedroom, Walk-in Closet, Master Bathroom<br>
+          <strong>Blueprint Sheets:</strong> 07 (Floor Plan), 12 (Foundation), 14 (Shear Walls)
+        </p>
+        
+        <h3 class="card-subtitle">Simplified Section Diagram:</h3>
+        <div class="blueprint-container">
+          <svg viewBox="0 0 800 600" class="diagram-svg">
+            <rect width="800" height="600" fill="#0a0e27"/>
+            <text x="400" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#9cc1ff">
+              SECTION 1: MASTER BEDROOM WING (Top-Down View)
+            </text>
+            
+            <!-- Foundation outline -->
+            <rect x="100" y="100" width="600" height="400" fill="#4a5568" opacity="0.3" stroke="#2d3748" stroke-width="2"/>
+            
+            <!-- Exterior walls (thick) -->
+            <rect x="100" y="100" width="600" height="30" fill="#fb923c" stroke="#000" stroke-width="2"/>
+            <rect x="100" y="470" width="600" height="30" fill="#fb923c" stroke="#000" stroke-width="2"/>
+            <rect x="100" y="100" width="30" height="400" fill="#fb923c" stroke="#000" stroke-width="2"/>
+            <rect x="670" y="100" width="30" height="400" fill="#fb923c" stroke="#000" stroke-width="2"/>
+            
+            <text x="50" y="120" font-size="12" fill="#fb923c" font-weight="bold">2x6</text>
+            
+            <!-- Interior walls -->
+            <!-- Closet wall -->
+            <rect x="300" y="130" width="20" height="150" fill="#fbbf24" stroke="#000" stroke-width="1"/>
+            <rect x="300" y="130" width="350" height="20" fill="#fbbf24" stroke="#000" stroke-width="1"/>
+            
+            <!-- Bathroom wall -->
+            <rect x="450" y="280" width="20" height="190" fill="#fbbf24" stroke="#000" stroke-width="1"/>
+            <rect x="320" y="280" width="150" height="20" fill="#fbbf24" stroke="#000" stroke-width="1"/>
+            
+            <!-- Room labels -->
+            <text x="200" y="250" font-size="20" font-weight="bold" fill="#e8eef5">MASTER</text>
+            <text x="200" y="275" font-size="20" font-weight="bold" fill="#e8eef5">BEDROOM</text>
+            <text x="200" y="295" font-size="14" fill="#4ade80">≈ 15' x 14'</text>
+            
+            <text x="550" y="200" font-size="16" font-weight="bold" fill="#e8eef5">WALK-IN</text>
+            <text x="550" y="220" font-size="16" font-weight="bold" fill="#e8eef5">CLOSET</text>
+            <text x="550" y="235" font-size="12" fill="#4ade80">≈ 10' x 8'</text>
+            
+            <text x="530" y="380" font-size="16" font-weight="bold" fill="#e8eef5">MASTER</text>
+            <text x="530" y="400" font-size="16" font-weight="bold" fill="#e8eef5">BATH</text>
+            <text x="530" y="415" font-size="12" fill="#4ade80">≈ 10' x 10'</text>
+            
+            <!-- Door openings -->
+            <rect x="200" y="470" width="60" height="30" fill="none" stroke="#67b7d1" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="230" y="490" font-size="11" fill="#67b7d1" font-weight="bold">DOOR</text>
+            
+            <rect x="380" y="280" width="70" height="20" fill="none" stroke="#67b7d1" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="415" y="293" text-anchor="middle" font-size="10" fill="#67b7d1">DOOR</text>
+            
+            <!-- Windows (on exterior walls) -->
+            <rect x="150" y="100" width="100" height="30" fill="#67b7d1" opacity="0.4" stroke="#fff" stroke-width="2"/>
+            <text x="200" y="120" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">WINDOW</text>
+            
+            <rect x="400" y="100" width="120" height="30" fill="#67b7d1" opacity="0.4" stroke="#fff" stroke-width="2"/>
+            <text x="460" y="120" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">WINDOW</text>
+            
+            <!-- Dimensions -->
+            <line x1="100" y1="550" x2="700" y2="550" stroke="#fb923c" stroke-width="2"/>
+            <text x="400" y="575" text-anchor="middle" font-size="16" font-weight="bold" fill="#fb923c">≈ 25'-0" (WIDTH)</text>
+            
+            <line x1="750" y1="100" x2="750" y2="500" stroke="#fb923c" stroke-width="2"/>
+            <text x="770" y="300" font-size="16" font-weight="bold" fill="#fb923c" transform="rotate(90 770 300)">≈ 24'-0"</text>
+          </svg>
+        </div>
+        
+        <h3 class="card-subtitle">Step-by-Step Framing Instructions:</h3>
+        
+        <div class="step-box">
+          <span class="step-number">1</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Layout Foundation Lines</div>
+            <div class="step-content">
+              <p>On your foundation slab, snap chalk lines for:</p>
+              <ul>
+                <li><strong>Exterior walls:</strong> 25' wide x 24' deep rectangle (verify exact dims from Sheet 07)</li>
+                <li><strong>Interior wall 1:</strong> Separates bedroom from closet (runs east-west)</li>
+                <li><strong>Interior wall 2:</strong> Separates bedroom from bathroom (runs north-south)</li>
+                <li><strong>Closet/Bath divider:</strong> Small wall between closet and bath</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step-box">
+          <span class="step-number">2</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Exterior Walls</div>
+            <div class="step-content">
+              <p>Build each exterior wall flat on the slab:</p>
+              <ul>
+                <li><strong>North wall:</strong> 25' long, 8' tall, 2x6 studs @ 16" O.C.</li>
+                <li><strong>East wall:</strong> 24' long, 8' tall, 2x6 studs @ 16" O.C.</li>
+                <li><strong>South wall:</strong> 25' long, has DOOR opening (leave 3' gap), 2x6 studs</li>
+                <li><strong>West wall:</strong> 24' long (this ties into main house - see Section 8)</li>
+                <li>Add headers over windows (north wall has 2 windows)</li>
+                <li>Tip up walls and brace temporarily</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step-box">
+          <span class="step-number">3</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Frame Interior Walls</div>
+            <div class="step-content">
+              <p>Interior walls are 2x4 (non-load-bearing):</p>
+              <ul>
+                <li><strong>Bedroom/Closet wall:</strong> Runs east-west, ≈15' long</li>
+                <li><strong>Bedroom/Bath wall:</strong> Runs north-south, ≈14' long, has door opening</li>
+                <li><strong>Closet/Bath divider:</strong> Short wall, ≈8' long</li>
+                <li>Leave door openings as shown on plans</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step-box">
+          <span class="step-number">4</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Install Top Plates & Prepare for Roof</div>
+            <div class="step-content">
+              <ul>
+                <li>Install double top plates on ALL walls</li>
+                <li>Top plates tie walls together and support roof</li>
+                <li>Make sure plates overlap at corners</li>
+                <li>Check Sheet 15 for roof framing that goes above this section</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="card-subtitle">Materials Needed (Section 1):</h3>
+        <div class="material-table">
+          <table>
+            <tr>
+              <th>Material</th>
+              <th>Size</th>
+              <th>Quantity (est.)</th>
+              <th>Use</th>
+            </tr>
+            <tr>
+              <td>Studs</td>
+              <td>2x6 x 8'</td>
+              <td>~45</td>
+              <td>Exterior walls</td>
+            </tr>
+            <tr>
+              <td>Studs</td>
+              <td>2x4 x 8'</td>
+              <td>~25</td>
+              <td>Interior walls</td>
+            </tr>
+            <tr>
+              <td>Plates</td>
+              <td>2x6 x varies</td>
+              <td>~20</td>
+              <td>Bottom & top plates (exterior)</td>
+            </tr>
+            <tr>
+              <td>Plates</td>
+              <td>2x4 x varies</td>
+              <td>~15</td>
+              <td>Bottom & top plates (interior)</td>
+            </tr>
+            <tr>
+              <td>Headers</td>
+              <td>2x8 or 2x10</td>
+              <td>3 sets</td>
+              <td>Over 2 windows + 1 door</td>
+            </tr>
+            <tr>
+              <td>Framing nails</td>
+              <td>16d (3.5")</td>
+              <td>~10 lbs</td>
+              <td>Nailing</td>
+            </tr>
+            <tr>
+              <td>Anchor bolts</td>
+              <td>5/8" x 10"</td>
+              <td>~12</td>
+              <td>Bottom plate to foundation</td>
+            </tr>
+          </table>
+        </div>
+        
+        <div style="background:rgba(74,222,128,0.1); padding:20px; border-radius:8px; border-left:4px solid #4ade80; margin-top:24px">
+          <h4 style="margin:0 0 12px; color:#4ade80">✅ Completion Checklist:</h4>
+          <ul style="margin:0; color:#a9b6c6; line-height:2">
+            <li>☐ All exterior walls framed, plumb, and square</li>
+            <li>☐ Interior walls in correct positions per floor plan</li>
+            <li>☐ Door openings correct size (typically 3' wide for bedrooms)</li>
+            <li>☐ Window rough openings correct</li>
+            <li>☐ Double top plates installed and overlapping</li>
+            <li>☐ Section ready for roof framing (Section continues in Sheet 15)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Great Room Tab -->
+    <div id="section-2" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">2️⃣ Section 2: Great Room / Family Room</h2>
+        <p style="color:#8a98ab; margin-bottom:24px">
+          <strong>Location:</strong> Central area of addition<br>
+          <strong>Size:</strong> Approximately 700 SF<br>
+          <strong>Includes:</strong> Large open family/great room space with high ceilings<br>
+          <strong>Blueprint Sheets:</strong> 07 (Floor Plan), 14 (Shear Walls), 15 (Roof Framing)<br>
+          <strong>⚠️ IMPORTANT:</strong> This is a LOAD-BEARING section - supports main roof structure
+        </p>
+        
+        <div class="alert" style="background:rgba(251,146,60,0.1); border-left-color:#fb923c">
+          <h3 style="color:#fb923c">⚠️ Critical Section</h3>
+          <p>The Great Room is the "spine" of your addition. Build this SECOND (after establishing connection to existing house). All other sections connect to this central area.</p>
+        </div>
+        
+        <h3 class="card-subtitle">Coming Soon...</h3>
+        <p style="color:#a9b6c6">This section is being prepared with exact dimensions from your blueprints. Check back soon!</p>
+      </div>
+    </div>
+
+    <!-- Other sections - placeholders -->
+    <div id="section-3" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">3️⃣ Section 3: Kitchen & Dining</h2>
+        <p style="color:#a9b6c6">Detailed guide coming soon...</p>
+      </div>
+    </div>
+
+    <div id="section-4" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">4️⃣ Section 4: Secondary Bedrooms (2 & 3)</h2>
+        <p style="color:#a9b6c6">Detailed guide coming soon...</p>
+      </div>
+    </div>
+
+    <div id="section-5" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">5️⃣ Section 5: Office / Den</h2>
+        <p style="color:#a9b6c6">Detailed guide coming soon...</p>
+      </div>
+    </div>
+
+    <div id="section-6" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">6️⃣ Section 6: Entry & Laundry</h2>
+        <p style="color:#a9b6c6">Detailed guide coming soon...</p>
+      </div>
+    </div>
+
+    <div id="section-7" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">7️⃣ Section 7: Covered Patio</h2>
+        <p style="color:#a9b6c6">Detailed guide coming soon...</p>
+      </div>
+    </div>
+
+    <div id="section-8" class="tab-content">
+      <div class="card">
+        <h2 class="card-title">8️⃣ Section 8: Connection to Existing House</h2>
+        <p style="color:#8a98ab; margin-bottom:24px">
+          <strong>⚠️ BUILD THIS FIRST!</strong><br>
+          This section shows how your 3,200 SF addition connects to the existing 2,611 SF house.<br>
+          <strong>Blueprint Sheets:</strong> 07, 12, 14
+        </p>
+        
+        <div class="alert" style="background:rgba(248,113,113,0.1); border-left-color:#f87171">
+          <h3 style="color:#f87171">🚨 CRITICAL FIRST STEP</h3>
+          <p>You MUST establish this connection point first! It defines where the new addition starts and how it ties into existing structure. Get this wrong and everything else will be off.</p>
+        </div>
+        
+        <h3 class="card-subtitle">What You're Connecting To:</h3>
+        <ul style="color:#a9b6c6; line-height:2">
+          <li><strong>Existing house:</strong> 2,611 SF (already standing)</li>
+          <li><strong>New addition:</strong> 3,200 SF (what you're framing)</li>
+          <li><strong>Connection wall:</strong> Where they meet - this is the western edge of your addition</li>
+          <li><strong>Sheet 07</strong> shows the dotted line indicating "existing" vs "new"</li>
+        </ul>
+        
+        <h3 class="card-subtitle">Steps:</h3>
+        <div class="step-box">
+          <span class="step-number">1</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Verify Existing House Measurements</div>
+            <div class="step-content">
+              <ul>
+                <li>Measure the existing wall where addition will attach</li>
+                <li>Compare to Sheet 07 - make sure dimensions match reality</li>
+                <li>Mark exactly where new addition starts</li>
+                <li>This establishes your "datum" - starting point for all measurements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="step-box">
+          <span class="step-number">2</span>
+          <div style="display:inline-block; vertical-align:top; width:calc(100% - 60px)">
+            <div class="step-title">Remove Existing Siding (If Needed)</div>
+            <div class="step-content">
+              <ul>
+                <li>Where new walls tie in, you may need to remove exterior siding from existing house</li>
+                <li>Exposes existing framing so you can attach new framing directly</li>
+                <li>Check Sheet 14 for connection details</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <p style="color:#a9b6c6; margin-top:24px">Detailed connection guide being prepared with exact measurements from your plans...</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showTab(tabName) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+      
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      const content = document.getElementById(tabName);
+      if (content) {
+        content.classList.add('active');
+        
+        // Find and activate corresponding tab
+        const matchingTab = Array.from(tabs).find(tab => 
+          tab.getAttribute('onclick') && tab.getAttribute('onclick').includes(tabName)
+        );
+        if (matchingTab) {
+          matchingTab.classList.add('active');
+        }
+      }
+      
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>
+
+
