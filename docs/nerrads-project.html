@@ -115,6 +115,7 @@
     
     .tab-content {display:none}
     .tab-content.active {display:block}
+    .tabs.top {position:sticky; top:72px; z-index:901; background:#0a0e27; padding:8px 0}
     
     /* Cards */
     .card {
@@ -212,6 +213,18 @@
 <body data-jsdom-page="nerrads" data-jsdom-title="🏘️ Nerrads Place">
   
   <div class="container">
+    <!-- Top Tabs (sticky) -->
+    <div class="tabs top">
+      <button class="tab active" onclick="showTab('overview')">📊 Overview</button>
+      <button class="tab" onclick="showTab('infrastructure')">🏗️ Infrastructure</button>
+      <button class="tab" onclick="showTab('strategy-a-detail')">✅ Strategy A (Sell Lots)</button>
+      <button class="tab" onclick="showTab('strategy-b-detail')">❌ Strategy B (Build)</button>
+      <button class="tab" onclick="showTab('hybrid')">🔄 Hybrid Strategy</button>
+      <button class="tab" onclick="showTab('calculator')">🧮 Calculator</button>
+      <button class="tab" onclick="showTab('resources')">🎯 Resources & Guides</button>
+      <button class="tab" onclick="showTab('milestones')">✅ De-Risking (75%)</button>
+      <button class="tab" onclick="showTab('engineering-docs')">📄 Engineering PDFs</button>
+    </div>
     <!-- Hero Section -->
     <div class="project-hero">
       <h1 class="hero-title">🏘️ 4929 Nerrads Place / Nerradscali Subdivision</h1>
@@ -327,7 +340,7 @@
     </div>
 
     <!-- Tabs -->
-    <div class="tabs">
+    <div class="tabs" style="display:none">
       <button class="tab active" onclick="showTab('overview')">📊 Overview</button>
       <button class="tab" onclick="showTab('infrastructure')">🏗️ Infrastructure</button>
       <button class="tab" onclick="showTab('strategy-a-detail')">✅ Strategy A (Sell Lots)</button>
@@ -1455,8 +1468,36 @@
     <div id="engineering-docs" class="tab-content">
       <div class="card">
         <h2 class="card-title">📄 Engineering & Legal Documents (27)</h2>
-        <p class="card-subtitle">All documents in one place. Open any PDF in a new tab.</p>
-        <iframe src="nerrads-engineering-docs.html" style="width:100%; height:75vh; border:2px solid #1f2630; border-radius:12px; background:#0f1318"></iframe>
+        <p class="card-subtitle">Click to open in a new tab. Folder: assets/pdfs/</p>
+        <ul class="documents-list" style="columns:2; column-gap:24px">
+          <li><a href="assets/pdfs/05-22016G Geotechnical Report Nerradscali Subdivision, Sacramento 03-23-22 (1).pdf" target="_blank">Geotechnical Report (Allerion, 03/23/22)</a></li>
+          <li><a href="assets/pdfs/1_175554SA-F00_Final_Report.pdf" target="_blank">Final Report (175554SA-F00)</a></li>
+          <li><a href="assets/pdfs/2023-10-23 905 NORTH AVE OFFSITES esigned.pdf" target="_blank">Off-Sites Agreement (eSigned, 10/23/23)</a></li>
+          <li><a href="assets/pdfs/2_RE614E_Public_Report_Receipt.pdf" target="_blank">Public Report Receipt (RE614E)</a></li>
+          <li><a href="assets/pdfs/3_ModernReport_Lots 3_ 4_ 5_ 6_ 7_ 8 NERRADS PL_3399996_JCP.pdf" target="_blank">Modern Report – Lots 3-8</a></li>
+          <li><a href="assets/pdfs/525-2412037-62.PreliminaryReport.Merged.pdf" target="_blank">Preliminary Title Report (525-2412037-62)</a></li>
+          <li><a href="assets/pdfs/7_Restated CCRs.pdf" target="_blank">Restated CC&Rs</a></li>
+          <li><a href="assets/pdfs/8_Recorded Map.pdf" target="_blank">Recorded Final Map</a></li>
+          <li><a href="assets/pdfs/905 North Ave Offsite Cost Estimate 2023-10-03 (1) (1).pdf" target="_blank">Off-Site Cost Estimate (10/03/23)</a></li>
+          <li><a href="assets/pdfs/905 North Ave Onsite Cost Estimate 2023-12-06 (1).pdf" target="_blank">On-Site Cost Estimate (12/06/23)</a></li>
+          <li><a href="assets/pdfs/905 North Ave Sac Maintenance Letter 2024-01-11 (1).pdf" target="_blank">Maintenance Letter (01/11/24)</a></li>
+          <li><a href="assets/pdfs/CC&Rs_44063013_Book-20240228Page-814.Merged.pdf" target="_blank">CC&Rs – Recorded (Book 20240228)</a></li>
+          <li><a href="assets/pdfs/COM-2307306-CYC4-PLANS.pdf" target="_blank">Engineering Plans – Cycle 4</a></li>
+          <li><a href="assets/pdfs/COM-2307306-CYC4-PLANS1.pdf" target="_blank">Engineering Plans – Cycle 4 (Set 1)</a></li>
+          <li><a href="assets/pdfs/COM-2307306-CYC4-REPLY.pdf" target="_blank">City Reply – Cycle 4</a></li>
+          <li><a href="assets/pdfs/COM-2307306-CYC4-SUPP.pdf" target="_blank">Supplemental – Cycle 4</a></li>
+          <li><a href="assets/pdfs/COM-2307306-CYC8-PLANS.pdf" target="_blank">Engineering Plans – Cycle 8</a></li>
+          <li><a href="assets/pdfs/EIS - Lot 2 & Nerrads Place Lots.pdf" target="_blank">Environmental Impact Statement</a></li>
+          <li><a href="assets/pdfs/Final Map.pdf" target="_blank">Final Map</a></li>
+          <li><a href="assets/pdfs/Nerradscali Subdivision - PERF BOND - signed (3).pdf" target="_blank">Performance Bond – Signed</a></li>
+          <li><a href="assets/pdfs/Nerradscali Subdivision - RECORDED SIA (1).pdf" target="_blank">Recorded SIA</a></li>
+          <li><a href="assets/pdfs/RES-2227146-CYC5-PLANS.pdf" target="_blank">Residential Plans – RES-2227146</a></li>
+          <li><a href="assets/pdfs/Recorded White paper.pdf" target="_blank">Recorded White Paper</a></li>
+          <li><a href="assets/pdfs/Shared Road Maintenance Responsibilities.pdf" target="_blank">Shared Road Maintenance Responsibilities</a></li>
+          <li><a href="assets/pdfs/ace notorized.pdf" target="_blank">ACE Notarized Document</a></li>
+          <li><a href="assets/pdfs/current detention agreement.pdf" target="_blank">Detention Agreement (Current)</a></li>
+          <li><a href="assets/pdfs/school fees paid for.pdf" target="_blank">School Fees – Paid</a></li>
+        </ul>
       </div>
     </div>
 
