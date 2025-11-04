@@ -160,7 +160,7 @@ const SHARED_NAV_HTML = `
     <a href="project.html" class="jsdom-nav-item" data-section="tasks"><span class="icon">✓</span><span>Tasks</span></a>
     <a href="schedule/baseline.html" class="jsdom-nav-item" data-section="schedule"><span class="icon">📅</span><span>Schedule</span></a>
     <a href="changelog.html" class="jsdom-nav-item" data-section="changelog"><span class="icon">📋</span><span>Changelog</span></a>
-    <a href="nerrads-hub.html" class="jsdom-nav-item" data-section="nerrads"><span class="icon">🏡</span><span>Nerrads</span></a>
+    <a href="nerrads-project.html" class="jsdom-nav-item" data-section="nerrads"><span class="icon">🏡</span><span>Nerrads</span></a>
     <a href="investor-site.html" class="jsdom-nav-item" data-section="investor"><span class="icon">💼</span><span>Investor</span></a>
 </nav>
 `;
