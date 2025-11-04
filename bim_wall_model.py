@@ -136,6 +136,7 @@ class WallModel:
             create_layer(self.doc, "P-DRAIN", 3)
             create_layer(self.doc, "Z-CLASH", 1)
             create_layer(self.doc, "A-DIMS", 6)
+            create_layer(self.doc, "A-TITLE", 7)
             setup_dimstyle(self.doc)
             self._owns_doc = True
         else:
@@ -587,8 +588,13 @@ def _save_wall_to_dxf(wall_data: Dict[str, Any]) -> Tuple[str, Dict[str, Any]]:
     model.generate_framing_geometry()
     model.check_electrical_code()
     model.check_plumbing_code()
+    # Branding note
+    try:
+        model.msp.add_text("AutoCAD by Vursor", dxfattribs={"layer": "A-TITLE", "height": 6.0}).set_pos((model.start_x, -24.0))
+    except Exception:
+        pass
     safe_id = str(model.id).replace("/", "-").replace(" ", "_")
-    outfile = f"{safe_id}_Framing_Model.dxf"
+    outfile = f"{safe_id}_AutoCAD-by-Vursor_Framing_Model.dxf"
     model.save(outfile)
     return outfile, model.get_bom()
 
@@ -613,6 +619,7 @@ def main() -> None:
             create_layer(doc, "P-DRAIN", 3)
             create_layer(doc, "Z-CLASH", 1)
             create_layer(doc, "A-DIMS", 6)
+            create_layer(doc, "A-TITLE", 7)
             setup_dimstyle(doc)
 
             # Normalize walls
@@ -741,7 +748,12 @@ def main() -> None:
                 cut_rows_all.extend(model.get_cut_list_rows())
 
             project_name = str(data.get("project", "project")).replace(" ", "_")
-            dxf_name = f"{project_name}_Framing_Model.dxf"
+            # Branding note on shared doc
+            try:
+                msp.add_text("AutoCAD by Vursor", dxfattribs={"layer": "A-TITLE", "height": 6.0}).set_pos((0.0, -24.0))
+            except Exception:
+                pass
+            dxf_name = f"{project_name}_AutoCAD-by-Vursor_Framing_Model.dxf"
             doc.saveas(dxf_name)
             print("DXF saved:", dxf_name)
 
