@@ -115,15 +115,6 @@
     
     .tab-content {display:none}
     .tab-content.active {display:block}
-    .tabs.top {display:none}
-
-    /* In-page sidebar navigation */
-    .page {display:grid; grid-template-columns:260px 1fr; gap:16px}
-    .subnav {background:#12161b; border:2px solid #1f2630; border-radius:12px; padding:12px; position:sticky; top:88px; height:max-content}
-    .subnav h3 {margin:4px 8px 12px; font-size:14px; color:#8a98ab; font-weight:700; text-transform:uppercase}
-    .subnav-item {display:block; width:100%; text-align:left; background:transparent; border:none; color:#a9b6c6; padding:10px 12px; border-radius:8px; cursor:pointer; font-weight:600}
-    .subnav-item:hover {background:#1a1f2e; color:#9cc1ff}
-    .subnav-item.active {background:#1a1f2e; color:#9cc1ff; border-left:4px solid #667eea}
     
     /* Cards */
     .card {
@@ -221,20 +212,6 @@
 <body data-jsdom-page="nerrads" data-jsdom-title="🏘️ Nerrads Place">
   
   <div class="container">
-    <div class="page">
-      <nav class="subnav">
-        <h3>Sections</h3>
-        <button class="subnav-item active" data-tab="overview">📊 Overview</button>
-        <button class="subnav-item" data-tab="infrastructure">🏗️ Infrastructure</button>
-        <button class="subnav-item" data-tab="strategy-a-detail">✅ Strategy A</button>
-        <button class="subnav-item" data-tab="strategy-b-detail">❌ Strategy B</button>
-        <button class="subnav-item" data-tab="hybrid">🔄 Hybrid</button>
-        <button class="subnav-item" data-tab="calculator">🧮 Calculator</button>
-        <button class="subnav-item" data-tab="resources">🎯 Resources</button>
-        <button class="subnav-item" data-tab="milestones">✅ De‑Risking</button>
-        <button class="subnav-item" data-tab="engineering-docs">📄 Engineering PDFs</button>
-      </nav>
-      <div>
     <!-- Hero Section -->
     <div class="project-hero">
       <h1 class="hero-title">🏘️ 4929 Nerrads Place / Nerradscali Subdivision</h1>
@@ -349,8 +326,8 @@
       </div>
     </div>
 
-    <!-- Tabs (hidden; replaced by sidebar) -->
-    <div class="tabs" style="display:none">
+    <!-- Tabs under Strategy A/B -->
+    <div class="tabs">
       <button class="tab active" onclick="showTab('overview')">📊 Overview</button>
       <button class="tab" onclick="showTab('infrastructure')">🏗️ Infrastructure</button>
       <button class="tab" onclick="showTab('strategy-a-detail')">✅ Strategy A (Sell Lots)</button>
@@ -1519,8 +1496,6 @@
       </div>
     </div>
 
-    </div> <!-- end right content -->
-  </div> <!-- end page -->
   </div> <!-- end container -->
 
   <script>
@@ -1529,24 +1504,14 @@
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(content => content.classList.remove('active'));
       
-      // Remove active class from all tabs and subnav
+      // Remove active class from all tabs
       document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-      document.querySelectorAll('.subnav-item').forEach(it => it.classList.remove('active'));
       
       // Show selected tab content
       document.getElementById(tabName).classList.add('active');
       
-      // Highlight subnav item
-      const match = document.querySelector(`.subnav-item[data-tab="${tabName}"]`);
-      if (match) match.classList.add('active');
+      // nothing extra
     }
-
-    // Wire subnav clicks
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.subnav-item').forEach(btn => {
-        btn.addEventListener('click', () => showTab(btn.dataset.tab));
-      });
-    });
   </script>
  </body>
  </html>
